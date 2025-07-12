@@ -22,6 +22,38 @@ window.sectionsData = [
     ],
   },
   {
+    id: "info_people",
+    title: "Who's Who",
+    color: "blue",
+    dependencies: [],
+    subsections: [
+      {
+        id: "person01_herbie",
+        title: "Herbert S. Sinclair",
+        color: "blue",
+        dependencies: [],
+        information: ["person01_herbie_001"],
+        checkboxes: [],
+      },
+    ],
+  },
+  {
+    id: "info_timeline",
+    title: "The Timeline",
+    color: "blue",
+    dependencies: [],
+    information: ["date001"],
+    checkboxes: [],
+  },
+  {
+    id: "info_notes",
+    title: "Notes & Letters",
+    color: "blue",
+    dependencies: [],
+    information: ["note001"],
+    checkboxes: [],
+  },
+  {
     id: "getting-started",
     title: "Getting Started",
     color: "blue",
