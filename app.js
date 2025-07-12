@@ -33,7 +33,7 @@ function checklistApp() {
       if (!this.data || !this.data.sections) {
         console.error("Failed to load data from data.js");
         this.dataLoadError = true;
-        this.data = { sections: [], checkboxes: {} }; // Empty structure to prevent errors
+        this.data = { sections: [], checkboxes: {}, information: {} }; // Empty structure to prevent errors
         return;
       }
 
@@ -152,6 +152,14 @@ function checklistApp() {
       return checkboxIds.filter((id) => {
         const checkbox = this.data.checkboxes[id];
         return checkbox && this.checkDependencies(checkbox.dependencies);
+      });
+    },
+
+    getVisibleInformation(informationIds) {
+      if (!informationIds || !this.data.information) return [];
+      return informationIds.filter((id) => {
+        const info = this.data.information[id];
+        return info && this.checkDependencies(info.dependencies);
       });
     },
 
