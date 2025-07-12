@@ -4,17 +4,23 @@ window.informationData = {
     description: "I, Herbert S. Sinclair, of the Mount Holly Estate at Reddington, do publish, and declare this instrument, my last will and testament, and hereby revoke all wills and codicils heretofore made my me. I give and bequeath to my grandnephew, Simon P. Jones, son of my dear niece Mary Matthew, all of my right, title and interest in and to the house and land which I own near Mount Holly. The above provision and bequest is contingent on my aforementioned grandnephew discovering the location of the 46th room of my forty-five room estate. The location of the room has been kept a secret from all of the staff and servants of the manor, but I am confident that any heir worthy of the Sinclair legacy should have no trouble uncovering its whereabouts within a timely manner. Should my grandnephew fail to uncover this room or provide proof of his discovery to the executors of my will then this gift shall lapse. In witness whereof, I have hereunto set my hand this 18th day of March, 1993."
   },
   dir002_description: {
-    title: "Room Description",
+    title: "Description",
     description: "Past the steps and beyond the grand doors, admission to Mount Holly is granted by way of a dark and garish lobby, suitably called the Entrance Hall. From here, each guest's adventure begins; however, the three doors that proceed onward do not always lead to the same adjoining rooms...",
     dependencies: [],
+    images: [
+      {
+        url: "images/dir002_description.jpeg",
+        caption: "A brand new, empty Mount Holly Estate Blueprint."
+      },
+    ],
   },
   dir002_info: {
-    title: "Room Information",
+    title: "Information",
     description: "TYPE: Permanent • RARITY: n/a",
     dependencies: [],
   },
   note001: {
-    title: "Opening Cinematic",
+    title: "Recital Invitation",
     description: "MISS MARAE BOHL requests your presence at her RECITAL Thursday Eve, Aug 30th at 8 P.M. at her home 403 Seventh Street.",
     dependencies: [],
   },
