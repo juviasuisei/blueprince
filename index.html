@@ -437,127 +437,9 @@
                       class="p-3"
                       :style="`background-color: ${getColorHex(subsection.color)}15`"
                     >
-                      <!-- Checkboxes in Subsection -->
-                      <div class="space-y-3">
-                        <template
-                          x-for="checkboxId in getVisibleCheckboxes(subsection.checkboxes)"
-                          :key="checkboxId"
-                        >
-                          <div
-                            class="checkbox-reveal"
-                            x-data="{ checkbox: data.checkboxes[checkboxId], checkboxId: checkboxId }"
-                          >
-                            <div
-                              class="flex items-start space-x-3 p-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors bg-white"
-                            >
-                              <!-- Checkbox -->
-                              <input
-                                type="checkbox"
-                             :id="checkboxId"
-                                :checked="checkedItems.includes(checkboxId)"
-                                @change="toggleCheckbox(checkboxId)"
-                                class="mt-1 h-5 w-5 rounded focus:ring-2 checkbox-colored"
-                                :style="`--checkbox-color: ${getColorHex(subsection.color)}; color: ${getColorHex(subsection.color)}; accent-color: ${getColorHex(subsection.color)};`"
-                              />
-
-                              <!-- Content -->
-                              <div class="flex-1 min-w-0">
-                                <label
-                                  :for="checkboxId"
-                                  class="block text-sm font-medium text-gray-900 cursor-pointer"
-                                  x-text="getMysteryTitle(checkboxId)"
-                                ></label>
-                                
-                                <!-- Description - only show when checked or mystery unlocked -->
-                                <template x-if="(checkedItems.includes(checkboxId) || shouldShowMysteryContent(checkboxId)) && shouldShowMysteryContent(checkboxId)">
-                                  <p
-                                    class="mt-1 text-sm text-gray-600"
-                                    x-text="checkbox.description"
-                                  ></p>
-                                </template>
-
-                                <!-- Images - only show when checked -->
-                                <template
-                                  x-if="checkedItems.includes(checkboxId) && checkbox.images && checkbox.images.length > 0"
-                                >
-                                  <div class="mt-3">
-                                    <template
-                                      x-if="checkbox.images.length === 1"
-                                    >
-                                      <div class="mt-2 text-center">
-                                        <img
-                                          :src="checkbox.images[0].url"
-                                          :alt="checkbox.images[0].caption || checkbox.title"
-                                          class="max-w-full h-auto rounded-lg shadow-sm mx-auto"
-                                          style="
-                                            max-height: 300px;
-                                            object-fit: cover;
-                                          "
-                                          @load="console.log('Single image loaded:', checkbox.images[0].url)"
-                                          @error="console.error('Single image failed to load:', checkbox.images[0].url)"
-                                        />
-                                        <p
-                                          x-show="checkbox.images[0].caption"
-                                          class="mt-2 text-xs text-gray-500 italic"
-                                          x-text="checkbox.images[0].caption"
-                                        ></p>
-                                      </div>
-                                    </template>
-
-                                    <template x-if="checkbox.images.length > 1">
-                                      <div class="relative mt-2">
-                                        <div
-                                          class="swiper rounded-lg"
-                                          :id="`swiper-${checkboxId}`"
-                                          x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(subsection.color)))"
-                                          :style="`--swiper-color: ${getColorHex(subsection.color)}`"
-                                        >
-                                          <div class="swiper-wrapper">
-                                            <template
-                                              x-for="image in checkbox.images"
-                                              :key="image.url"
-                                            >
-                                              <div
-                                                class="swiper-slide text-center"
-                                              >
-                                                <img
-                                                  :src="image.url"
-                                                  :alt="image.caption || checkbox.title"
-                                                  class="h-auto rounded-lg shadow-sm mx-auto"
-                                                  style="
-                                                    max-height: 300px;
-                                                    max-width: 100%;
-                                                    object-fit: cover;
-                                                  "
-                                                  @load="console.log('Image loaded:', image.url)"
-                                                  @error="console.error('Image failed to load:', image.url)"
-                                                />
-                                              </div>
-                                            </template>
-                                          </div>
-                                          <div class="swiper-pagination"></div>
-                                          <div class="swiper-button-next"></div>
-                                          <div class="swiper-button-prev"></div>
-                                        </div>
-                                        <!-- Carousel Caption (shows first image caption as default) -->
-                                        <p
-                                          x-show="checkbox.images && checkbox.images.length > 0 && checkbox.images[0].caption"
-                                          class="text-xs text-gray-500 italic text-center"
-                                          x-text="checkbox.images[0].caption"
-                                        ></p>
-                                      </div>
-                                    </template>
-                                  </div>
-                                </template>
-                              </div>
-                            </div>
-                          </div>
-                        </template>
-                      </div>
-
                       <!-- Information Items in Subsection -->
                       <template x-if="subsection.information && getVisibleInformation(subsection.information).length > 0">
-                        <div class="space-y-3 mt-4">
+                        <div class="space-y-3">
                           <template
                             x-for="informationId in getVisibleInformation(subsection.information)"
                             :key="informationId"
@@ -689,7 +571,162 @@
                           </div>
                         </div>
                       </template>
+
+                      <!-- Checkboxes in Subsection -->
+                      <div class="space-y-3 mt-4">
+                        <template
+                          x-for="checkboxId in getVisibleCheckboxes(subsection.checkboxes)"
+                          :key="checkboxId"
+                        >
+                          <div
+                            class="checkbox-reveal"
+                            x-data="{ checkbox: data.checkboxes[checkboxId], checkboxId: checkboxId }"
+                          >
+                            <div
+                              class="flex items-start space-x-3 p-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors bg-white"
+                            >
+                              <!-- Checkbox -->
+                              <input
+                                type="checkbox"
+                             :id="checkboxId"
+                                :checked="checkedItems.includes(checkboxId)"
+                                @change="toggleCheckbox(checkboxId)"
+                                class="mt-1 h-5 w-5 rounded focus:ring-2 checkbox-colored"
+                                :style="`--checkbox-color: ${getColorHex(subsection.color)}; color: ${getColorHex(subsection.color)}; accent-color: ${getColorHex(subsection.color)};`"
+                              />
+
+                              <!-- Content -->
+                              <div class="flex-1 min-w-0">
+                                <label
+                                  :for="checkboxId"
+                                  class="block text-sm font-medium text-gray-900 cursor-pointer"
+                                  x-text="getMysteryTitle(checkboxId)"
+                                ></label>
+                                
+                                <!-- Description - only show when checked or mystery unlocked -->
+                                <template x-if="(checkedItems.includes(checkboxId) || shouldShowMysteryContent(checkboxId)) && shouldShowMysteryContent(checkboxId)">
+                                  <p
+                                    class="mt-1 text-sm text-gray-600"
+                                    x-text="checkbox.description"
+                                  ></p>
+                                </template>
+
+                                <!-- Images - only show when checked -->
+                                <template
+                                  x-if="checkedItems.includes(checkboxId) && checkbox.images && checkbox.images.length > 0"
+                                >
+                                  <div class="mt-3">
+                                    <template
+                                      x-if="checkbox.images.length === 1"
+                                    >
+                                      <div class="mt-2 text-center">
+                                        <img
+                                          :src="checkbox.images[0].url"
+                                          :alt="checkbox.images[0].caption || checkbox.title"
+                                          class="max-w-full h-auto rounded-lg shadow-sm mx-auto"
+                                          style="
+                                            max-height: 300px;
+                                            object-fit: cover;
+                                          "
+                                          @load="console.log('Single image loaded:', checkbox.images[0].url)"
+                                          @error="console.error('Single image failed to load:', checkbox.images[0].url)"
+                                        />
+                                        <p
+                                          x-show="checkbox.images[0].caption"
+                                          class="mt-2 text-xs text-gray-500 italic"
+                                          x-text="checkbox.images[0].caption"
+                                        ></p>
+                                      </div>
+                                    </template>
+
+                                    <template x-if="checkbox.images.length > 1">
+                                      <div class="relative mt-2">
+                                        <div
+                                          class="swiper rounded-lg"
+                                          :id="`swiper-${checkboxId}`"
+                                          x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(subsection.color)))"
+                                          :style="`--swiper-color: ${getColorHex(subsection.color)}`"
+                                        >
+                                          <div class="swiper-wrapper">
+                                            <template
+                                              x-for="image in checkbox.images"
+                                              :key="image.url"
+                                            >
+                                              <div
+                                                class="swiper-slide text-center"
+                                              >
+                                                <img
+                                                  :src="image.url"
+                                                  :alt="image.caption || checkbox.title"
+                                                  class="h-auto rounded-lg shadow-sm mx-auto"
+                                                  style="
+                                                    max-height: 300px;
+                                                    max-width: 100%;
+                                                    object-fit: cover;
+                                                  "
+                                                  @load="console.log('Image loaded:', image.url)"
+                                                  @error="console.error('Image failed to load:', image.url)"
+                                                />
+                                              </div>
+                                            </template>
+                                          </div>
+                                          <div class="swiper-pagination"></div>
+                                          <div class="swiper-button-next"></div>
+                                          <div class="swiper-button-prev"></div>
+                                        </div>
+                                        <!-- Carousel Caption (shows first image caption as default) -->
+                                        <p
+                                          x-show="checkbox.images && checkbox.images.length > 0 && checkbox.images[0].caption"
+                                          class="text-xs text-gray-500 italic text-center"
+                                          x-text="checkbox.images[0].caption"
+                                        ></p>
+                                      </div>
+                                    </template>
+                                  </div>
+                                </template>
+                              </div>
+                            </div>
+                          </div>
+                        </template>
+                      </div>
                     </div>
+                  </div>
+                </template>
+
+                <!-- Information Items in Section (Direct) -->
+                <template x-if="section.information && getVisibleInformation(section.information).length > 0">
+                  <div class="space-y-3">
+                    <template
+                      x-for="informationId in getVisibleInformation(section.information)"
+                      :key="informationId"
+                    >
+                      <div
+                        class="checkbox-reveal"
+                        x-data="{ information: data.information[informationId], informationId: informationId }"
+                      >
+                        <div
+                          class="flex items-start space-x-3 p-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors bg-white"
+                        >
+                          <!-- Colored Bullet -->
+                          <div 
+                            class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0"
+                            :style="`background-color: ${getColorHex(section.color)}`"
+                          ></div>
+
+                          <!-- Content -->
+                          <div class="flex-1 min-w-0">
+                            <h4
+                              class="block text-sm font-medium text-gray-900"
+                              x-text="information.title"
+                            ></h4>
+                            <p
+                              class="mt-1 text-sm text-gray-600"
+                              x-text="information.description"
+                            ></p>
+                          </div>
+                        </div>
+                      </div>
+                    </template>
                   </div>
                 </template>
 
@@ -810,43 +847,6 @@
                             </template>
                           </div>
                         </div>
-                      </div>
-                    </template>
-
-                    <!-- Information Items in Section (Direct) -->
-                    <template x-if="section.information && getVisibleInformation(section.information).length > 0">
-                      <div class="space-y-3 mt-4">
-                        <template
-                          x-for="informationId in getVisibleInformation(section.information)"
-                          :key="informationId"
-                        >
-                          <div
-                            class="checkbox-reveal"
-                            x-data="{ information: data.information[informationId], informationId: informationId }"
-                          >
-                            <div
-                              class="flex items-start space-x-3 p-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors bg-white"
-                            >
-                              <!-- Colored Bullet -->
-                              <div 
-                                class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0"
-                                :style="`background-color: ${getColorHex(section.color)}`"
-                              ></div>
-
-                              <!-- Content -->
-                              <div class="flex-1 min-w-0">
-                                <h4
-                                  class="block text-sm font-medium text-gray-900"
-                                  x-text="information.title"
-                                ></h4>
-                                <p
-                                  class="mt-1 text-sm text-gray-600"
-                                  x-text="information.description"
-                                ></p>
-                              </div>
-                            </div>
-                          </div>
-                        </template>
                       </div>
                     </template>
 
