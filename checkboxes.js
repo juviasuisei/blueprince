@@ -18,8 +18,20 @@ window.checkboxesData = {
     dependencies: [],
     images: [
       {
-        url: "images/note002.jpeg",
-        caption: "found in the Entrance Hall on Day One"
+        url: "images/note002_1.jpeg",
+        caption: "envelope"
+      },
+      {
+        url: "images/note002_2.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note002_3.jpeg",
+        caption: "page 2"
+      },
+      {
+        url: "images/note002_4.jpeg",
+        caption: "page 3"
       },
     ],
   },
@@ -31,7 +43,7 @@ window.checkboxesData = {
     images: [
       {
         url: "images/note003.jpeg",
-        caption: "found in the Entrance Hall"
+        caption: "steps explainer"
       },
     ],
   },
