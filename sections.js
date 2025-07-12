@@ -16,7 +16,7 @@ window.sectionsData = [
         title: "002: Entrance Hall",
         color: "blue",
         dependencies: [],
-        information: ["dir2_description"],
+        information: ["dir2_description", "dir2_info"],
         checkboxes: ["dir2_item1_blueprint"],
       },
     ],

@@ -1,9 +1,15 @@
 window.checkboxesData = {
   dir2_item1_blueprint: {
-    title: "Item: The Mount Holly Blueprint",
-    hint: "Item: The Mount Holly Blueprint",
+    title: "Item: ???",
+    hint: "Item: The Mount Holly Estate Blueprint",
     description: "This will serve as a useful lmap and inventory log during your adventure.",
     dependencies: [],
+    images: [
+      {
+        url: "https://share.icloud.com/photos/0a6Ld4GrO5SqRUATqnCWsSgNQ",
+        caption: "A brand new, empty Mount Holly Estate Blueprint."
+      },
+    ],
   },
   setup: {
     title: "Initial Setup",
