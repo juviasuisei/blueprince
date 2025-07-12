@@ -248,7 +248,7 @@ function checklistApp() {
       return 0;
     },
 
-    initializeSwiper(swiperId, color) {
+    initializeSwiper(swiperId, color, onSlideChange) {
       // Initialize a specific Swiper instance
       if (!this.swipers[swiperId]) {
         // Use a longer timeout and check for slide count
@@ -309,6 +309,10 @@ function checklistApp() {
                       activeBullet.style.backgroundColor = color;
                     }
                   }
+                  // Call the slide change callback on init
+                  if (onSlideChange) {
+                    onSlideChange(this);
+                  }
                 },
                 slideChange: function () {
                   if (color) {
@@ -319,6 +323,10 @@ function checklistApp() {
                     if (activeBullet) {
                       activeBullet.style.backgroundColor = color;
                     }
+                  }
+                  // Call the slide change callback
+                  if (onSlideChange) {
+                    onSlideChange(this);
                   }
                 },
               },
