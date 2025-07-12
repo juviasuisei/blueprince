@@ -1,5 +1,27 @@
 window.sectionsData = [
   {
+    id: "obj1",
+    title: "Objective: Discover the 46th Room",
+    color: "blue",
+    dependencies: [],
+  },
+  {
+    id: "info_house",
+    title: "Mount Holly Room Directory",
+    color: "blue",
+    dependencies: [],
+    subsections: [
+      {
+        id: "dir2",
+        title: "002: Entrance Hall",
+        color: "blue",
+        dependencies: [],
+        information: ["dir2_description"],
+        checkboxes: ["dir2_item1_blueprint"],
+      },
+    ],
+  },
+  {
     id: "getting-started",
     title: "Getting Started",
     color: "blue",
