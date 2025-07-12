@@ -555,6 +555,43 @@
                         </template>
                       </div>
 
+                      <!-- Information Items in Subsection -->
+                      <template x-if="subsection.information && getVisibleInformation(subsection.information).length > 0">
+                        <div class="space-y-3 mt-4">
+                          <template
+                            x-for="informationId in getVisibleInformation(subsection.information)"
+                            :key="informationId"
+                          >
+                            <div
+                              class="checkbox-reveal"
+                              x-data="{ information: data.information[informationId], informationId: informationId }"
+                            >
+                              <div
+                                class="flex items-start space-x-3 p-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors bg-white"
+                              >
+                                <!-- Colored Bullet -->
+                                <div 
+                                  class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0"
+                                  :style="`background-color: ${getColorHex(subsection.color)}`"
+                                ></div>
+
+                                <!-- Content -->
+                                <div class="flex-1 min-w-0">
+                                  <h4
+                                    class="block text-sm font-medium text-gray-900"
+                                    x-text="information.title"
+                                  ></h4>
+                                  <p
+                                    class="mt-1 text-sm text-gray-600"
+                                    x-text="information.description"
+                                  ></p>
+                                </div>
+                              </div>
+                            </div>
+                          </template>
+                        </div>
+                      </template>
+
                       <!-- Mystery Input Field for Subsection -->
                       <template x-if="hasMysteries(subsection.checkboxes)">
                         <div 
@@ -773,6 +810,43 @@
                             </template>
                           </div>
                         </div>
+                      </div>
+                    </template>
+
+                    <!-- Information Items in Section (Direct) -->
+                    <template x-if="section.information && getVisibleInformation(section.information).length > 0">
+                      <div class="space-y-3 mt-4">
+                        <template
+                          x-for="informationId in getVisibleInformation(section.information)"
+                          :key="informationId"
+                        >
+                          <div
+                            class="checkbox-reveal"
+                            x-data="{ information: data.information[informationId], informationId: informationId }"
+                          >
+                            <div
+                              class="flex items-start space-x-3 p-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors bg-white"
+                            >
+                              <!-- Colored Bullet -->
+                              <div 
+                                class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0"
+                                :style="`background-color: ${getColorHex(section.color)}`"
+                              ></div>
+
+                              <!-- Content -->
+                              <div class="flex-1 min-w-0">
+                                <h4
+                                  class="block text-sm font-medium text-gray-900"
+                                  x-text="information.title"
+                                ></h4>
+                                <p
+                                  class="mt-1 text-sm text-gray-600"
+                                  x-text="information.description"
+                                ></p>
+                              </div>
+                            </div>
+                          </div>
+                        </template>
                       </div>
                     </template>
 
