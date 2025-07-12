@@ -8,7 +8,7 @@ window.checklistData = {
       subsections: [
         {
           id: "basics",
-          title: "The Basics!",
+          title: "The Basics",
           color: "green",
           dependencies: [],
           checkboxes: [
@@ -19,6 +19,7 @@ window.checklistData = {
             "mastery-1",
             "mastery-2",
           ],
+          information: ["basics-tip", "getting-started-info"],
         },
         {
           id: "advanced-basics",
@@ -42,6 +43,7 @@ window.checklistData = {
           dependencies: [],
           mysteryType: "stealth technique",
           checkboxes: ["skill-1", "second-step", "skill-2", "hidden-skill"],
+          information: ["advanced-warning"],
         },
       ],
     },
@@ -60,6 +62,7 @@ window.checklistData = {
         "mastery-2",
         "easter-egg",
       ],
+      information: ["advanced-warning"],
     },
     {
       id: "secret-section",
@@ -74,6 +77,7 @@ window.checklistData = {
           dependencies: [],
           mysteryType: "ancient word",
           checkboxes: ["secret-1", "secret-2", "secret-3"],
+          information: ["mystery-hint"],
         },
       ],
     },
@@ -217,6 +221,32 @@ window.checklistData = {
           caption: "Behind the scenes",
         },
       ],
+    },
+  },
+  information: {
+    "basics-tip": {
+      title: "Pro Tip",
+      description:
+        "Remember to save your progress regularly. The system auto-saves, but it's good practice to double-check your work.",
+      dependencies: [],
+    },
+    "getting-started-info": {
+      title: "Getting Started Guide",
+      description:
+        "This checklist is designed to be completed in order. Each item builds upon the previous ones, so don't skip ahead unless you're confident in your abilities.",
+      dependencies: ["setup"],
+    },
+    "advanced-warning": {
+      title: "Advanced Section Notice",
+      description:
+        "The advanced section contains complex challenges that require mastery of all previous skills. Make sure you're prepared before proceeding.",
+      dependencies: ["skill-1", "skill-2"],
+    },
+    "mystery-hint": {
+      title: "Mystery Discovery",
+      description:
+        "Some items in this guide are hidden mysteries. You can unlock them by discovering their keywords through exploration, or by simply checking them if you encounter them.",
+      dependencies: ["mastery-1"],
     },
   },
 };
