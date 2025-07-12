@@ -74,7 +74,7 @@ function checklistApp() {
         // If this is a mystery checkbox that hasn't been unlocked yet, unlock it
         if (
           checkbox &&
-          checkbox.type === "mystery" &&
+          checkbox.unlockKeyword &&
           !this.unlockedMysteries.includes(checkboxId)
         ) {
           this.unlockedMysteries.push(checkboxId);
@@ -388,7 +388,7 @@ function checklistApp() {
         const checkbox = this.data.checkboxes[id];
         return (
           checkbox &&
-          checkbox.type === "mystery" &&
+          checkbox.unlockKeyword &&
           this.checkDependencies(checkbox.dependencies) &&
           !this.unlockedMysteries.includes(id) // Only show input if there are unrevealed mysteries
         );
@@ -406,7 +406,7 @@ function checklistApp() {
         const checkbox = this.data.checkboxes[checkboxId];
         if (
           checkbox &&
-          checkbox.type === "mystery" &&
+          checkbox.unlockKeyword &&
           !this.unlockedMysteries.includes(checkboxId) &&
           this.checkDependencies(checkbox.dependencies)
         ) {
@@ -440,7 +440,7 @@ function checklistApp() {
       if (!checkbox) return "";
 
       // For mysteries: show "???" if not unlocked, otherwise follow normal logic
-      if (checkbox.type === "mystery" && !this.isMysteryUnlocked(checkboxId)) {
+      if (checkbox.unlockKeyword && !this.isMysteryUnlocked(checkboxId)) {
         return "???";
       }
 
@@ -457,7 +457,7 @@ function checklistApp() {
       if (!checkbox) return false;
 
       // For mysteries: only show content if unlocked AND checked
-      if (checkbox.type === "mystery") {
+      if (checkbox.unlockKeyword) {
         return (
           this.isMysteryUnlocked(checkboxId) &&
           this.checkedItems.includes(checkboxId)
@@ -476,7 +476,7 @@ function checklistApp() {
         const checkbox = this.data.checkboxes[checkboxId];
         return (
           checkbox &&
-          checkbox.type === "mystery" &&
+          checkbox.unlockKeyword &&
           this.checkDependencies(checkbox.dependencies) &&
           !this.unlockedMysteries.includes(checkboxId)
         );
@@ -536,7 +536,7 @@ function checklistApp() {
       this.unlockedMysteries = Object.keys(this.data.checkboxes || {}).filter(
         (checkboxId) => {
           const checkbox = this.data.checkboxes[checkboxId];
-          return checkbox && checkbox.type === "mystery";
+          return checkbox && checkbox.unlockKeyword;
         }
       );
 
