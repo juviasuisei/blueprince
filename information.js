@@ -25,6 +25,17 @@ window.informationData = {
     description: "TYPE: Permanent",
     dependencies: [],
   },
+  dir003_description: {
+    title: "Description",
+    description: "An unfurnished, unfinished, and otherwise unremarkable empty room. If there had at some point been plans for this spare room, it would seem those designs are now long forgotten.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir003_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir012_description: {
     title: "Description",
     description: "A dedicated storage space filled from end to end with a surplus of chairs, carpets, paintings, and a handful of other things that had at one time been in vogue and on display elsewhere in the house.",
@@ -159,7 +170,7 @@ window.informationData = {
   note005: {
     title: "Drawing: Swimbird",
     description: "This is from the children's book Swimbird by our mother.",
-    dependencies: [],
+    dependencies: ["dir012_drawing_identify"],
     images: [
       {
         url: "images/note005.jpeg",

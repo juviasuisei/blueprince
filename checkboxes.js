@@ -5,6 +5,13 @@ window.checkboxesData = {
     description: "You have fullfilled your uncle's challenge.",
     dependencies: [],
   },
+  obj02_003_spareroom: {
+    title: "Spare Room",
+    hint: "Draft the Spare Room",
+    description: "Room 003",
+    unlockKeyword: "Spare Room",
+    dependencies: [],
+  },
   obj02_012_storeroom: {
     title: "Storeroom",
     hint: "Draft the Storeroom",

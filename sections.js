@@ -22,7 +22,7 @@ window.sectionsData = [
     mysteryType: "room",
     dependencies: [],
     information: ["obj02_info"],
-    checkboxes: ["obj02_012", "obj02_045", "obj02_046"]
+    checkboxes: ["obj02_003_spareroom", "obj02_012_storeroom", "obj02_045_antechamber", "obj02_046_room46", "obj02_055_hallway"]
   },
   {
     id: "obj04",
@@ -45,6 +45,14 @@ window.sectionsData = [
         dependencies: [],
         information: ["dir002_description", "dir002_info"],
         checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_person1", "dir002_person2"],
+      },
+      {
+        id: "dir003",
+        title: "003: Spare Room",
+        color: "blue",
+        dependencies: [obj02_003_spareroom],
+        information: ["dir003_description", "dir003_info"],
+        checkboxes: [],
       },
       {
         id: "dir012",
