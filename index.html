@@ -501,7 +501,7 @@
                                           <div
                                             class="swiper rounded-lg"
                                             :id="`swiper-info-${informationId}`"
-                                            x-init="$nextTick(() => initializeSwiper(`swiper-info-${informationId}`, getColorHex(subsection.color), (swiper) => { currentSlide = swiper.activeIndex; }))"
+                                            x-init="$nextTick(() => initializeSwiper(`swiper-info-${informationId}`, getColorHex(subsection.color), (swiper) => { currentSlide = swiper.realIndex; }))"
                                             :style="`--swiper-color: ${getColorHex(subsection.color)}`"
                                           >
                                             <div class="swiper-wrapper">
@@ -718,7 +718,7 @@
                                         <div
                                           class="swiper rounded-lg"
                                           :id="`swiper-${checkboxId}`"
-                                          x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(subsection.color), (swiper) => { currentSlide = swiper.activeIndex; }))"
+                                          x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(subsection.color), (swiper) => { currentSlide = swiper.realIndex; }))"
                                           :style="`--swiper-color: ${getColorHex(subsection.color)}`"
                                         >
                                           <div class="swiper-wrapper">
@@ -831,7 +831,7 @@
                                     <div
                                       class="swiper rounded-lg"
                                       :id="`swiper-info-${informationId}`"
-                                      x-init="$nextTick(() => initializeSwiper(`swiper-info-${informationId}`, getColorHex(section.color), (swiper) => { currentSlide = swiper.activeIndex; }))"
+                                      x-init="$nextTick(() => initializeSwiper(`swiper-info-${informationId}`, getColorHex(section.color), (swiper) => { currentSlide = swiper.realIndex; }))"
                                       :style="`--swiper-color: ${getColorHex(section.color)}`"
                                     >
                                       <div class="swiper-wrapper">
@@ -953,7 +953,7 @@
                                     <div
                                       class="swiper rounded-lg"
                                       :id="`swiper-${checkboxId}`"
-                                      x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(section.color), (swiper) => { currentSlide = swiper.activeIndex; }))"
+                                      x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(section.color), (swiper) => { currentSlide = swiper.realIndex; }))"
                                       :style="`--swiper-color: ${getColorHex(section.color)}`"
                                     >
                                       <div class="swiper-wrapper">
