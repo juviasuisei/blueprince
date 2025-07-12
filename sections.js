@@ -1,6 +1,6 @@
 window.sectionsData = [
   {
-    id: "obj1",
+    id: "obj01",
     title: "Objective: Discover the 46th Room",
     color: "blue",
     dependencies: [],
@@ -8,8 +8,9 @@ window.sectionsData = [
   },
   {
     id: "info_house",
-    title: "Mount Holly Room Directory",
+    title: "Mount Holly Directory",
     color: "blue",
+    mysteryType: "room",
     dependencies: [],
     subsections: [
       {
@@ -24,7 +25,7 @@ window.sectionsData = [
   },
   {
     id: "info_people",
-    title: "Who's Who",
+    title: "Who's Who?",
     color: "blue",
     dependencies: [],
     subsections: [
@@ -48,7 +49,7 @@ window.sectionsData = [
   },
   {
     id: "info_notes",
-    title: "Notes & Letters",
+    title: "Letters & Notes",
     color: "blue",
     dependencies: [],
     subsections: [
@@ -56,7 +57,7 @@ window.sectionsData = [
         id: "info_notes_letters",
         title: "Letters",
         color: "blue",
-        dependencies: [],
+        dependencies: ["dir002_note_letter1"],
         information: ["note002"],
       },
       {
@@ -65,87 +66,6 @@ window.sectionsData = [
         color: "blue",
         dependencies: [],
         information: ["note001", "note003"],
-      },
-    ],
-  },
-  {
-    id: "getting-started",
-    title: "Getting Started",
-    color: "blue",
-    dependencies: [],
-    subsections: [
-      {
-        id: "basics",
-        title: "The Basics",
-        color: "green",
-        dependencies: [],
-        checkboxes: [
-          "setup",
-          "first-step",
-          "second-step",
-          "third-step",
-          "mastery-1",
-          "mastery-2",
-        ],
-        information: ["basics-tip", "getting-started-info"],
-      },
-      {
-        id: "advanced-basics",
-        title: "Advanced Basics",
-        color: "orange",
-        dependencies: ["setup"],
-        checkboxes: ["second-step", "third-step"],
-      },
-    ],
-  },
-  {
-    id: "intermediate",
-    title: "Intermediate Challenges",
-    color: "red",
-    dependencies: ["first-step"],
-    subsections: [
-      {
-        id: "skills",
-        title: "New Skills",
-        color: "gold",
-        dependencies: [],
-        mysteryType: "stealth technique",
-        checkboxes: ["skill-1", "second-step", "skill-2", "hidden-skill"],
-        information: ["advanced-warning"],
-      },
-    ],
-  },
-  {
-    id: "advanced",
-    title: "Advanced Mastery",
-    color: "purple",
-    dependencies: ["skill-1", "skill-2", "third-step"],
-    mysteryType: "cheat code",
-    checkboxes: [
-      "setup",
-      "first-step",
-      "second-step",
-      "third-step",
-      "mastery-1",
-      "mastery-2",
-      "easter-egg",
-    ],
-    information: ["advanced-warning"],
-  },
-  {
-    id: "secret-section",
-    title: "Hidden Mysteries",
-    color: "black",
-    dependencies: ["mastery-1"],
-    subsections: [
-      {
-        id: "mysteries",
-        title: "Ancient Secrets",
-        color: "purple",
-        dependencies: [],
-        mysteryType: "ancient word",
-        checkboxes: ["secret-1", "secret-2", "secret-3"],
-        information: ["mystery-hint"],
       },
     ],
   },

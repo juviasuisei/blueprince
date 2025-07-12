@@ -1,4 +1,10 @@
 window.checkboxesData = {
+  obj01_1_room46: {
+    title: "Enter Room 46",
+    hint: "Enter Room 46",
+    description: "You have fullfilled your uncle's challenge.",
+    dependencies: [],
+  },
   dir002_item_blueprint: {
     title: "Item: The Mount Holly Estate Blueprint",
     hint: "Item: ???",
