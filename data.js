@@ -8,7 +8,7 @@ window.checklistData = {
       subsections: [
         {
           id: "basics",
-          title: "The Basics",
+          title: "The Basics!",
           color: "green",
           dependencies: [],
           checkboxes: [
