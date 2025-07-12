@@ -335,7 +335,7 @@
                   ></h2>
                   <div class="flex items-center space-x-3">
                     <!-- Section Progress -->
-                    <div class="text-sm text-gray-500">
+                    <div class="text-sm text-gray-500" x-show="getSectionTotalCount(section.id) > 0">
                       <span
                         x-text="`${Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)}%`"
                       ></span>
@@ -361,7 +361,7 @@
                 <div class="w-full bg-gray-200 rounded-full h-1.5">
                   <div
                     class="h-1.5 rounded-full transition-all duration-300"
-                    :style="`width: ${(getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100}%; background-color: ${getColorHex(section.color)}`"
+                    :style="`width: ${getSectionTotalCount(section.id) === 0 ? 100 : (getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100}%; background-color: ${getColorHex(section.color)}`"
                   ></div>
                 </div>
               </div>
@@ -397,7 +397,7 @@
                         ></h3>
                         <div class="flex items-center space-x-3">
                           <!-- Subsection Progress Count -->
-                          <div class="text-sm text-gray-500">
+                          <div class="text-sm text-gray-500" x-show="getSubsectionTotalCount(subsection.id) > 0">
                             <span
                               x-text="`${Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)}%`"
                             ></span>
@@ -423,7 +423,7 @@
                       <div class="w-full bg-gray-200 rounded-full h-1">
                         <div
                           class="h-1 rounded-full transition-all duration-300"
-                          :style="`width: ${(getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100}%; background-color: ${getColorHex(subsection.color)}`"
+                          :style="`width: ${getSubsectionTotalCount(subsection.id) === 0 ? 100 : (getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100}%; background-color: ${getColorHex(subsection.color)}`"
                         ></div>
                       </div>
                     </div>
