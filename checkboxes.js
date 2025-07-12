@@ -5,6 +5,13 @@ window.checkboxesData = {
     description: "You have fullfilled your uncle's challenge.",
     dependencies: [],
   },
+  obj02_012_storeroom: {
+    title: "Storeroom",
+    hint: "Draft the Storeroom",
+    description: "Room 012",
+    unlockKeyword: "Storeroom",
+    dependencies: [],
+  },
   obj02_045_antechamber: {
     title: "Antechamber",
     hint: "Draft the Antechamber",
@@ -53,6 +60,34 @@ window.checkboxesData = {
       {
         url: "images/obj03_r1f3_R.jpeg",
         caption: "ace"
+      },
+    ],
+  },
+  obj03_r2f3: {
+    title: "Rank 1 • File 4: E",
+    hint: "Rank 1 • File 4: ???",
+    description: "PIN[E]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r1f4_L.jpeg",
+        caption: "pine"
+      },
+      {
+        url: "images/obj03_r1f4_R.jpeg",
+        caption: "pin"
+      },
+    ],
+  },
+  obj04_012_storeroom: {
+    title: "Storeroom: White Pawn",
+    hint: "Storeroom: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_012_storeroom.jpeg",
+        caption: "white pawn"
       },
     ],
   },
@@ -127,6 +162,24 @@ window.checkboxesData = {
         caption: "TK"
       },
     ],
+  },
+  dir012_drawing: {
+    title: "Drawing: ???",
+    hint: "???",
+    description: "What is this a drawing of and who drew it?",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note005.jpeg",
+        caption: "a hand drawn color depiction of a blue bird wearing a swim cap and a blue-striped swimsuit "
+      },
+    ],
+  },
+  dir012_drawing_identify: {
+    title: "Drawing: Swimbird",
+    hint: "What is This Drawing?",
+    description: "This is from the children's book Swimbird by our mother.",
+    dependencies: ["dir012_drawing"],
   },
   dir055_note_red: {
     title: "Red Note: Hallway",

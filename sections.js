@@ -4,13 +4,15 @@ window.sectionsData = [
     title: "Objective: Discover the 46th Room",
     color: "blue",
     dependencies: [],
-    information: ["obj01_info"]
+    information: ["obj01_info"],
+    checkboxes: ["obj01_1_room46"],
   },
   {
     id: "obj03",
     title: "Objective: Solve the Paintings Puzzle",
     color: "blue",
     dependencies: ["TK"],
+    information: [],
     checkboxes: ["obj03_r2f3", "obj03_r1f3"]
   },
   {
@@ -20,7 +22,15 @@ window.sectionsData = [
     mysteryType: "room",
     dependencies: [],
     information: ["obj02_info"],
-    checkboxes: ["obj02_045", "obj02_046"]
+    checkboxes: ["obj02_012", "obj02_045", "obj02_046"]
+  },
+  {
+    id: "obj04",
+    title: "Objective: Solve the Chess Puzzle",
+    color: "blue",
+    dependencies: ["TK"],
+    information: [],
+    checkboxes: ["obj04_012_storeroom"]
   },
   {
     id: "info_house",
@@ -37,10 +47,18 @@ window.sectionsData = [
         checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_person1", "dir002_person2"],
       },
       {
+        id: "dir012",
+        title: "012: Storeroom",
+        color: "blue",
+        dependencies: ["obj02_012_storeroom"],
+        information: ["dir012_description", "dir012_info"],
+        checkboxes: [],
+      },
+      {
         id: "dir045",
         title: "045: Antechamber",
         color: "blue",
-        dependencies: ["obj02_045"],
+        dependencies: ["obj02_045_antechamber"],
         information: ["dir045_description", "dir045_info"],
         checkboxes: [],
       },
@@ -48,7 +66,7 @@ window.sectionsData = [
         id: "dir046",
         title: "046: Room 46",
         color: "blue",
-        dependencies: ["obj02_046"],
+        dependencies: ["obj02_046_room46"],
         information: ["dir046_description", "dir046_info"],
         checkboxes: [],
       },
@@ -56,7 +74,7 @@ window.sectionsData = [
         id: "dir055",
         title: "055: Antechamber",
         color: "orange",
-        dependencies: ["obj02_055"],
+        dependencies: ["obj02_055_hallway"],
         information: ["dir055_description", "dir055_info"],
         checkboxes: ["dir055_note_red"],
       },

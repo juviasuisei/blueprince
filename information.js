@@ -25,6 +25,33 @@ window.informationData = {
     description: "TYPE: Permanent",
     dependencies: [],
   },
+  dir012_description: {
+    title: "Description",
+    description: "A dedicated storage space filled from end to end with a surplus of chairs, carpets, paintings, and a handful of other things that had at one time been in vogue and on display elsewhere in the house.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir012_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir012_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
+  dir012_chess: {
+    title: "Chess Piece",
+    description: "White Pawn",
+    dependencies: ["obj04_012_storeroom"],
+    images: [
+      {
+        url: "images/obj04_012_storeroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   dir045_description: {
     title: "Description",
     description: "From its root meaning \"The Room Before\", all signs and paths point toward the Antechamber. This mysterious sealed room — resting on the 9th Rank — may prove, however, quite an initial challenge to even reach, let alone enter. Still, you can't help but draw a connection between this chamber and Room 46.",
@@ -126,6 +153,17 @@ window.informationData = {
       {
         url: "images/note004.jpeg",
         caption: "a red typed note"
+      },
+    ],
+  },
+  note005: {
+    title: "Drawing: Swimbird",
+    description: "This is from the children's book Swimbird by our mother.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note005.jpeg",
+        caption: "a hand drawn color depiction of a blue bird wearing a swim cap and a blue-striped swimsuit "
       },
     ],
   },
