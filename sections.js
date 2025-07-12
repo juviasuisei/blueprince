@@ -4,6 +4,7 @@ window.sectionsData = [
     title: "Objective: Discover the 46th Room",
     color: "blue",
     dependencies: [],
+    information: ["obj01_info"]
   },
   {
     id: "info_house",
@@ -17,7 +18,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: [],
         information: ["dir002_description", "dir002_info"],
-        checkboxes: ["dir002_item_blueprint"],
+        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black"],
       },
     ],
   },
@@ -50,8 +51,22 @@ window.sectionsData = [
     title: "Notes & Letters",
     color: "blue",
     dependencies: [],
-    information: ["note001"],
-    checkboxes: [],
+    subsections: [
+      {
+        id: "info_notes_letters",
+        title: "Letters",
+        color: "blue",
+        dependencies: [],
+        information: ["note002"],
+      },
+      {
+        id: "info_notes_cards",
+        title: "Note Cards",
+        color: "blue",
+        dependencies: [],
+        information: ["note001", "note003"],
+      },
+    ],
   },
   {
     id: "getting-started",
