@@ -76,7 +76,6 @@
         margin-top: 8px !important;
         margin-bottom: 0px !important;
       }
-
     </style>
   </head>
   <body class="bg-gray-50">
@@ -96,8 +95,17 @@
             </p>
           </div>
           
-          <!-- Reset Button -->
-          <div class="flex justify-end mt-4">
+          <!-- Action Buttons -->
+          <div class="flex justify-end mt-4 space-x-3">
+            <button
+              @click="showCompleteAllConfirm = true"
+              class="px-4 py-2 text-sm font-medium text-orange-600 bg-white border border-orange-300 rounded-md hover:bg-orange-50 hover:border-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+            >
+              <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Complete All (Spoilers!)
+            </button>
             <button
               @click="showResetConfirm = true"
               class="px-4 py-2 text-sm font-medium text-red-600 bg-white border border-red-300 rounded-md hover:bg-red-50 hover:border-red-400 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
@@ -179,6 +187,95 @@
                 class="flex-1 px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
               >
                 Reset Everything
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Complete All Confirmation Modal -->
+        <div 
+          x-show="showCompleteAllConfirm"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          @click.self="showCompleteAllConfirm = false"
+        >
+          <div 
+            class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 transform scale-95"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-95"
+          >
+            <div class="flex items-center mb-4">
+              <svg class="w-6 h-6 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+              </svg>
+              <h3 class="text-lg font-semibold text-gray-900">Complete All Progress</h3>
+            </div>
+            
+            <div class="mb-4 p-3 bg-orange-50 border border-orange-200 rounded-md">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+                <span class="text-sm font-medium text-orange-800">⚠️ SPOILER WARNING ⚠️</span>
+              </div>
+            </div>
+            
+            <p class="text-gray-600 mb-6">
+              This will instantly complete everything and reveal all secrets! This action will:
+            </p>
+            
+            <ul class="text-sm text-gray-600 mb-6 space-y-1">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Check all items as completed
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Unlock and reveal ALL mystery content
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Expand all sections for full visibility
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Show all images and descriptions
+              </li>
+            </ul>
+            
+            <p class="text-sm text-orange-600 mb-6">
+              <strong>This will spoil all secrets and mysteries!</strong> Only use this if you want to see everything at once or need to reference completed content.
+            </p>
+            
+            <div class="flex space-x-3">
+              <button
+                @click="showCompleteAllConfirm = false"
+                class="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              >
+                Cancel
+              </button>
+              <button
+                @click="completeAllProgress(); showCompleteAllConfirm = false"
+                class="flex-1 px-4 py-2 text-sm font-medium text-white bg-orange-600 border border-transparent rounded-md hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              >
+                Complete All (Spoilers!)
               </button>
             </div>
           </div>
