@@ -497,11 +497,11 @@
                                       </template>
 
                                       <template x-if="information.images.length > 1">
-                                        <div class="relative mt-2">
+                                        <div class="relative mt-2" x-data="{ currentSlide: 0 }">
                                           <div
                                             class="swiper rounded-lg"
                                             :id="`swiper-info-${informationId}`"
-                                            x-init="$nextTick(() => initializeSwiper(`swiper-info-${informationId}`, getColorHex(subsection.color)))"
+                                            x-init="$nextTick(() => initializeSwiper(`swiper-info-${informationId}`, getColorHex(subsection.color), (swiper) => { currentSlide = swiper.activeIndex; }))"
                                             :style="`--swiper-color: ${getColorHex(subsection.color)}`"
                                           >
                                             <div class="swiper-wrapper">
@@ -531,11 +531,11 @@
                                             <div class="swiper-button-next"></div>
                                             <div class="swiper-button-prev"></div>
                                           </div>
-                                          <!-- Carousel Caption (shows first image caption as default) -->
+                                          <!-- Dynamic Carousel Caption -->
                                           <p
-                                            x-show="information.images && information.images.length > 0 && information.images[0].caption"
+                                            x-show="information.images && information.images.length > 0 && information.images[currentSlide] && information.images[currentSlide].caption"
                                             class="text-xs text-gray-500 italic text-center"
-                                            x-text="information.images[0].caption"
+                                            x-text="information.images[currentSlide]?.caption"
                                           ></p>
                                         </div>
                                       </template>
@@ -714,11 +714,11 @@
                                     </template>
 
                                     <template x-if="checkbox.images.length > 1">
-                                      <div class="relative mt-2">
+                                      <div class="relative mt-2" x-data="{ currentSlide: 0 }">
                                         <div
                                           class="swiper rounded-lg"
                                           :id="`swiper-${checkboxId}`"
-                                          x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(subsection.color)))"
+                                          x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(subsection.color), (swiper) => { currentSlide = swiper.activeIndex; }))"
                                           :style="`--swiper-color: ${getColorHex(subsection.color)}`"
                                         >
                                           <div class="swiper-wrapper">
@@ -748,11 +748,11 @@
                                           <div class="swiper-button-next"></div>
                                           <div class="swiper-button-prev"></div>
                                         </div>
-                                        <!-- Carousel Caption (shows first image caption as default) -->
+                                        <!-- Dynamic Carousel Caption -->
                                         <p
-                                          x-show="checkbox.images && checkbox.images.length > 0 && checkbox.images[0].caption"
+                                          x-show="checkbox.images && checkbox.images.length > 0 && checkbox.images[currentSlide] && checkbox.images[currentSlide].caption"
                                           class="text-xs text-gray-500 italic text-center"
-                                          x-text="checkbox.images[0].caption"
+                                          x-text="checkbox.images[currentSlide]?.caption"
                                         ></p>
                                       </div>
                                     </template>
@@ -827,11 +827,11 @@
                                 </template>
 
                                 <template x-if="information.images.length > 1">
-                                  <div class="relative mt-2">
+                                  <div class="relative mt-2" x-data="{ currentSlide: 0 }">
                                     <div
                                       class="swiper rounded-lg"
                                       :id="`swiper-info-${informationId}`"
-                                      x-init="$nextTick(() => initializeSwiper(`swiper-info-${informationId}`, getColorHex(section.color)))"
+                                      x-init="$nextTick(() => initializeSwiper(`swiper-info-${informationId}`, getColorHex(section.color), (swiper) => { currentSlide = swiper.activeIndex; }))"
                                       :style="`--swiper-color: ${getColorHex(section.color)}`"
                                     >
                                       <div class="swiper-wrapper">
@@ -861,11 +861,11 @@
                                       <div class="swiper-button-next"></div>
                                       <div class="swiper-button-prev"></div>
                                     </div>
-                                    <!-- Carousel Caption (shows first image caption as default) -->
+                                    <!-- Dynamic Carousel Caption -->
                                     <p
-                                      x-show="information.images && information.images.length > 0 && information.images[0].caption"
+                                      x-show="information.images && information.images.length > 0 && information.images[currentSlide] && information.images[currentSlide].caption"
                                       class="text-xs text-gray-500 italic text-center"
-                                      x-text="information.images[0].caption"
+                                      x-text="information.images[currentSlide]?.caption"
                                     ></p>
                                   </div>
                                 </template>
@@ -949,11 +949,11 @@
                                 </template>
 
                                 <template x-if="checkbox.images.length > 1">
-                                  <div class="relative mt-2">
+                                  <div class="relative mt-2" x-data="{ currentSlide: 0 }">
                                     <div
                                       class="swiper rounded-lg"
                                       :id="`swiper-${checkboxId}`"
-                                      x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(section.color)))"
+                                      x-init="$nextTick(() => initializeSwiper(`swiper-${checkboxId}`, getColorHex(section.color), (swiper) => { currentSlide = swiper.activeIndex; }))"
                                       :style="`--swiper-color: ${getColorHex(section.color)}`"
                                     >
                                       <div class="swiper-wrapper">
@@ -983,11 +983,11 @@
                                       <div class="swiper-button-next"></div>
                                       <div class="swiper-button-prev"></div>
                                     </div>
-                                    <!-- Carousel Caption (shows first image caption as default) -->
+                                    <!-- Dynamic Carousel Caption -->
                                     <p
-                                      x-show="checkbox.images && checkbox.images.length > 0 && checkbox.images[0].caption"
+                                      x-show="checkbox.images && checkbox.images.length > 0 && checkbox.images[currentSlide] && checkbox.images[currentSlide].caption"
                                       class="text-xs text-gray-500 italic text-center"
-                                      x-text="checkbox.images[0].caption"
+                                      x-text="checkbox.images[currentSlide]?.caption"
                                     ></p>
                                   </div>
                                 </template>
