@@ -24,6 +24,22 @@ window.checkboxesData = {
     unlockKeyword: "Hallway",
     dependencies: [],
   },
+  obj03_r2f3: {
+    title: "Rank 2 • File 3: G",
+    hint: "Rank 2 • File 3: ???",
+    description: "BRID[G]E",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r2f3_L.jpeg",
+        caption: "bridge"
+      },
+      {
+        url: "images/obj03_r2f3_R.jpeg",
+        caption: "bride"
+      },
+    ],
+  },
   obj03_r1f3: {
     title: "Rank 1 • File 3: F",
     hint: "Rank 1 • File 3: ???",
@@ -100,7 +116,7 @@ window.checkboxesData = {
       },
     ],
   },
-  dir002_person1: {
+  dir002_person2: {
     title: "Right Bust: TK",
     hint: "Identify the Bust on the Right",
     description: "TK",
@@ -109,6 +125,18 @@ window.checkboxesData = {
       {
         url: "images/dir002_person2.jpeg",
         caption: "TK"
+      },
+    ],
+  },
+  dir055_note_red: {
+    title: "Red Note: Hallway",
+    hint: "Red Note: ???",
+    description: "DOORS IN THE WEST WING ARE MORE LIKELY TO BE LOCKED",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note004.jpeg",
+        caption: "a red typed note"
       },
     ],
   },

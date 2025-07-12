@@ -118,6 +118,17 @@ window.informationData = {
       },
     ],
   },
+  note004: {
+    title: "Red Note: Hallway",
+    description: "DOORS IN THE WEST WING ARE MORE LIKELY TO BE LOCKED",
+    dependencies: ["dir004_note_red"],
+    images: [
+      {
+        url: "images/note004.jpeg",
+        caption: "a red typed note"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Initial Information",
     description: "Herbert S. Sinclair is our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",

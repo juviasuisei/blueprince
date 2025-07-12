@@ -11,7 +11,7 @@ window.sectionsData = [
     title: "Objective: Solve the Paintings Puzzle",
     color: "blue",
     dependencies: ["TK"],
-    checkboxes: ["obj03_r1f3"]
+    checkboxes: ["obj03_r2f3", "obj03_r1f3"]
   },
   {
     id: "obj02",
@@ -58,7 +58,7 @@ window.sectionsData = [
         color: "orange",
         dependencies: ["obj02_055"],
         information: ["dir055_description", "dir055_info"],
-        checkboxes: [],
+        checkboxes: ["dir055_note_red"],
       },
     ],
   },
