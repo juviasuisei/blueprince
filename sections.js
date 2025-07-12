@@ -19,7 +19,8 @@ window.sectionsData = [
     color: "blue",
     mysteryType: "room",
     dependencies: [],
-    information: ["obj02_info"]
+    information: ["obj02_info"],
+    checkboxes: ["obj02_045", "obj02_046"]
   },
   {
     id: "info_house",
@@ -28,12 +29,36 @@ window.sectionsData = [
     dependencies: [],
     subsections: [
       {
-        id: "dir2",
+        id: "dir002",
         title: "002: Entrance Hall",
         color: "blue",
         dependencies: [],
         information: ["dir002_description", "dir002_info"],
         checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_person1", "dir002_person2"],
+      },
+      {
+        id: "dir045",
+        title: "045: Antechamber",
+        color: "blue",
+        dependencies: ["obj02_045"],
+        information: ["dir045_description", "dir045_info"],
+        checkboxes: [],
+      },
+      {
+        id: "dir046",
+        title: "046: Room 46",
+        color: "blue",
+        dependencies: ["obj02_046"],
+        information: ["dir046_description", "dir046_info"],
+        checkboxes: [],
+      },
+      {
+        id: "dir055",
+        title: "055: Antechamber",
+        color: "orange",
+        dependencies: ["obj02_055"],
+        information: ["dir055_description", "dir055_info"],
+        checkboxes: [],
       },
     ],
   },

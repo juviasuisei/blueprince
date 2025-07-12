@@ -22,7 +22,55 @@ window.informationData = {
   },
   dir002_info: {
     title: "Classification",
-    description: "TYPE: Permanent • RARITY: n/a",
+    description: "TYPE: Permanent",
+    dependencies: [],
+  },
+  dir045_description: {
+    title: "Description",
+    description: "From its root meaning \"The Room Before\", all signs and paths point toward the Antechamber. This mysterious sealed room — resting on the 9th Rank — may prove, however, quite an initial challenge to even reach, let alone enter. Still, you can't help but draw a connection between this chamber and Room 46.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir045_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir045_info: {
+    title: "Classification",
+    description: "TYPE: Objective",
+    dependencies: [],
+  },
+  dir046_description: {
+    title: "Description",
+    description: "The mysterious room mentioned in H. S. Sinclair's will, named only by a number. Despite the house's official blueprint only showing a total of 45 rooms, the words of the legal document make it apparent that a 46th room in the house in fact exists. Finding this room is your primary objective while on the estate. It is after all, your bequest.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir046_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir046_info: {
+    title: "Classification",
+    description: "TYPE: Objective",
+    dependencies: [],
+  },
+  dir055_description: {
+    title: "Description",
+    description: "One of the many nondescript hallways snaking through the estate and providing elegant causeways between the more noteworthy destinations that the house has to offer.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir055_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir055_info: {
+    title: "Classification",
+    description: "TYPE: Hallway",
     dependencies: [],
   },
   note001: {
