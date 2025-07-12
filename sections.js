@@ -122,7 +122,7 @@ window.sectionsData = [
         title: "Note Cards",
         color: "blue",
         dependencies: [],
-        information: ["note001", "note003"],
+        information: ["note001", "note003", "note005", "note004"],
       },
     ],
   },
