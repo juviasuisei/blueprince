@@ -5,6 +5,22 @@ window.checkboxesData = {
     description: "You have fullfilled your uncle's challenge.",
     dependencies: [],
   },
+  obj03_r1f3: {
+    title: "Rank 1 • File 3: F",
+    hint: "Rank 1 • File 3: ???",
+    description: "[F]ACE",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r1f3_L.jpeg",
+        caption: "face"
+      },
+      {
+        url: "images/obj03_r1f3_R.jpeg",
+        caption: "ace"
+      },
+    ],
+  },
   dir002_item_blueprint: {
     title: "Item: The Mount Holly Estate Blueprint",
     hint: "Item: ???",
@@ -50,6 +66,30 @@ window.checkboxesData = {
       {
         url: "images/note003.jpeg",
         caption: "steps explainer"
+      },
+    ],
+  },
+  dir002_person1: {
+    title: "Left Bust: TK",
+    hint: "Identify the Bust on the Left",
+    description: "TK",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir002_person1.jpeg",
+        caption: "TK"
+      },
+    ],
+  },
+  dir002_person1: {
+    title: "Right Bust: TK",
+    hint: "Identify the Bust on the Right",
+    description: "TK",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir002_person2.jpeg",
+        caption: "TK"
       },
     ],
   },

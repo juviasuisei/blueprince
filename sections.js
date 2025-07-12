@@ -7,10 +7,24 @@ window.sectionsData = [
     information: ["obj01_info"]
   },
   {
+    id: "obj03",
+    title: "Objective: Solve the Paintings Puzzle",
+    color: "blue",
+    dependencies: ["TK"],
+    checkboxes: ["obj03_r1f3"]
+  },
+  {
+    id: "obj02",
+    title: "Objective: Complete the Mount Holly Directory",
+    color: "blue",
+    mysteryType: "room",
+    dependencies: [],
+    information: ["obj02_info"]
+  },
+  {
     id: "info_house",
     title: "Mount Holly Directory",
     color: "blue",
-    mysteryType: "room",
     dependencies: [],
     subsections: [
       {
@@ -19,7 +33,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: [],
         information: ["dir002_description", "dir002_info"],
-        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black"],
+        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_person1", "dir002_person2"],
       },
     ],
   },
