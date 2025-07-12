@@ -12,6 +12,13 @@ window.checkboxesData = {
     unlockKeyword: "Spare Room",
     dependencies: [],
   },
+  obj02_005_parlor: {
+    title: "Parlor",
+    hint: "Draft the Parlor",
+    description: "Room 005",
+    unlockKeyword: "Parlor",
+    dependencies: [],
+  },
   obj02_012_storeroom: {
     title: "Storeroom",
     hint: "Draft the Storeroom",
@@ -54,6 +61,22 @@ window.checkboxesData = {
       },
     ],
   },
+  obj03_r1f1: {
+    title: "Rank 1 • File 1: S",
+    hint: "Rank 1 • File 1: ???",
+    description: "DES[S]ERT",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r1f1_L.jpeg",
+        caption: "dessert"
+      },
+      {
+        url: "images/obj03_r1f1_R.jpeg",
+        caption: "desert"
+      },
+    ],
+  },
   obj03_r1f3: {
     title: "Rank 1 • File 3: F",
     hint: "Rank 1 • File 3: ???",
@@ -83,6 +106,18 @@ window.checkboxesData = {
       {
         url: "images/obj03_r1f4_R.jpeg",
         caption: "pin"
+      },
+    ],
+  },
+  obj04_005_parlor: {
+    title: "Parlor: Black Pawn",
+    hint: "Parlor: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_005_parlor.jpeg",
+        caption: "black pawn"
       },
     ],
   },
@@ -167,6 +202,34 @@ window.checkboxesData = {
       {
         url: "images/dir002_person2.jpeg",
         caption: "TK"
+      },
+    ],
+  },
+  dir005_item_windup: {
+    title: "Item: A Rather Curious Wind-Up Key",
+    hint: "Item: ???",
+    description: "A component of the Parlor Game.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir005_item_windup.jpeg",
+        caption: "used to open 1 box in the parlor game"
+      },
+    ],
+  },
+  dir005_note_letter: {
+    title: "Letter: Parlor Game Rules",
+    hint: "Letter: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note006_1.jpeg",
+        caption: "letter"
+      },
+      {
+        url: "images/note006_2.jpeg",
+        caption: "parlor game rules"
       },
     ],
   },

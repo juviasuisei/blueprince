@@ -11,7 +11,7 @@ window.informationData = {
   },
   dir002_description: {
     title: "Description",
-    description: "Past the steps and beyond the grand doors, admission to Mount Holly is granted by way of a dark and garish lobby, suitably called the Entrance Hall. From here, each guest's adventure begins; however, the three doors that proceed onward do not always lead to the same adjoining rooms...",
+    description: "Past the steps and beyond the grand doors, admission to Mount Holly is granted by way of a dark and garish lobby, suitably called the Entrance Hall. From here, each guest's adventure begins; however, the three doors that proceed onward do not always lead to the same adjoining rooms....",
     dependencies: [],
     images: [
       {
@@ -33,6 +33,33 @@ window.informationData = {
       {
         url: "images/dir003_description.jpeg",
         caption: "room directory entry"
+      },
+    ],
+  },
+  dir005_description: {
+    title: "Description",
+    description: "This cozy lounge furnished with couches and armchairs serves as the perfect social setting for receptions and after parties. Consequently this was one of the most popular rooms for entertaining and the late H. S. Sinclair was known to supply a myriad of parlor games to encourage his guests to think and conversate.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir005_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir005_info: {
+    title: "Classification",
+    description: "TYPE: Puzzle",
+    dependencies: [],
+  },
+  dir005_chess: {
+    title: "Chess Piece",
+    description: "Black Pawn",
+    dependencies: ["obj04_005_parlor"],
+    images: [
+      {
+        url: "images/obj04_005_parlor.jpeg",
+        caption: "black pawn"
       },
     ],
   },
@@ -178,10 +205,31 @@ window.informationData = {
       },
     ],
   },
+  note006: {
+    title: "Parlor Game Rules",
+    description: "",
+    dependencies: ["dir005_note_letter"],
+    images: [
+      {
+        url: "images/note006_1.jpeg",
+        caption: "letter"
+      },
+      {
+        url: "images/note006_2.jpeg",
+        caption: "parlor game rules"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Initial Information",
     description: "Herbert S. Sinclair is our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
     dependencies: [],
+    images: [
+      {
+        url: "images/person01_herbie.jpeg",
+        caption: "portrait of Herbert S. Sinclair"
+      },
+    ]
   },
   date001: {
     title: "Thursday, 18 March 1993",

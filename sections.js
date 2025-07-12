@@ -13,7 +13,7 @@ window.sectionsData = [
     color: "blue",
     dependencies: ["TK"],
     information: [],
-    checkboxes: ["obj03_r2f3", "obj03_r1f3"]
+    checkboxes: ["obj03_r2f3", "obj03_r1f1", "obj03_r1f3", "obj03_r1f4"]
   },
   {
     id: "obj02",
@@ -22,7 +22,7 @@ window.sectionsData = [
     mysteryType: "room",
     dependencies: [],
     information: ["obj02_info"],
-    checkboxes: ["obj02_003_spareroom", "obj02_012_storeroom", "obj02_045_antechamber", "obj02_046_room46", "obj02_055_hallway"]
+    checkboxes: ["obj02_003_spareroom", "obj02_005_parlor", "obj02_012_storeroom", "obj02_045_antechamber", "obj02_046_room46", "obj02_055_hallway"]
   },
   {
     id: "obj04",
@@ -30,7 +30,7 @@ window.sectionsData = [
     color: "blue",
     dependencies: ["TK"],
     information: [],
-    checkboxes: ["obj04_012_storeroom"]
+    checkboxes: ["obj04_005_parlor", "obj04_012_storeroom"]
   },
   {
     id: "info_house",
@@ -50,16 +50,24 @@ window.sectionsData = [
         id: "dir003",
         title: "003: Spare Room",
         color: "blue",
-        dependencies: [obj02_003_spareroom],
-        information: ["dir003_description", "dir003_info"],
+        dependencies: ["obj02_003_spareroom"],
+        information: ["dir003_description"],
         checkboxes: [],
+      },
+      {
+        id: "dir005",
+        title: "005: Parlor",
+        color: "blue",
+        dependencies: ["obj02_005_parlor"],
+        information: ["dir005_description", "dir005_info", "dir005_chess"],
+        checkboxes: ["dir005_item_windup", "dir005_note_letter"],
       },
       {
         id: "dir012",
         title: "012: Storeroom",
         color: "blue",
         dependencies: ["obj02_012_storeroom"],
-        information: ["dir012_description", "dir012_info"],
+        information: ["dir012_description", "dir012_info", "dir012_chess"],
         checkboxes: [],
       },
       {
@@ -123,7 +131,7 @@ window.sectionsData = [
         title: "Letters",
         color: "blue",
         dependencies: ["dir002_note_letter1"],
-        information: ["note002"],
+        information: ["note002", "note006"],
       },
       {
         id: "info_notes_cards",
