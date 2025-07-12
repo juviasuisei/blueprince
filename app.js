@@ -8,6 +8,7 @@ function checklistApp() {
     dataLoadError: false,
     unlockedMysteries: [],
     showResetConfirm: false,
+    showCompleteAllConfirm: false,
 
     async init() {
       await this.loadData();
@@ -63,14 +64,24 @@ function checklistApp() {
 
     toggleCheckbox(checkboxId) {
       const index = this.checkedItems.indexOf(checkboxId);
+      const checkbox = this.data.checkboxes[checkboxId];
+
       if (index > -1) {
         this.checkedItems.splice(index, 1);
       } else {
         this.checkedItems.push(checkboxId);
+
+        // If this is a mystery checkbox that hasn't been unlocked yet, unlock it
+        if (
+          checkbox &&
+          checkbox.type === "mystery" &&
+          !this.unlockedMysteries.includes(checkboxId)
+        ) {
+          this.unlockedMysteries.push(checkboxId);
+        }
       }
 
       // Handle cloned checkboxes - if this checkbox appears in multiple sections
-      const checkbox = this.data.checkboxes[checkboxId];
       if (checkbox && checkbox.clones) {
         checkbox.clones.forEach((cloneId) => {
           const cloneIndex = this.checkedItems.indexOf(cloneId);
@@ -499,6 +510,42 @@ function checklistApp() {
       });
 
       console.log("All progress has been reset");
+    },
+
+    completeAllProgress() {
+      // Check all checkboxes
+      this.checkedItems = Object.keys(this.data.checkboxes || {});
+
+      // Unlock all mysteries
+      this.unlockedMysteries = Object.keys(this.data.checkboxes || {}).filter(
+        (checkboxId) => {
+          const checkbox = this.data.checkboxes[checkboxId];
+          return checkbox && checkbox.type === "mystery";
+        }
+      );
+
+      // Expand all sections and subsections for full visibility
+      this.expandedSections = (this.data.sections || []).map(
+        (section) => section.id
+      );
+      this.expandedSubsections = [];
+      (this.data.sections || []).forEach((section) => {
+        if (section.subsections) {
+          section.subsections.forEach((subsection) => {
+            this.expandedSubsections.push(subsection.id);
+          });
+        }
+      });
+
+      // Save the state
+      this.saveState();
+
+      // Reinitialize swipers after completion
+      this.$nextTick(() => {
+        this.initializeSwipers();
+      });
+
+      console.log("All progress has been completed - all secrets revealed!");
     },
   };
 }
