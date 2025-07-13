@@ -193,11 +193,6 @@ window.informationData = {
       },
     ],
   },
-  dir055_info: {
-    title: "Classification",
-    description: "TYPE: Hallway",
-    dependencies: [],
-  },
   dir065_description: {
     title: "Description",
     description: "A charming spot granting guests a bit of fresh air and open skies within the privacy of the manor walls.",
@@ -220,7 +215,7 @@ window.informationData = {
       },
     ],
   },
-  dir055_info: {
+  dir080_info: {
     title: "Classification",
     description: "TYPE: Entry",
     dependencies: [],
@@ -228,7 +223,7 @@ window.informationData = {
   item01_sledgehammer: {
     title: "A Heavy Sledge Hammer",
     description: "Can shatter padlocks on locked trunks.",
-    dependencies: [],
+    dependencies: ["obj05_01_sledgehammer"],
     images: [
       {
         url: "images/item01_sledgehammer.jpeg",

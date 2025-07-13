@@ -81,7 +81,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: [],
         information: ["dir002_description", "dir002_info"],
-        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_person1", "dir002_person2"],
+        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_person1", "dir002_person2", "dir002_search"],
       },
       {
         id: "dir003",
@@ -89,7 +89,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_003_spareroom"],
         information: ["dir003_description"],
-        checkboxes: [],
+        checkboxes: ["dir003_search"],
       },
       {
         id: "dir005",
@@ -97,7 +97,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_005_parlor"],
         information: ["dir005_description", "dir005_info", "dir005_chess"],
-        checkboxes: ["dir005_item_windup", "dir005_note_letter"],
+        checkboxes: ["dir005_item_windup", "dir005_note_letter", "dir005_search"],
       },
       {
         id: "dir012",
@@ -105,7 +105,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_012_storeroom"],
         information: ["dir012_description", "dir012_info", "dir012_chess"],
-        checkboxes: ["dir012_drawing", "dir012_drawing_identify"],
+        checkboxes: ["dir012_search", "dir012_drawing_identify"],
       },
       {
         id: "dir021",
@@ -113,7 +113,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_021_pantry"],
         information: ["dir021_description", "dir021_info"],
-        checkboxes: ["dir021_note"],
+        checkboxes: ["dir021_note", "dir021_search"],
       },
       {
         id: "dir034",
@@ -121,7 +121,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_034_security"],
         information: ["dir034_description", "dir034_info", "dir034_chess"],
-        checkboxes: ["dir034_note_pad", "dir034_note_notice", "dir034_note_red", "dir034_note_blue", "obj_network_unlock"],
+        checkboxes: ["dir034_note_pad", "dir034_note_notice", "dir034_note_red", "dir034_note_blue", "obj_network_unlock", "dir034_search"],
       },
       {
         id: "dir045",
@@ -145,15 +145,15 @@ window.sectionsData = [
         color: "purple",
         dependencies: ["obj02_047_bedroom"],
         information: ["dir047_description", "dir047_info", "dir047_chess"],
-        checkboxes: ["dir047_note_postcard", "dir047_photo", "dir047_photo_identify", "dir047_finger"],
+        checkboxes: ["dir047_note_postcard", "dir047_photo", "dir047_photo_identify", "dir047_finger", "dir047_search"],
       },
       {
         id: "dir055",
         title: "055: Hallway",
         color: "orange",
         dependencies: ["obj02_055_hallway"],
-        information: ["dir055_description", "dir055_info"],
-        checkboxes: ["dir055_note_red"],
+        information: ["dir055_description"],
+        checkboxes: ["dir055_note_red", "dir055_search"],
       },
       {
         id: "dir065",
@@ -161,7 +161,7 @@ window.sectionsData = [
         color: "green",
         dependencies: ["obj02_065_courtyard"],
         information: ["dir065_description"],
-        checkboxes: [],
+        checkboxes: ["dir065_search"],
       },
       {
         id: "dir080",
@@ -169,7 +169,7 @@ window.sectionsData = [
         color: "red",
         dependencies: ["obj02_080_chapel"],
         information: ["dir080_description", "dir080_info"],
-        checkboxes: [],
+        checkboxes: ["dir080_search"],
       },
     ],
   },

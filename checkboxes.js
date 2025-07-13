@@ -262,6 +262,7 @@ window.checkboxesData = {
     title: "Sledge Hammer",
     hint: "Find a Sledge Hammer",
     description: "",
+    unlockKeyword: ["Sledge Hammer", "Sledgehammer"],
     dependencies: [],
     images: [
       {
@@ -348,6 +349,18 @@ window.checkboxesData = {
       },
     ],
   },
+  dir002_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir003_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir005_item_windup: {
     title: "Item: A Rather Curious Wind-Up Key",
     hint: "Item: ???",
@@ -376,9 +389,15 @@ window.checkboxesData = {
       },
     ],
   },
-  dir012_drawing: {
+  dir005_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir012_search: {
     title: "Drawing: ???",
-    hint: "??? Hidden Thing ???",
+    hint: "Search for any Less Obvious Notes: ???",
     description: "What is this a drawing of and who drew it?",
     dependencies: [],
     images: [
@@ -405,6 +424,12 @@ window.checkboxesData = {
         caption: "fruit explainer"
       },
     ],
+  },
+  dir021_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
   },
   dir034_note_pad: {
     title: "Note: Note Pad",
@@ -454,6 +479,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir034_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir047_note_postcard: {
     title: "Postcard: Reddington",
     hint: "Postcard: ???",
@@ -484,6 +515,12 @@ window.checkboxesData = {
     description: "This is our greatgrandmother, the Baroness Auravei Sinclair.",
     dependencies: ["dir047_photo"],
   },
+  dir047_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir047_finger: {
     title: "Baron Bafflers",
     hint: "What's Up With This Giant Finger?",
@@ -501,5 +538,23 @@ window.checkboxesData = {
         caption: "a red typed note"
       },
     ],
+  },
+  dir055_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir065_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir080_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
   },
 };
