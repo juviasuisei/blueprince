@@ -395,7 +395,7 @@ window.informationData = {
       },
     ]
   },
-  person02_auravei_001: {
+  person02_baroness_001: {
     title: "Initial Information",
     description: "Baroness Auravei Sinclair is our great-grandmother.",
     dependencies: [],
