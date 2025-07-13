@@ -52,6 +52,13 @@ window.checkboxesData = {
     unlockKeyword: "Hallway",
     dependencies: [],
   },
+  obj02_065_courtyard: {
+    title: "Courtyard",
+    hint: "Draft the Courtyard",
+    description: "Room 065",
+    unlockKeyword: "Courtyard",
+    dependencies: [],
+  },
   obj02_080_chapel: {
     title: "Chapel",
     hint: "Draft the Chapel",

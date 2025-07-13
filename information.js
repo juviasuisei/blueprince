@@ -149,6 +149,17 @@ window.informationData = {
     description: "TYPE: Hallway",
     dependencies: [],
   },
+  dir065_description: {
+    title: "Description",
+    description: "A charming spot granting guests a bit of fresh air and open skies within the privacy of the manor walls.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir065_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir080_description: {
     title: "Description",
     description: "A private sacristy, as ornate as the most lavish rooms of the estate, is watched over by eight Ajeran Angels depicted in stained glass. This room was more of a tribute to your granduncle's vanity than it was to his faith.",
@@ -164,6 +175,17 @@ window.informationData = {
     title: "Classification",
     description: "TYPE: Entry",
     dependencies: [],
+  },
+  item01_sledgehammer: {
+    title: "A Heavy Sledge Hammer",
+    description: "Can shatter padlocks on locked trunks.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item01_sledgehammer.jpeg",
+        caption: "sledge hammer"
+      },
+    ],
   },
   note001: {
     title: "Recital Invitation",

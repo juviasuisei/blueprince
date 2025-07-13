@@ -25,6 +25,15 @@ window.sectionsData = [
     checkboxes: ["obj02_003_spareroom", "obj02_005_parlor", "obj02_012_storeroom", "obj02_021_pantry", "obj02_045_antechamber", "obj02_046_room46", "obj02_055_hallway", "obj02_080_chapel"]
   },
   {
+    id: "obj05",
+    title: "Objective: Discover All the Items",
+    color: "blue",
+    mysteryType: "item",
+    dependencies: [],
+    information: ["obj05_info"],
+    checkboxes: ["obj05_01_sledgehammer"]
+  },
+  {
     id: "obj04",
     title: "Objective: Solve the Chess Puzzle",
     color: "blue",
@@ -103,12 +112,36 @@ window.sectionsData = [
         checkboxes: ["dir055_note_red"],
       },
       {
+        id: "dir065",
+        title: "065: Courtyard",
+        color: "green",
+        dependencies: ["obj02_065_courtyard"],
+        information: ["dir065_description"],
+        checkboxes: [],
+      },
+      {
         id: "dir080",
         title: "080: Chapel",
         color: "red",
         dependencies: ["obj02_080_chapel"],
         information: ["dir080_description", "dir080_info"],
         checkboxes: [],
+      },
+    ],
+  },
+  {
+    id: "info_items",
+    title: "Items",
+    color: "blue",
+    dependencies: [],
+    subsections: [
+      {
+        id: "item01_sledgehammer",
+        title: "Sledge Hammer",
+        color: "blue",
+        dependencies: [],
+        information: ["item01_sledgehammer"],
+        checkboxes: ["obj05_01_sledgehammer"],
       },
     ],
   },
