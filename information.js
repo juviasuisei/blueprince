@@ -186,7 +186,7 @@ window.informationData = {
   note004: {
     title: "Red Note: Hallway",
     description: "",
-    dependencies: ["dir004_note_red"],
+    dependencies: ["dir055_note_red"],
     images: [
       {
         url: "images/note004.jpeg",

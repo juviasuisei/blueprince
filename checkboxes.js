@@ -235,7 +235,7 @@ window.checkboxesData = {
   },
   dir012_drawing: {
     title: "Drawing: ???",
-    hint: "???",
+    hint: "??? Hidden Thing ???",
     description: "What is this a drawing of and who drew it?",
     dependencies: [],
     images: [
