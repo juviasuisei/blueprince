@@ -41,6 +41,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
+    - run: npm run test
     - name: Setup Pages
       uses: actions/configure-pages@v5
     - name: Upload artifact
