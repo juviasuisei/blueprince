@@ -77,16 +77,48 @@
         margin-top: 8px !important;
         margin-bottom: 0px !important;
       }
+
+      /* Screen reader only content */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Focus visible styles for better keyboard navigation */
+      .focus-visible:focus {
+        outline: 2px solid #3B82F6;
+        outline-offset: 2px;
+      }
+
+      /* High contrast mode support */
+      @media (prefers-contrast: high) {
+        .border-gray-200 {
+          border-color: #000;
+        }
+        .text-gray-600 {
+          color: #000;
+        }
+      }
     </style>
   </head>
   <body class="bg-gray-50">
+    <!-- Live region for screen reader announcements -->
+    <div id="live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    
     <div
       x-data="checklistApp()"
       x-cloak
       class="container mx-auto px-4 py-6 max-w-4xl"
     >
         <!-- Header -->
-        <div class="mb-8">
+        <header class="mb-8" role="banner">
           <div class="text-center">
             <h1 class="text-3xl font-bold text-gray-800 mb-2">
               Blue Prince Spoiler Free Guide & Tracking
@@ -97,27 +129,37 @@
           </div>
           
           <!-- Action Buttons -->
-          <div class="flex justify-end mt-4 space-x-3">
+          <div class="flex justify-end mt-4 space-x-3" role="toolbar" aria-label="Application controls">
             <button
               @click="showCompleteAllConfirm = true"
+              @keydown.enter="showCompleteAllConfirm = true"
+              @keydown.space.prevent="showCompleteAllConfirm = true"
               class="px-4 py-2 text-sm font-medium text-orange-600 bg-white border border-orange-300 rounded-md hover:bg-orange-50 hover:border-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              aria-label="Complete all items and reveal all content including spoilers"
+              aria-describedby="complete-all-warning"
             >
-              <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               Complete All (Spoilers!)
             </button>
+            <div id="complete-all-warning" class="sr-only">Warning: This action will reveal all spoilers and secrets</div>
             <button
               @click="showResetConfirm = true"
+              @keydown.enter="showResetConfirm = true"
+              @keydown.space.prevent="showResetConfirm = true"
               class="px-4 py-2 text-sm font-medium text-red-600 bg-white border border-red-300 rounded-md hover:bg-red-50 hover:border-red-400 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              aria-label="Reset all progress and clear all completed items"
+              aria-describedby="reset-warning"
             >
-              <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
               </svg>
               Reset All Progress
             </button>
+            <div id="reset-warning" class="sr-only">Warning: This action will permanently delete all progress</div>
           </div>
-        </div>
+        </header>
 
         <!-- Reset Confirmation Modal -->
         <div 
@@ -130,6 +172,11 @@
           x-transition:leave-end="opacity-0"
           class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           @click.self="showResetConfirm = false"
+          @keydown.escape="showResetConfirm = false"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="reset-modal-title"
+          aria-describedby="reset-modal-description"
         >
           <div 
             class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
@@ -139,33 +186,34 @@
             x-transition:leave="transition ease-in duration-150"
             x-transition:leave-start="opacity-100 transform scale-100"
             x-transition:leave-end="opacity-0 transform scale-95"
+            x-trap="showResetConfirm"
           >
             <div class="flex items-center mb-4">
-              <svg class="w-6 h-6 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
               </svg>
-              <h3 class="text-lg font-semibold text-gray-900">Reset All Progress</h3>
+              <h3 id="reset-modal-title" class="text-lg font-semibold text-gray-900">Reset All Progress</h3>
             </div>
             
-            <p class="text-gray-600 mb-6">
+            <p id="reset-modal-description" class="text-gray-600 mb-6">
               Are you sure you want to reset all progress? This will:
             </p>
             
-            <ul class="text-sm text-gray-600 mb-6 space-y-1">
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <ul class="text-sm text-gray-600 mb-6 space-y-1" role="list">
+              <li class="flex items-center" role="listitem">
+                <svg class="w-4 h-4 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
                 Uncheck all completed items
               </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li class="flex items-center" role="listitem">
+                <svg class="w-4 h-4 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
                 Hide all unlocked additions
               </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li class="flex items-center" role="listitem">
+                <svg class="w-4 h-4 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
                 Collapse all expanded sections
@@ -176,16 +224,22 @@
               <strong>This action cannot be undone.</strong>
             </p>
             
-            <div class="flex space-x-3">
+            <div class="flex space-x-3" role="group" aria-label="Reset confirmation actions">
               <button
                 @click="showResetConfirm = false"
+                @keydown.enter="showResetConfirm = false"
+                @keydown.space.prevent="showResetConfirm = false"
                 class="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                aria-label="Cancel reset operation"
               >
                 Cancel
               </button>
               <button
                 @click="resetAllProgress(); showResetConfirm = false"
+                @keydown.enter="resetAllProgress(); showResetConfirm = false"
+                @keydown.space.prevent="resetAllProgress(); showResetConfirm = false"
                 class="flex-1 px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                aria-label="Confirm reset all progress - this will permanently delete all progress"
               >
                 Reset Everything
               </button>
@@ -204,6 +258,11 @@
           x-transition:leave-end="opacity-0"
           class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           @click.self="showCompleteAllConfirm = false"
+          @keydown.escape="showCompleteAllConfirm = false"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="complete-all-modal-title"
+          aria-describedby="complete-all-modal-description"
         >
           <div 
             class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"
@@ -213,12 +272,13 @@
             x-transition:leave="transition ease-in duration-150"
             x-transition:leave-start="opacity-100 transform scale-100"
             x-transition:leave-end="opacity-0 transform scale-95"
+            x-trap="showCompleteAllConfirm"
           >
             <div class="flex items-center mb-4">
-              <svg class="w-6 h-6 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
               </svg>
-              <h3 class="text-lg font-semibold text-gray-900">Complete All Progress</h3>
+              <h3 id="complete-all-modal-title" class="text-lg font-semibold text-gray-900">Complete All Progress</h3>
             </div>
             
             <div class="mb-4 p-3 bg-orange-50 border border-orange-200 rounded-md">
@@ -230,31 +290,31 @@
               </div>
             </div>
             
-            <p class="text-gray-600 mb-6">
+            <p id="complete-all-modal-description" class="text-gray-600 mb-6">
               This will instantly complete everything and reveal all secrets! This action will:
             </p>
             
-            <ul class="text-sm text-gray-600 mb-6 space-y-1">
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <ul class="text-sm text-gray-600 mb-6 space-y-1" role="list">
+              <li class="flex items-center" role="listitem">
+                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 Check all items as completed
               </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li class="flex items-center" role="listitem">
+                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 Unlock and reveal ALL mystery content
               </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li class="flex items-center" role="listitem">
+                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 Expand all sections for full visibility
               </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li class="flex items-center" role="listitem">
+                <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 Show all images and descriptions
@@ -265,16 +325,22 @@
               <strong>This will spoil all secrets and mysteries!</strong> Only use this if you want to see everything at once or need to reference completed content.
             </p>
             
-            <div class="flex space-x-3">
+            <div class="flex space-x-3" role="group" aria-label="Complete all confirmation actions">
               <button
                 @click="showCompleteAllConfirm = false"
+                @keydown.enter="showCompleteAllConfirm = false"
+                @keydown.space.prevent="showCompleteAllConfirm = false"
                 class="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                aria-label="Cancel complete all operation"
               >
                 Cancel
               </button>
               <button
                 @click="completeAllProgress(); showCompleteAllConfirm = false"
+                @keydown.enter="completeAllProgress(); showCompleteAllConfirm = false"
+                @keydown.space.prevent="completeAllProgress(); showCompleteAllConfirm = false"
                 class="flex-1 px-4 py-2 text-sm font-medium text-white bg-orange-600 border border-transparent rounded-md hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                aria-label="Confirm complete all progress - this will reveal all spoilers and secrets"
               >
                 Complete All (Spoilers!)
               </button>
@@ -299,17 +365,22 @@
         </div>
 
         <!-- Overall Progress -->
-        <div x-show="!dataLoadError" class="mb-6 bg-white rounded-lg shadow-sm p-4">
+        <div x-show="!dataLoadError" class="mb-6 bg-white rounded-lg shadow-sm p-4" role="region" aria-labelledby="overall-progress-title">
           <div class="flex justify-between items-center mb-2">
-            <span class="text-sm font-medium text-gray-700"
+            <span id="overall-progress-title" class="text-sm font-medium text-gray-700"
               >Overall Progress</span
             >
             <span
               class="text-sm text-gray-500"
               x-text="`${Math.round((getTotalChecked() / getTotalCheckboxes()) * 100)}%`"
+              aria-label="Overall completion percentage"
             ></span>
           </div>
-          <div class="w-full bg-gray-200 rounded-full h-2">
+          <div class="w-full bg-gray-200 rounded-full h-2" role="progressbar" 
+               :aria-valuenow="Math.round((getTotalChecked() / getTotalCheckboxes()) * 100)"
+               aria-valuemin="0" 
+               aria-valuemax="100"
+               :aria-label="`Overall progress: ${Math.round((getTotalChecked() / getTotalCheckboxes()) * 100)}% complete`">
             <div
               class="h-2 rounded-full transition-all duration-300"
               :style="`width: ${(getTotalChecked() / getTotalCheckboxes()) * 100}%; background-color: ${getColorHex('blue')}`"
@@ -325,20 +396,27 @@
             >
               <!-- Section Header -->
               <div
-                class="bg-white cursor-pointer"
-       
+                class="bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
                 @click="toggleSection(section.id)"
+                @keydown="handleSectionKeydown($event, section.id)"
+                tabindex="0"
+                role="button"
+                :aria-expanded="expandedSections.includes(section.id)"
+                :aria-controls="`section-content-${section.id}`"
+                :aria-label="`${section.title} section, ${expandedSections.includes(section.id) ? 'expanded' : 'collapsed'}. Progress: ${getSectionTotalCount(section.id) > 0 ? Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100) + '%' : 'No items'}`"
               >
                 <div class="pl-4 pr-6 py-4 flex justify-between items-center">
                   <h2
                     class="text-xl font-semibold text-gray-800"
                     x-text="section.title"
+                    :id="`section-title-${section.id}`"
                   ></h2>
                   <div class="flex items-center space-x-3">
                     <!-- Section Progress -->
                     <div class="text-sm text-gray-500" x-show="getSectionTotalCount(section.id) > 0">
                       <span
                         x-text="`${Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)}%`"
+                        :aria-label="`Section progress: ${Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)}% complete`"
                       ></span>
                     </div>
                     <!-- Expand/Collapse Icon -->
@@ -348,6 +426,7 @@
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         stroke-linecap="round"
@@ -359,7 +438,12 @@
                   </div>
                 </div>
                 <!-- Section Progress Bar -->
-                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                <div class="w-full bg-gray-200 rounded-full h-1.5" 
+                     role="progressbar" 
+                     :aria-valuenow="getSectionTotalCount(section.id) === 0 ? 100 : Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)"
+                     aria-valuemin="0" 
+                     aria-valuemax="100"
+                     :aria-label="`${section.title} progress: ${getSectionTotalCount(section.id) === 0 ? 100 : Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)}% complete`">
                   <div
                     class="h-1.5 rounded-full transition-all duration-300"
                     :style="`width: ${getSectionTotalCount(section.id) === 0 ? 100 : (getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100}%; background-color: ${getColorHex(section.color)}`"
@@ -386,8 +470,14 @@
                   >
                     <!-- Subsection Header -->
                     <div
-                      class="bg-white cursor-pointer"
+                      class="bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
                       @click="toggleSubsection(subsection.id)"
+                      @keydown="handleSubsectionKeydown($event, subsection.id)"
+                      tabindex="0"
+                      role="button"
+                      :aria-expanded="expandedSubsections.includes(subsection.id)"
+                      :aria-controls="`subsection-content-${subsection.id}`"
+                      :aria-label="`${subsection.title} subsection, ${expandedSubsections.includes(subsection.id) ? 'expanded' : 'collapsed'}. Progress: ${getSubsectionTotalCount(subsection.id) > 0 ? Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100) + '%' : 'No items'}`"
                     >
                       <div
                         class="pl-4 pr-6 py-3 flex justify-between items-center"
@@ -395,12 +485,14 @@
                         <h3
                           class="text-lg font-medium text-gray-700"
                           x-text="subsection.title"
+                          :id="`subsection-title-${subsection.id}`"
                         ></h3>
                         <div class="flex items-center space-x-3">
                           <!-- Subsection Progress Count -->
                           <div class="text-sm text-gray-500" x-show="getSubsectionTotalCount(subsection.id) > 0">
                             <span
                               x-text="`${Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)}%`"
+                              :aria-label="`Subsection progress: ${Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)}% complete`"
                             ></span>
                           </div>
                           <!-- Expand/Collapse Icon -->
@@ -410,6 +502,7 @@
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
+                            aria-hidden="true"
                           >
                             <path
                               stroke-linecap="round"
@@ -421,7 +514,12 @@
                         </div>
                       </div>
                       <!-- Subsection Progress Bar -->
-                      <div class="w-full bg-gray-200 rounded-full h-1">
+                      <div class="w-full bg-gray-200 rounded-full h-1" 
+                           role="progressbar" 
+                           :aria-valuenow="getSubsectionTotalCount(subsection.id) === 0 ? 100 : Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)"
+                           aria-valuemin="0" 
+                           aria-valuemax="100"
+                           :aria-label="`${subsection.title} progress: ${getSubsectionTotalCount(subsection.id) === 0 ? 100 : Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)}% complete`">
                         <div
                           class="h-1 rounded-full transition-all duration-300"
                           :style="`width: ${getSubsectionTotalCount(subsection.id) === 0 ? 100 : (getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100}%; background-color: ${getColorHex(subsection.color)}`"
@@ -553,6 +651,8 @@
                       <template x-if="hasMysteries(subsection.checkboxes)">
                         <div 
                           class="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200"
+                          role="region"
+                          :aria-labelledby="`mystery-label-${subsection.id}`"
                           x-data="{ 
                             mysteryInput: '', 
                             lastUnlock: null,
@@ -562,12 +662,16 @@
                           }"
                         >
                           <div class="flex items-center space-x-2 mb-2">
-                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
-                            <span class="text-sm font-medium text-gray-700" x-text="`Discovered a ${getMysteryType(subsection.checkboxes).toLowerCase()} for the first time? Add it below to start tracking it.`"></span>
+                            <span 
+                              :id="`mystery-label-${subsection.id}`"
+                              class="text-sm font-medium text-gray-700" 
+                              x-text="`Discovered a ${getMysteryType(subsection.checkboxes).toLowerCase()} for the first time? Add it below to start tracking it.`"
+                            ></span>
                           </div>
-                          <div class="flex space-x-2">
+                          <div class="flex space-x-2" role="group" :aria-labelledby="`mystery-label-${subsection.id}`">
                             <input
                               type="text"
                               x-model="mysteryInput"
@@ -587,6 +691,8 @@
                                 }
                               "
                               :placeholder="`Enter a ${getMysteryType(subsection.checkboxes).toLowerCase()}`"
+                              :aria-label="`Enter ${getMysteryType(subsection.checkboxes).toLowerCase()} to unlock mystery items`"
+                              :aria-describedby="`mystery-help-${subsection.id} ${showSuccess ? 'mystery-success-' + subsection.id : ''} ${showError ? 'mystery-error-' + subsection.id : ''}`"
                               class="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:border-transparent"
                               :style="`focus:ring-color: ${getColorHex(subsection.color)}`"
                             />
@@ -606,11 +712,17 @@
                                   setTimeout(() => showError = false, 3000);
                                 }
                               "
-                              class="px-4 py-2 text-sm font-medium text-white rounded-md hover:opacity-90 transition-opacity"
-                              :style="`background-color: ${getColorHex(subsection.color)}`"
+                              @keydown.enter="$event.target.click()"
+                              @keydown.space.prevent="$event.target.click()"
+                              class="px-4 py-2 text-sm font-medium text-white rounded-md hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2"
+                              :style="`background-color: ${getColorHex(subsection.color)}; focus:ring-color: ${getColorHex(subsection.color)}`"
+                              :aria-label="`Try to unlock mystery with entered ${getMysteryType(subsection.checkboxes).toLowerCase()}`"
                             >
                               Try
                             </button>
+                          </div>
+                          <div :id="`mystery-help-${subsection.id}`" class="sr-only">
+                            Enter a keyword you discovered to unlock hidden mystery items in this section
                           </div>
                           
                           <!-- Success Message -->
@@ -620,9 +732,12 @@
                             x-transition:enter-start="opacity-0 transform scale-95"
                             x-transition:enter-end="opacity-1 transform scale-100"
                             class="mt-2 p-2 bg-green-50 border border-green-200 rounded-md"
+                            :id="`mystery-success-${subsection.id}`"
+                            role="status"
+                            aria-live="polite"
                           >
                             <div class="flex items-center space-x-2">
-                              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                               </svg>
                               <span class="text-sm text-green-800" x-text="`Mystery unlocked: ${lastUnlock?.title}!`"></span>
@@ -636,9 +751,12 @@
                             x-transition:enter-start="opacity-0 transform scale-95"
                             x-transition:enter-end="opacity-1 transform scale-100"
                             class="mt-2 p-2 bg-red-50 border border-red-200 rounded-md"
+                            :id="`mystery-error-${subsection.id}`"
+                            role="alert"
+                            aria-live="assertive"
                           >
                             <div class="flex items-center space-x-2">
-                              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
                               </svg>
                               <span class="text-sm text-red-800" x-text="errorMessage"></span>
@@ -663,11 +781,14 @@
                               <!-- Checkbox -->
                               <input
                                 type="checkbox"
-                             :id="checkboxId"
+                                :id="checkboxId"
                                 :checked="checkedItems.includes(checkboxId)"
-                                @change="toggleCheckbox(checkboxId)"
-                                class="mt-1 h-5 w-5 rounded focus:ring-2 checkbox-colored"
+                                @change="toggleCheckboxWithAnnouncement(checkboxId)"
+                                @keydown="handleCheckboxKeydown($event, checkboxId)"
+                                class="mt-1 h-5 w-5 rounded focus:ring-2 checkbox-colored focus:outline-none"
                                 :style="`--checkbox-color: ${getColorHex(subsection.color)}; color: ${getColorHex(subsection.color)}; accent-color: ${getColorHex(subsection.color)};`"
+                                :aria-describedby="`checkbox-desc-${checkboxId}`"
+                                :aria-label="`${getMysteryTitle(checkboxId)} - ${checkedItems.includes(checkboxId) ? 'completed' : 'not completed'}`"
                               />
 
                               <!-- Content -->
@@ -677,6 +798,10 @@
                                   class="block text-sm font-medium text-gray-900 cursor-pointer"
                                   x-text="getMysteryTitle(checkboxId)"
                                 ></label>
+                                <div :id="`checkbox-desc-${checkboxId}`" class="sr-only">
+                                  <span x-text="checkbox.description || 'Checkbox item'"></span>
+                                  <span x-show="checkbox.unlockKeyword && !isMysteryUnlocked(checkboxId)"> - Mystery item, click to unlock</span>
+                                </div>
                                 
                                 <!-- Description - only show when checked or mystery unlocked -->
                                 <template x-if="(checkedItems.includes(checkboxId) || shouldShowMysteryContent(checkboxId)) && shouldShowMysteryContent(checkboxId)">
