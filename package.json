@@ -1,6 +1,6 @@
 {
   "name": "blue-prince-guide",
-  "version": "1.0.0",
+  "version": "0.11.0",
   "description": "Blue Prince Spoiler Free Guide & Tracking - Interactive checklist with progressive disclosure",
   "main": "index.html",
   "scripts": {
@@ -9,7 +9,10 @@
     "serve-node": "npx http-server -p 8000 -c-1",
     "dev": "npx http-server -p 8000 -c-1 -o",
     "deploy": "npm run build && echo 'Build complete! Deploy the dist/ folder to your web server.'",
-    "test": "echo 'No tests specified yet'",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
     "lint": "echo 'No linting configured yet'",
     "clean": "rm -rf dist/",
     "debug": "echo 'Setting debug mode...' && node -e \"console.log('Add ?debug=true to URL or run: localStorage.setItem(\\\"debug\\\", \\\"true\\\")')\"",
@@ -36,7 +39,11 @@
   },
   "homepage": "https://your-username.github.io/blue-prince-guide",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "@vitest/ui": "^3.2.4",
+    "happy-dom": "^18.0.1",
+    "http-server": "^14.1.1",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.2.4"
   },
   "engines": {
     "node": ">=14.0.0"

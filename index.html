@@ -126,6 +126,9 @@
             <p class="text-gray-600">
               Mark items complete to track your progress.
             </p>
+            <p class="text-xs text-gray-400 mt-1" x-text="`Version ${version}`">
+              Version 0.11.0
+            </p>
           </div>
           
           <!-- Action Buttons -->
@@ -186,7 +189,6 @@
             x-transition:leave="transition ease-in duration-150"
             x-transition:leave-start="opacity-100 transform scale-100"
             x-transition:leave-end="opacity-0 transform scale-95"
-            x-trap="showResetConfirm"
           >
             <div class="flex items-center mb-4">
               <svg class="w-6 h-6 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -272,7 +274,6 @@
             x-transition:leave="transition ease-in duration-150"
             x-transition:leave-start="opacity-100 transform scale-100"
             x-transition:leave-end="opacity-0 transform scale-95"
-            x-trap="showCompleteAllConfirm"
           >
             <div class="flex items-center mb-4">
               <svg class="w-6 h-6 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -792,7 +793,7 @@
                                 :checked="checkedItems.includes(checkboxId)"
                                 @change="toggleCheckboxWithAnnouncement(checkboxId)"
                                 @keydown="handleCheckboxKeydown($event, checkboxId)"
-                                class="mt-1 h-5 w-5 rounded focus:ring-2 checkbox-colored focus:outline-none"
+                                class="h-5 w-5 rounded focus:ring-2 checkbox-colored focus:outline-none"
                                 :style="`--checkbox-color: ${getColorHex(subsection.color)}; color: ${getColorHex(subsection.color)}; accent-color: ${getColorHex(subsection.color)};`"
                                 :aria-describedby="`checkbox-desc-${checkboxId}`"
                                 :aria-label="`${getMysteryTitle(checkboxId)} - ${checkedItems.includes(checkboxId) ? 'completed' : 'not completed'}`"
@@ -1145,7 +1146,7 @@
                            :id="checkboxId"
                             :checked="checkedItems.includes(checkboxId)"
                             @change="toggleCheckbox(checkboxId)"
-                            class="mt-1 h-5 w-5 rounded focus:ring-2 checkbox-colored"
+                            class="h-5 w-5 rounded focus:ring-2 checkbox-colored"
                             :style="`--checkbox-color: ${getColorHex(section.color)}; color: ${getColorHex(section.color)}; accent-color: ${getColorHex(section.color)};`"
                           />
 
