@@ -15,22 +15,50 @@ const path = require("path");
 
 // Simple minification function for JavaScript
 function minifyJS(code) {
-  return (
-    code
-      // Remove comments
-      .replace(/\/\*[\s\S]*?\*\//g, "")
-      .replace(/\/\/.*$/gm, "")
-      // Remove extra whitespace
-      .replace(/\s+/g, " ")
-      // Remove unnecessary semicolons and spaces
-      .replace(/;\s*}/g, "}")
-      .replace(/{\s*/g, "{")
-      .replace(/}\s*/g, "}")
-      .replace(/,\s*/g, ",")
-      .replace(/:\s*/g, ":")
-      .replace(/;\s*/g, ";")
-      .trim()
-  );
+  // First, preserve string contents by replacing them with placeholders
+  const strings = [];
+  let stringIndex = 0;
+
+  // Match both single and double quoted strings, including escaped quotes
+  const stringRegex = /(["'])((?:\\.|(?!\1)[^\\])*?)\1/g;
+  const codeWithPlaceholders = code.replace(stringRegex, (match) => {
+    const placeholder = `__STRING_${stringIndex}__`;
+    strings[stringIndex] = match;
+    stringIndex++;
+    return placeholder;
+  });
+
+  // Apply minification to code outside of strings
+  let minified = codeWithPlaceholders
+    // Remove comments
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/\/\/.*$/gm, "")
+    // Remove extra whitespace but preserve single spaces where needed
+    .replace(/\s+/g, " ")
+    .trim();
+
+  // More aggressive space removal for specific patterns
+  minified = minified
+    // Remove spaces around operators and punctuation
+    .replace(/\s*([{}();,:])\s*/g, "$1")
+    // Remove spaces around brackets
+    .replace(/\s*(\[|\])\s*/g, "$1")
+    // Remove spaces around assignment and comparison operators
+    .replace(/\s*(=|\+|-|\*|\/|%|==|!=|===|!==|<|>|<=|>=)\s*/g, "$1")
+    // But preserve spaces around keywords that need them
+    .replace(
+      /\b(function|return|var|let|const|if|else|for|while|do|switch|case|break|continue|try|catch|finally|throw|new|typeof|instanceof)\b(?=[a-zA-Z_$])/g,
+      "$1 "
+    )
+    .replace(
+      /\b(function|return|var|let|const|if|else|for|while|do|switch|case|break|continue|try|catch|finally|throw|new|typeof|instanceof) +/g,
+      "$1 "
+    );
+
+  // Restore original strings
+  return minified.replace(/__STRING_(\d+)__/g, (match, index) => {
+    return strings[parseInt(index)];
+  });
 }
 
 // Create production directory
