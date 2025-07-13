@@ -33,6 +33,13 @@ window.checkboxesData = {
     unlockKeyword: "Pantry",
     dependencies: [],
   },
+  obj02_034_security: {
+    title: "Security",
+    hint: "Draft Security",
+    description: "Room 034",
+    unlockKeyword: "Security",
+    dependencies: [],
+  },
   obj02_045_antechamber: {
     title: "Antechamber",
     hint: "Enter the Antechamber",
@@ -65,6 +72,22 @@ window.checkboxesData = {
     description: "Room 080",
     unlockKeyword: "Chapel",
     dependencies: [],
+  },
+  obj03_r3f5: {
+    title: "Rank 3 • File 5: K",
+    hint: "Rank 3 • File 5: ???",
+    description: "PEA[K]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r3f5_L.jpeg",
+        caption: "peak"
+      },
+      {
+        url: "images/obj03_r3f5_R.jpeg",
+        caption: "pea"
+      },
+    ],
   },
   obj03_r2f3: {
     title: "Rank 2 • File 3: G",
@@ -146,6 +169,18 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_002_entrance: {
+    title: "Entrance Hall: None",
+    hint: "Entrance Hall: ???",
+    description: "",
+    dependencies: [],
+  },
+  obj04_002_spareroom: {
+    title: "Spare Room: None",
+    hint: "Spare Room: ???",
+    description: "",
+    dependencies: [],
+  },
   obj04_005_parlor: {
     title: "Parlor: Black Pawn",
     hint: "Parlor: ???",
@@ -169,6 +204,42 @@ window.checkboxesData = {
         caption: "white pawn"
       },
     ],
+  },
+  obj04_021_pantry: {
+    title: "Pantry: None",
+    hint: "Pantry: ???",
+    description: "",
+    dependencies: [],
+  },
+  obj04_034_security: {
+    title: "Security: White Knight",
+    hint: "Security: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_034_security.jpeg",
+        caption: "white knight"
+      },
+    ],
+  },
+  obj05_01_sledgehammer: {
+    title: "Sledge Hammer",
+    hint: "Find a Sledge Hammer",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item01_sledgehammer.jpeg",
+        caption: "sledge hammer"
+      },
+    ],
+  },
+  obj_network_unlock: {
+    title: "Network Password",
+    hint: "Find the Network Password",
+    description: "SWANSONG",
+    dependencies: [],
   },
   dir002_item_blueprint: {
     title: "Item: The Mount Holly Estate Blueprint",
@@ -297,6 +368,54 @@ window.checkboxesData = {
       {
         url: "images/note007.jpeg",
         caption: "fruit explainer"
+      },
+    ],
+  },
+  dir034_note_pad: {
+    title: "Note: Note Pad",
+    hint: "Note Pad: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note008.jpeg",
+        caption: "red/blue note explainer"
+      },
+    ],
+  },
+  dir034_note_notice: {
+    title: "Note: Staff Notice",
+    hint: "White Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note009.jpeg",
+        caption: "terminal explainer"
+      },
+    ],
+  },
+  dir034_note_red: {
+    title: "Red Note: Antechamber Access",
+    hint: "Red Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note010.jpeg",
+        caption: "red typed note"
+      },
+    ],
+  },
+  dir034_note_blue: {
+    title: "Blue Note: Keycard Doors",
+    hint: "Blue Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note011.jpeg",
+        caption: "blue typed note"
       },
     ],
   },

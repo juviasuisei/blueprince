@@ -4,11 +4,6 @@ window.informationData = {
     description: "I, Herbert S. Sinclair, of the Mount Holly Estate at Reddington, do publish, and declare this instrument, my last will and testament, and hereby revoke all wills and codicils heretofore made my me. I give and bequeath to my grandnephew, Simon P. Jones, son of my dear niece Mary Matthew, all of my right, title and interest in and to the house and land which I own near Mount Holly. The above provision and bequest is contingent on my aforementioned grandnephew discovering the location of the 46th room of my forty-five room estate. The location of the room has been kept a secret from all of the staff and servants of the manor, but I am confident that any heir worthy of the Sinclair legacy should have no trouble uncovering its whereabouts within a timely manner. Should my grandnephew fail to uncover this room or provide proof of his discovery to the executors of my will then this gift shall lapse. In witness whereof, I have hereunto set my hand this 18th day of March, 1993.",
     dependencies: [],
   },
-  obj02_info: {
-    title: "Gotta Catch 'Em All",
-    description: "To prevent spoilers the list of checkboxes for each room are not shown by default. As you see rooms in your drafting pool, type their name below to add them to the tracker.",
-    dependencies: [],
-  },
   dir002_description: {
     title: "Description",
     description: "Past the steps and beyond the grand doors, admission to Mount Holly is granted by way of a dark and garish lobby, suitably called the Entrance Hall. From here, each guest's adventure begins; however, the three doors that proceed onward do not always lead to the same adjoining rooms....",
@@ -19,6 +14,11 @@ window.informationData = {
         caption: "room directory entry"
       },
     ],
+  },
+  obj02_info: {
+    title: "Gotta Catch 'Em All",
+    description: "To prevent spoilers the list of checkboxes for each room are not shown by default. As you see rooms in your drafting pool, type their name below to add them to the tracker.",
+    dependencies: [],
   },
   dir002_info: {
     title: "Classification",
@@ -100,6 +100,33 @@ window.informationData = {
         caption: "room directory entry"
       },
     ],
+  },
+  dir034_description: {
+    title: "Description",
+    description: "A control room with state of the art surveillance equipment, inventory system, and access control via an electronic computer terminal. This room is where the estate's patrol guards kick up their feet and thank their stars they are living in a modern era.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir034_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir034_chess: {
+    title: "Chess Piece",
+    description: "White Knight",
+    dependencies: ["obj04_034_security"],
+    images: [
+      {
+        url: "images/obj04_034_security.jpeg",
+        caption: "white knight"
+      },
+    ],
+  },
+  dir045_info: {
+    title: "Classification",
+    description: "TYPE: Mechanical",
+    dependencies: [],
   },
   dir045_description: {
     title: "Description",
@@ -239,7 +266,7 @@ window.informationData = {
     images: [
       {
         url: "images/note004.jpeg",
-        caption: "a red typed note"
+        caption: "red typed note"
       },
     ],
   },
@@ -277,6 +304,50 @@ window.informationData = {
       {
         url: "images/note007.jpeg",
         caption: "fruit explainer"
+      },
+    ],
+  },
+  note008: {
+    title: "Note: Notepad",
+    description: "",
+    dependencies: ["dir034_note_pad"],
+    images: [
+      {
+        url: "images/note008.jpeg",
+        caption: "red/blue note explainer"
+      },
+    ],
+  },
+  note009: {
+    title: "Note: Terminal Staff Notice",
+    description: "",
+    dependencies: ["dir034_note_notice"],
+    images: [
+      {
+        url: "images/note009.jpeg",
+        caption: "terminal explainer"
+      },
+    ],
+  },
+  note010: {
+    title: "Red Note: Antechamber Access",
+    description: "",
+    dependencies: ["dir034_note_red"],
+    images: [
+      {
+        url: "images/note010.jpeg",
+        caption: "red typed noted"
+      },
+    ],
+  },
+  note011: {
+    title: "Blue Note: Keycard Doors",
+    description: "",
+    dependencies: ["dir034_note_blue"],
+    images: [
+      {
+        url: "images/note011.jpeg",
+        caption: "blue typed noted"
       },
     ],
   },
