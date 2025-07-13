@@ -36,6 +36,7 @@
   },
   "homepage": "https://your-username.github.io/blue-prince-guide",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "http-server": "^14.1.1",
     "live-server": "^1.2.0"
   },
