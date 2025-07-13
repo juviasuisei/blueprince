@@ -99,7 +99,7 @@ window.sectionsData = [
         title: "055: Hallway",
         color: "orange",
         dependencies: ["obj02_055_hallway"],
-        information: ["dir055_description", "dir055_info", "note004"],
+        information: ["dir055_description", "dir055_info"],
         checkboxes: ["dir055_note_red"],
       },
       {
@@ -154,7 +154,7 @@ window.sectionsData = [
         title: "Note Cards",
         color: "blue",
         dependencies: [],
-        information: ["note001", "note003", "note005", "note004"],
+        information: ["note001", "note003", "note005", "note007", "note004"],
       },
     ],
   },
