@@ -132,7 +132,8 @@ Non-interactive informational content:
 1. Edit `sections.js` to add new sections/subsections
 2. Edit `checkboxes.js` to add new interactive items
 3. Edit `information.js` to add new informational content
-4. Refresh the page to see changes
+4. Place any local images in an `images/` folder (they'll be copied to production build)
+5. Refresh the page to see changes
 
 ### Styling
 

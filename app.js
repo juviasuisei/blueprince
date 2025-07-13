@@ -95,7 +95,11 @@ function checklistApp() {
       }
 
       // Monitor memory usage in development
-      if (process?.env?.NODE_ENV === "development" && performance.memory) {
+      if (
+        typeof process !== "undefined" &&
+        process?.env?.NODE_ENV === "development" &&
+        performance.memory
+      ) {
         this.memoryMonitor = setInterval(() => {
           const memory = performance.memory;
           if (memory.usedJSHeapSize > 50 * 1024 * 1024) {

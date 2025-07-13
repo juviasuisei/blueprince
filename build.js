@@ -66,6 +66,41 @@ function createProductionBuild() {
     }
   });
 
+  // Copy static assets (images, favicon, etc.)
+  const staticFiles = ["favicon.ico"];
+  staticFiles.forEach((file) => {
+    if (fs.existsSync(file)) {
+      fs.copyFileSync(file, path.join(prodDir, file));
+      console.log(`✅ Copied ${file}`);
+    }
+  });
+
+  // Copy images directory if it exists
+  if (fs.existsSync("images")) {
+    const imagesDir = path.join(prodDir, "images");
+    if (!fs.existsSync(imagesDir)) {
+      fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    const copyDirectory = (src, dest) => {
+      const entries = fs.readdirSync(src, { withFileTypes: true });
+      for (const entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+
+        if (entry.isDirectory()) {
+          fs.mkdirSync(destPath, { recursive: true });
+          copyDirectory(srcPath, destPath);
+        } else {
+          fs.copyFileSync(srcPath, destPath);
+        }
+      }
+    };
+
+    copyDirectory("images", imagesDir);
+    console.log("✅ Copied images directory");
+  }
+
   // Copy and optimize HTML
   if (fs.existsSync("index.html")) {
     let htmlContent = fs.readFileSync("index.html", "utf8");
