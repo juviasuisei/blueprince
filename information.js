@@ -15,11 +15,6 @@ window.informationData = {
       },
     ],
   },
-  obj02_info: {
-    title: "Gotta Catch 'Em All",
-    description: "To prevent spoilers the list of checkboxes for each room are not shown by default. As you see rooms in your drafting pool, type their name below to add them to the tracker.",
-    dependencies: [],
-  },
   dir002_info: {
     title: "Classification",
     description: "TYPE: Permanent",
@@ -112,6 +107,11 @@ window.informationData = {
       },
     ],
   },
+  dir034_info: {
+    title: "Classification",
+    description: "TYPE: Mechanical",
+    dependencies: [],
+  },
   dir034_chess: {
     title: "Chess Piece",
     description: "White Knight",
@@ -122,11 +122,6 @@ window.informationData = {
         caption: "white knight"
       },
     ],
-  },
-  dir045_info: {
-    title: "Classification",
-    description: "TYPE: Mechanical",
-    dependencies: [],
   },
   dir045_description: {
     title: "Description",
@@ -159,6 +154,33 @@ window.informationData = {
     title: "Classification",
     description: "TYPE: Objective",
     dependencies: [],
+  },
+  dir047_description: {
+    title: "Description",
+    description: "A familiar room that you may have slept in at some prior visit in the past. Like most bedrooms of the estate, these quarters offer you a little rest and recuperation during your long days exploring the surrounding rooms.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir047_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir047_info: {
+    title: "Classification",
+    description: "TYPE: Entry",
+    dependencies: [],
+  },
+  dir047_chess: {
+    title: "Chess Piece",
+    description: "White Pawn",
+    dependencies: ["obj04_047_bedroom"],
+    images: [
+      {
+        url: "images/obj04_047_bedroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
   },
   dir055_description: {
     title: "Description",
@@ -336,7 +358,7 @@ window.informationData = {
     images: [
       {
         url: "images/note010.jpeg",
-        caption: "red typed noted"
+        caption: "red typed note"
       },
     ],
   },
@@ -347,7 +369,18 @@ window.informationData = {
     images: [
       {
         url: "images/note011.jpeg",
-        caption: "blue typed noted"
+        caption: "blue typed note"
+      },
+    ],
+  },
+  note012: {
+    title: "Postcard: Reddington",
+    description: "",
+    dependencies: ["dir047_note_postcard"],
+    images: [
+      {
+        url: "images/note012.jpeg",
+        caption: "postcard of Reddington"
       },
     ],
   },
@@ -357,8 +390,19 @@ window.informationData = {
     dependencies: [],
     images: [
       {
-        url: "images/person01_herbie.jpeg",
+        url: "images/dir005_person.jpeg",
         caption: "portrait of Herbert S. Sinclair"
+      },
+    ]
+  },
+  person02_auravei_001: {
+    title: "Initial Information",
+    description: "Baroness Auravei Sinclair is our great-grandmother.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir047_person.jpeg",
+        caption: "portrait of Baroness Auravei Sinclair"
       },
     ]
   },

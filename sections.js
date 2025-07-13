@@ -17,6 +17,7 @@ window.sectionsData = [
       "obj03_r3f5",
       "obj03_r2f3",
       "obj03_r2f4",
+      "obj03_r2f5",
       "obj03_r1f1",
       "obj03_r1f3",
       "obj03_r1f4"
@@ -63,7 +64,8 @@ window.sectionsData = [
       "obj04_005_parlor",
       "obj04_012_storeroom",
       "obj04_021_pantry",
-      "obj04_034_security"
+      "obj04_034_security",
+      "obj04_047_bedroom",
     ]
   },
   {
@@ -137,6 +139,14 @@ window.sectionsData = [
         checkboxes: [],
       },
       {
+        id: "dir047",
+        title: "047: Bedroom",
+        color: "purple",
+        dependencies: ["obj02_047_bedroom"],
+        information: ["dir047_description", "dir047_info", "dir047_chess"],
+        checkboxes: ["dir047_note_postcard", "dir047_photo", "dir047_photo_identify", "dir047_finger"],
+      },
+      {
         id: "dir055",
         title: "055: Hallway",
         color: "orange",
@@ -192,6 +202,14 @@ window.sectionsData = [
         information: ["person01_herbie_001"],
         checkboxes: [],
       },
+      {
+        id: "person02_baroness",
+        title: "Baroness Auravei Sinclair",
+        color: "blue",
+        dependencies: ["dir047_photo_identify"],
+        information: ["person02_baroness_001"],
+        checkboxes: [],
+      },
     ],
   },
   {
@@ -220,7 +238,7 @@ window.sectionsData = [
         title: "Note Cards",
         color: "blue",
         dependencies: [],
-        information: ["note001", "note003", "note005", "note007", "note008", "note009", "note010", "note011", "note004"],
+        information: ["note001", "note003", "note005", "note007", "note008", "note009", "note010", "note011", "note012", "note004"],
       },
     ],
   },

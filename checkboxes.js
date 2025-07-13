@@ -52,6 +52,13 @@ window.checkboxesData = {
     description: "Room 046",
     dependencies: [],
   },
+  obj02_047_bedroom: {
+    title: "Bedroom",
+    hint: "Draft the Bedroom",
+    description: "Room 047",
+    unlockKeyword: "Bedroom",
+    dependencies: [],
+  },
   obj02_055_hallway: {
     title: "Hallway",
     hint: "Draft the Hallway",
@@ -118,6 +125,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r2f4_R.jpeg",
         caption: "bat"
+      },
+    ],
+  },
+  obj03_r2f5: {
+    title: "Rank 2 • File 5: T",
+    hint: "Rank 2 • File 5: ???",
+    description: "CAR[T]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r2f5_L.jpeg",
+        caption: "cart"
+      },
+      {
+        url: "images/obj03_r2f5_R.jpeg",
+        caption: "car"
       },
     ],
   },
@@ -220,6 +243,18 @@ window.checkboxesData = {
       {
         url: "images/obj04_034_security.jpeg",
         caption: "white knight"
+      },
+    ],
+  },
+  obj04_047_bedroom: {
+    title: "Bedroom: White Pawn",
+    hint: "Bedroom: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_047_bedroom.jpeg",
+        caption: "white pawn"
       },
     ],
   },
@@ -349,7 +384,7 @@ window.checkboxesData = {
     images: [
       {
         url: "images/note005.jpeg",
-        caption: "a hand drawn color depiction of a blue bird wearing a swim cap and a blue-striped swimsuit "
+        caption: "a hand drawn color depiction of a blue bird wearing a swim cap and a blue-striped swimsuit"
       },
     ],
   },
@@ -418,6 +453,42 @@ window.checkboxesData = {
         caption: "blue typed note"
       },
     ],
+  },
+  dir047_note_postcard: {
+    title: "Postcard: Reddington",
+    hint: "Postcard: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note012.jpeg",
+        caption: "postcard of Reddington"
+      },
+    ],
+  },
+  dir047_photo: {
+    title: "Photo: ???",
+    hint: "Photo: ???",
+    description: "Who is this a portrait of?",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir047_person.jpeg",
+        caption: "a portrait of a woman with a moon-pendant necklace"
+      },
+    ],
+  },
+  dir047_photo_identify: {
+    title: "Photo: Baroness Auravei Sinclair",
+    hint: "Identify the Portrait",
+    description: "This is our greatgrandmother, the Baroness Auravei Sinclair.",
+    dependencies: ["dir047_photo"],
+  },
+  dir047_finger: {
+    title: "Baron Bafflers",
+    hint: "What's Up With This Giant Finger?",
+    description: "The April 6 Edition of Baron Bafflers.",
+    dependencies: [],
   },
   dir055_note_red: {
     title: "Red Note: Hallway",
