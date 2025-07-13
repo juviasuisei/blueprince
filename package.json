@@ -4,10 +4,10 @@
   "description": "Blue Prince Spoiler Free Guide & Tracking - Interactive checklist with progressive disclosure",
   "main": "index.html",
   "scripts": {
-    "build": "node build.js && gh-pages -d dist",
+    "build": "node build.js",
     "serve": "python -m http.server 8000",
     "serve-node": "npx http-server -p 8000 -c-1",
-    "dev": "npx live-server --port=8000 --no-browser",
+    "dev": "npx http-server -p 8000 -c-1 -o",
     "deploy": "npm run build && echo 'Build complete! Deploy the dist/ folder to your web server.'",
     "test": "echo 'No tests specified yet'",
     "lint": "echo 'No linting configured yet'",
@@ -36,9 +36,7 @@
   },
   "homepage": "https://your-username.github.io/blue-prince-guide",
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "http-server": "^14.1.1",
-    "live-server": "^1.2.0"
+    "http-server": "^14.1.1"
   },
   "engines": {
     "node": ">=14.0.0"
