@@ -270,7 +270,7 @@ window.informationData = {
     ],
   },
   note007: {
-    title: "Fruit Order",
+    title: "Note: Fruit Order",
     description: "",
     dependencies: ["dir021_note"],
     images: [

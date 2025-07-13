@@ -84,7 +84,7 @@ window.sectionsData = [
         title: "021: Pantry",
         color: "blue",
         dependencies: ["obj02_021_pantry"],
-        information: ["dir021_description", "dir021_info", "note007"],
+        information: ["dir021_description", "dir021_info"],
         checkboxes: ["dir021_note"],
       },
       {
