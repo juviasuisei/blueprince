@@ -613,15 +613,25 @@ function checklistApp() {
       });
     },
 
-    checkDependencies(dependencies) {
+    checkDependencies(dependencies, optionalDependencies = false) {
       if (!dependencies || dependencies.length === 0) return true;
-      return dependencies.every((dep) => this.checkedItems.includes(dep));
+
+      if (optionalDependencies) {
+        // If optionalDependencies is true, only ONE dependency needs to be satisfied
+        return dependencies.some((dep) => this.checkedItems.includes(dep));
+      } else {
+        // Default behavior: ALL dependencies must be satisfied
+        return dependencies.every((dep) => this.checkedItems.includes(dep));
+      }
     },
 
     getVisibleSections() {
       if (!this.data.sections) return [];
       return this.data.sections.filter((section) =>
-        this.checkDependencies(section.dependencies)
+        this.checkDependencies(
+          section.dependencies,
+          section.optionalDependencies
+        )
       );
     },
 
@@ -629,7 +639,10 @@ function checklistApp() {
       const section = this.data.sections?.find((s) => s.id === sectionId);
       if (!section || !section.subsections) return [];
       return section.subsections.filter((subsection) =>
-        this.checkDependencies(subsection.dependencies)
+        this.checkDependencies(
+          subsection.dependencies,
+          subsection.optionalDependencies
+        )
       );
     },
 
@@ -637,7 +650,13 @@ function checklistApp() {
       if (!checkboxIds || !this.data.checkboxes) return [];
       return checkboxIds.filter((id) => {
         const checkbox = this.data.checkboxes[id];
-        return checkbox && this.checkDependencies(checkbox.dependencies);
+        return (
+          checkbox &&
+          this.checkDependencies(
+            checkbox.dependencies,
+            checkbox.optionalDependencies
+          )
+        );
       });
     },
 
@@ -645,7 +664,10 @@ function checklistApp() {
       if (!informationIds || !this.data.information) return [];
       return informationIds.filter((id) => {
         const info = this.data.information[id];
-        return info && this.checkDependencies(info.dependencies);
+        return (
+          info &&
+          this.checkDependencies(info.dependencies, info.optionalDependencies)
+        );
       });
     },
 
@@ -927,7 +949,10 @@ function checklistApp() {
         return (
           checkbox &&
           checkbox.unlockKeyword &&
-          this.checkDependencies(checkbox.dependencies) &&
+          this.checkDependencies(
+            checkbox.dependencies,
+            checkbox.optionalDependencies
+          ) &&
           !this.unlockedMysteries.includes(id) // Only show input if there are unrevealed mysteries
         );
       });
@@ -946,14 +971,30 @@ function checklistApp() {
           checkbox &&
           checkbox.unlockKeyword &&
           !this.unlockedMysteries.includes(checkboxId) &&
-          this.checkDependencies(checkbox.dependencies)
+          this.checkDependencies(
+            checkbox.dependencies,
+            checkbox.optionalDependencies
+          )
         ) {
           // Check if input matches the unlock keyword (case-insensitive)
-          if (
-            checkbox.unlockKeyword &&
-            (checkbox.unlockKeyword.toLowerCase().includes(searchTerm) ||
-              searchTerm.includes(checkbox.unlockKeyword.toLowerCase()))
-          ) {
+          // Support both string and array of strings for unlockKeyword
+          const unlockKeywords = Array.isArray(checkbox.unlockKeyword)
+            ? checkbox.unlockKeyword
+            : [checkbox.unlockKeyword];
+
+          let matchedKeyword = null;
+          for (const keyword of unlockKeywords) {
+            if (
+              keyword &&
+              (keyword.toLowerCase().includes(searchTerm) ||
+                searchTerm.includes(keyword.toLowerCase()))
+            ) {
+              matchedKeyword = keyword;
+              break;
+            }
+          }
+
+          if (matchedKeyword) {
             // Unlock the mystery!
             this.unlockedMysteries.push(checkboxId);
             this.debouncedSaveState();
@@ -967,7 +1008,7 @@ function checklistApp() {
             return {
               checkboxId: checkboxId,
               title: checkbox.title,
-              matchedKeyword: checkbox.unlockKeyword,
+              matchedKeyword: matchedKeyword,
             };
           }
         }
@@ -1028,7 +1069,10 @@ function checklistApp() {
         return (
           checkbox &&
           checkbox.unlockKeyword &&
-          this.checkDependencies(checkbox.dependencies) &&
+          this.checkDependencies(
+            checkbox.dependencies,
+            checkbox.optionalDependencies
+          ) &&
           !this.unlockedMysteries.includes(checkboxId)
         );
       });
