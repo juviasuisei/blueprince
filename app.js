@@ -9,13 +9,155 @@ function checklistApp() {
     unlockedMysteries: [],
     showResetConfirm: false,
     showCompleteAllConfirm: false,
+    // Accessibility state
+    announcements: [],
+    lastAnnouncementId: 0,
 
     async init() {
       await this.loadData();
       this.loadState();
+      this.setupAccessibility();
       this.$nextTick(() => {
         this.initializeSwipers();
       });
+    },
+
+    // Accessibility methods
+    setupAccessibility() {
+      // Set up keyboard navigation listeners
+      document.addEventListener("keydown", this.handleGlobalKeydown.bind(this));
+
+      // Create live region for announcements
+      this.createLiveRegion();
+    },
+
+    createLiveRegion() {
+      if (!document.getElementById("live-region")) {
+        const liveRegion = document.createElement("div");
+        liveRegion.id = "live-region";
+        liveRegion.setAttribute("aria-live", "polite");
+        liveRegion.setAttribute("aria-atomic", "true");
+        liveRegion.className = "sr-only";
+        document.body.appendChild(liveRegion);
+      }
+    },
+
+    announceToScreenReader(message, priority = "polite") {
+      const liveRegion = document.getElementById("live-region");
+      if (liveRegion) {
+        liveRegion.setAttribute("aria-live", priority);
+        liveRegion.textContent = message;
+
+        // Clear after announcement to allow repeated messages
+        setTimeout(() => {
+          liveRegion.textContent = "";
+        }, 1000);
+      }
+    },
+
+    handleGlobalKeydown(event) {
+      // Handle escape key for modals
+      if (event.key === "Escape") {
+        if (this.showResetConfirm) {
+          this.showResetConfirm = false;
+          event.preventDefault();
+        }
+        if (this.showCompleteAllConfirm) {
+          this.showCompleteAllConfirm = false;
+          event.preventDefault();
+        }
+      }
+    },
+
+    // Enhanced keyboard navigation for sections and subsections
+    handleSectionKeydown(event, sectionId) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        this.toggleSection(sectionId);
+
+        const section = this.data.sections?.find((s) => s.id === sectionId);
+        const isExpanded = this.expandedSections.includes(sectionId);
+        this.announceToScreenReader(
+          `${section?.title} section ${isExpanded ? "expanded" : "collapsed"}`
+        );
+      }
+    },
+
+    handleSubsectionKeydown(event, subsectionId) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        this.toggleSubsection(subsectionId);
+
+        // Find subsection title for announcement
+        let subsectionTitle = "";
+        for (const section of this.data.sections || []) {
+          const subsection = section.subsections?.find(
+            (s) => s.id === subsectionId
+          );
+          if (subsection) {
+            subsectionTitle = subsection.title;
+            break;
+          }
+        }
+
+        const isExpanded = this.expandedSubsections.includes(subsectionId);
+        this.announceToScreenReader(
+          `${subsectionTitle} subsection ${
+            isExpanded ? "expanded" : "collapsed"
+          }`
+        );
+      }
+    },
+
+    // Enhanced checkbox interaction with accessibility
+    handleCheckboxKeydown(event, checkboxId) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        this.toggleCheckboxWithAnnouncement(checkboxId);
+      }
+    },
+
+    toggleCheckboxWithAnnouncement(checkboxId) {
+      const wasChecked = this.checkedItems.includes(checkboxId);
+      const checkbox = this.data.checkboxes[checkboxId];
+
+      this.toggleCheckbox(checkboxId);
+
+      // Announce the change
+      if (checkbox) {
+        const isNowChecked = this.checkedItems.includes(checkboxId);
+        const title = checkbox.title || checkbox.hint || "Item";
+
+        if (checkbox.unlockKeyword && !wasChecked && isNowChecked) {
+          // Mystery unlocked and checked
+          this.announceToScreenReader(
+            `Mystery item "${title}" unlocked and completed`
+          );
+        } else {
+          this.announceToScreenReader(
+            `${title} ${isNowChecked ? "completed" : "uncompleted"}`
+          );
+        }
+
+        // Announce if new content was revealed
+        if (isNowChecked && !wasChecked) {
+          this.announceNewContentRevealed();
+        }
+      }
+    },
+
+    announceNewContentRevealed() {
+      // Check if any new sections, subsections, or items became visible
+      setTimeout(() => {
+        const visibleSections = this.getVisibleSections().length;
+        const totalSections = this.data.sections?.length || 0;
+
+        if (visibleSections < totalSections) {
+          this.announceToScreenReader(
+            "New content may have been revealed. Check for new sections or items."
+          );
+        }
+      }, 100);
     },
 
     async loadData() {
@@ -419,6 +561,13 @@ function checklistApp() {
             // Unlock the mystery!
             this.unlockedMysteries.push(checkboxId);
             this.saveState();
+
+            // Announce the mystery unlock
+            this.announceToScreenReader(
+              `Mystery unlocked: ${checkbox.title}. New item is now available to complete.`,
+              "assertive"
+            );
+
             return {
               checkboxId: checkboxId,
               title: checkbox.title,
@@ -427,6 +576,12 @@ function checklistApp() {
           }
         }
       }
+
+      // Announce failed attempt
+      this.announceToScreenReader(
+        "No matching mystery found for that keyword.",
+        "polite"
+      );
 
       return null;
     },
@@ -520,6 +675,12 @@ function checklistApp() {
       // Clear localStorage
       localStorage.removeItem("checklist-state");
 
+      // Announce the reset
+      this.announceToScreenReader(
+        "All progress has been reset. All items are now uncompleted and sections are collapsed.",
+        "assertive"
+      );
+
       // Reinitialize swipers after reset
       this.$nextTick(() => {
         this.initializeSwipers();
@@ -555,6 +716,12 @@ function checklistApp() {
 
       // Save the state
       this.saveState();
+
+      // Announce the completion
+      this.announceToScreenReader(
+        "All progress completed! All items are now checked, all mysteries unlocked, and all sections expanded. Warning: All spoilers are now visible.",
+        "assertive"
+      );
 
       // Reinitialize swipers after completion
       this.$nextTick(() => {
