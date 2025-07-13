@@ -85,6 +85,97 @@ describe("Mystery System", () => {
     expect(app.unlockedMysteries).toContain("mystery-checkbox");
   });
 
+  it("should unlock mystery with array of keywords", () => {
+    const app = checklistApp();
+    app.data = {
+      checkboxes: {
+        "multi-keyword-mystery": {
+          title: "Multi-Keyword Mystery",
+          hint: "Multiple ways to unlock",
+          unlockKeyword: ["secret", "password", "key"],
+          dependencies: [],
+        },
+      },
+    };
+    app.debouncedSaveState = vi.fn();
+    app.announceToScreenReader = vi.fn();
+
+    const checkboxIds = ["multi-keyword-mystery"];
+
+    // Test first keyword
+    let result = app.tryUnlockMystery("secret", checkboxIds);
+    expect(result).toBeTruthy();
+    expect(result.matchedKeyword).toBe("secret");
+
+    // Reset for next test
+    app.unlockedMysteries = [];
+
+    // Test second keyword
+    result = app.tryUnlockMystery("password", checkboxIds);
+    expect(result).toBeTruthy();
+    expect(result.matchedKeyword).toBe("password");
+
+    // Reset for next test
+    app.unlockedMysteries = [];
+
+    // Test third keyword
+    result = app.tryUnlockMystery("key", checkboxIds);
+    expect(result).toBeTruthy();
+    expect(result.matchedKeyword).toBe("key");
+  });
+
+  it("should unlock mystery with partial match from array of keywords", () => {
+    const app = checklistApp();
+    app.data = {
+      checkboxes: {
+        "multi-keyword-mystery": {
+          title: "Multi-Keyword Mystery",
+          hint: "Multiple ways to unlock",
+          unlockKeyword: ["secretword", "password123", "masterkey"],
+          dependencies: [],
+        },
+      },
+    };
+    app.debouncedSaveState = vi.fn();
+    app.announceToScreenReader = vi.fn();
+
+    const checkboxIds = ["multi-keyword-mystery"];
+
+    // Test partial match with first keyword
+    let result = app.tryUnlockMystery("secret", checkboxIds);
+    expect(result).toBeTruthy();
+    expect(result.matchedKeyword).toBe("secretword");
+
+    // Reset for next test
+    app.unlockedMysteries = [];
+
+    // Test partial match with second keyword
+    result = app.tryUnlockMystery("pass", checkboxIds);
+    expect(result).toBeTruthy();
+    expect(result.matchedKeyword).toBe("password123");
+  });
+
+  it("should return null when no keywords in array match", () => {
+    const app = checklistApp();
+    app.data = {
+      checkboxes: {
+        "multi-keyword-mystery": {
+          title: "Multi-Keyword Mystery",
+          hint: "Multiple ways to unlock",
+          unlockKeyword: ["secret", "password", "key"],
+          dependencies: [],
+        },
+      },
+    };
+    app.announceToScreenReader = vi.fn();
+
+    const checkboxIds = ["multi-keyword-mystery"];
+    const result = app.tryUnlockMystery("wrongword", checkboxIds);
+
+    expect(result).toBeNull();
+    expect(app.unlockedMysteries).not.toContain("multi-keyword-mystery");
+  });
+
   it("should unlock mystery with partial keyword match", () => {
     const app = checklistApp();
     app.data = global.window.checklistData;
@@ -163,6 +254,79 @@ describe("Mystery System", () => {
     const result = app.tryUnlockMystery("unlock", checkboxIds);
 
     expect(result).toBeNull();
+  });
+
+  it("should unlock mysteries with satisfied optional dependencies", () => {
+    const app = checklistApp();
+    app.checkedItems = ["test-checkbox-1"]; // Only one dependency satisfied
+    app.data = {
+      checkboxes: {
+        "mystery-optional-deps": {
+          title: "Mystery with Optional Dependencies",
+          unlockKeyword: "unlock",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: true, // Only one dependency needs to be satisfied
+        },
+      },
+    };
+    app.debouncedSaveState = vi.fn();
+    app.announceToScreenReader = vi.fn();
+
+    const checkboxIds = ["mystery-optional-deps"];
+    const result = app.tryUnlockMystery("unlock", checkboxIds);
+
+    expect(result).toBeTruthy();
+    expect(result.checkboxId).toBe("mystery-optional-deps");
+    expect(app.unlockedMysteries).toContain("mystery-optional-deps");
+  });
+
+  it("should not unlock mysteries with unsatisfied optional dependencies", () => {
+    const app = checklistApp();
+    app.checkedItems = []; // No dependencies satisfied
+    app.data = {
+      checkboxes: {
+        "mystery-optional-deps": {
+          title: "Mystery with Optional Dependencies",
+          unlockKeyword: "unlock",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: true,
+        },
+      },
+    };
+    app.announceToScreenReader = vi.fn();
+
+    const checkboxIds = ["mystery-optional-deps"];
+    const result = app.tryUnlockMystery("unlock", checkboxIds);
+
+    expect(result).toBeNull();
+  });
+
+  it("should detect mysteries with optional dependencies correctly", () => {
+    const app = checklistApp();
+    app.checkedItems = ["test-checkbox-1"]; // Only one dependency satisfied
+    app.data = {
+      checkboxes: {
+        "mystery-optional-deps": {
+          title: "Mystery with Optional Dependencies",
+          unlockKeyword: "unlock",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: true,
+        },
+        "mystery-required-deps": {
+          title: "Mystery with Required Dependencies",
+          unlockKeyword: "unlock2",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: false,
+        },
+      },
+    };
+
+    // Should detect the optional dependencies mystery but not the required dependencies one
+    expect(app.hasMysteries(["mystery-optional-deps"])).toBe(true);
+    expect(app.hasMysteries(["mystery-required-deps"])).toBe(false);
+    expect(
+      app.hasMysteries(["mystery-optional-deps", "mystery-required-deps"])
+    ).toBe(true);
   });
 
   it("should check if mystery is unlocked", () => {

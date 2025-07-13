@@ -70,6 +70,35 @@ describe("Dependency Resolution", () => {
 
     expect(app.checkDependencies(["non-existent-checkbox"])).toBe(false);
   });
+
+  it("should support optional dependencies (any one dependency satisfies)", () => {
+    const app = checklistApp();
+    app.checkedItems = ["test-checkbox-1"];
+
+    // With optionalDependencies=true, only one dependency needs to be satisfied
+    expect(
+      app.checkDependencies(["test-checkbox-1", "test-checkbox-2"], true)
+    ).toBe(true);
+    expect(
+      app.checkDependencies(["test-checkbox-2", "test-checkbox-1"], true)
+    ).toBe(true);
+
+    // Should still return false if none are satisfied
+    expect(
+      app.checkDependencies(["test-checkbox-3", "test-checkbox-4"], true)
+    ).toBe(false);
+  });
+
+  it("should default to requiring all dependencies when optionalDependencies is false", () => {
+    const app = checklistApp();
+    app.checkedItems = ["test-checkbox-1"];
+
+    // With optionalDependencies=false (default), all dependencies must be satisfied
+    expect(
+      app.checkDependencies(["test-checkbox-1", "test-checkbox-2"], false)
+    ).toBe(false);
+    expect(app.checkDependencies(["test-checkbox-1"], false)).toBe(true);
+  });
 });
 
 describe("Visibility Logic", () => {
@@ -204,5 +233,113 @@ describe("Subsection Visibility", () => {
 
     const visibleSubsections = app.getVisibleSubsections("test-section");
     expect(visibleSubsections).toEqual([]);
+  });
+
+  it("should handle optional dependencies in sections", () => {
+    const app = checklistApp();
+    app.checkedItems = ["test-checkbox-1"];
+    app.data = {
+      sections: [
+        {
+          id: "optional-deps-section",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: true,
+        },
+        {
+          id: "required-deps-section",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: false,
+        },
+      ],
+    };
+
+    const visibleSections = app.getVisibleSections();
+
+    // Only the optional dependencies section should be visible
+    expect(visibleSections).toHaveLength(1);
+    expect(visibleSections[0].id).toBe("optional-deps-section");
+  });
+
+  it("should handle optional dependencies in subsections", () => {
+    const app = checklistApp();
+    app.checkedItems = ["test-checkbox-1"];
+    app.data = {
+      sections: [
+        {
+          id: "test-section",
+          dependencies: [],
+          subsections: [
+            {
+              id: "optional-deps-subsection",
+              dependencies: ["test-checkbox-1", "test-checkbox-2"],
+              optionalDependencies: true,
+            },
+            {
+              id: "required-deps-subsection",
+              dependencies: ["test-checkbox-1", "test-checkbox-2"],
+              optionalDependencies: false,
+            },
+          ],
+        },
+      ],
+    };
+
+    const visibleSubsections = app.getVisibleSubsections("test-section");
+
+    // Only the optional dependencies subsection should be visible
+    expect(visibleSubsections).toHaveLength(1);
+    expect(visibleSubsections[0].id).toBe("optional-deps-subsection");
+  });
+
+  it("should handle optional dependencies in checkboxes", () => {
+    const app = checklistApp();
+    app.checkedItems = ["test-checkbox-1"];
+    app.data = {
+      checkboxes: {
+        "optional-deps-checkbox": {
+          title: "Optional Dependencies Checkbox",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: true,
+        },
+        "required-deps-checkbox": {
+          title: "Required Dependencies Checkbox",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: false,
+        },
+      },
+    };
+
+    const checkboxIds = ["optional-deps-checkbox", "required-deps-checkbox"];
+    const visibleCheckboxes = app.getVisibleCheckboxes(checkboxIds);
+
+    // Only the optional dependencies checkbox should be visible
+    expect(visibleCheckboxes).toHaveLength(1);
+    expect(visibleCheckboxes).toContain("optional-deps-checkbox");
+  });
+
+  it("should handle optional dependencies in information items", () => {
+    const app = checklistApp();
+    app.checkedItems = ["test-checkbox-1"];
+    app.data = {
+      information: {
+        "optional-deps-info": {
+          title: "Optional Dependencies Info",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: true,
+        },
+        "required-deps-info": {
+          title: "Required Dependencies Info",
+          dependencies: ["test-checkbox-1", "test-checkbox-2"],
+          optionalDependencies: false,
+        },
+      },
+    };
+
+    const informationIds = ["optional-deps-info", "required-deps-info"];
+    const visibleInformation = app.getVisibleInformation(informationIds);
+
+    // Only the optional dependencies information should be visible
+    expect(visibleInformation).toHaveLength(1);
+    expect(visibleInformation).toContain("optional-deps-info");
   });
 });
