@@ -13,7 +13,14 @@ window.sectionsData = [
     color: "blue",
     dependencies: ["TK"],
     information: [],
-    checkboxes: ["obj03_r3f5", "obj03_r2f3", "obj03_r2f4", "obj03_r1f1", "obj03_r1f3", "obj03_r1f4"]
+    checkboxes: [
+      "obj03_r3f5",
+      "obj03_r2f3",
+      "obj03_r2f4",
+      "obj03_r1f1",
+      "obj03_r1f3",
+      "obj03_r1f4"
+    ]
   },
   {
     id: "obj02",
@@ -22,7 +29,18 @@ window.sectionsData = [
     mysteryType: "room",
     dependencies: [],
     information: [],
-    checkboxes: ["obj02_003_spareroom", "obj02_005_parlor", "obj02_012_storeroom", "obj02_021_pantry", "obj02_034_security", "obj02_045_antechamber", "obj02_046_room46", "obj02_055_hallway", "obj02_080_chapel"]
+    checkboxes: [
+      "obj02_003_spareroom",
+      "obj02_005_parlor",
+      "obj02_012_storeroom",
+      "obj02_021_pantry",
+      "obj02_034_security",
+      "obj02_045_antechamber",
+      "obj02_046_room46",
+      "obj02_055_hallway",
+      "obj02_065_courtyard",
+      "obj02_080_chapel"
+    ]
   },
   {
     id: "obj05",
@@ -39,7 +57,14 @@ window.sectionsData = [
     color: "blue",
     dependencies: ["TK"],
     information: [],
-    checkboxes: ["obj04_002_entrance", "obj04_003_spareroom", "obj04_005_parlor", "obj04_012_storeroom", "obj04_021_pantry", "obj04_034_security"]
+    checkboxes: [
+      "obj04_002_entrance",
+      "obj04_003_spareroom",
+      "obj04_005_parlor",
+      "obj04_012_storeroom",
+      "obj04_021_pantry",
+      "obj04_034_security"
+    ]
   },
   {
     id: "info_house",
@@ -149,7 +174,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: [],
         information: ["item01_sledgehammer"],
-        checkboxes: ["obj05_01_sledgehammer"],
+        checkboxes: [],
       },
     ],
   },
