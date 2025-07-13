@@ -1,6 +1,6 @@
 {
   "name": "blue-prince-guide",
-  "version": "0.11.0",
+  "version": "1.0.0",
   "description": "Blue Prince Spoiler Free Guide & Tracking - Interactive checklist with progressive disclosure",
   "main": "index.html",
   "scripts": {
@@ -60,5 +60,8 @@
     "*.html",
     "*.md",
     "build.js"
-  ]
+  ],
+  "dependencies": {
+    "@alpinejs/focus": "^3.14.9"
+  }
 }

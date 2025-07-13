@@ -6,6 +6,7 @@
     <title>Blue Prince Spoiler Free Guide & Tracking</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -176,6 +177,7 @@
           class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           @click.self="showResetConfirm = false"
           @keydown.escape="showResetConfirm = false"
+          x-trap="showResetConfirm"
           role="dialog"
           aria-modal="true"
           aria-labelledby="reset-modal-title"
@@ -261,6 +263,7 @@
           class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           @click.self="showCompleteAllConfirm = false"
           @keydown.escape="showCompleteAllConfirm = false"
+          x-trap="showCompleteAllConfirm"
           role="dialog"
           aria-modal="true"
           aria-labelledby="complete-all-modal-title"

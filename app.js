@@ -16,7 +16,7 @@ function checklistApp() {
 
     async init() {
       await this.loadData();
-      await this.loadVersion();
+      this.loadVersion();
       this.loadState();
       this.setupAccessibility();
       this.setupPerformanceOptimizations();
@@ -25,18 +25,12 @@ function checklistApp() {
       });
     },
 
-    async loadVersion() {
-      try {
-        // Try to fetch package.json to get the version
-        const response = await fetch("./package.json");
-        if (response.ok) {
-          const packageData = await response.json();
-          this.version = packageData.version || "Unknown";
-        } else {
-          console.warn("Could not load package.json, using default version");
-        }
-      } catch (error) {
-        console.warn("Failed to load version from package.json:", error);
+    loadVersion() {
+      // Get version from the loaded data
+      if (this.data && this.data.version) {
+        this.version = this.data.version;
+      } else {
+        console.warn("Version not found in data, using default");
         // Keep the default fallback version
       }
     },
