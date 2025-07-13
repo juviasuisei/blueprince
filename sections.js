@@ -68,7 +68,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_012_storeroom"],
         information: ["dir012_description", "dir012_info", "dir012_chess"],
-        checkboxes: [],
+        checkboxes: ["dir012_drawing", "dir012_drawing_identify"],
       },
       {
         id: "dir045",
@@ -88,10 +88,10 @@ window.sectionsData = [
       },
       {
         id: "dir055",
-        title: "055: Antechamber",
+        title: "055: Hallway",
         color: "orange",
         dependencies: ["obj02_055_hallway"],
-        information: ["dir055_description", "dir055_info"],
+        information: ["dir055_description", "dir055_info", "note004"],
         checkboxes: ["dir055_note_red"],
       },
     ],

@@ -28,13 +28,13 @@ window.checkboxesData = {
   },
   obj02_045_antechamber: {
     title: "Antechamber",
-    hint: "Draft the Antechamber",
+    hint: "Enter the Antechamber",
     description: "Room 045",
     dependencies: [],
   },
   obj02_046_room46: {
     title: "Room 46",
-    hint: "Draft Room 46",
+    hint: "Enter Room 46",
     description: "Room 046",
     dependencies: [],
   },
