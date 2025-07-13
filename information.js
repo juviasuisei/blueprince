@@ -90,6 +90,17 @@ window.informationData = {
       },
     ],
   },
+  dir021_description: {
+    title: "Description",
+    description: "A well stocked pantry is always the true test of a large estate, and keeping Mount Holly's wide gamut of ingredients and supplies stocked has always been one of the primary priorities of the house staff.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir021_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir045_description: {
     title: "Description",
     description: "From its root meaning \"The Room Before\", all signs and paths point toward the Antechamber. This mysterious sealed room — resting on the 9th Rank — may prove, however, quite an initial challenge to even reach, let alone enter. Still, you can't help but draw a connection between this chamber and Room 46.",
@@ -136,6 +147,22 @@ window.informationData = {
   dir055_info: {
     title: "Classification",
     description: "TYPE: Hallway",
+    dependencies: [],
+  },
+  dir080_description: {
+    title: "Description",
+    description: "A private sacristy, as ornate as the most lavish rooms of the estate, is watched over by eight Ajeran Angels depicted in stained glass. This room was more of a tribute to your granduncle's vanity than it was to his faith.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir080_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir055_info: {
+    title: "Classification",
+    description: "TYPE: Entry",
     dependencies: [],
   },
   note001: {
@@ -217,6 +244,17 @@ window.informationData = {
       {
         url: "images/note006_2.jpeg",
         caption: "parlor game rules"
+      },
+    ],
+  },
+  note007: {
+    title: "Fruit Order",
+    description: "",
+    dependencies: ["dir021_note"],
+    images: [
+      {
+        url: "images/note007.jpeg",
+        caption: "fruit explainer"
       },
     ],
   },

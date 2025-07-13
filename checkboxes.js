@@ -26,6 +26,13 @@ window.checkboxesData = {
     unlockKeyword: "Storeroom",
     dependencies: [],
   },
+  obj02_021_pantry: {
+    title: "Pantry",
+    hint: "Draft the Pantry",
+    description: "Room 021",
+    unlockKeyword: "Pantry",
+    dependencies: [],
+  },
   obj02_045_antechamber: {
     title: "Antechamber",
     hint: "Enter the Antechamber",
@@ -45,6 +52,13 @@ window.checkboxesData = {
     unlockKeyword: "Hallway",
     dependencies: [],
   },
+  obj02_080_chapel: {
+    title: "Chapel",
+    hint: "Draft the Chapel",
+    description: "Room 080",
+    unlockKeyword: "Chapel",
+    dependencies: [],
+  },
   obj03_r2f3: {
     title: "Rank 2 • File 3: G",
     hint: "Rank 2 • File 3: ???",
@@ -58,6 +72,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r2f3_R.jpeg",
         caption: "bride"
+      },
+    ],
+  },
+  obj03_r2f4: {
+    title: "Rank 2 • File 4: H",
+    hint: "Rank 2 • File 4: ???",
+    description: "BAT[H]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r2f4_L.jpeg",
+        caption: "bath"
+      },
+      {
+        url: "images/obj03_r2f4_R.jpeg",
+        caption: "bat"
       },
     ],
   },
@@ -93,7 +123,7 @@ window.checkboxesData = {
       },
     ],
   },
-  obj03_r2f3: {
+  obj03_r1f4: {
     title: "Rank 1 • File 4: E",
     hint: "Rank 1 • File 4: ???",
     description: "PIN[E]",
@@ -250,6 +280,18 @@ window.checkboxesData = {
     hint: "What is This Drawing?",
     description: "This is from the children's book Swimbird by our mother.",
     dependencies: ["dir012_drawing"],
+  },
+  dir021_note: {
+    title: "Note: Pantry",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note007.jpeg",
+        caption: "fruit explainer"
+      },
+    ],
   },
   dir055_note_red: {
     title: "Red Note: Hallway",

@@ -13,7 +13,7 @@ window.sectionsData = [
     color: "blue",
     dependencies: ["TK"],
     information: [],
-    checkboxes: ["obj03_r2f3", "obj03_r1f1", "obj03_r1f3", "obj03_r1f4"]
+    checkboxes: ["obj03_r2f3", "obj03_r2f4", "obj03_r1f1", "obj03_r1f3", "obj03_r1f4"]
   },
   {
     id: "obj02",
@@ -22,7 +22,7 @@ window.sectionsData = [
     mysteryType: "room",
     dependencies: [],
     information: ["obj02_info"],
-    checkboxes: ["obj02_003_spareroom", "obj02_005_parlor", "obj02_012_storeroom", "obj02_045_antechamber", "obj02_046_room46", "obj02_055_hallway"]
+    checkboxes: ["obj02_003_spareroom", "obj02_005_parlor", "obj02_012_storeroom", "obj02_021_pantry", "obj02_045_antechamber", "obj02_046_room46", "obj02_055_hallway", "obj02_080_chapel"]
   },
   {
     id: "obj04",
@@ -71,6 +71,14 @@ window.sectionsData = [
         checkboxes: ["dir012_drawing", "dir012_drawing_identify"],
       },
       {
+        id: "dir021",
+        title: "021: Pantry",
+        color: "blue",
+        dependencies: ["obj02_021_pantry"],
+        information: ["dir021_description", "dir021_info", "note007"],
+        checkboxes: ["dir021_note"],
+      },
+      {
         id: "dir045",
         title: "045: Antechamber",
         color: "blue",
@@ -93,6 +101,14 @@ window.sectionsData = [
         dependencies: ["obj02_055_hallway"],
         information: ["dir055_description", "dir055_info", "note004"],
         checkboxes: ["dir055_note_red"],
+      },
+      {
+        id: "dir080",
+        title: "080: Chapel",
+        color: "red",
+        dependencies: ["obj02_080_chapel"],
+        information: ["dir080_description", "dir080_info"],
+        checkboxes: [],
       },
     ],
   },
