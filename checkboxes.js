@@ -411,7 +411,7 @@ window.checkboxesData = {
     title: "Drawing: Swimbird",
     hint: "What is This Drawing?",
     description: "This is from the children's book Swimbird by our mother.",
-    dependencies: ["dir012_drawing"],
+    dependencies: ["dir012_search"],
   },
   dir021_note: {
     title: "Note: Pantry",
