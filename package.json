@@ -1,0 +1,58 @@
+{
+  "name": "blue-prince-guide",
+  "version": "1.0.0",
+  "description": "Blue Prince Spoiler Free Guide & Tracking - Interactive checklist with progressive disclosure",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "python -m http.server 8000",
+    "serve-node": "npx http-server -p 8000 -c-1",
+    "dev": "npx live-server --port=8000 --no-browser",
+    "deploy": "npm run build && echo 'Build complete! Deploy the dist/ folder to your web server.'",
+    "test": "echo 'No tests specified yet'",
+    "lint": "echo 'No linting configured yet'",
+    "clean": "rm -rf dist/",
+    "debug": "echo 'Setting debug mode...' && node -e \"console.log('Add ?debug=true to URL or run: localStorage.setItem(\\\"debug\\\", \\\"true\\\")')\"",
+    "analyze": "node -e \"const fs=require('fs'); const files=['app.js','data.js','sections.js','checkboxes.js','information.js']; files.forEach(f => { if(fs.existsSync(f)) { const size = fs.statSync(f).size; console.log(f + ': ' + Math.round(size/1024) + 'KB'); } });\""
+  },
+  "keywords": [
+    "checklist",
+    "tracking",
+    "progressive-disclosure",
+    "spoiler-free",
+    "interactive",
+    "guide",
+    "alpine.js",
+    "tailwind"
+  ],
+  "author": "Juvia Suisei",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/blue-prince-guide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/blue-prince-guide/issues"
+  },
+  "homepage": "https://your-username.github.io/blue-prince-guide",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "files": [
+    "dist/",
+    "*.js",
+    "*.html",
+    "*.md",
+    "build.js"
+  ]
+}

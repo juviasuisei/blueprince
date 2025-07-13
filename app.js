@@ -17,8 +17,294 @@ function checklistApp() {
       await this.loadData();
       this.loadState();
       this.setupAccessibility();
+      this.setupPerformanceOptimizations();
       this.$nextTick(() => {
         this.initializeSwipers();
+      });
+    },
+
+    // Performance optimization setup
+    setupPerformanceOptimizations() {
+      // Debounce state saving to reduce localStorage writes
+      this.debouncedSaveState = this.debounce(this.saveState.bind(this), 300);
+
+      // Set up intersection observer for lazy loading
+      this.setupLazyLoading();
+
+      // Set up performance monitoring
+      this.setupPerformanceMonitoring();
+    },
+
+    // Debounce utility for performance optimization
+    debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    },
+
+    // Lazy loading setup for images
+    setupLazyLoading() {
+      if ("IntersectionObserver" in window) {
+        this.imageObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  img.src = img.dataset.src;
+                  img.removeAttribute("data-src");
+                  this.imageObserver.unobserve(img);
+                }
+              }
+            });
+          },
+          {
+            rootMargin: "50px 0px",
+            threshold: 0.01,
+          }
+        );
+
+        // Observe all images with data-src
+        this.observeImages();
+      }
+    },
+
+    // Observe all lazy loading images
+    observeImages() {
+      if (!this.imageObserver) return;
+
+      requestAnimationFrame(() => {
+        const lazyImages = document.querySelectorAll("img[data-src]");
+        lazyImages.forEach((img) => {
+          this.imageObserver.observe(img);
+        });
+      });
+    },
+
+    // Performance monitoring setup
+    setupPerformanceMonitoring() {
+      // Track initialization time
+      if (performance.mark) {
+        performance.mark("app-init-start");
+      }
+
+      // Monitor memory usage in development
+      if (process?.env?.NODE_ENV === "development" && performance.memory) {
+        this.memoryMonitor = setInterval(() => {
+          const memory = performance.memory;
+          if (memory.usedJSHeapSize > 50 * 1024 * 1024) {
+            // 50MB threshold
+            console.warn("High memory usage detected:", {
+              used: Math.round(memory.usedJSHeapSize / 1024 / 1024) + "MB",
+              total: Math.round(memory.totalJSHeapSize / 1024 / 1024) + "MB",
+            });
+          }
+        }, 30000); // Check every 30 seconds
+      }
+
+      // Setup performance optimizations for DOM operations
+      this.setupDOMOptimizations();
+
+      // Setup production error logging
+      this.setupErrorLogging();
+    },
+
+    // Setup comprehensive error logging for production
+    setupErrorLogging() {
+      // Global error handler
+      window.addEventListener("error", (event) => {
+        this.logError("JavaScript Error", {
+          message: event.message,
+          filename: event.filename,
+          lineno: event.lineno,
+          colno: event.colno,
+          error: event.error?.stack,
+        });
+      });
+
+      // Unhandled promise rejection handler
+      window.addEventListener("unhandledrejection", (event) => {
+        this.logError("Unhandled Promise Rejection", {
+          reason: event.reason,
+          promise: event.promise,
+        });
+      });
+
+      // Performance monitoring
+      if ("performance" in window) {
+        window.addEventListener("load", () => {
+          setTimeout(() => {
+            const perfData = performance.getEntriesByType("navigation")[0];
+            if (perfData) {
+              this.logPerformance("Page Load", {
+                loadTime: perfData.loadEventEnd - perfData.loadEventStart,
+                domContentLoaded:
+                  perfData.domContentLoadedEventEnd -
+                  perfData.domContentLoadedEventStart,
+                totalTime: perfData.loadEventEnd - perfData.fetchStart,
+              });
+            }
+          }, 0);
+        });
+      }
+    },
+
+    // Centralized error logging
+    logError(type, details) {
+      const errorData = {
+        type,
+        details,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        url: window.location.href,
+        userId: this.getUserId(), // Anonymous user ID for tracking
+      };
+
+      // Log to console in development
+      if (localStorage.getItem("debug") === "true") {
+        console.error("Error logged:", errorData);
+      }
+
+      // In production, you would send this to your error tracking service
+      // Example: sendToErrorService(errorData);
+
+      // Store recent errors locally for debugging
+      this.storeRecentError(errorData);
+    },
+
+    // Performance logging
+    logPerformance(type, metrics) {
+      const perfData = {
+        type,
+        metrics,
+        timestamp: new Date().toISOString(),
+        userId: this.getUserId(),
+      };
+
+      if (localStorage.getItem("debug") === "true") {
+        console.log("Performance logged:", perfData);
+      }
+
+      // In production, send to analytics service
+      // Example: sendToAnalytics(perfData);
+    },
+
+    // Get or create anonymous user ID
+    getUserId() {
+      let userId = localStorage.getItem("anonymous-user-id");
+      if (!userId) {
+        userId =
+          "user-" + Math.random().toString(36).substr(2, 9) + "-" + Date.now();
+        localStorage.setItem("anonymous-user-id", userId);
+      }
+      return userId;
+    },
+
+    // Store recent errors for debugging
+    storeRecentError(errorData) {
+      try {
+        let recentErrors = JSON.parse(
+          localStorage.getItem("recent-errors") || "[]"
+        );
+        recentErrors.unshift(errorData);
+
+        // Keep only last 10 errors
+        recentErrors = recentErrors.slice(0, 10);
+
+        localStorage.setItem("recent-errors", JSON.stringify(recentErrors));
+      } catch (e) {
+        console.warn("Failed to store error data:", e);
+      }
+    },
+
+    // Get recent errors for debugging
+    getRecentErrors() {
+      try {
+        return JSON.parse(localStorage.getItem("recent-errors") || "[]");
+      } catch (e) {
+        return [];
+      }
+    },
+
+    // Setup DOM operation optimizations
+    setupDOMOptimizations() {
+      // Cache frequently accessed DOM elements
+      this.cachedElements = new Map();
+
+      // Throttle expensive operations
+      this.throttledProgressUpdate = this.throttle(() => {
+        this.updateProgressBars();
+      }, 100);
+
+      // Setup mutation observer for efficient DOM updates
+      if ("MutationObserver" in window) {
+        this.mutationObserver = new MutationObserver((mutations) => {
+          let shouldUpdateImages = false;
+
+          mutations.forEach((mutation) => {
+            if (
+              mutation.type === "childList" &&
+              mutation.addedNodes.length > 0
+            ) {
+              // Check if new images were added
+              mutation.addedNodes.forEach((node) => {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                  if (
+                    node.tagName === "IMG" ||
+                    node.querySelector("img[data-src]")
+                  ) {
+                    shouldUpdateImages = true;
+                  }
+                }
+              });
+            }
+          });
+
+          if (shouldUpdateImages) {
+            requestAnimationFrame(() => {
+              this.observeImages();
+            });
+          }
+        });
+
+        // Start observing
+        this.mutationObserver.observe(document.body, {
+          childList: true,
+          subtree: true,
+        });
+      }
+    },
+
+    // Throttle utility for performance optimization
+    throttle(func, limit) {
+      let inThrottle;
+      return function (...args) {
+        if (!inThrottle) {
+          func.apply(this, args);
+          inThrottle = true;
+          setTimeout(() => (inThrottle = false), limit);
+        }
+      };
+    },
+
+    // Optimized progress bar updates
+    updateProgressBars() {
+      requestAnimationFrame(() => {
+        // Batch all progress bar updates to avoid layout thrashing
+        const progressBars = document.querySelectorAll('[role="progressbar"]');
+        progressBars.forEach((bar) => {
+          const progressDiv = bar.querySelector("div");
+          if (progressDiv && bar.getAttribute("aria-valuenow")) {
+            const value = parseInt(bar.getAttribute("aria-valuenow"));
+            progressDiv.style.width = `${value}%`;
+          }
+        });
       });
     },
 
@@ -184,24 +470,64 @@ function checklistApp() {
     },
 
     loadState() {
-      const saved = localStorage.getItem("checklist-state");
-      if (saved) {
-        const state = JSON.parse(saved);
-        this.checkedItems = state.checkedItems || [];
-        this.expandedSections = state.expandedSections || [];
-        this.expandedSubsections = state.expandedSubsections || [];
-        this.unlockedMysteries = state.unlockedMysteries || [];
+      try {
+        const saved = localStorage.getItem("checklist-state");
+        if (saved) {
+          const state = JSON.parse(saved);
+          // Validate state structure before applying
+          if (this.validateStateStructure(state)) {
+            this.checkedItems = state.checkedItems || [];
+            this.expandedSections = state.expandedSections || [];
+            this.expandedSubsections = state.expandedSubsections || [];
+            this.unlockedMysteries = state.unlockedMysteries || [];
+          } else {
+            console.warn("Invalid state structure detected, using defaults");
+          }
+        }
+      } catch (error) {
+        console.error("Failed to load state from localStorage:", error);
+        // Continue with default empty state
       }
     },
 
+    // Validate state structure to prevent corruption
+    validateStateStructure(state) {
+      return (
+        state &&
+        typeof state === "object" &&
+        Array.isArray(state.checkedItems) &&
+        Array.isArray(state.expandedSections) &&
+        Array.isArray(state.expandedSubsections) &&
+        Array.isArray(state.unlockedMysteries)
+      );
+    },
+
     saveState() {
-      const state = {
-        checkedItems: this.checkedItems,
-        expandedSections: this.expandedSections,
-        expandedSubsections: this.expandedSubsections,
-        unlockedMysteries: this.unlockedMysteries,
-      };
-      localStorage.setItem("checklist-state", JSON.stringify(state));
+      try {
+        const state = {
+          checkedItems: this.checkedItems,
+          expandedSections: this.expandedSections,
+          expandedSubsections: this.expandedSubsections,
+          unlockedMysteries: this.unlockedMysteries,
+          timestamp: Date.now(), // Add timestamp for debugging
+        };
+
+        // Compress state if it's getting large
+        const stateString = JSON.stringify(state);
+        if (stateString.length > 10000) {
+          // 10KB threshold
+          console.warn(
+            "Large state detected:",
+            stateString.length,
+            "characters"
+          );
+        }
+
+        localStorage.setItem("checklist-state", stateString);
+      } catch (error) {
+        console.error("Failed to save state to localStorage:", error);
+        // Could implement fallback storage here if needed
+      }
     },
 
     toggleCheckbox(checkboxId) {
@@ -237,9 +563,10 @@ function checklistApp() {
         });
       }
 
-      this.saveState();
+      this.debouncedSaveState();
       this.$nextTick(() => {
         this.initializeSwipers();
+        this.observeImages(); // Re-observe new images after DOM updates
       });
     },
 
@@ -250,7 +577,7 @@ function checklistApp() {
       } else {
         this.expandedSections.push(sectionId);
       }
-      this.saveState();
+      this.debouncedSaveState();
       this.$nextTick(() => {
         this.initializeSwipers();
       });
@@ -263,9 +590,10 @@ function checklistApp() {
       } else {
         this.expandedSubsections.push(subsectionId);
       }
-      this.saveState();
+      this.debouncedSaveState();
       this.$nextTick(() => {
         this.initializeSwipers();
+        this.observeImages(); // Re-observe new images after DOM updates
       });
     },
 
@@ -391,36 +719,41 @@ function checklistApp() {
     },
 
     initializeSwiper(swiperId, color, onSlideChange) {
-      // Initialize a specific Swiper instance
+      // Initialize a specific Swiper instance with performance optimizations
       if (!this.swipers[swiperId]) {
-        // Use a longer timeout and check for slide count
-        setTimeout(() => {
+        // Use requestAnimationFrame for better performance
+        requestAnimationFrame(() => {
           const swiperEl = document.getElementById(swiperId);
-          if (swiperEl) {
-            const slides = swiperEl.querySelectorAll(".swiper-slide");
-            const slideCount = slides.length;
+          if (!swiperEl) return;
 
-            console.log(
-              "Initializing Swiper:",
-              swiperId,
-              "with",
-              slideCount,
-              "slides",
-              "color:",
-              color
-            );
+          const slides = swiperEl.querySelectorAll(".swiper-slide");
+          const slideCount = slides.length;
 
-            // Apply dynamic colors to swiper controls
-            if (color) {
-              const nextBtn = swiperEl.querySelector(".swiper-button-next");
-              const prevBtn = swiperEl.querySelector(".swiper-button-prev");
-              if (nextBtn) nextBtn.style.color = color;
-              if (prevBtn) prevBtn.style.color = color;
-            }
+          // Skip initialization if no slides
+          if (slideCount === 0) return;
 
-            // Only enable loop if we have more than 2 slides
-            const enableLoop = slideCount > 2;
+          console.log(
+            "Initializing Swiper:",
+            swiperId,
+            "with",
+            slideCount,
+            "slides",
+            "color:",
+            color
+          );
 
+          // Pre-apply styles to avoid layout thrashing
+          const nextBtn = swiperEl.querySelector(".swiper-button-next");
+          const prevBtn = swiperEl.querySelector(".swiper-button-prev");
+          if (color) {
+            if (nextBtn) nextBtn.style.color = color;
+            if (prevBtn) prevBtn.style.color = color;
+          }
+
+          // Only enable loop if we have more than 2 slides
+          const enableLoop = slideCount > 2;
+
+          try {
             this.swipers[swiperId] = new Swiper(`#${swiperId}`, {
               navigation: {
                 nextEl: `#${swiperId} .swiper-button-next`,
@@ -433,80 +766,127 @@ function checklistApp() {
               loop: enableLoop,
               autoHeight: true,
               spaceBetween: 10,
-              // Ensure proper initialization
+              // Performance optimizations
               observer: true,
               observeParents: true,
+              watchSlidesProgress: true,
+              watchSlidesVisibility: true,
+              // Lazy loading support
+              lazy: {
+                loadPrevNext: true,
+                loadPrevNextAmount: 1,
+              },
               // Add some resistance for better UX when not looping
               resistance: true,
               resistanceRatio: 0.85,
-              // Custom pagination styling
+              // Optimized event handlers
               on: {
-                init: function () {
-                  if (color) {
-                    // Apply color to active pagination bullet
-                    const activeBullet = swiperEl.querySelector(
-                      ".swiper-pagination-bullet-active"
-                    );
-                    if (activeBullet) {
-                      activeBullet.style.backgroundColor = color;
-                    }
-                  }
-                  // Call the slide change callback on init
-                  if (onSlideChange) {
-                    onSlideChange(this);
-                  }
+                init: (swiper) => {
+                  this.applySwiperStyling(swiperEl, color);
+                  if (onSlideChange) onSlideChange(swiper);
                 },
-                slideChange: function () {
-                  if (color) {
-                    // Apply color to active pagination bullet on slide change
-                    const activeBullet = swiperEl.querySelector(
-                      ".swiper-pagination-bullet-active"
-                    );
-                    if (activeBullet) {
-                      activeBullet.style.backgroundColor = color;
-                    }
-                  }
-                  // Call the slide change callback
-                  if (onSlideChange) {
-                    onSlideChange(this);
-                  }
+                slideChange: (swiper) => {
+                  this.applySwiperStyling(swiperEl, color);
+                  if (onSlideChange) onSlideChange(swiper);
+                },
+                lazyImageReady: (swiper, slideEl, imageEl) => {
+                  // Handle lazy loaded images
+                  imageEl.style.opacity = "1";
                 },
               },
             });
 
-            // Force update after initialization
-            setTimeout(() => {
-              if (
-                this.swipers[swiperId] &&
-                typeof this.swipers[swiperId].update === "function"
-              ) {
-                this.swipers[swiperId].update();
-              }
-              // Apply colors again after update
-              if (color) {
-                const nextBtn = swiperEl.querySelector(".swiper-button-next");
-                const prevBtn = swiperEl.querySelector(".swiper-button-prev");
-                const activeBullet = swiperEl.querySelector(
-                  ".swiper-pagination-bullet-active"
-                );
-                if (nextBtn) nextBtn.style.color = color;
-                if (prevBtn) prevBtn.style.color = color;
-                if (activeBullet) activeBullet.style.backgroundColor = color;
-              }
-            }, 50);
+            // Setup lazy loading for images in this swiper
+            this.setupSwiperLazyLoading(swiperEl);
+          } catch (error) {
+            console.error("Failed to initialize Swiper:", swiperId, error);
+            // Fallback: remove swiper classes to show as static gallery
+            swiperEl.classList.remove("swiper");
           }
-        }, 200); // Increased timeout for better reliability
+        });
       }
     },
 
-    initializeSwipers() {
-      // Initialize Swiper for any new carousels
-      document.querySelectorAll(".swiper").forEach((swiperEl) => {
-        const id = swiperEl.id;
-        if (!this.swipers[id]) {
-          this.initializeSwiper(id);
+    // Optimized styling application to reduce DOM queries
+    applySwiperStyling(swiperEl, color) {
+      if (!color) return;
+
+      requestAnimationFrame(() => {
+        const activeBullet = swiperEl.querySelector(
+          ".swiper-pagination-bullet-active"
+        );
+        if (activeBullet) {
+          activeBullet.style.backgroundColor = color;
         }
       });
+    },
+
+    // Setup lazy loading for swiper images
+    setupSwiperLazyLoading(swiperEl) {
+      if (!this.imageObserver) return;
+
+      const images = swiperEl.querySelectorAll("img[data-src]");
+      images.forEach((img) => {
+        this.imageObserver.observe(img);
+      });
+    },
+
+    initializeSwipers() {
+      // Initialize Swiper for any new carousels with performance optimization
+      requestAnimationFrame(() => {
+        const swipers = document.querySelectorAll(".swiper");
+
+        // Batch DOM operations for better performance
+        const swipersToInit = [];
+        swipers.forEach((swiperEl) => {
+          const id = swiperEl.id;
+          if (!this.swipers[id] && id) {
+            swipersToInit.push(id);
+          }
+        });
+
+        // Initialize in batches to avoid blocking the main thread
+        if (swipersToInit.length > 0) {
+          this.initializeSwiperBatch(swipersToInit, 0);
+        }
+      });
+    },
+
+    // Initialize swipers in batches to prevent blocking
+    initializeSwiperBatch(swiperIds, index) {
+      if (index >= swiperIds.length) return;
+
+      this.initializeSwiper(swiperIds[index]);
+
+      // Process next swiper in next frame
+      if (index + 1 < swiperIds.length) {
+        requestAnimationFrame(() => {
+          this.initializeSwiperBatch(swiperIds, index + 1);
+        });
+      }
+    },
+
+    // Cleanup method for performance
+    cleanup() {
+      // Clear intervals and observers
+      if (this.memoryMonitor) {
+        clearInterval(this.memoryMonitor);
+      }
+
+      if (this.imageObserver) {
+        this.imageObserver.disconnect();
+      }
+
+      // Destroy swiper instances
+      Object.values(this.swipers).forEach((swiper) => {
+        if (swiper && typeof swiper.destroy === "function") {
+          swiper.destroy(true, true);
+        }
+      });
+      this.swipers = {};
+
+      // Remove event listeners
+      document.removeEventListener("keydown", this.handleGlobalKeydown);
     },
 
     // Color mapping for progress bars
@@ -560,7 +940,7 @@ function checklistApp() {
           ) {
             // Unlock the mystery!
             this.unlockedMysteries.push(checkboxId);
-            this.saveState();
+            this.debouncedSaveState();
 
             // Announce the mystery unlock
             this.announceToScreenReader(
@@ -715,7 +1095,7 @@ function checklistApp() {
       });
 
       // Save the state
-      this.saveState();
+      this.debouncedSaveState();
 
       // Announce the completion
       this.announceToScreenReader(

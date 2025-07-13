@@ -577,14 +577,17 @@
                                       >
                                         <div class="mt-2 text-center">
                                           <img
-                                            :src="information.images[0].url"
+                                            :data-src="information.images[0].url"
                                             :alt="information.images[0].caption || information.title"
                                             class="max-w-full h-auto rounded-lg shadow-sm mx-auto"
+                                            loading="lazy"
                                             style="
                                               max-height: 300px;
                                               object-fit: cover;
+                                              opacity: 0;
+                                              transition: opacity 0.3s ease;
                                             "
-                                            @load="console.log('Single info image loaded:', information.images[0].url)"
+                                            @load="$event.target.style.opacity='1'; console.log('Single info image loaded:', information.images[0].url)"
                                             @error="console.error('Single info image failed to load:', information.images[0].url)"
                                           />
                                           <p
@@ -612,17 +615,21 @@
                                                   class="swiper-slide text-center"
                                                 >
                                                   <img
-                                                    :src="image.url"
+                                                    :data-src="image.url"
                                                     :alt="image.caption || information.title"
-                                                    class="h-auto rounded-lg shadow-sm mx-auto"
+                                                    class="h-auto rounded-lg shadow-sm mx-auto swiper-lazy"
+                                                    loading="lazy"
                                                     style="
                                                       max-height: 300px;
                                                       max-width: 100%;
                                                       object-fit: cover;
+                                                      opacity: 0;
+                                                      transition: opacity 0.3s ease;
                                                     "
-                                                    @load="console.log('Info image loaded:', image.url)"
+                                                    @load="$event.target.style.opacity='1'; console.log('Info image loaded:', image.url)"
                                                     @error="console.error('Info image failed to load:', image.url)"
                                                   />
+                                                  <div class="swiper-lazy-preloader"></div>
                                                 </div>
                                               </template>
                                             </div>
@@ -821,14 +828,17 @@
                                     >
                                       <div class="mt-2 text-center">
                                         <img
-                                          :src="checkbox.images[0].url"
+                                          :data-src="checkbox.images[0].url"
                                           :alt="checkbox.images[0].caption || checkbox.title"
                                           class="max-w-full h-auto rounded-lg shadow-sm mx-auto"
+                                          loading="lazy"
                                           style="
                                             max-height: 300px;
                                             object-fit: cover;
+                                            opacity: 0;
+                                            transition: opacity 0.3s ease;
                                           "
-                                          @load="console.log('Single image loaded:', checkbox.images[0].url)"
+                                          @load="$event.target.style.opacity='1'; console.log('Single image loaded:', checkbox.images[0].url)"
                                           @error="console.error('Single image failed to load:', checkbox.images[0].url)"
                                         />
                                         <p
@@ -856,17 +866,21 @@
                                                 class="swiper-slide text-center"
                                               >
                                                 <img
-                                                  :src="image.url"
+                                                  :data-src="image.url"
                                                   :alt="image.caption || checkbox.title"
-                                                  class="h-auto rounded-lg shadow-sm mx-auto"
+                                                  class="h-auto rounded-lg shadow-sm mx-auto swiper-lazy"
+                                                  loading="lazy"
                                                   style="
                                                     max-height: 300px;
                                                     max-width: 100%;
                                                     object-fit: cover;
+                                                    opacity: 0;
+                                                    transition: opacity 0.3s ease;
                                                   "
-                                                  @load="console.log('Image loaded:', image.url)"
+                                                  @load="$event.target.style.opacity='1'; console.log('Image loaded:', image.url)"
                                                   @error="console.error('Image failed to load:', image.url)"
                                                 />
+                                                <div class="swiper-lazy-preloader"></div>
                                               </div>
                                             </template>
                                           </div>
@@ -934,14 +948,17 @@
                                 >
                                   <div class="mt-2 text-center">
                                     <img
-                                      :src="information.images[0].url"
+                                      :data-src="information.images[0].url"
                                       :alt="information.images[0].caption || information.title"
                                       class="max-w-full h-auto rounded-lg shadow-sm mx-auto"
+                                      loading="lazy"
                                       style="
                                         max-height: 300px;
                                         object-fit: cover;
+                                        opacity: 0;
+                                        transition: opacity 0.3s ease;
                                       "
-                                      @load="console.log('Single info image loaded:', information.images[0].url)"
+                                      @load="$event.target.style.opacity='1'; console.log('Single info image loaded:', information.images[0].url)"
                                       @error="console.error('Single info image failed to load:', information.images[0].url)"
                                     />
                                     <p
@@ -969,17 +986,21 @@
                                             class="swiper-slide text-center"
                                           >
                                             <img
-                                              :src="image.url"
+                                              :data-src="image.url"
                                               :alt="image.caption || information.title"
-                                              class="h-auto rounded-lg shadow-sm mx-auto"
+                                              class="h-auto rounded-lg shadow-sm mx-auto swiper-lazy"
+                                              loading="lazy"
                                               style="
                                                 max-height: 300px;
                                                 max-width: 100%;
                                                 object-fit: cover;
+                                                opacity: 0;
+                                                transition: opacity 0.3s ease;
                                               "
-                                              @load="console.log('Info image loaded:', image.url)"
+                                              @load="$event.target.style.opacity='1'; console.log('Info image loaded:', image.url)"
                                               @error="console.error('Info image failed to load:', image.url)"
                                             />
+                                            <div class="swiper-lazy-preloader"></div>
                                           </div>
                                         </template>
                                       </div>
@@ -1154,14 +1175,17 @@
                                 >
                                   <div class="mt-2 text-center">
                                     <img
-                                      :src="checkbox.images[0].url"
+                                      :data-src="checkbox.images[0].url"
                                       :alt="checkbox.images[0].caption || checkbox.title"
                                       class="max-w-full h-auto rounded-lg shadow-sm mx-auto"
+                                      loading="lazy"
                                       style="
                                         max-height: 300px;
                                         object-fit: cover;
+                                        opacity: 0;
+                                        transition: opacity 0.3s ease;
                                       "
-                                      @load="console.log('Single image loaded:', checkbox.images[0].url)"
+                                      @load="$event.target.style.opacity='1'; console.log('Single image loaded:', checkbox.images[0].url)"
                                       @error="console.error('Single image failed to load:', checkbox.images[0].url)"
                                     />
                                     <p
@@ -1189,17 +1213,21 @@
                                             class="swiper-slide text-center"
                                           >
                                             <img
-                                              :src="image.url"
+                                              :data-src="image.url"
                                               :alt="image.caption || checkbox.title"
-                                              class="h-auto rounded-lg shadow-sm mx-auto"
+                                              class="h-auto rounded-lg shadow-sm mx-auto swiper-lazy"
+                                              loading="lazy"
                                               style="
                                                 max-height: 300px;
                                                 max-width: 100%;
                                                 object-fit: cover;
+                                                opacity: 0;
+                                                transition: opacity 0.3s ease;
                                               "
-                                              @load="console.log('Image loaded:', image.url)"
+                                              @load="$event.target.style.opacity='1'; console.log('Image loaded:', image.url)"
                                               @error="console.error('Image failed to load:', image.url)"
                                             />
+                                            <div class="swiper-lazy-preloader"></div>
                                           </div>
                                         </template>
                                       </div>
