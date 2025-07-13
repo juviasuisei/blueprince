@@ -15,50 +15,82 @@ const path = require("path");
 
 // Simple minification function for JavaScript
 function minifyJS(code) {
-  // First, preserve string contents by replacing them with placeholders
-  const strings = [];
+  // Advanced safe minification that preserves JavaScript syntax
+
+  // Step 1: Preserve all string literals and template literals
+  const preservedStrings = [];
   let stringIndex = 0;
 
-  // Match both single and double quoted strings, including escaped quotes
-  const stringRegex = /(["'])((?:\\.|(?!\1)[^\\])*?)\1/g;
-  const codeWithPlaceholders = code.replace(stringRegex, (match) => {
-    const placeholder = `__STRING_${stringIndex}__`;
-    strings[stringIndex] = match;
+  // Handle template literals first (more complex)
+  let result = code.replace(/`(?:[^`\\]|\\.)*`/g, (match) => {
+    const placeholder = `__TEMPLATE_${stringIndex}__`;
+    preservedStrings[stringIndex] = match;
     stringIndex++;
     return placeholder;
   });
 
-  // Apply minification to code outside of strings
-  let minified = codeWithPlaceholders
-    // Remove comments
+  // Handle regular string literals
+  result = result.replace(/(["'])((?:\\.|(?!\1)[^\\])*?)\1/g, (match) => {
+    const placeholder = `__STRING_${stringIndex}__`;
+    preservedStrings[stringIndex] = match;
+    stringIndex++;
+    return placeholder;
+  });
+
+  // Step 2: Preserve regex literals
+  const preservedRegex = [];
+  let regexIndex = 0;
+  result = result.replace(
+    /\/(?![*/])(?:[^\/\\\n]|\\.)+\/[gimuy]*/g,
+    (match, offset) => {
+      // Simple heuristic to avoid false positives (division operators)
+      const before = result.charAt(offset - 1);
+      if (/[a-zA-Z0-9_$)]/.test(before)) {
+        return match; // Likely a division operator
+      }
+      const placeholder = `__REGEX_${regexIndex}__`;
+      preservedRegex[regexIndex] = match;
+      regexIndex++;
+      return placeholder;
+    }
+  );
+
+  // Step 3: Safe minification operations
+  result = result
+    // Remove single-line comments (but preserve URLs and regex)
+    .replace(
+      /\/\/(?![^\n]*(?:https?:|__STRING_|__TEMPLATE_|__REGEX_)).*$/gm,
+      ""
+    )
+    // Remove multi-line comments
     .replace(/\/\*[\s\S]*?\*\//g, "")
-    .replace(/\/\/.*$/gm, "")
-    // Remove extra whitespace but preserve single spaces where needed
-    .replace(/\s+/g, " ")
+    // Normalize whitespace (but preserve line breaks for safety)
+    .replace(/[ \t]+/g, " ")
+    // Remove trailing whitespace
+    .replace(/[ \t]+$/gm, "")
+    // Remove leading whitespace
+    .replace(/^[ \t]+/gm, "")
+    // Remove empty lines (but keep some structure)
+    .replace(/\n\s*\n\s*\n/g, "\n\n")
+    // Safe space removal around specific operators (very conservative)
+    .replace(/\s*([{}();,])\s*/g, "$1")
+    .replace(/\s*:\s*(?![\/])/g, ":") // Avoid breaking URLs
+    // Clean up any multiple spaces that might remain
+    .replace(/  +/g, " ")
     .trim();
 
-  // More aggressive space removal for specific patterns
-  minified = minified
-    // Remove spaces around operators and punctuation
-    .replace(/\s*([{}();,:])\s*/g, "$1")
-    // Remove spaces around brackets
-    .replace(/\s*(\[|\])\s*/g, "$1")
-    // Remove spaces around assignment and comparison operators
-    .replace(/\s*(=|\+|-|\*|\/|%|==|!=|===|!==|<|>|<=|>=)\s*/g, "$1")
-    // But preserve spaces around keywords that need them
-    .replace(
-      /\b(function|return|var|let|const|if|else|for|while|do|switch|case|break|continue|try|catch|finally|throw|new|typeof|instanceof)\b(?=[a-zA-Z_$])/g,
-      "$1 "
-    )
-    .replace(
-      /\b(function|return|var|let|const|if|else|for|while|do|switch|case|break|continue|try|catch|finally|throw|new|typeof|instanceof) +/g,
-      "$1 "
-    );
-
-  // Restore original strings
-  return minified.replace(/__STRING_(\d+)__/g, (match, index) => {
-    return strings[parseInt(index)];
+  // Step 4: Restore preserved content
+  // Restore regex first
+  result = result.replace(/__REGEX_(\d+)__/g, (match, index) => {
+    return preservedRegex[parseInt(index)] || match;
   });
+
+  // Restore strings and templates
+  result = result.replace(/__(?:STRING|TEMPLATE)_(\d+)__/g, (match, index) => {
+    return preservedStrings[parseInt(index)] || match;
+  });
+
+  return result;
 }
 
 // Create production directory
