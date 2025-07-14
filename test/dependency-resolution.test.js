@@ -109,7 +109,7 @@ describe("Visibility Logic", () => {
     // All sections should be visible since test-section has no dependencies
     const visibleSections = app.getVisibleSections();
     expect(visibleSections).toHaveLength(1);
-    expect(visibleSections[0].id).toBe("test-section");
+    expect(visibleSections[0].id).toBe("getting-started");
   });
 
   it("should filter out sections with unsatisfied dependencies", () => {

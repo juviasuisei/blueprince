@@ -14,6 +14,11 @@ function checklistApp() {
     announcements: [],
     lastAnnouncementId: 0,
 
+    // Navigation state
+    showNavigation: false,
+    expandedNavSections: [],
+    currentActiveSection: null,
+
     async init() {
       await this.loadData();
       this.loadVersion();
@@ -22,6 +27,7 @@ function checklistApp() {
       this.setupPerformanceOptimizations();
       this.$nextTick(() => {
         this.initializeSwipers();
+        this.setupScrollSpy();
       });
     },
 
@@ -941,7 +947,98 @@ function checklistApp() {
       return colors[colorName?.toLowerCase()] || colors.blue; // Default to blue
     },
 
-    // Mystery functionality
+    // Navigation methods
+    toggleNavigation() {
+      this.showNavigation = !this.showNavigation;
+      this.announceToScreenReader(
+        `Navigation ${this.showNavigation ? "opened" : "closed"}`,
+        "polite"
+      );
+    },
+
+    toggleNavSection(sectionId) {
+      const index = this.expandedNavSections.indexOf(sectionId);
+      if (index > -1) {
+        this.expandedNavSections.splice(index, 1);
+      } else {
+        this.expandedNavSections.push(sectionId);
+      }
+    },
+
+    scrollToSection(sectionId) {
+      const element = document.getElementById(`section-${sectionId}`);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        this.currentActiveSection = sectionId;
+        this.announceToScreenReader(
+          `Navigated to ${this.getSectionTitle(sectionId)} section`,
+          "polite"
+        );
+      }
+    },
+
+    scrollToSubsection(subsectionId) {
+      const element = document.getElementById(`subsection-${subsectionId}`);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        this.announceToScreenReader(
+          `Navigated to ${this.getSubsectionTitle(subsectionId)} subsection`,
+          "polite"
+        );
+      }
+    },
+
+    getSectionTitle(sectionId) {
+      const section = this.data.sections?.find((s) => s.id === sectionId);
+      return section?.title || "Unknown Section";
+    },
+    getSubsectionTitle(subsectionId) {
+      for (const section of this.data.sections || []) {
+        const subsection = section.subsections?.find(
+          (s) => s.id === subsectionId
+        );
+        if (subsection) {
+          return subsection.title;
+        }
+      }
+      return "Unknown Subsection";
+    },
+
+    setupScrollSpy() {
+      // Set up intersection observer for scroll spy functionality
+      if ("IntersectionObserver" in window) {
+        this.scrollSpyObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const sectionId = entry.target.id.replace("section-", "");
+                this.currentActiveSection = sectionId;
+              }
+            });
+          },
+          {
+            rootMargin: "-20% 0px -70% 0px",
+            threshold: 0.1,
+          }
+        );
+
+        // Observe all section elements
+        this.$nextTick(() => {
+          const sections = document.querySelectorAll('[id^="section-"]');
+          sections.forEach((section) => {
+            this.scrollSpyObserver.observe(section);
+          });
+        });
+      }
+    },
+
+    // Mystery system methods
     hasMysteries(checkboxIds) {
       if (!checkboxIds || !this.data.checkboxes) return false;
       return checkboxIds.some((id) => {
@@ -953,9 +1050,58 @@ function checklistApp() {
             checkbox.dependencies,
             checkbox.optionalDependencies
           ) &&
-          !this.unlockedMysteries.includes(id) // Only show input if there are unrevealed mysteries
+          !this.unlockedMysteries.includes(id)
         );
       });
+    },
+
+    getMysteryType(checkboxIds) {
+      if (!checkboxIds || !this.data.sections) return "Mystery Discovery";
+
+      // Check if there are any unrevealed mysteries in this scope first
+      const hasUnrevealedMysteries = checkboxIds.some((checkboxId) => {
+        const checkbox = this.data.checkboxes[checkboxId];
+        return (
+          checkbox &&
+          checkbox.unlockKeyword &&
+          this.checkDependencies(
+            checkbox.dependencies,
+            checkbox.optionalDependencies
+          ) &&
+          !this.unlockedMysteries.includes(checkboxId)
+        );
+      });
+
+      if (!hasUnrevealedMysteries) return "Mystery Discovery";
+
+      // Find the section or subsection that contains these checkboxes
+      for (const section of this.data.sections) {
+        // Check direct section
+        if (
+          section.checkboxes &&
+          section.checkboxes.some((id) => checkboxIds.includes(id))
+        ) {
+          return section.mysteryType || "Mystery Discovery";
+        }
+
+        // Check subsections
+        if (section.subsections) {
+          for (const subsection of section.subsections) {
+            if (
+              subsection.checkboxes &&
+              subsection.checkboxes.some((id) => checkboxIds.includes(id))
+            ) {
+              return (
+                subsection.mysteryType ||
+                section.mysteryType ||
+                "Mystery Discovery"
+              );
+            }
+          }
+        }
+      }
+
+      return "Mystery Discovery";
     },
 
     tryUnlockMystery(input, checkboxIds) {
@@ -1014,7 +1160,7 @@ function checklistApp() {
         }
       }
 
-      // Announce failed attempt
+      // No mystery was unlocked, announce failure
       this.announceToScreenReader(
         "No matching mystery found for that keyword.",
         "polite"
@@ -1029,95 +1175,75 @@ function checklistApp() {
 
     getMysteryTitle(checkboxId) {
       const checkbox = this.data.checkboxes[checkboxId];
-      if (!checkbox) return "";
+      if (!checkbox || !checkbox.unlockKeyword) {
+        return checkbox?.title || "Unknown";
+      }
 
-      // For mysteries: show "???" if not unlocked, otherwise follow normal logic
-      if (checkbox.unlockKeyword && !this.isMysteryUnlocked(checkboxId)) {
+      if (!this.unlockedMysteries.includes(checkboxId)) {
         return "???";
       }
 
-      // For all checkboxes (including unlocked mysteries): show hint when unchecked, title when checked
       if (this.checkedItems.includes(checkboxId)) {
-        return checkbox.title;
-      } else {
-        return checkbox.hint || checkbox.title;
+        return checkbox.title || "Mystery Item";
       }
+
+      return checkbox.hint || checkbox.title || "Mystery Item";
     },
 
     shouldShowMysteryContent(checkboxId) {
       const checkbox = this.data.checkboxes[checkboxId];
-      if (!checkbox) return false;
-
-      // For mysteries: only show content if unlocked AND checked
-      if (checkbox.unlockKeyword) {
-        return (
-          this.isMysteryUnlocked(checkboxId) &&
-          this.checkedItems.includes(checkboxId)
-        );
+      if (!checkbox || !checkbox.unlockKeyword) {
+        return true; // Not a mystery, always show
       }
 
-      // For regular checkboxes: only show content when checked
-      return this.checkedItems.includes(checkboxId);
+      return (
+        this.unlockedMysteries.includes(checkboxId) &&
+        this.checkedItems.includes(checkboxId)
+      );
     },
 
-    getMysteryType(checkboxIds) {
-      if (!checkboxIds || !this.data.sections) return "Mystery Discovery";
-
-      // Check if there are any unrevealed mysteries in this scope first
-      const hasUnrevealedMysteries = checkboxIds.some((checkboxId) => {
-        const checkbox = this.data.checkboxes[checkboxId];
-        return (
-          checkbox &&
-          checkbox.unlockKeyword &&
-          this.checkDependencies(
-            checkbox.dependencies,
-            checkbox.optionalDependencies
-          ) &&
-          !this.unlockedMysteries.includes(checkboxId)
-        );
-      });
-
-      if (!hasUnrevealedMysteries) return "Mystery Discovery";
-
-      // Find which section/subsection contains these checkboxes
-      for (const section of this.data.sections) {
-        // Check if this is a section with direct checkboxes
-        if (
-          section.checkboxes &&
-          checkboxIds.every((id) => section.checkboxes.includes(id))
-        ) {
-          return section.mysteryType || "Mystery Discovery";
-        }
-
-        // Check subsections
-        if (section.subsections) {
-          for (const subsection of section.subsections) {
-            if (
-              subsection.checkboxes &&
-              checkboxIds.every((id) => subsection.checkboxes.includes(id))
-            ) {
-              return subsection.mysteryType || "Mystery Discovery";
-            }
-          }
-        }
-      }
-
-      return "Mystery Discovery"; // Fallback
-    },
-
+    // Administrative functions
     resetAllProgress() {
-      // Clear all progress
+      // Reset all state
       this.checkedItems = [];
-      this.unlockedMysteries = [];
       this.expandedSections = [];
       this.expandedSubsections = [];
+      this.unlockedMysteries = [];
 
-      // Clear localStorage
-      localStorage.removeItem("checklist-state");
+      // Remove the state from localStorage completely
+      try {
+        localStorage.removeItem("checklist-state");
+      } catch (error) {
+        console.error("Failed to remove state from localStorage:", error);
+      }
 
       // Announce the reset
       this.announceToScreenReader(
-        "All progress has been reset. All items are now uncompleted and sections are collapsed.",
+        "All progress has been reset. All items are now unchecked and all sections collapsed.",
+        "assertive"
+      );
+
+      // Reinitialize swipers after reset
+      this.$nextTick(() => {
+        this.initializeSwipers();
+      });
+
+      console.log("All progress has been reset");
+    },
+
+    resetProgress() {
+      // Reset all state
+      this.checkedItems = [];
+      this.expandedSections = [];
+      this.expandedSubsections = [];
+      this.unlockedMysteries = [];
+
+      // Save the reset state
+      this.debouncedSaveState();
+
+      // Announce the reset
+      this.announceToScreenReader(
+        "All progress has been reset. All items are now unchecked and all sections collapsed.",
         "assertive"
       );
 
@@ -1171,4 +1297,14 @@ function checklistApp() {
       console.log("All progress has been completed - all secrets revealed!");
     },
   };
+}
+
+// Initialize the app when the DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  window.app = checklistApp();
+});
+
+// Export for testing
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = checklistApp;
 }
