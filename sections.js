@@ -217,7 +217,7 @@ window.sectionsData = [
     subsections: [
       {
         id: "person01_herbie",
-        title: "Herbert S. Sinclair",
+        title: "Baron Herbert S. Sinclair",
         color: "blue",
         dependencies: [],
         information: ["person01_herbie_001"],

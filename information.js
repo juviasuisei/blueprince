@@ -431,18 +431,18 @@ window.informationData = {
   },
   person01_herbie_001: {
     title: "Relationship to Us",
-    description: "Herbert S. Sinclair is our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
+    description: "Baron Herbert S. Sinclair was our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
     dependencies: [],
     images: [
       {
         url: "images/dir005_person.jpeg",
-        caption: "portrait of Herbert S. Sinclair"
+        caption: "portrait of Baron Herbert S. Sinclair"
       },
     ]
   },
   person02_baroness_001: {
     title: "Relationship to Us",
-    description: "Baroness Auravei Sinclair is our great-grandmother.",
+    description: "Baroness Auravei Sinclair was our great-grandmother.",
     dependencies: ["dir047_photo_identify"],
     images: [
       {
