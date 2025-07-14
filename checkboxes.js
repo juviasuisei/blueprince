@@ -19,6 +19,13 @@ window.checkboxesData = {
     unlockKeyword: "Parlor",
     dependencies: [],
   },
+  obj02_009_closet: {
+    title: "Closet",
+    hint: "Draft the Closet",
+    description: "Room 009",
+    unlockKeyword: "Closet",
+    dependencies: [],
+  },
   obj02_012_storeroom: {
     title: "Storeroom",
     hint: "Draft the Storeroom",
@@ -107,6 +114,22 @@ window.checkboxesData = {
     description: "Room 080",
     unlockKeyword: "Chapel",
     dependencies: [],
+  },
+  obj03_r4f3: {
+    title: "Rank 4 • File 3: T",
+    hint: "Rank 4 • File 3: ???",
+    description: "S[T]AGE",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r4f3_L.jpeg",
+        caption: "stage"
+      },
+      {
+        url: "images/obj03_r4f3_R.jpeg",
+        caption: "sage"
+      },
+    ],
   },
   obj03_r4f4: {
     title: "Rank 4 • File 4: E",
@@ -308,6 +331,12 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_009_closet: {
+    title: "Closet: None",
+    hint: "Closet: ???",
+    description: "",
+    dependencies: [],
+  },
   obj04_012_storeroom: {
     title: "Storeroom: White Pawn",
     hint: "Storeroom: ???",
@@ -372,6 +401,45 @@ window.checkboxesData = {
       {
         url: "images/item01_sledgehammer.jpeg",
         caption: "sledge hammer"
+      },
+    ],
+  },
+  obj05_01_sledgehammer: {
+    title: "Sledge Hammer",
+    hint: "Find a Sledge Hammer",
+    description: "",
+    unlockKeyword: ["Sledge Hammer", "Sledgehammer"],
+    dependencies: [],
+    images: [
+      {
+        url: "images/item01_sledgehammer.jpeg",
+        caption: "sledge hammer"
+      },
+    ],
+  },
+  obj05_02_coinpurse: {
+    title: "Coin Purse",
+    hint: "Find a Coin Purse",
+    description: "",
+    unlockKeyword: "Coin Purse",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item02_coinpurse.jpeg",
+        caption: "coin purse"
+      },
+    ],
+  },
+  obj05_03_windupkey: {
+    title: "Wind-Up Key",
+    hint: "Find a Wind-Up Key",
+    description: "",
+    unlockKeyword: ["Wind-Up Key", "Windup Key"],
+    dependencies: [],
+    images: [
+      {
+        url: "images/item03_windupkey.jpeg",
+        caption: "wind-up key"
       },
     ],
   },
@@ -494,6 +562,12 @@ window.checkboxesData = {
     ],
   },
   dir005_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir009_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

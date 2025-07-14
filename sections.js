@@ -14,6 +14,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r4f3",
       "obj03_r4f4",
       "obj03_r4f5",
       "obj03_r3f3",
@@ -37,6 +38,7 @@ window.sectionsData = [
     checkboxes: [
       "obj02_003_spareroom",
       "obj02_005_parlor",
+      "obj02_009_closet",
       "obj02_012_storeroom",
       "obj02_017_den",
       "obj02_021_pantry",
@@ -59,7 +61,7 @@ window.sectionsData = [
     mysteryType: "item",
     dependencies: [],
     information: [],
-    checkboxes: ["obj05_01_sledgehammer"]
+    checkboxes: ["obj05_01_sledgehammer", "obj05_02_coinpurse", "obj05_03_windupkey"]
   },
   {
     id: "obj04",
@@ -71,6 +73,7 @@ window.sectionsData = [
       "obj04_002_entrance",
       "obj04_003_spareroom",
       "obj04_005_parlor",
+      "obj04_009_closet",
       "obj04_012_storeroom",
       "obj04_017_den",
       "obj04_021_pantry",
@@ -107,6 +110,14 @@ window.sectionsData = [
         dependencies: ["obj02_005_parlor"],
         information: ["dir005_description", "dir005_info", "dir005_chess"],
         checkboxes: ["dir005_item_windup", "dir005_note_letter", "dir005_search"],
+      },
+      {
+        id: "dir009",
+        title: "009: Closet",
+        color: "blue",
+        dependencies: ["obj02_009_closet"],
+        information: ["dir009_description", "dir009_info"],
+        checkboxes: ["dir009_search"],
       },
       {
         id: "dir012",
@@ -219,16 +230,7 @@ window.sectionsData = [
     title: "Items",
     color: "blue",
     dependencies: [],
-    subsections: [
-      {
-        id: "item01_sledgehammer",
-        title: "Sledge Hammer",
-        color: "blue",
-        dependencies: [],
-        information: ["item01_sledgehammer"],
-        checkboxes: [],
-      },
-    ],
+    information: ["item01_sledgehammer", "item02_coinpurse", "item03_windupkey"],
   },
   {
     id: "info_people",

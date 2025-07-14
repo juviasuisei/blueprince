@@ -53,6 +53,22 @@ window.informationData = {
       },
     ],
   },
+  dir009_description: {
+    title: "Description",
+    description: "A very modest recessed space used for storage. This particular closet is favored by the junior memebrs of the staff, who utilize it to stash away assorted articles and knicknacks whose proper place in the estate is yet unknown to them.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir009_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir009_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
   dir012_description: {
     title: "Description",
     description: "A dedicated storage space filled from end to end with a surplus of chairs, carpets, paintings, and a handful of other things that had at one time been in vogue and on display elsewhere in the house.",
@@ -283,6 +299,28 @@ window.informationData = {
       {
         url: "images/item01_sledgehammer.jpeg",
         caption: "sledge hammer"
+      },
+    ],
+  },
+  item02_coinpurse: {
+    title: "A Small Coin Purse",
+    description: "Each time you collect 3 coins, earn an additional 1 coin in interest.",
+    dependencies: ["obj05_02_coinpurse"],
+    images: [
+      {
+        url: "images/item02_coinpurse.jpeg",
+        caption: "coin purse"
+      },
+    ],
+  },
+  item03_windupkey: {
+    title: "A Rather Curious Wind-Up Key",
+    description: "A component of the Parlor Game.",
+    dependencies: ["obj05_03_windupkey"],
+    images: [
+      {
+        url: "images/item03_windupkey.jpeg",
+        caption: "wind-up key"
       },
     ],
   },
