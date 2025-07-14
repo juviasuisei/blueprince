@@ -109,7 +109,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_005_parlor"],
         information: ["dir005_description", "dir005_info", "dir005_chess"],
-        checkboxes: ["item03_windupkey", "dir005_note_letter", "dir005_search"],
+        checkboxes: ["obj05_03_windupkey", "dir005_note_letter", "dir005_search"],
       },
       {
         id: "dir009",

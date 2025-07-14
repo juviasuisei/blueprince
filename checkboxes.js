@@ -434,8 +434,7 @@ window.checkboxesData = {
     title: "Wind-Up Key",
     hint: "Find a Wind-Up Key",
     description: "",
-    unlockKeyword: ["Wind-Up Key", "Windup Key"],
-    dependencies: [],
+    dependencies: ["obj02_005_parlor"],
     images: [
       {
         url: "images/item03_windupkey.jpeg",
