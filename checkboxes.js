@@ -33,6 +33,13 @@ window.checkboxesData = {
     unlockKeyword: "Storeroom",
     dependencies: [],
   },
+  obj02_013_nook: {
+    title: "Nook",
+    hint: "Draft the Nook",
+    description: "Room 013",
+    unlockKeyword: "Nook",
+    dependencies: [],
+  },
   obj02_017_den: {
     title: "Den",
     hint: "Draft the Den",
@@ -114,6 +121,22 @@ window.checkboxesData = {
     description: "Room 080",
     unlockKeyword: "Chapel",
     dependencies: [],
+  },
+  obj03_r4f3: {
+    title: "Rank 5 • File 5: T",
+    hint: "Rank 5 • File 5: ???",
+    description: "TEN[T]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r5f5_L.jpeg",
+        caption: "tent"
+      },
+      {
+        url: "images/obj03_r5f5_R.jpeg",
+        caption: "ten"
+      },
+    ],
   },
   obj03_r4f3: {
     title: "Rank 4 • File 3: T",
@@ -349,6 +372,18 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_013_nook: {
+    title: "Nook: White Rook",
+    hint: "Nook: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_013_nook.jpeg",
+        caption: "white rook"
+      },
+    ],
+  },
   obj04_017_den: {
     title: "Den: White Pawn",
     hint: "Den: ???",
@@ -388,19 +423,6 @@ window.checkboxesData = {
       {
         url: "images/obj04_047_bedroom.jpeg",
         caption: "white pawn"
-      },
-    ],
-  },
-  obj05_01_sledgehammer: {
-    title: "Sledge Hammer",
-    hint: "Find a Sledge Hammer",
-    description: "",
-    unlockKeyword: ["Sledge Hammer", "Sledgehammer"],
-    dependencies: [],
-    images: [
-      {
-        url: "images/item01_sledgehammer.jpeg",
-        caption: "sledge hammer"
       },
     ],
   },
@@ -577,6 +599,24 @@ window.checkboxesData = {
     hint: "What is This Drawing?",
     description: "This is from the children's book Swimbird by our mother.",
     dependencies: ["dir012_search"],
+  },
+  dir013_note: {
+    title: "Black Note: Journal",
+    hint: "Black Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note015.jpeg",
+        caption: "journal tip"
+      },
+    ],
+  },
+  dir013_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
   },
   dir017_search: {
     title: "Search Complete: None",

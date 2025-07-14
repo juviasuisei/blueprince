@@ -14,6 +14,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r5f5",
       "obj03_r4f3",
       "obj03_r4f4",
       "obj03_r4f5",
@@ -40,6 +41,7 @@ window.sectionsData = [
       "obj02_005_parlor",
       "obj02_009_closet",
       "obj02_012_storeroom",
+      "obj02_013_nook",
       "obj02_017_den",
       "obj02_021_pantry",
       "obj02_034_security",
@@ -75,6 +77,7 @@ window.sectionsData = [
       "obj04_005_parlor",
       "obj04_009_closet",
       "obj04_012_storeroom",
+      "obj04_013_nook",
       "obj04_017_den",
       "obj04_021_pantry",
       "obj04_034_security",
@@ -126,6 +129,14 @@ window.sectionsData = [
         dependencies: ["obj02_012_storeroom"],
         information: ["dir012_description", "dir012_info", "dir012_chess"],
         checkboxes: ["dir012_search", "dir012_drawing_identify"],
+      },
+      {
+        id: "dir013",
+        title: "013: Nook",
+        color: "blue",
+        dependencies: ["obj02_013_nook"],
+        information: ["dir013_description", "dir013_chess"],
+        checkboxes: ["dir013_note", "dir013_search"],
       },
       {
         id: "dir017",
@@ -308,6 +319,7 @@ window.sectionsData = [
           "note001", // opening cinematic
           "note003", // 002 - entrance hall
           "note005", // 012 - storeroom
+          "note013", // 013 - nook
           "note007", // 021 - pantry
           "note008", // 034 - security
           "note009", // 034 - security

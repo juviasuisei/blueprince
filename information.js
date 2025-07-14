@@ -96,6 +96,28 @@ window.informationData = {
       },
     ],
   },
+  dir013_description: {
+    title: "Description",
+    description: "A snug corner reading room which serves as a quiet, private place for guests to spend a few hours of their afternoon away from the hustle and bustle of the staff.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir013_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir013_chess: {
+    title: "Chess Piece",
+    description: "White Rook",
+    dependencies: ["obj04_013_nook"],
+    images: [
+      {
+        url: "images/obj04_013_nook.jpeg",
+        caption: "white rook"
+      },
+    ],
+  },
   dir017_description: {
     title: "Description",
     description: "A more traditional family room, warm and inviting. So comfortable, one might assume that the countless clocks surrounding the sofas are placed in a futile attempt to avoid inevitably wasting the entire day here.",
@@ -359,7 +381,7 @@ window.informationData = {
     ],
   },
   note003: {
-    title: "Black Note: SEARCHING THE ESTATE CAN BE EXHAUSTING",
+    title: "Black Note: Exhaustion",
     description: "",
     dependencies: ["dir002_note_black"],
     images: [
@@ -370,7 +392,7 @@ window.informationData = {
     ],
   },
   note004: {
-    title: "Red Note: Hallway",
+    title: "Red Note: West Wing Locks",
     description: "",
     dependencies: ["dir055_note_red"],
     images: [
@@ -492,6 +514,17 @@ window.informationData = {
       {
         url: "images/note014.jpeg",
         caption: "red typed note"
+      },
+    ],
+  },
+  note015: {
+    title: "Black Note: Journal",
+    description: "",
+    dependencies: ["dir013_note"],
+    images: [
+      {
+        url: "images/note015.jpeg",
+        caption: "journal tip"
       },
     ],
   },
