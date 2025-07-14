@@ -586,18 +586,6 @@ window.checkboxesData = {
       },
     ],
   },
-  dir071_note_notice: {
-    title: "Note: Staff Notice",
-    hint: "White Note: ???",
-    description: "",
-    dependencies: [],
-    images: [
-      {
-        url: "images/note009.jpeg",
-        caption: "terminal explainer"
-      },
-    ],
-  },
   dir071_note_red: {
     title: "Red Note: Commissary Closure",
     hint: "Red Note: ???",

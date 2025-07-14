@@ -438,8 +438,7 @@ window.informationData = {
   person03_babbage_001: {
     title: "Occupation",
     description: "Mrs. Babbage is the House Manager for the Mount Holly Estate.",
-    optionalDependencies: true,
-    dependencies: ["dir034_note_notice", "dir071_note_notice"],
+    dependencies: ["dir034_note_notice"],
   },
   date001: {
     title: "Thursday, 18 March 1993",
