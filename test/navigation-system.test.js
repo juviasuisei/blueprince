@@ -115,6 +115,8 @@ describe("Navigation System", () => {
       const app = checklistApp();
       app.data = global.window.checklistData;
       app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
 
       const mockElement = {
         scrollIntoView: vi.fn(),
@@ -138,10 +140,13 @@ describe("Navigation System", () => {
       );
     });
 
-    it("should scroll to subsection when subsection navigation is clicked", () => {
+    it("should auto-expand collapsed section before scrolling", () => {
       const app = checklistApp();
       app.data = global.window.checklistData;
       app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
+      app.expandedSections = []; // Section is initially collapsed
 
       const mockElement = {
         scrollIntoView: vi.fn(),
@@ -149,24 +154,139 @@ describe("Navigation System", () => {
 
       global.document.getElementById.mockReturnValue(mockElement);
 
-      app.scrollToSubsection("test-subsection");
+      app.scrollToSection("getting-started");
+
+      // Should auto-expand the section
+      expect(app.expandedSections).toContain("getting-started");
+      expect(app.debouncedSaveState).toHaveBeenCalled();
+      expect(app.$nextTick).toHaveBeenCalled();
+    });
+
+    it("should not duplicate section in expandedSections if already expanded", () => {
+      const app = checklistApp();
+      app.data = global.window.checklistData;
+      app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
+      app.expandedSections = ["getting-started"]; // Section is already expanded
+
+      const mockElement = {
+        scrollIntoView: vi.fn(),
+      };
+
+      global.document.getElementById.mockReturnValue(mockElement);
+
+      app.scrollToSection("getting-started");
+
+      // Should not duplicate the section
+      expect(
+        app.expandedSections.filter((id) => id === "getting-started")
+      ).toHaveLength(1);
+    });
+
+    it("should scroll to subsection when subsection navigation is clicked", () => {
+      const app = checklistApp();
+      app.data = global.window.checklistData;
+      app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
+
+      const mockElement = {
+        scrollIntoView: vi.fn(),
+      };
+
+      global.document.getElementById.mockReturnValue(mockElement);
+
+      app.scrollToSubsection("basics");
 
       expect(global.document.getElementById).toHaveBeenCalledWith(
-        "subsection-test-subsection"
+        "subsection-basics"
       );
       expect(mockElement.scrollIntoView).toHaveBeenCalledWith({
         behavior: "smooth",
         block: "start",
       });
       expect(app.announceToScreenReader).toHaveBeenCalledWith(
-        "Navigated to Unknown Subsection subsection",
+        "Navigated to The Basics subsection",
         "polite"
       );
+    });
+
+    it("should auto-expand parent section and subsection before scrolling to subsection", () => {
+      const app = checklistApp();
+      app.data = global.window.checklistData;
+      app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
+      app.expandedSections = []; // Parent section is collapsed
+      app.expandedSubsections = []; // Subsection is collapsed
+
+      const mockElement = {
+        scrollIntoView: vi.fn(),
+      };
+
+      global.document.getElementById.mockReturnValue(mockElement);
+
+      app.scrollToSubsection("basics");
+
+      // Should auto-expand both parent section and subsection
+      expect(app.expandedSections).toContain("getting-started");
+      expect(app.expandedSubsections).toContain("basics");
+      expect(app.debouncedSaveState).toHaveBeenCalled();
+      expect(app.$nextTick).toHaveBeenCalled();
+    });
+
+    it("should handle subsection with no parent section gracefully", () => {
+      const app = checklistApp();
+      app.data = { sections: [] }; // Empty sections
+      app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
+
+      const mockElement = {
+        scrollIntoView: vi.fn(),
+      };
+
+      global.document.getElementById.mockReturnValue(mockElement);
+
+      // Should not throw error
+      expect(() =>
+        app.scrollToSubsection("non-existent-subsection")
+      ).not.toThrow();
+      expect(app.debouncedSaveState).toHaveBeenCalled();
+    });
+
+    it("should not duplicate subsection in expandedSubsections if already expanded", () => {
+      const app = checklistApp();
+      app.data = global.window.checklistData;
+      app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
+      app.expandedSections = ["getting-started"]; // Parent section already expanded
+      app.expandedSubsections = ["basics"]; // Subsection already expanded
+
+      const mockElement = {
+        scrollIntoView: vi.fn(),
+      };
+
+      global.document.getElementById.mockReturnValue(mockElement);
+
+      app.scrollToSubsection("basics");
+
+      // Should not duplicate entries
+      expect(
+        app.expandedSections.filter((id) => id === "getting-started")
+      ).toHaveLength(1);
+      expect(
+        app.expandedSubsections.filter((id) => id === "basics")
+      ).toHaveLength(1);
     });
 
     it("should handle missing section element gracefully", () => {
       const app = checklistApp();
       app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
 
       global.document.getElementById.mockReturnValue(null);
 
@@ -178,6 +298,8 @@ describe("Navigation System", () => {
     it("should handle missing subsection element gracefully", () => {
       const app = checklistApp();
       app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
 
       global.document.getElementById.mockReturnValue(null);
 
@@ -389,6 +511,8 @@ describe("Navigation System", () => {
       const app = checklistApp();
       app.data = global.window.checklistData;
       app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
 
       const mockElement = { scrollIntoView: vi.fn() };
       global.document = {
@@ -407,6 +531,8 @@ describe("Navigation System", () => {
       const app = checklistApp();
       app.data = global.window.checklistData;
       app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
+      app.debouncedSaveState = vi.fn();
 
       const mockElement = { scrollIntoView: vi.fn() };
       global.document = {
