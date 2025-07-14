@@ -73,12 +73,35 @@ window.checkboxesData = {
     unlockKeyword: "Courtyard",
     dependencies: [],
   },
+  obj02_071_courtyard: {
+    title: "Commissary",
+    hint: "Draft the Commissary",
+    description: "Room 071",
+    unlockKeyword: "Commissary",
+    dependencies: [],
+  },
   obj02_080_chapel: {
     title: "Chapel",
     hint: "Draft the Chapel",
     description: "Room 080",
     unlockKeyword: "Chapel",
     dependencies: [],
+  },
+  obj03_r3f3: {
+    title: "Rank 3 • File 3: A",
+    hint: "Rank 3 • File 3: ???",
+    description: "RO[A]D",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r3f3_L.jpeg",
+        caption: "road"
+      },
+      {
+        url: "images/obj03_r3f3_R.jpeg",
+        caption: "rod"
+      },
+    ],
   },
   obj03_r3f5: {
     title: "Rank 3 • File 5: K",
@@ -528,7 +551,7 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir055_note_red: {
-    title: "Red Note: Hallway",
+    title: "Red Note: West Wing Locks",
     hint: "Red Note: ???",
     description: "",
     dependencies: [],
@@ -546,6 +569,48 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir065_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir071_note_notice: {
+    title: "Note: Staff Notice",
+    hint: "White Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note009.jpeg",
+        caption: "terminal explainer"
+      },
+    ],
+  },
+  dir071_note_red: {
+    title: "Flyer: Maid's Day Sale",
+    hint: "Flyer: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note013.jpeg",
+        caption: "commissary sale flyer"
+      },
+    ],
+  },
+  dir071_note_red: {
+    title: "Red Note: Commissary Closure",
+    hint: "Red Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note014.jpeg",
+        caption: "a red typed note"
+      },
+    ],
+  },
+  dir071_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

@@ -204,6 +204,17 @@ window.informationData = {
       },
     ],
   },
+  dir071_description: {
+    title: "Description",
+    description: "The staff commissary is always stocked with household goods and supplies at a reasonable cost. This provides the servants of the estate an invaluable service, especially to the live-in staff who may only expect to leave the property once or twice a month.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir071_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir080_description: {
     title: "Description",
     description: "A private sacristy, as ornate as the most lavish rooms of the estate, is watched over by eight Ajeran Angels depicted in stained glass. This room was more of a tribute to your granduncle's vanity than it was to his faith.",
@@ -338,7 +349,8 @@ window.informationData = {
   note009: {
     title: "Note: Terminal Staff Notice",
     description: "",
-    dependencies: ["dir034_note_notice"],
+    optionalDependencies: true,
+    dependencies: ["dir034_note_notice", "dir071_note_notice"],
     images: [
       {
         url: "images/note009.jpeg",
@@ -379,8 +391,30 @@ window.informationData = {
       },
     ],
   },
+  note013: {
+    title: "Note: Maid's Day Sale",
+    description: "",
+    dependencies: ["dir071_note_flyer"],
+    images: [
+      {
+        url: "images/note013.jpeg",
+        caption: "commissary sale flyer"
+      },
+    ],
+  },
+  note014: {
+    title: "Red Note: Commissary Closure",
+    description: "",
+    dependencies: ["dir047_note_postcard"],
+    images: [
+      {
+        url: "images/note014.jpeg",
+        caption: "red typed note"
+      },
+    ],
+  },
   person01_herbie_001: {
-    title: "Initial Information",
+    title: "Relationship to Us",
     description: "Herbert S. Sinclair is our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
     dependencies: [],
     images: [
@@ -391,15 +425,21 @@ window.informationData = {
     ]
   },
   person02_baroness_001: {
-    title: "Initial Information",
+    title: "Relationship to Us",
     description: "Baroness Auravei Sinclair is our great-grandmother.",
-    dependencies: [],
+    dependencies: ["dir047_photo_identify"],
     images: [
       {
         url: "images/dir047_person.jpeg",
         caption: "portrait of Baroness Auravei Sinclair"
       },
     ]
+  },
+  person03_babbage_001: {
+    title: "Occupation",
+    description: "Mrs. Babbage is the House Manager for the Mount Holly Estate.",
+    optionalDependencies: true,
+    dependencies: ["dir034_note_notice", "dir071_note_notice"],
   },
   date001: {
     title: "Thursday, 18 March 1993",

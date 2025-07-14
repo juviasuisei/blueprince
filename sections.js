@@ -14,6 +14,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r3f3",
       "obj03_r3f5",
       "obj03_r2f3",
       "obj03_r2f4",
@@ -41,6 +42,7 @@ window.sectionsData = [
       "obj02_047_bedroom",
       "obj02_055_hallway",
       "obj02_065_courtyard",
+      "obj02_071_commissary",
       "obj02_080_chapel"
     ]
   },
@@ -164,6 +166,14 @@ window.sectionsData = [
         checkboxes: ["dir065_search"],
       },
       {
+        id: "dir071",
+        title: "071: Commissary",
+        color: "green",
+        dependencies: ["obj02_071_commissary"],
+        information: ["dir071_description"],
+        checkboxes: ["dir071_note_flyer", "dir071_note_notice", "dir071_note_red", "dir071_search"],
+      },
+      {
         id: "dir080",
         title: "080: Chapel",
         color: "red",
@@ -211,6 +221,15 @@ window.sectionsData = [
         information: ["person02_baroness_001"],
         checkboxes: [],
       },
+      {
+        id: "person03_babbage",
+        title: "House Manager Mrs. Babbage",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir034_note_notice", "dir071_note_notice"],
+        information: ["person03_babbage_001"],
+        checkboxes: [],
+      },
     ],
   },
   {
@@ -232,14 +251,30 @@ window.sectionsData = [
         title: "Letters",
         color: "blue",
         dependencies: ["dir002_note_letter1"],
-        information: ["note002", "note006"],
+        information: [
+          "note002", // 002 - entrance hall
+          "note006", // 005 - parlor
+        ],
       },
       {
         id: "info_notes_cards",
         title: "Note Cards",
         color: "blue",
         dependencies: [],
-        information: ["note001", "note003", "note005", "note007", "note008", "note009", "note010", "note011", "note012", "note004"],
+        information: [
+          "note001", // opening cinematic
+          "note003", // 002 - entrance hall
+          "note005", // 012 - storeroom
+          "note007", // 021 - pantry
+          "note008", // 034 - security
+          "note009", // 034 - security
+          "note010", // 034 - security
+          "note011", // 034 - security
+          "note012", // 047 - bedroom
+          "note013", // 071 - commissary
+          "note014", // 071 - commissary
+          "note004", // 055 - hallway
+        ],
       },
     ],
   },
