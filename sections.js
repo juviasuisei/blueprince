@@ -319,7 +319,7 @@ window.sectionsData = [
           "note001", // opening cinematic
           "note003", // 002 - entrance hall
           "note005", // 012 - storeroom
-          "note013", // 013 - nook
+          "note015", // 013 - nook
           "note007", // 021 - pantry
           "note008", // 034 - security
           "note009", // 034 - security
