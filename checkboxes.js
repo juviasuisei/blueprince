@@ -533,18 +533,6 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
-  dir005_item_windup: {
-    title: "Item: A Rather Curious Wind-Up Key",
-    hint: "Item: ???",
-    description: "A component of the Parlor Game.",
-    dependencies: [],
-    images: [
-      {
-        url: "images/dir005_item_windup.jpeg",
-        caption: "used to open 1 box in the parlor game"
-      },
-    ],
-  },
   dir005_note_letter: {
     title: "Letter: Parlor Game Rules",
     hint: "Letter: ???",
