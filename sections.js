@@ -14,6 +14,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r4f4",
       "obj03_r4f5",
       "obj03_r3f3",
       "obj03_r3f5",
@@ -44,6 +45,7 @@ window.sectionsData = [
       "obj02_046_room46",
       "obj02_047_bedroom",
       "obj02_055_hallway",
+      "obj02_058_corridor",
       "obj02_065_courtyard",
       "obj02_071_commissary",
       "obj02_079_lavatory",
@@ -169,6 +171,14 @@ window.sectionsData = [
         dependencies: ["obj02_055_hallway"],
         information: ["dir055_description"],
         checkboxes: ["dir055_note_red", "dir055_search"],
+      },
+      {
+        id: "dir058",
+        title: "058: Corridor",
+        color: "orange",
+        dependencies: ["obj02_058_corridor"],
+        information: ["dir058_description"],
+        checkboxes: ["dir058_search"],
       },
       {
         id: "dir065",

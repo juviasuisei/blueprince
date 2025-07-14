@@ -210,6 +210,17 @@ window.informationData = {
       },
     ],
   },
+  dir058_description: {
+    title: "Description",
+    description: "A long hall with two doors at either end that had been one of your granduncle's most frequently traveled rooms. Consequently, he has left strict instructions with the household staff that the doors of this corridor should never under any circumstance be locked.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir058_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir065_description: {
     title: "Description",
     description: "A charming spot granting guests a bit of fresh air and open skies within the privacy of the manor walls.",

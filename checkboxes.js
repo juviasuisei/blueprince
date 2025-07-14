@@ -73,6 +73,13 @@ window.checkboxesData = {
     unlockKeyword: "Hallway",
     dependencies: [],
   },
+  obj02_058_hallway: {
+    title: "Corridor",
+    hint: "Draft the Corridor",
+    description: "Room 058",
+    unlockKeyword: "Corridor",
+    dependencies: [],
+  },
   obj02_065_courtyard: {
     title: "Courtyard",
     hint: "Draft the Courtyard",
@@ -100,6 +107,22 @@ window.checkboxesData = {
     description: "Room 080",
     unlockKeyword: "Chapel",
     dependencies: [],
+  },
+  obj03_r4f4: {
+    title: "Rank 4 • File 4: E",
+    hint: "Rank 4 • File 4: ???",
+    description: "FIR[E]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r4f4_L.jpeg",
+        caption: "fire"
+      },
+      {
+        url: "images/obj03_r4f4_R.jpeg",
+        caption: "fir"
+      },
+    ],
   },
   obj03_r4f5: {
     title: "Rank 4 • File 5: S",
@@ -627,6 +650,12 @@ window.checkboxesData = {
     ],
   },
   dir055_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir058_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
