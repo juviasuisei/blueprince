@@ -61,6 +61,13 @@ window.checkboxesData = {
     unlockKeyword: "Security",
     dependencies: [],
   },
+  obj02_042_observatory: {
+    title: "Observatory",
+    hint: "Draft Observatory",
+    description: "Room 042",
+    unlockKeyword: "Observatory",
+    dependencies: [],
+  },
   obj02_045_antechamber: {
     title: "Antechamber",
     hint: "Enter the Antechamber",
@@ -122,7 +129,23 @@ window.checkboxesData = {
     unlockKeyword: "Chapel",
     dependencies: [],
   },
-  obj03_r4f3: {
+  obj03_r5f4: {
+    title: "Rank 5 • File 4: H",
+    hint: "Rank 5 • File 4: ???",
+    description: "C[H]ART",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r5f4_L.jpeg",
+        caption: "chart"
+      },
+      {
+        url: "images/obj03_r5f4_R.jpeg",
+        caption: "cart"
+      },
+    ],
+  },
+  obj03_r5f5: {
     title: "Rank 5 • File 5: T",
     hint: "Rank 5 • File 5: ???",
     description: "TEN[T]",
@@ -414,6 +437,18 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_042_observatory: {
+    title: "Observatory: White Knight",
+    hint: "Observatory: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_042_observatory.jpeg",
+        caption: "white knight"
+      },
+    ],
+  },
   obj04_047_bedroom: {
     title: "Bedroom: White Pawn",
     hint: "Bedroom: ???",
@@ -461,6 +496,138 @@ window.checkboxesData = {
       {
         url: "images/item03_windupkey.jpeg",
         caption: "wind-up key"
+      },
+    ],
+  },
+  obj06_001_northstar: {
+    title: "North Star",
+    hint: "North Star",
+    description: "+1 gold",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_001_northstar.jpeg",
+        caption: "North Star"
+      },
+    ],
+  },
+  obj06_002_thetwins: {
+    title: "The Twins",
+    hint: "The Twins",
+    description: "two trunks have been added to the Entrance Hall",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_002_thetwins.jpeg",
+        caption: "The Twins"
+      },
+    ],
+  },
+  obj06_003_theslice: {
+    title: "The Slice",
+    hint: "The Slice",
+    description: "+3 steps",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_003_theslice.jpeg",
+        caption: "The Slice"
+      },
+    ],
+  },
+  obj06_004_diamondusminor: {
+    title: "Diamondus Minor",
+    hint: "Diamondus Minor",
+    description: "+3 steps",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_004_diamondusminor.jpeg",
+        caption: "Diamondus Minor"
+      },
+    ],
+  },
+  obj06_005_thesoutherncross: {
+    title: "The Southern Cross",
+    hint: "The Southern Cross",
+    description: "rooms with four doors are more common today",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_005_thesoutherncross.jpeg",
+        caption: "The Southern Cross"
+      },
+    ],
+  },
+  obj06_007_farmersapple: {
+    title: "Farmer's Apple",
+    hint: "Farmer's Apple",
+    description: "apples are extra delicious today",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_007_farmersapple.jpeg",
+        caption: "Farmer's Apple"
+      },
+    ],
+  },
+  obj06_008_clavisthekey: {
+    title: "Clavis, the Key",
+    hint: "Clavis, the Key",
+    description: "+1 key",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_008_clavisthekey.jpeg",
+        caption: "Clavis, the Key"
+      },
+    ],
+  },
+  obj06_011_diamondusmajor: {
+    title: "Diamondus Major",
+    hint: "Diamondus Major",
+    description: "+5 gems",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_011_diamondusmajor.jpeg",
+        caption: "Diamondus Major"
+      },
+    ],
+  },
+  obj06_012_draxusthedead: {
+    title: "Draxus, the Dead",
+    hint: "Draxus, the Dead",
+    description: "Dead End rooms are more common today",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_012_draxusthedead.jpeg",
+        caption: "Draxus, the Dead"
+      },
+    ],
+  },
+  obj06_015_thesail: {
+    title: "The Sail",
+    hint: "The Sail",
+    description: "everything is 50% off today",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_015_thesail.jpeg",
+        caption: "The Sail"
+      },
+    ],
+  },
+  obj06_020_florealisbloomofthesky: {
+    title: "Florealis, Bloom of the Sky",
+    hint: "Florealis, Bloom of the Sky",
+    description: "Green Rooms are more likely to contain special \"flowers\" today",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj06_020_florealisbloomofthesky.jpeg",
+        caption: "Florealis, Bloom of the Sky"
       },
     ],
   },
@@ -691,6 +858,64 @@ window.checkboxesData = {
     ],
   },
   dir034_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir042_note_book: {
+    title: "Book: The Fixed Stars",
+    hint: "Book: ???",
+    description: "Richard Witt • 1809",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note016_1.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note016_2.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note016_3.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note016_4.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note016_5.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note016_6.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note016_7.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note016_8.jpeg",
+        caption: "pages 14–15"
+      },
+    ],
+  },
+  dir042_telecope: {
+    title: "Stargazing Unlocked",
+    hint: "Telescope: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir042_telescope.jpeg",
+        caption: "stargazing unlocked"
+      },
+    ],
+  },
+  dir042_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

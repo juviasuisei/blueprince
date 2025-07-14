@@ -14,6 +14,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r5f4",
       "obj03_r5f5",
       "obj03_r4f3",
       "obj03_r4f4",
@@ -45,6 +46,7 @@ window.sectionsData = [
       "obj02_017_den",
       "obj02_021_pantry",
       "obj02_034_security",
+      "obj02_042_observatory",
       "obj02_045_antechamber",
       "obj02_046_room46",
       "obj02_047_bedroom",
@@ -66,6 +68,27 @@ window.sectionsData = [
     checkboxes: ["obj05_01_sledgehammer", "obj05_02_coinpurse", "obj05_03_windupkey"]
   },
   {
+    id: "obj06",
+    title: "Objective: Activate All the Constellations",
+    color: "blue",
+    mysteryType: "item",
+    dependencies: ["dir042_telescope"],
+    information: [],
+    checkboxes: [
+      obj06_001_northstar,
+      obj06_002_thetwins,
+      obj06_003_theslice,
+      obj06_004_diamondusminor,
+      obj06_005_thesoutherncross,
+      obj06_007_farmersapple,
+      obj06_008_clavisthekey,
+      obj06_011_diamondusmajor,
+      obj06_012_draxusthedead,
+      obj06_015_thesail,
+      obj06_020_florealisbloomofthesky,
+    ]
+  },
+  {
     id: "obj04",
     title: "Objective: Solve the Chess Puzzle",
     color: "blue",
@@ -81,6 +104,7 @@ window.sectionsData = [
       "obj04_017_den",
       "obj04_021_pantry",
       "obj04_034_security",
+      "obj04_042_observatory",
       "obj04_047_bedroom",
     ]
   },
@@ -161,6 +185,14 @@ window.sectionsData = [
         dependencies: ["obj02_034_security"],
         information: ["dir034_description", "dir034_info", "dir034_chess"],
         checkboxes: ["dir034_note_pad", "dir034_note_notice", "dir034_note_red", "dir034_note_blue", "obj_network_unlock", "dir034_search"],
+      },
+      {
+        id: "dir042",
+        title: "042: Observatory",
+        color: "blue",
+        dependencies: ["obj02_042_observatory"],
+        information: ["dir042_description", "dir042_chess"],
+        checkboxes: ["dir042_note_book", "dir042_telescope", "dir042_search"],
       },
       {
         id: "dir045",
@@ -284,6 +316,15 @@ window.sectionsData = [
         information: ["person04_bridgette_001"],
         checkboxes: [],
       },
+      {
+        id: "person05_richardwitt",
+        title: "Author Richard Witt",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir042_note_book"],
+        information: ["person05_richardwitt_001"],
+        checkboxes: [],
+      },
     ],
   },
   {
@@ -291,7 +332,10 @@ window.sectionsData = [
     title: "The Timeline",
     color: "blue",
     dependencies: [],
-    information: ["date001"],
+    information: [
+      "date002", // 1809
+      "date001", // 1993-03-18
+    ],
     checkboxes: [],
   },
   {
@@ -300,6 +344,16 @@ window.sectionsData = [
     color: "blue",
     dependencies: [],
     subsections: [
+      {
+        id: "info_notes_books",
+        title: "Books",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir042_note_book"],
+        information: [
+          "note016", // 042 - observatory
+        ],
+      },
       {
         id: "info_notes_letters",
         title: "Letters",

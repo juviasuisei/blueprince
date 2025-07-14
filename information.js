@@ -178,6 +178,28 @@ window.informationData = {
       },
     ],
   },
+  dir042_description: {
+    title: "Description",
+    description: "Housing an impressively large telescope, Mount Holly's observatory is a window to the world above and beyond the clouds and sky. Through its mirrored lens, even a novice stargazer will be able to distincly appreciate the wonder, signs, and constellations that punctuate the tapestry of night.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir042_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir042_chess: {
+    title: "Chess Piece",
+    description: "White Knight",
+    dependencies: ["obj04_042_observatory"],
+    images: [
+      {
+        url: "images/obj04_042_observatory.jpeg",
+        caption: "white knight"
+      },
+    ],
+  },
   dir045_description: {
     title: "Description",
     description: "From its root meaning \"The Room Before\", all signs and paths point toward the Antechamber. This mysterious sealed room — resting on the 9th Rank — may prove, however, quite an initial challenge to even reach, let alone enter. Still, you can't help but draw a connection between this chamber and Room 46.",
@@ -326,7 +348,7 @@ window.informationData = {
   },
   item02_coinpurse: {
     title: "A Small Coin Purse",
-    description: "Each time you collect 3 coins, earn an additional 1 coin in interest.",
+    description: "Each time you collect 3 gold, earn an additional 1 gold in interest.",
     dependencies: ["obj05_02_coinpurse"],
     images: [
       {
@@ -528,6 +550,45 @@ window.informationData = {
       },
     ],
   },
+  note016: {
+    title: "Book: The Fixed Stars",
+    description: "Richard Witt • 1809",
+    dependencies: ["dir042_note_book"],
+    images: [
+      {
+        url: "images/note016_1.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note016_2.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note016_3.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note016_4.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note016_5.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note016_6.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note016_7.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note016_8.jpeg",
+        caption: "pages 14–15"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relationship to Us",
     description: "Baron Herbert S. Sinclair was our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
@@ -560,9 +621,26 @@ window.informationData = {
     description: "Bridgette is a maid at the Mount Holly Estate who is commonly tasked with getting the groceries.",
     dependencies: ["dir021_note"],
   },
+  person05_richardwitt_001: {
+    title: "Occupation",
+    description: "Richard Witt is the author of The Fixed Stars, published in 1809",
+    optionalDependencies: true,
+    dependencies: ["dir042_note"],
+    images: [
+      {
+        url: "images/note016_1.jpeg",
+        caption: "title page of The Fixed Stars"
+      },
+    ]
+  },
   date001: {
     title: "Thursday, 18 March 1993",
     description: "Herbert S. Sinclair updates his will.",
+    dependencies: [],
+  },
+  date002: {
+    title: "Unknown, 1809",
+    description: "Bird & Sons Publishing, a Fenn Aeries company, publishes The Fixed Stars by Richard Witt.",
     dependencies: [],
   },
 };
