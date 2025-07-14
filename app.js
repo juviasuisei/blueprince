@@ -966,32 +966,66 @@ function checklistApp() {
     },
 
     scrollToSection(sectionId) {
-      const element = document.getElementById(`section-${sectionId}`);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-        this.currentActiveSection = sectionId;
-        this.announceToScreenReader(
-          `Navigated to ${this.getSectionTitle(sectionId)} section`,
-          "polite"
-        );
+      // Auto-expand the section if it's collapsed
+      if (!this.expandedSections.includes(sectionId)) {
+        this.expandedSections.push(sectionId);
+        this.debouncedSaveState();
       }
+
+      // Wait for DOM update after expansion, then scroll
+      this.$nextTick(() => {
+        const element = document.getElementById(`section-${sectionId}`);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+          this.currentActiveSection = sectionId;
+          this.announceToScreenReader(
+            `Navigated to ${this.getSectionTitle(sectionId)} section`,
+            "polite"
+          );
+        }
+      });
     },
 
     scrollToSubsection(subsectionId) {
-      const element = document.getElementById(`subsection-${subsectionId}`);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-        this.announceToScreenReader(
-          `Navigated to ${this.getSubsectionTitle(subsectionId)} subsection`,
-          "polite"
-        );
+      // Find the parent section for this subsection
+      let parentSectionId = null;
+      for (const section of this.data.sections || []) {
+        if (section.subsections?.some((sub) => sub.id === subsectionId)) {
+          parentSectionId = section.id;
+          break;
+        }
       }
+
+      // Auto-expand the parent section if it's collapsed
+      if (parentSectionId && !this.expandedSections.includes(parentSectionId)) {
+        this.expandedSections.push(parentSectionId);
+      }
+
+      // Auto-expand the subsection if it's collapsed
+      if (!this.expandedSubsections.includes(subsectionId)) {
+        this.expandedSubsections.push(subsectionId);
+      }
+
+      // Save state after expansions
+      this.debouncedSaveState();
+
+      // Wait for DOM update after expansion, then scroll
+      this.$nextTick(() => {
+        const element = document.getElementById(`subsection-${subsectionId}`);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+          this.announceToScreenReader(
+            `Navigated to ${this.getSubsectionTitle(subsectionId)} subsection`,
+            "polite"
+          );
+        }
+      });
     },
 
     getSectionTitle(sectionId) {
