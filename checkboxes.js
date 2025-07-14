@@ -80,6 +80,13 @@ window.checkboxesData = {
     unlockKeyword: "Commissary",
     dependencies: [],
   },
+  obj02_079_lavatory: {
+    title: "Lavatory",
+    hint: "Draft the Lavatory",
+    description: "Room 079",
+    unlockKeyword: "Lavatory",
+    dependencies: [],
+  },
   obj02_080_chapel: {
     title: "Chapel",
     hint: "Draft the Chapel",
@@ -116,6 +123,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r3f5_R.jpeg",
         caption: "pea"
+      },
+    ],
+  },
+  obj03_r2f2: {
+    title: "Rank 2 • File 2: I",
+    hint: "Rank 2 • File 2: ???",
+    description: "STA[I]RS",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r2f2_L.jpeg",
+        caption: "stairs"
+      },
+      {
+        url: "images/obj03_r2f2_R.jpeg",
+        caption: "stars"
       },
     ],
   },
@@ -599,6 +622,12 @@ window.checkboxesData = {
     ],
   },
   dir071_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir079_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

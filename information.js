@@ -215,6 +215,22 @@ window.informationData = {
       },
     ],
   },
+  dir079_description: {
+    title: "Description",
+    description: "A room one might go to great lengths to avoid showing guests despite them always probing for its location.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir079_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir079_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
   dir080_description: {
     title: "Description",
     description: "A private sacristy, as ornate as the most lavish rooms of the estate, is watched over by eight Ajeran Angels depicted in stained glass. This room was more of a tribute to your granduncle's vanity than it was to his faith.",

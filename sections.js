@@ -16,12 +16,13 @@ window.sectionsData = [
     checkboxes: [
       "obj03_r3f3",
       "obj03_r3f5",
+      "obj03_r2f2",
       "obj03_r2f3",
       "obj03_r2f4",
       "obj03_r2f5",
       "obj03_r1f1",
       "obj03_r1f3",
-      "obj03_r1f4"
+      "obj03_r1f4",
     ]
   },
   {
@@ -43,7 +44,8 @@ window.sectionsData = [
       "obj02_055_hallway",
       "obj02_065_courtyard",
       "obj02_071_commissary",
-      "obj02_080_chapel"
+      "obj02_079_lavatory",
+      "obj02_080_chapel",
     ]
   },
   {
@@ -172,6 +174,14 @@ window.sectionsData = [
         dependencies: ["obj02_071_commissary"],
         information: ["dir071_description"],
         checkboxes: ["dir071_note_flyer", "dir034_note_notice", "dir071_note_red", "dir071_search"],
+      },
+      {
+        id: "dir079",
+        title: "079: Lavatory",
+        color: "red",
+        dependencies: ["obj02_079_lavatory"],
+        information: ["dir079_description", "dir079_info"],
+        checkboxes: ["dir079_search"],
       },
       {
         id: "dir080",
