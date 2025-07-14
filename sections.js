@@ -4,7 +4,7 @@ window.sectionsData = [
     title: "Objective: Discover the 46th Room",
     color: "blue",
     dependencies: [],
-    information: ["obj01_info"],
+    information: [],
     checkboxes: ["obj01_1_room46"],
   },
   {
