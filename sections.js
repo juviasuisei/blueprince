@@ -241,6 +241,15 @@ window.sectionsData = [
         information: ["person03_babbage_001"],
         checkboxes: [],
       },
+      {
+        id: "person04_bridgette",
+        title: "Maid Bridgette",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir021_note"],
+        information: ["person04_bridgette_001"],
+        checkboxes: [],
+      },
     ],
   },
   {

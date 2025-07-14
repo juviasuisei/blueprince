@@ -456,6 +456,11 @@ window.informationData = {
     description: "Mrs. Babbage is the House Manager for the Mount Holly Estate.",
     dependencies: ["dir034_note_notice"],
   },
+  person04_bridgette_001: {
+    title: "Occupation",
+    description: "Bridgette is a maid at the Mount Holly Estate who is commonly tasked with getting the groceries.",
+    dependencies: ["dir021_note"],
+  },
   date001: {
     title: "Thursday, 18 March 1993",
     description: "Herbert S. Sinclair updates his will.",
