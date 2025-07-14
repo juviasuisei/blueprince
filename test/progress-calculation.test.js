@@ -42,7 +42,7 @@ describe("Progress Calculation", () => {
 
     // Should count all checkboxes in the data
     const total = app.getTotalCheckboxes();
-    expect(total).toBe(3); // test-checkbox-1, test-checkbox-2, mystery-checkbox
+    expect(total).toBe(9); // All checkboxes in the enhanced test data
   });
 
   it("should calculate total checked correctly", () => {
