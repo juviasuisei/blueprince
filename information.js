@@ -85,6 +85,28 @@ window.informationData = {
       },
     ],
   },
+  dir017_description: {
+    title: "Description",
+    description: "A more traditional family room, warm and inviting. So comfortable, one might assume that the countless clocks surrounding the sofas are placed in a futile attempt to avoid inevitably wasting the entire day here.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir017_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir017_chess: {
+    title: "Chess Piece",
+    description: "White Pawn",
+    dependencies: ["obj04_017_den"],
+    images: [
+      {
+        url: "images/obj04_017_den.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   dir021_description: {
     title: "Description",
     description: "A well stocked pantry is always the true test of a large estate, and keeping Mount Holly's wide gamut of ingredients and supplies stocked has always been one of the primary priorities of the house staff.",

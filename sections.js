@@ -14,6 +14,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r4f5",
       "obj03_r3f3",
       "obj03_r3f5",
       "obj03_r2f2",
@@ -36,6 +37,7 @@ window.sectionsData = [
       "obj02_003_spareroom",
       "obj02_005_parlor",
       "obj02_012_storeroom",
+      "obj02_017_den",
       "obj02_021_pantry",
       "obj02_034_security",
       "obj02_045_antechamber",
@@ -68,6 +70,7 @@ window.sectionsData = [
       "obj04_003_spareroom",
       "obj04_005_parlor",
       "obj04_012_storeroom",
+      "obj04_017_den",
       "obj04_021_pantry",
       "obj04_034_security",
       "obj04_047_bedroom",
@@ -110,6 +113,14 @@ window.sectionsData = [
         dependencies: ["obj02_012_storeroom"],
         information: ["dir012_description", "dir012_info", "dir012_chess"],
         checkboxes: ["dir012_search", "dir012_drawing_identify"],
+      },
+      {
+        id: "dir017",
+        title: "017: Den",
+        color: "blue",
+        dependencies: ["obj02_017_den"],
+        information: ["dir017_description", "dir017_chess"],
+        checkboxes: ["dir017_search"],
       },
       {
         id: "dir021",

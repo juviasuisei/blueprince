@@ -26,6 +26,13 @@ window.checkboxesData = {
     unlockKeyword: "Storeroom",
     dependencies: [],
   },
+  obj02_017_den: {
+    title: "Den",
+    hint: "Draft the Den",
+    description: "Room 017",
+    unlockKeyword: "Den",
+    dependencies: [],
+  },
   obj02_021_pantry: {
     title: "Pantry",
     hint: "Draft the Pantry",
@@ -93,6 +100,22 @@ window.checkboxesData = {
     description: "Room 080",
     unlockKeyword: "Chapel",
     dependencies: [],
+  },
+  obj03_r4f5: {
+    title: "Rank 4 • File 5: S",
+    hint: "Rank 4 • File 5: ???",
+    description: "[S]AND",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r4f5_L.jpeg",
+        caption: "sand"
+      },
+      {
+        url: "images/obj03_r4f5_R.jpeg",
+        caption: "and"
+      },
+    ],
   },
   obj03_r3f3: {
     title: "Rank 3 • File 3: A",
@@ -270,6 +293,18 @@ window.checkboxesData = {
     images: [
       {
         url: "images/obj04_012_storeroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
+  obj04_017_den: {
+    title: "Den: White Pawn",
+    hint: "Den: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_017_den.jpeg",
         caption: "white pawn"
       },
     ],
@@ -458,6 +493,12 @@ window.checkboxesData = {
     hint: "What is This Drawing?",
     description: "This is from the children's book Swimbird by our mother.",
     dependencies: ["dir012_search"],
+  },
+  dir017_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
   },
   dir021_note: {
     title: "Note: Pantry",
