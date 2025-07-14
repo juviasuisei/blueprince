@@ -1175,10 +1175,20 @@ function checklistApp() {
 
     getMysteryTitle(checkboxId) {
       const checkbox = this.data.checkboxes[checkboxId];
-      if (!checkbox || !checkbox.unlockKeyword) {
-        return checkbox?.title || "Unknown";
+      if (!checkbox) return "Unknown";
+
+      // Handle regular items (non-mysteries)
+      if (!checkbox.unlockKeyword) {
+        if (this.checkedItems.includes(checkboxId)) {
+          // Checked regular items show full title
+          return checkbox.title || "Unknown";
+        } else {
+          // Unchecked regular items show hint
+          return checkbox.hint || checkbox.title || "Unknown";
+        }
       }
 
+      // Handle mystery items
       if (!this.unlockedMysteries.includes(checkboxId)) {
         return "???";
       }
@@ -1196,6 +1206,23 @@ function checklistApp() {
         return true; // Not a mystery, always show
       }
 
+      // For mysteries, only show full content when both unlocked AND checked
+      return (
+        this.unlockedMysteries.includes(checkboxId) &&
+        this.checkedItems.includes(checkboxId)
+      );
+    },
+
+    shouldShowMysteryDescription(checkboxId) {
+      const checkbox = this.data.checkboxes[checkboxId];
+      if (!checkbox) return false;
+
+      if (!checkbox.unlockKeyword) {
+        // Regular items: show description only when checked
+        return this.checkedItems.includes(checkboxId);
+      }
+
+      // For mysteries, only show description when both unlocked AND checked
       return (
         this.unlockedMysteries.includes(checkboxId) &&
         this.checkedItems.includes(checkboxId)
