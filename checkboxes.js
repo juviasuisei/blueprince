@@ -574,6 +574,18 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
+  dir071_note_flyer: {
+    title: "Flyer: Maid's Day Sale",
+    hint: "Flyer: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note013.jpeg",
+        caption: "commissary sale flyer"
+      },
+    ],
+  },
   dir071_note_notice: {
     title: "Note: Staff Notice",
     hint: "White Note: ???",
@@ -583,18 +595,6 @@ window.checkboxesData = {
       {
         url: "images/note009.jpeg",
         caption: "terminal explainer"
-      },
-    ],
-  },
-  dir071_note_red: {
-    title: "Flyer: Maid's Day Sale",
-    hint: "Flyer: ???",
-    description: "",
-    dependencies: [],
-    images: [
-      {
-        url: "images/note013.jpeg",
-        caption: "commissary sale flyer"
       },
     ],
   },

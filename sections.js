@@ -168,7 +168,7 @@ window.sectionsData = [
       {
         id: "dir071",
         title: "071: Commissary",
-        color: "green",
+        color: "gold",
         dependencies: ["obj02_071_commissary"],
         information: ["dir071_description"],
         checkboxes: ["dir071_note_flyer", "dir071_note_notice", "dir071_note_red", "dir071_search"],
