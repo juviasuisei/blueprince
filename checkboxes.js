@@ -87,6 +87,13 @@ window.checkboxesData = {
     unlockKeyword: "Bedroom",
     dependencies: [],
   },
+  obj02_049_guestbedroom: {
+    title: "Guest Bedroom",
+    hint: "Draft the Guest Bedroom",
+    description: "Room 049",
+    unlockKeyword: "Guest Bedroom",
+    dependencies: [],
+  },
   obj02_055_hallway: {
     title: "Hallway",
     hint: "Draft the Hallway",
@@ -128,6 +135,22 @@ window.checkboxesData = {
     description: "Room 080",
     unlockKeyword: "Chapel",
     dependencies: [],
+  },
+  obj03_r6f4: {
+    title: "Rank 6 • File 4: E",
+    hint: "Rank 6 • File 4: ???",
+    description: "STAG[E]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r6f4_L.jpeg",
+        caption: "stage"
+      },
+      {
+        url: "images/obj03_r6f4_R.jpeg",
+        caption: "stag"
+      },
+    ],
   },
   obj03_r5f4: {
     title: "Rank 5 • File 4: H",
@@ -461,6 +484,18 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_049_guestbedroom: {
+    title: "Guest Bedroom: White Pawn",
+    hint: "Guest Bedroom: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_049_guestbedroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   obj05_01_sledgehammer: {
     title: "Sledge Hammer",
     hint: "Find a Sledge Hammer",
@@ -674,7 +709,7 @@ window.checkboxesData = {
     ],
   },
   dir002_note_black: {
-    title: "Black Note: SEARCHING THE ESTATE CAN BE EXHAUSTING",
+    title: "Black Note: Exhaustion",
     hint: "Black Note: ???",
     description: "",
     dependencies: [],
@@ -792,7 +827,7 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir021_note: {
-    title: "Note: Pantry",
+    title: "Note: Fruit Order",
     hint: "Note: ???",
     description: "",
     dependencies: [],
@@ -961,6 +996,24 @@ window.checkboxesData = {
     title: "Baron Bafflers",
     hint: "What's Up With This Giant Finger?",
     description: "The April 6 Edition of Baron Bafflers.",
+    dependencies: [],
+  },
+  dir049_note: {
+    title: "Letter: Billiard Room Hint",
+    hint: "Letter: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note017.jpeg",
+        caption: "billiard room puzzle hint"
+      },
+    ],
+  },
+  dir049_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
     dependencies: [],
   },
   dir055_note_red: {

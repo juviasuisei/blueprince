@@ -14,6 +14,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r6f4",
       "obj03_r5f4",
       "obj03_r5f5",
       "obj03_r4f3",
@@ -50,6 +51,7 @@ window.sectionsData = [
       "obj02_045_antechamber",
       "obj02_046_room46",
       "obj02_047_bedroom",
+      "obj02_049_guestbedroom",
       "obj02_055_hallway",
       "obj02_058_corridor",
       "obj02_065_courtyard",
@@ -106,6 +108,7 @@ window.sectionsData = [
       "obj04_034_security",
       "obj04_042_observatory",
       "obj04_047_bedroom",
+      "obj04_049_guestbedroom",
     ]
   },
   {
@@ -217,6 +220,14 @@ window.sectionsData = [
         dependencies: ["obj02_047_bedroom"],
         information: ["dir047_description", "dir047_info", "dir047_chess"],
         checkboxes: ["dir047_note_postcard", "dir047_photo", "dir047_photo_identify", "dir047_finger", "dir047_search"],
+      },
+      {
+        id: "dir049",
+        title: "049: Guest Bedroom",
+        color: "purple",
+        dependencies: ["obj02_049_guestbedroom"],
+        information: ["dir049_description", "dir049_info", "dir049_chess"],
+        checkboxes: ["dir049_note", "dir049_search"],
       },
       {
         id: "dir055",
@@ -380,9 +391,10 @@ window.sectionsData = [
           "note010", // 034 - security
           "note011", // 034 - security
           "note012", // 047 - bedroom
+          "note017", // 049 - guest bedroom
+          "note004", // 055 - hallway
           "note013", // 071 - commissary
           "note014", // 071 - commissary
-          "note004", // 055 - hallway
         ],
       },
     ],

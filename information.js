@@ -259,6 +259,33 @@ window.informationData = {
       },
     ],
   },
+  dir049_description: {
+    title: "Description",
+    description: "A small bedroom maintained and kept available for accommodating weekend guests and impromptu visitors who find themselves compelled to stay the night.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir049_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir049_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
+  dir049_chess: {
+    title: "Chess Piece",
+    description: "White Pawn",
+    dependencies: ["obj04_049_guestbedroom"],
+    images: [
+      {
+        url: "images/obj04_049_guestbedroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   dir055_description: {
     title: "Description",
     description: "One of the many nondescript hallways snaking through the estate and providing elegant causeways between the more noteworthy destinations that the house has to offer.",
@@ -451,7 +478,7 @@ window.informationData = {
     ],
   },
   note007: {
-    title: "Note: Fruit Order",
+    title: "Fruit Order",
     description: "",
     dependencies: ["dir021_note"],
     images: [
@@ -462,7 +489,7 @@ window.informationData = {
     ],
   },
   note008: {
-    title: "Note: Notepad",
+    title: "Notepad",
     description: "",
     dependencies: ["dir034_note_pad"],
     images: [
@@ -473,7 +500,7 @@ window.informationData = {
     ],
   },
   note009: {
-    title: "Note: Terminal Staff Notice",
+    title: "Terminal Staff Notice",
     description: "",
     optionalDependencies: true,
     dependencies: ["dir034_note_notice", "dir071_note_notice"],
@@ -518,7 +545,7 @@ window.informationData = {
     ],
   },
   note013: {
-    title: "Note: Maid's Day Sale",
+    title: "Flyer: Maid's Day Sale",
     description: "",
     dependencies: ["dir071_note_flyer"],
     images: [
@@ -551,7 +578,7 @@ window.informationData = {
     ],
   },
   note016: {
-    title: "Book: The Fixed Stars",
+    title: "The Fixed Stars",
     description: "Richard Witt • 1809",
     dependencies: ["dir042_note_book"],
     images: [
@@ -589,8 +616,19 @@ window.informationData = {
       },
     ],
   },
+  note017: {
+    title: "Billiard Room Hint",
+    description: "",
+    dependencies: ["dir049_note"],
+    images: [
+      {
+        url: "images/note017.jpeg",
+        caption: "billiard room puzzle hint"
+      },
+    ],
+  },
   person01_herbie_001: {
-    title: "Relationship to Us",
+    title: "Relation",
     description: "Baron Herbert S. Sinclair was our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
     dependencies: [],
     images: [
@@ -601,7 +639,7 @@ window.informationData = {
     ]
   },
   person02_baroness_001: {
-    title: "Relationship to Us",
+    title: "Relation",
     description: "Baroness Auravei Sinclair was our great-grandmother.",
     dependencies: ["dir047_photo_identify"],
     images: [
