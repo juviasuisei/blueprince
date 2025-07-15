@@ -1088,43 +1088,43 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
-  dir080_angel_1: {
+  dir080_angel1: {
     title: "Rynna the Ajeran Angel of Gardeners",
     hint: "Identify Ajeran Angel I: ???",
     description: "",
     dependencies: [],
   },
-  dir080_angel_2: {
+  dir080_angel2: {
     title: "Joya the Ajeran Angel of Chefs",
     hint: "Identify Ajeran Angel II: ???",
     description: "",
     dependencies: [],
   },
-  dir080_angel_3: {
+  dir080_angel3: {
     title: "Dauja the Ajeran Angel of Farmers",
     hint: "Identify Ajeran Angel III: ???",
     description: "",
     dependencies: [],
   },
-  dir080_angel_4: {
+  dir080_angel4: {
     title: "Veia the Ajeran Angel of Chimney Sweeps",
     hint: "Identify Ajeran Angel IV: ???",
     description: "",
     dependencies: [],
   },
-  dir080_angel_5: {
+  dir080_angel5: {
     title: "Mila the Ajeran Angel of Maids",
     hint: "Identify Ajeran Angel V: ???",
     description: "",
     dependencies: [],
   },
-  dir080_angel_6: {
+  dir080_angel6: {
     title: "Lydia the Ajeran Angel of Equestrians",
     hint: "Identify Ajeran Angel VI: ???",
     description: "",
     dependencies: [],
   },
-  dir080_angel_7: {
+  dir080_angel7: {
     title: "Orinda the Ajeran Angel of Royals",
     hint: "Identify Ajeran Angel VII: ???",
     description: "",
