@@ -324,7 +324,7 @@ window.sectionsData = [
     title: "Items",
     color: "blue",
     dependencies: [],
-    information: ["item01_sledgehammer", "item02_coinpurse", "item03_windupkey"],
+    information: ["item01_sledgehammer", "item02_coinpurse", "item03_windupkey", "item04_saltshaker"],
   },
   {
     id: "info_people",

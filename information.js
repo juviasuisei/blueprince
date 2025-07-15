@@ -740,7 +740,8 @@ window.informationData = {
   person03_babbage_001: {
     title: "Occupation",
     description: "Mrs. Babbage is the House Manager for the Mount Holly Estate.",
-    dependencies: ["dir034_note_notice"],
+    optionalDependencies: true,
+    dependencies: ["dir034_note_notice", "dir081_note_notice"],
   },
   person04_bridgette_001: {
     title: "Occupation",
@@ -751,7 +752,7 @@ window.informationData = {
     title: "Occupation",
     description: "Richard Witt is the author of The Fixed Stars, published in 1809",
     optionalDependencies: true,
-    dependencies: ["dir042_note"],
+    dependencies: ["dir042_note_book"],
     images: [
       {
         url: "images/note016_1.jpeg",
