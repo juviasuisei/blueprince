@@ -150,6 +150,13 @@ window.checkboxesData = {
     unlockKeyword: "Commissary",
     dependencies: [],
   },
+  obj02_072_kitchen: {
+    title: "Kitchen",
+    hint: "Draft the Kitchen",
+    description: "Room 072",
+    unlockKeyword: "Kitchen",
+    dependencies: [],
+  },
   obj02_079_lavatory: {
     title: "Lavatory",
     hint: "Draft the Lavatory",
@@ -344,6 +351,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r3f3_R.jpeg",
         caption: "rod"
+      },
+    ],
+  },
+  obj03_r3f4: {
+    title: "Rank 3 • File 4: C",
+    hint: "Rank 3 • File 4: ???",
+    description: "[C]LOCK",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r3f4_L.jpeg",
+        caption: "clock"
+      },
+      {
+        url: "images/obj03_r3f4_R.jpeg",
+        caption: "lock"
       },
     ],
   },

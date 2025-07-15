@@ -384,6 +384,17 @@ window.informationData = {
       },
     ],
   },
+  dir072_description: {
+    title: "Description",
+    description: "A standard kitchenette with all the typical amenities: a stove, refridgerator, oven, and sink. This galley is where the cooking staff prepares the daily cuisine that will be later served in the Dining Room.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir072_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir079_description: {
     title: "Description",
     description: "A room one might go to great lengths to avoid showing guests despite them always probing for its location.",
