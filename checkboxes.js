@@ -19,6 +19,13 @@ window.checkboxesData = {
     unlockKeyword: "Parlor",
     dependencies: [],
   },
+  obj02_006_billiardroom: {
+    title: "Billiard Room",
+    hint: "Draft the Billiard Room",
+    description: "Room 006",
+    unlockKeyword: "Billiard Room",
+    dependencies: [],
+  },
   obj02_009_closet: {
     title: "Closet",
     hint: "Draft the Closet",
@@ -205,7 +212,23 @@ window.checkboxesData = {
       },
     ],
   },
-  obj03_r4f3: {
+  obj03_r4f1: {
+    title: "Rank 4 • File 1: D",
+    hint: "Rank 4 • File 1: ???",
+    description: "CAR[D]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r4f1_L.jpeg",
+        caption: "card"
+      },
+      {
+        url: "images/obj03_r4f1_R.jpeg",
+        caption: "car"
+      },
+    ],
+  },
+  obj03_r4f2: {
     title: "Rank 4 • File 2: A",
     hint: "Rank 4 • File 2: ???",
     description: "CO[A]T",
@@ -468,6 +491,12 @@ window.checkboxesData = {
         caption: "black pawn"
       },
     ],
+  },
+  obj04_006_billiardroom: {
+    title: "Billiard Room: None",
+    hint: "Billiard Room: ???",
+    description: "",
+    dependencies: [],
   },
   obj04_009_closet: {
     title: "Closet: None",
@@ -891,6 +920,12 @@ window.checkboxesData = {
     ],
   },
   dir005_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir006_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

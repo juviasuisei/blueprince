@@ -17,6 +17,7 @@ window.sectionsData = [
       "obj03_r6f4",
       "obj03_r5f4",
       "obj03_r5f5",
+      "obj03_r4f1",
       "obj03_r4f2",
       "obj03_r4f3",
       "obj03_r4f4",
@@ -44,6 +45,7 @@ window.sectionsData = [
     checkboxes: [
       "obj02_003_spareroom",
       "obj02_005_parlor",
+      "obj02_006_billiardroom",
       "obj02_009_closet",
       "obj02_012_storeroom",
       "obj02_013_nook",
@@ -111,6 +113,7 @@ window.sectionsData = [
       "obj04_002_entrance",
       "obj04_003_spareroom",
       "obj04_005_parlor",
+      "obj04_006_billiardroom",
       "obj04_009_closet",
       "obj04_012_storeroom",
       "obj04_013_nook",
@@ -156,6 +159,14 @@ window.sectionsData = [
         dependencies: ["obj02_005_parlor"],
         information: ["dir005_description", "dir005_info", "dir005_chess"],
         checkboxes: ["obj05_03_windupkey", "dir005_note_letter", "dir005_search"],
+      },
+      {
+        id: "dir006",
+        title: "006: Billiard Room",
+        color: "blue",
+        dependencies: ["obj02_006_billiardroom"],
+        information: ["dir006_description", "dir006_info"],
+        checkboxes: ["dir006_search"],
       },
       {
         id: "dir009",
@@ -324,7 +335,12 @@ window.sectionsData = [
     title: "Items",
     color: "blue",
     dependencies: [],
-    information: ["item01_sledgehammer", "item02_coinpurse", "item03_windupkey", "item04_saltshaker"],
+    information: [
+      "item01_sledgehammer",
+      "item02_coinpurse",
+      "item03_windupkey",
+      "item04_saltshaker",
+    ],
   },
   {
     id: "info_people",

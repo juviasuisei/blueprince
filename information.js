@@ -53,6 +53,22 @@ window.informationData = {
       },
     ],
   },
+  dir006_description: {
+    title: "Description",
+    description: "This smoky backroom, featuring a pool table and fully stocked bar, has served as a retreat on more than one occasion for guests lacking the social wit required for after-dinner conversation. A rather curious game of darts provided the less competitive players a unique opportunity to ponder over its unusual rules.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir006_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir006_info: {
+    title: "Classification",
+    description: "TYPE: Puzzle",
+    dependencies: [],
+  },
   dir009_description: {
     title: "Description",
     description: "A very modest recessed space used for storage. This particular closet is favored by the junior memebrs of the staff, who utilize it to stash away assorted articles and knicknacks whose proper place in the estate is yet unknown to them.",
