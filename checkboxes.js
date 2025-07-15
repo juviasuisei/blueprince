@@ -610,7 +610,7 @@ window.checkboxesData = {
       },
     ],
   },
-  obj05_06_saltshaker: {
+  obj05_04_saltshaker: {
     title: "Salt Shaker",
     hint: "Find a Salt Shaker",
     description: "",
