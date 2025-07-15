@@ -944,7 +944,7 @@ window.informationData = {
   person01_herbie_003: {
     title: "Synka",
     description: "Prior to his death, he was the owner of Synka. Prior to her disappearance, he was going to leave the company to his niece, Mary.",
-    dependencies: [],
+    dependencies: ["dir082_note_scrapbook"],
   },
   person02_baroness_001: {
     title: "Relation",
