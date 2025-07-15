@@ -85,7 +85,7 @@ window.sectionsData = [
       "obj02_013_nook",
       "obj02_017_den",
       "obj02_021_pantry",
-      "obj02_031_utility_closet",
+      "obj02_031_utilitycloset",
       "obj02_034_security",
       "obj02_042_observatory",
       "obj02_045_antechamber",
