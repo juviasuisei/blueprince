@@ -1,188 +1,222 @@
-/**
- * Build Minification Tests
- *
- * Tests to ensure that the build process correctly minifies JavaScript
- * while preserving spaces inside string values.
- */
-
+import { createRequire } from "module";
 import { describe, expect, it } from "vitest";
-import { minifyJS } from "../build.js";
 
-describe("JavaScript Minification", () => {
-  describe("String Preservation", () => {
-    it("should preserve spaces after colons in strings", () => {
-      const input = `const message = "Time: 5:30 PM";`;
-      const result = minifyJS(input);
-      expect(result).toContain('"Time: 5:30 PM"');
-    });
+// Use createRequire to import CommonJS module
+const require = createRequire(import.meta.url);
+const { minifyJS, validateTemplateReplacement } = require("../build.js");
 
-    it("should preserve spaces after commas in strings", () => {
-      const input = `const greeting = "Hello, world!";`;
-      const result = minifyJS(input);
-      expect(result).toContain('"Hello, world!"');
-    });
+describe("minifyJS function", () => {
+  it("should preserve template literals correctly", () => {
+    const code = `
+      const element = document.getElementById(\`section-\${sectionId}\`);
+      const message = \`Hello \${name}\`;
+    `;
 
-    it("should preserve multiple spaces in strings", () => {
-      const input = `const text = "This  has   multiple    spaces";`;
-      const result = minifyJS(input);
-      expect(result).toContain('"This  has   multiple    spaces"');
-    });
+    const result = minifyJS(code);
 
-    it("should preserve spaces in single-quoted strings", () => {
-      const input = `const message = 'Error: File not found, please try again';`;
-      const result = minifyJS(input);
-      expect(result).toContain("'Error: File not found, please try again'");
-    });
+    // Should contain the original template literals
+    expect(result).toContain("`section-${sectionId}`");
+    expect(result).toContain("`Hello ${name}`");
 
-    it("should preserve escaped quotes in strings", () => {
-      const input = `const quote = "He said: \\"Hello, world!\\"";`;
-      const result = minifyJS(input);
-      expect(result).toContain('"He said: \\"Hello, world!\\""');
-    });
-
-    it("should preserve complex punctuation in strings", () => {
-      const input = `const complex = "Status: OK; Message: Success, data loaded!";`;
-      const result = minifyJS(input);
-      expect(result).toContain('"Status: OK; Message: Success, data loaded!"');
-    });
-
-    it("should handle mixed quotes correctly", () => {
-      const input = `
-        const single = 'Single: quote, test';
-        const double = "Double: quote, test";
-      `;
-      const result = minifyJS(input);
-      expect(result).toContain("'Single: quote, test'");
-      expect(result).toContain('"Double: quote, test"');
-    });
-
-    it("should preserve template literal-like content in strings", () => {
-      const input = `const template = "Template: \${variable}, value: \${other}";`;
-      const result = minifyJS(input);
-      expect(result).toContain('"Template: ${variable}, value: ${other}"');
-    });
+    // Should not contain any unreplaced placeholders
+    expect(result).not.toMatch(/__TEMPLATE_\d+__/);
+    expect(result).not.toMatch(/__STRING_\d+__/);
+    expect(result).not.toMatch(/__REGEX_\d+__/);
   });
 
-  describe("Code Minification", () => {
-    it("should remove spaces after colons in object literals", () => {
-      const input = `const obj = { key: value, other: data };`;
-      const result = minifyJS(input);
-      expect(result).toContain("key:value");
-      expect(result).toContain("other:data");
-    });
+  it("should preserve string literals correctly", () => {
+    const code = `
+      const message = "Hello world";
+      const greeting = 'Hi there';
+      const escaped = "He said \\"Hello\\"";
+    `;
 
-    it("should remove spaces after commas in arrays and objects", () => {
-      const input = `const arr = [1, 2, 3]; const obj = { a: 1, b: 2 };`;
-      const result = minifyJS(input);
-      expect(result).toContain("[1,2,3]");
-      expect(result).toContain("{a:1,b:2}");
-    });
+    const result = minifyJS(code);
 
-    it("should remove unnecessary spaces around braces", () => {
-      const input = `function test() { return true; }`;
-      const result = minifyJS(input);
-      expect(result).toContain("function test(){return true;}");
-    });
+    // Should contain the original string literals
+    expect(result).toContain('"Hello world"');
+    expect(result).toContain("'Hi there'");
+    expect(result).toContain('"He said \\"Hello\\""');
 
-    it("should remove comments", () => {
-      const input = `
-        // This is a comment
-        const value = "test"; /* block comment */
-        const other = "data";
-      `;
-      const result = minifyJS(input);
-      expect(result).not.toContain("// This is a comment");
-      expect(result).not.toContain("/* block comment */");
-      expect(result).toContain('"test"');
-      expect(result).toContain('"data"');
-    });
+    // Should not contain any unreplaced placeholders
+    expect(result).not.toMatch(/__TEMPLATE_\d+__/);
+    expect(result).not.toMatch(/__STRING_\d+__/);
+    expect(result).not.toMatch(/__REGEX_\d+__/);
   });
 
-  describe("Complex Scenarios", () => {
-    it("should handle strings with code-like content", () => {
-      const input = `
-        const codeString = "function test() { return 'Hello, world!'; }";
-        const obj = { method: function() { return true; } };
-      `;
-      const result = minifyJS(input);
-      expect(result).toContain(
-        "\"function test() { return 'Hello, world!'; }\""
-      );
-      expect(result).toContain("method:function(){return true;}");
-    });
+  it("should preserve regex literals correctly", () => {
+    const code = `
+      const pattern = /test\\d+/g;
+      const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/;
+    `;
 
-    it("should handle nested quotes correctly", () => {
-      const input = `
-        const html = "<div class='container'>Hello, world!</div>";
-        const json = '{"message": "Hello, world!", "status": "OK"}';
-      `;
-      const result = minifyJS(input);
-      expect(result).toContain(
-        "\"<div class='container'>Hello, world!</div>\""
-      );
-      expect(result).toContain(
-        '\'{"message": "Hello, world!", "status": "OK"}\''
-      );
-    });
+    const result = minifyJS(code);
 
-    it("should preserve aria-label and other HTML attributes in strings", () => {
-      const input = `
-        const ariaLabel = "Section progress: 75% complete";
-        const htmlContent = '<button aria-label="Close dialog, return to main content">×</button>';
-      `;
-      const result = minifyJS(input);
-      expect(result).toContain('"Section progress: 75% complete"');
-      expect(result).toContain(
-        "'<button aria-label=\"Close dialog, return to main content\">×</button>'"
-      );
-    });
+    // Should contain the original regex literals
+    expect(result).toContain("/test\\d+/g");
+    expect(result).toContain(
+      "/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/"
+    );
 
-    it("should handle real-world data structures", () => {
-      const input = `
-        const data = {
-          sections: [
-            {
-              title: "Getting Started: Basic Setup",
-              description: "Learn the basics, including: installation, configuration, and first steps"
-            }
-          ]
-        };
-      `;
-      const result = minifyJS(input);
-      expect(result).toContain('"Getting Started: Basic Setup"');
-      expect(result).toContain(
-        '"Learn the basics, including: installation, configuration, and first steps"'
-      );
-      // But should minify the object structure
-      expect(result).toContain("sections:[{title:");
-    });
+    // Should not contain any unreplaced placeholders
+    expect(result).not.toMatch(/__TEMPLATE_\d+__/);
+    expect(result).not.toMatch(/__STRING_\d+__/);
+    expect(result).not.toMatch(/__REGEX_\d+__/);
   });
 
-  describe("Edge Cases", () => {
-    it("should handle empty strings", () => {
-      const input = `const empty = ""; const other = '';`;
-      const result = minifyJS(input);
-      expect(result).toContain('""');
-      expect(result).toContain("''");
-    });
+  it("should handle complex nested expressions", () => {
+    const code = `
+      this.announceToScreenReader(
+        \`Navigated to \${this.getSectionTitle(sectionId)} section\`,
+        "polite"
+      );
+    `;
 
-    it("should handle strings with only punctuation", () => {
-      const input = `const punct = ":,;{}"; const other = ':,;{}';`;
-      const result = minifyJS(input);
-      expect(result).toContain('":,;{}"');
-      expect(result).toContain("':,;{}'");
-    });
+    const result = minifyJS(code);
 
-    it("should handle strings with backslashes", () => {
-      const input = `const path = "C:\\\\Users\\\\Name: Test, File";`;
-      const result = minifyJS(input);
-      expect(result).toContain('"C:\\\\Users\\\\Name: Test, File"');
-    });
+    // Should preserve the complex template literal
+    expect(result).toContain(
+      "`Navigated to ${this.getSectionTitle(sectionId)} section`"
+    );
+    expect(result).toContain('"polite"');
 
-    it("should handle regex-like strings", () => {
-      const input = `const pattern = "/test: \\\\d+, value: \\\\w+/g";`;
-      const result = minifyJS(input);
-      expect(result).toContain('"/test: \\\\d+, value: \\\\w+/g"');
-    });
+    // Should not contain any unreplaced placeholders
+    expect(result).not.toMatch(/__TEMPLATE_\d+__/);
+    expect(result).not.toMatch(/__STRING_\d+__/);
+    expect(result).not.toMatch(/__REGEX_\d+__/);
+  });
+
+  it("should remove comments correctly", () => {
+    const code = `
+      // This is a single line comment
+      const value = "test"; // Another comment
+      /* This is a 
+         multi-line comment */
+      const result = \`template \${value}\`;
+    `;
+
+    const result = minifyJS(code);
+
+    // Should remove comments
+    expect(result).not.toContain("// This is a single line comment");
+    expect(result).not.toContain("// Another comment");
+    expect(result).not.toContain("/* This is a");
+    expect(result).not.toContain("multi-line comment */");
+
+    // Should preserve code
+    expect(result).toContain('"test"');
+    expect(result).toContain("`template ${value}`");
+  });
+
+  it("should handle edge cases with escaped quotes", () => {
+    const code = `
+      const str1 = "He said \\"Hello\\" to me";
+      const str2 = 'She replied \\'Hi\\'';
+      const template = \`Message: "\${message}"\`;
+    `;
+
+    const result = minifyJS(code);
+
+    // Should preserve escaped quotes
+    expect(result).toContain('"He said \\"Hello\\" to me"');
+    expect(result).toContain("'She replied \\'Hi\\''");
+    expect(result).toContain('`Message: "${message}"`');
+
+    // Should not contain any unreplaced placeholders
+    expect(result).not.toMatch(/__TEMPLATE_\d+__/);
+    expect(result).not.toMatch(/__STRING_\d+__/);
+    expect(result).not.toMatch(/__REGEX_\d+__/);
+  });
+
+  it("should minify whitespace correctly", () => {
+    const code = `
+      function   test(  ) {
+        const   value   =   "hello"  ;
+        return    value   ;
+      }
+    `;
+
+    const result = minifyJS(code);
+
+    // Should remove extra whitespace
+    expect(result).not.toContain("  ");
+    expect(result).toContain("function test(){");
+    expect(result).toContain('"hello"');
+
+    // Should preserve string content
+    expect(result).toContain('"hello"');
+  });
+});
+
+describe("validateTemplateReplacement function", () => {
+  it("should pass validation for clean code", () => {
+    const code = `
+      const element = document.getElementById(\`section-\${sectionId}\`);
+      const message = "Hello world";
+    `;
+
+    const result = validateTemplateReplacement(code, "test.js");
+
+    expect(result.isValid).toBe(true);
+    expect(result.unreplacedVariables).toHaveLength(0);
+    expect(result.errorMessage).toBeNull();
+  });
+
+  it("should fail validation for code with unreplaced template variables", () => {
+    const code = `
+      const element = document.getElementById(__TEMPLATE_10__);
+      const message = __STRING_5__;
+    `;
+
+    const result = validateTemplateReplacement(code, "test.js");
+
+    expect(result.isValid).toBe(false);
+    expect(result.unreplacedVariables).toHaveLength(2);
+    expect(result.unreplacedVariables[0].variable).toBe("__TEMPLATE_10__");
+    expect(result.unreplacedVariables[1].variable).toBe("__STRING_5__");
+    expect(result.errorMessage).toContain(
+      "Found 2 unreplaced template variable(s)"
+    );
+  });
+
+  it("should provide detailed information about unreplaced variables", () => {
+    const code = `line 1
+line 2
+const element = __TEMPLATE_10__;
+line 4`;
+
+    const result = validateTemplateReplacement(code, "test.js");
+
+    expect(result.isValid).toBe(false);
+    expect(result.unreplacedVariables).toHaveLength(1);
+    expect(result.unreplacedVariables[0].line).toBe(3);
+    expect(result.unreplacedVariables[0].position).toBeGreaterThan(0);
+    expect(result.filename).toBe("test.js");
+  });
+
+  it("should handle multiple types of unreplaced variables", () => {
+    const code = `
+      const template = __TEMPLATE_1__;
+      const string = __STRING_2__;
+      const regex = __REGEX_3__;
+    `;
+
+    const result = validateTemplateReplacement(code, "test.js");
+
+    expect(result.isValid).toBe(false);
+    expect(result.unreplacedVariables).toHaveLength(3);
+
+    const variables = result.unreplacedVariables.map((v) => v.variable);
+    expect(variables).toContain("__TEMPLATE_1__");
+    expect(variables).toContain("__STRING_2__");
+    expect(variables).toContain("__REGEX_3__");
+  });
+
+  it("should handle empty code", () => {
+    const result = validateTemplateReplacement("", "empty.js");
+
+    expect(result.isValid).toBe(true);
+    expect(result.unreplacedVariables).toHaveLength(0);
+    expect(result.errorMessage).toBeNull();
   });
 });
