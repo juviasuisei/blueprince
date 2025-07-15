@@ -48,6 +48,7 @@ describe("Navigation System", () => {
     it("should toggle navigation visibility", () => {
       const app = checklistApp();
       app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
 
       // Initially closed
       expect(app.showNavigation).toBe(false);
@@ -498,6 +499,7 @@ describe("Navigation System", () => {
     it("should announce navigation state changes", () => {
       const app = checklistApp();
       app.announceToScreenReader = vi.fn();
+      app.$nextTick = vi.fn((callback) => callback());
 
       app.toggleNavigation();
 
