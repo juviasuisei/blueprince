@@ -484,6 +484,22 @@ window.checkboxesData = {
       },
     ],
   },
+  obj03_r1f5: {
+    title: "Rank 1 • File 5: S",
+    hint: "Rank 1 • File 5: ???",
+    description: "[S]TAG",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r1f5_L.jpeg",
+        caption: "stag"
+      },
+      {
+        url: "images/obj03_r1f5_R.jpeg",
+        caption: "tag"
+      },
+    ],
+  },
   obj04_002_entrance: {
     title: "Entrance Hall: None",
     hint: "Entrance Hall: ???",
