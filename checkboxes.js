@@ -101,6 +101,13 @@ window.checkboxesData = {
     unlockKeyword: "Hallway",
     dependencies: [],
   },
+  obj02_056_westwinghall: {
+    title: "West Wing Hall",
+    hint: "Draft the West Wing Hall",
+    description: "Room 056",
+    unlockKeyword: "West Wing Hall",
+    dependencies: [],
+  },
   obj02_058_hallway: {
     title: "Corridor",
     hint: "Draft the Corridor",
@@ -245,6 +252,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r3f3_R.jpeg",
         caption: "rod"
+      },
+    ],
+  },
+  obj03_r3f1: {
+    title: "Rank 3 • File 1: C",
+    hint: "Rank 3 • File 1: ???",
+    description: "[C]ROW",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r3f1_L.jpeg",
+        caption: "crow"
+      },
+      {
+        url: "images/obj03_r3f1_R.jpeg",
+        caption: "row"
       },
     ],
   },
@@ -531,6 +554,19 @@ window.checkboxesData = {
       {
         url: "images/item03_windupkey.jpeg",
         caption: "wind-up key"
+      },
+    ],
+  },
+  obj05_06_saltshaker: {
+    title: "Salt Shaker",
+    hint: "Find a Salt Shaker",
+    description: "",
+    unlockKeyword: "Salt Shaker",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item04_saltshaker.jpeg",
+        caption: "salt shaker"
       },
     ],
   },
@@ -1034,6 +1070,24 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
+  dir056_note: {
+    title: "Note: Staff Notice",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note018.jpeg",
+        caption: "West Wing closure notice"
+      },
+    ],
+  },
+  dir056_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir058_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
@@ -1093,41 +1147,83 @@ window.checkboxesData = {
     hint: "Identify Ajeran Angel I: ???",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/dir080_angel1.jpeg",
+        caption: "Rynna • Gardener"
+      },
+    ],
   },
   dir080_angel2: {
     title: "Joya the Ajeran Angel of Chefs",
     hint: "Identify Ajeran Angel II: ???",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/dir080_angel2.jpeg",
+        caption: "Joya • Chef"
+      },
+    ],
   },
   dir080_angel3: {
     title: "Dauja the Ajeran Angel of Farmers",
     hint: "Identify Ajeran Angel III: ???",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/dir080_angel3.jpeg",
+        caption: "Dauja • Farmer"
+      },
+    ],
   },
   dir080_angel4: {
     title: "Veia the Ajeran Angel of Chimney Sweeps",
     hint: "Identify Ajeran Angel IV: ???",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/dir080_angel4.jpeg",
+        caption: "Veia • Chimney Sweep"
+      },
+    ],
   },
   dir080_angel5: {
     title: "Mila the Ajeran Angel of Maids",
     hint: "Identify Ajeran Angel V: ???",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/dir080_angel5.jpeg",
+        caption: "Mila • Maid"
+      },
+    ],
   },
   dir080_angel6: {
     title: "Lydia the Ajeran Angel of Equestrians",
     hint: "Identify Ajeran Angel VI: ???",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/dir080_angel1.jpeg",
+        caption: "Lydia • Equestrian"
+      },
+    ],
   },
   dir080_angel7: {
     title: "Orinda the Ajeran Angel of Royals",
     hint: "Identify Ajeran Angel VII: ???",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/dir080_angel1.jpeg",
+        caption: "Orinda • Royal"
+      },
+    ],
   },
 };

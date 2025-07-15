@@ -20,6 +20,7 @@ window.sectionsData = [
       "obj03_r4f3",
       "obj03_r4f4",
       "obj03_r4f5",
+      "obj03_r3f1",
       "obj03_r3f3",
       "obj03_r3f5",
       "obj03_r2f2",
@@ -53,6 +54,7 @@ window.sectionsData = [
       "obj02_047_bedroom",
       "obj02_049_guestbedroom",
       "obj02_055_hallway",
+      "obj02_056_westwinghall",
       "obj02_058_corridor",
       "obj02_065_courtyard",
       "obj02_071_commissary",
@@ -67,7 +69,7 @@ window.sectionsData = [
     mysteryType: "item",
     dependencies: [],
     information: [],
-    checkboxes: ["obj05_01_sledgehammer", "obj05_02_coinpurse", "obj05_03_windupkey"]
+    checkboxes: ["obj05_01_sledgehammer", "obj05_02_coinpurse", "obj05_03_windupkey", "obj05_04_saltshaker"]
   },
   {
     id: "obj06",
@@ -238,6 +240,14 @@ window.sectionsData = [
         checkboxes: ["dir055_note_red", "dir055_search"],
       },
       {
+        id: "dir056",
+        title: "056: West Wing Hall",
+        color: "orange",
+        dependencies: ["obj02_056_westwinghall"],
+        information: ["dir056_description"],
+        checkboxes: ["dir056_note", "dir056_search"],
+      },
+      {
         id: "dir058",
         title: "058: Corridor",
         color: "orange",
@@ -301,6 +311,15 @@ window.sectionsData = [
         checkboxes: [],
       },
       {
+        id: "person06_clara",
+        title: "Lady Clara Epsen",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir056_note"],
+        information: ["person06_clara_001"],
+        checkboxes: [],
+      },
+      {
         id: "person02_baroness",
         title: "Baroness Auravei Sinclair",
         color: "blue",
@@ -345,6 +364,7 @@ window.sectionsData = [
     dependencies: [],
     information: [
       "date002", // 1809
+      "date003", // 1983-06-15
       "date001", // 1993-03-18
     ],
     checkboxes: [],
@@ -393,6 +413,7 @@ window.sectionsData = [
           "note011", // 034 - security
           "note012", // 047 - bedroom
           "note004", // 055 - hallway
+          "note018", // 056 - west wing hall
           "note013", // 071 - commissary
           "note014", // 071 - commissary
         ],

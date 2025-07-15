@@ -297,6 +297,17 @@ window.informationData = {
       },
     ],
   },
+  dir056_description: {
+    title: "Description",
+    description: "The west wing of the estate has been closed since the death of Lady Epsen. It is unsurprising therefore, that this hallway in its neglected state features boarded windows and dust smothered furniture.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir056_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir058_description: {
     title: "Description",
     description: "A long hall with two doors at either end that had been one of your granduncle's most frequently traveled rooms. Consequently, he has left strict instructions with the household staff that the doors of this corridor should never under any circumstance be locked.",
@@ -392,6 +403,17 @@ window.informationData = {
       {
         url: "images/item03_windupkey.jpeg",
         caption: "wind-up key"
+      },
+    ],
+  },
+  item04_saltshaker: {
+    title: "A Glass Salt Shaker",
+    description: "Whenever you eat food and gain steps, gain an extra 1 step.",
+    dependencies: ["obj05_04_saltshaker"],
+    images: [
+      {
+        url: "images/item04_saltshaker.jpeg",
+        caption: "salt shaker"
       },
     ],
   },
@@ -627,6 +649,17 @@ window.informationData = {
       },
     ],
   },
+  note018: {
+    title: "West Wing Closure",
+    description: "",
+    dependencies: ["dir056_note"],
+    images: [
+      {
+        url: "images/note018.jpeg",
+        caption: "West Wing closure notice"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Baron Herbert S. Sinclair was our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
@@ -671,6 +704,11 @@ window.informationData = {
       },
     ]
   },
+  person06_clara_001: {
+    title: "Mount Holly West Wing",
+    description: "Lady Clara Epsen is associated with the West Wing Hall in Mount Holly. So much so, that in the wake of her death, the West Wing was closed.",
+    dependencies: ["dir056_note"],
+  },
   date001: {
     title: "Thursday, 18 March 1993",
     description: "Herbert S. Sinclair updates his will.",
@@ -679,6 +717,11 @@ window.informationData = {
   date002: {
     title: "Unknown, 1809",
     description: "Bird & Sons Publishing, a Fenn Aeries company, publishes The Fixed Stars by Richard Witt.",
+    dependencies: [],
+  },
+  date003: {
+    title: "Wednesday, 15 June 1983",
+    description: "The West Wing of Mount Holly is closed out of respect for the late Lady Clara Epsen.",
     dependencies: [],
   },
 };
