@@ -7,6 +7,7 @@ function checklistApp() {
     swipers: {},
     dataLoadError: false,
     unlockedMysteries: [],
+    revealedHints: {},
     showResetConfirm: false,
     showCompleteAllConfirm: false,
     version: "Unknown", // Default fallback version
@@ -506,6 +507,7 @@ function checklistApp() {
             this.expandedSections = state.expandedSections || [];
             this.expandedSubsections = state.expandedSubsections || [];
             this.unlockedMysteries = state.unlockedMysteries || [];
+            this.revealedHints = state.revealedHints || {};
           } else {
             console.warn("Invalid state structure detected, using defaults");
           }
@@ -524,7 +526,9 @@ function checklistApp() {
         Array.isArray(state.checkedItems) &&
         Array.isArray(state.expandedSections) &&
         Array.isArray(state.expandedSubsections) &&
-        Array.isArray(state.unlockedMysteries)
+        Array.isArray(state.unlockedMysteries) &&
+        (state.revealedHints === undefined ||
+          typeof state.revealedHints === "object")
       );
     },
 
@@ -535,6 +539,7 @@ function checklistApp() {
           expandedSections: this.expandedSections,
           expandedSubsections: this.expandedSubsections,
           unlockedMysteries: this.unlockedMysteries,
+          revealedHints: this.revealedHints,
           timestamp: Date.now(), // Add timestamp for debugging
         };
 
@@ -916,6 +921,82 @@ function checklistApp() {
     _invalidateProgressCache() {
       this._progressCache = {};
       this._lastStateChange = Date.now();
+    },
+
+    // Hint system methods
+    hasAdditionalHints(checkboxId) {
+      if (!this.data || !this.data.checkboxes) return false;
+      const checkbox = this.data.checkboxes[checkboxId];
+      return !!(
+        checkbox &&
+        Array.isArray(checkbox.additionalHints) &&
+        checkbox.additionalHints.length > 0
+      );
+    },
+
+    getRevealedHintCount(checkboxId) {
+      return this.revealedHints[checkboxId] || 0;
+    },
+
+    revealNextHint(checkboxId) {
+      if (!this.hasAdditionalHints(checkboxId)) return;
+
+      const checkbox = this.data.checkboxes[checkboxId];
+      const currentCount = this.getRevealedHintCount(checkboxId);
+
+      // Only reveal if there are more hints available
+      if (currentCount < checkbox.additionalHints.length) {
+        this.revealedHints[checkboxId] = currentCount + 1;
+        this.debouncedSaveState();
+
+        // Announce to screen reader
+        const hintText = checkbox.additionalHints[currentCount];
+        this.announceToScreenReader(`Hint revealed: ${hintText}`, "polite");
+      }
+    },
+
+    getHintDisplayData(checkboxId) {
+      if (!this.hasAdditionalHints(checkboxId)) return null;
+
+      const checkbox = this.data.checkboxes[checkboxId];
+      const revealedCount = this.getRevealedHintCount(checkboxId);
+
+      return {
+        checkboxId: checkboxId,
+        totalHints: checkbox.additionalHints.length,
+        revealedCount: revealedCount,
+        hints: checkbox.additionalHints.map((hintText, index) => ({
+          text: hintText,
+          revealed: index < revealedCount,
+          lightbulbOpacity: index < revealedCount ? 1.0 : 0.4,
+        })),
+      };
+    },
+
+    shouldShowHints(checkboxId) {
+      // Only show hints for unchecked checkboxes that have additional hints
+      return (
+        !this.checkedItems.includes(checkboxId) &&
+        this.hasAdditionalHints(checkboxId)
+      );
+    },
+
+    getRevealedHints(checkboxId) {
+      if (!this.hasAdditionalHints(checkboxId)) return [];
+
+      const checkbox = this.data.checkboxes[checkboxId];
+      const revealedCount = this.getRevealedHintCount(checkboxId);
+
+      return checkbox.additionalHints.slice(0, revealedCount);
+    },
+
+    getUnrevealedLightbulbCount(checkboxId) {
+      if (!this.hasAdditionalHints(checkboxId)) return 0;
+
+      const checkbox = this.data.checkboxes[checkboxId];
+      const revealedCount = this.getRevealedHintCount(checkboxId);
+
+      return checkbox.additionalHints.length - revealedCount;
     },
 
     initializeSwiper(swiperId, color, onSlideChange) {
