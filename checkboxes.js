@@ -143,6 +143,13 @@ window.checkboxesData = {
     unlockKeyword: "Passageway",
     dependencies: [],
   },
+  obj02_063_terrace: {
+    title: "Terrace",
+    hint: "Draft the Terrace",
+    description: "Room 063",
+    unlockKeyword: "Terrace",
+    dependencies: [],
+  },
   obj02_065_courtyard: {
     title: "Courtyard",
     hint: "Draft the Courtyard",
@@ -190,6 +197,20 @@ window.checkboxesData = {
     hint: "Draft the Archives",
     description: "Room 082",
     unlockKeyword: "Archives",
+    dependencies: [],
+  },
+  obj02_084_darkroom: {
+    title: "Darkroom",
+    hint: "Draft the Darkroom",
+    description: "Room 084",
+    unlockKeyword: "Darkroom",
+    dependencies: [],
+  },
+  obj02_086_furnace: {
+    title: "Furnace",
+    hint: "Draft the Furnace",
+    description: "Room 086",
+    unlockKeyword: "Furnace",
     dependencies: [],
   },
   obj03_r6f4: {
@@ -706,6 +727,12 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_059_passageway"],
   },
+  obj04_063_terrace: {
+    title: "Terrace: None",
+    hint: "Terrace: ???",
+    description: "",
+    dependencies: ["obj02_063_terrace"],
+  },
   obj04_065_courtyard: {
     title: "Courtyard: None",
     hint: "Courtyard: ???",
@@ -747,6 +774,18 @@ window.checkboxesData = {
     hint: "Archives: ???",
     description: "",
     dependencies: ["obj02_082_archives"],
+  },
+  obj04_084_darkroom: {
+    title: "Darkroom: None",
+    hint: "Darkroom: ???",
+    description: "",
+    dependencies: ["obj02_084_darkroom"],
+  },
+  obj04_086_furnace: {
+    title: "Furnace: None",
+    hint: "Furnace: ???",
+    description: "",
+    dependencies: ["obj02_084_furnace"],
   },
   obj05_01_sledgehammer: {
     title: "Sledge Hammer",
@@ -809,6 +848,32 @@ window.checkboxesData = {
       {
         url: "images/item05_lockpick.jpeg",
         caption: "lock pick kit"
+      },
+    ],
+  },
+  obj05_06_shovel: {
+    title: "Shovel",
+    hint: "Find a Shovel",
+    description: "",
+    unlockKeyword: "Shovel",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item06_shovel.jpeg",
+        caption: "shovel"
+      },
+    ],
+  },
+  obj05_07_keycard: {
+    title: "Keycard",
+    hint: "Find a Keycard",
+    description: "",
+    unlockKeyword: ["Keycard", "Key Card", "Security Keycard", "Security Key Card"],
+    dependencies: [],
+    images: [
+      {
+        url: "images/item07_keycard.jpeg",
+        caption: "keycard"
       },
     ],
   },
@@ -1378,6 +1443,18 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
+  dir059_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir063_terrace: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir065_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
@@ -1569,6 +1646,62 @@ window.checkboxesData = {
     ],
   },
   dir082_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir084_note_print: {
+    title: "Note: Print Notes",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note023.jpeg",
+        caption: "print-making order from Herbert"
+      },
+    ],
+  },
+  dir084_note_photos: {
+    title: "Photos: Darkroom Prints",
+    hint: "Book: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note024_1.jpeg",
+        caption: "Mrs. Babbage"
+      },
+      {
+        url: "images/note024_2.jpeg",
+        caption: "Unknown Maid and Bridgette"
+      },
+      {
+        url: "images/note024_3.jpeg",
+        caption: "bathroom selfie by Herbert"
+      },
+      {
+        url: "images/note024_4.jpeg",
+        caption: "Hartley holding a note with possibly Kirk"
+      },
+      {
+        url: "images/note024_5.jpeg",
+        caption: "the apple orchard"
+      },
+      {
+        url: "images/note024_6.jpeg",
+        caption: "weathered portrait of Clara"
+      },
+    ],
+  },
+  dir084_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir086_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

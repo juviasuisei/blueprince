@@ -373,6 +373,22 @@ window.informationData = {
       },
     ],
   },
+  dir063_description: {
+    title: "Description",
+    description: "A terrace balcony overlooking the grounds providing an ideal spot for appreciating all the verdure and greenery that the estate offers.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir063_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir063_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
   dir065_description: {
     title: "Description",
     description: "A charming spot granting guests a bit of fresh air and open skies within the privacy of the manor walls.",
@@ -460,6 +476,33 @@ window.informationData = {
       },
     ],
   },
+  dir084_description: {
+    title: "Description",
+    description: "A room dedicated to photo processing, development, and print-making. This room is outfitted with safelights which provide red illumination to which photographic material is insensitive. However, due to a faulty installation the safelights often overload their circuit capacity and blow a fuse.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir084_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir086_description: {
+    title: "Description",
+    description: "The main centralized heat source for the estate. You may find yourself starting to sweat after drafting this room.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir086_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir086_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
   item01_sledgehammer: {
     title: "A Heavy Sledge Hammer",
     description: "Can shatter padlocks on locked trunks.",
@@ -512,6 +555,28 @@ window.informationData = {
       {
         url: "images/item05_lockpick.jpeg",
         caption: "lock pick kit"
+      },
+    ],
+  },
+  item06_shovel: {
+    title: "An Old Weathered Shovel",
+    description: "Looks like it could be useful for digging.",
+    dependencies: ["obj05_06_shovel"],
+    images: [
+      {
+        url: "images/item06_shovel.jpeg",
+        caption: "shovel"
+      },
+    ],
+  },
+  item07_keycard: {
+    title: "An Electronic Keycard",
+    description: "Opens electronically-powered security doors.",
+    dependencies: ["obj05_07_keycard"],
+    images: [
+      {
+        url: "images/item07_keycard.jpeg",
+        caption: "keycard"
       },
     ],
   },
@@ -818,6 +883,48 @@ window.informationData = {
       },
     ],
   },
+  note023: {
+    title: "Print Notes",
+    description: "",
+    dependencies: ["dir086_note_print"],
+    images: [
+      {
+        url: "images/note023.jpeg",
+        caption: "print-making order from Herbert"
+      },
+    ],
+  },
+  note024: {
+    title: "Photos: Darkroom Prints",
+    description: "",
+    dependencies: ["dir086_note_photos"],
+    images: [
+      {
+        url: "images/note024_1.jpeg",
+        caption: "Mrs. Babbage"
+      },
+      {
+        url: "images/note024_2.jpeg",
+        caption: "Unknown Maid and Bridgette"
+      },
+      {
+        url: "images/note024_3.jpeg",
+        caption: "bathroom selfie by Herbert"
+      },
+      {
+        url: "images/note024_4.jpeg",
+        caption: "Hartley holding a note with possibly Kirk"
+      },
+      {
+        url: "images/note024_5.jpeg",
+        caption: "the apple orchard"
+      },
+      {
+        url: "images/note024_6.jpeg",
+        caption: "weathered portrait of Clara"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -863,7 +970,7 @@ window.informationData = {
   },
   person05_richardwitt_001: {
     title: "Occupation",
-    description: "Author of The Fixed Stars, published in 1809",
+    description: "Author of The Fixed Stars.",
     optionalDependencies: true,
     dependencies: ["dir042_note_book"],
     images: [
@@ -906,7 +1013,7 @@ window.informationData = {
     dependencies: ["dir082_note_scrapbook"],
   },
   person07_mary_003: {
-    title: "Friendship with Caleb Manning",
+    title: "Friendship with Caleb",
     description: "Has referred to Caleb as a mentor, friend, and confidant in press interviews.",
     dependencies: ["dir082_note_scrapbook"],
   },
@@ -918,6 +1025,31 @@ window.informationData = {
   person07_mary_005: {
     title: "Synka Heiress",
     description: "Prior to her disappearance, she was the hieress to Synka.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  person08_caleb_001: {
+    title: "Occupation",
+    description: "Author.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  person08_caleb_002: {
+    title: "Political Activist?",
+    description: "Arrested days after a politically motivated bombing in Trinsdale.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  person08_caleb_003: {
+    title: "Friendship with Mary",
+    description: "Mary spoke in press interviews about Caleb being her mentor, friend, and confidant.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  person09_phillip_001: {
+    title: "Occupation",
+    description: "Publisher.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  person09_phillip_002: {
+    title: "Political Activist?",
+    description: "Arrested days after a politically motivated bombing in Trinsdale.",
     dependencies: ["dir082_note_scrapbook"],
   },
   date001: {

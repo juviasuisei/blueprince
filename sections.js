@@ -33,6 +33,7 @@ window.sectionsData = [
       "obj04_056_westwinghall",
       "obj04_058_corridor",
       "obj04_059_passageway",
+      "obj04_063_terrace",
       "obj04_065_courtyard",
       "obj04_071_commissary",
       "obj04_072_kitchen",
@@ -40,6 +41,8 @@ window.sectionsData = [
       "obj04_080_chapel",
       "obj04_081_maidschamber",
       "obj04_082_archives",
+      "obj04_084_darkroom",
+      "obj04_086_furnace",
     ]
   },
   {
@@ -102,6 +105,7 @@ window.sectionsData = [
       "obj02_056_westwinghall",
       "obj02_058_corridor",
       "obj02_059_passageway",
+      "obj02_063_terrace",
       "obj02_065_courtyard",
       "obj02_071_commissary",
       "obj02_072_kitchen",
@@ -109,6 +113,8 @@ window.sectionsData = [
       "obj02_080_chapel",
       "obj02_081_maidschamber",
       "obj02_082_archives",
+      "obj02_084_darkroom",
+      "obj02_086_furnace",
     ]
   },
   {
@@ -124,6 +130,8 @@ window.sectionsData = [
       "obj05_03_windupkey",
       "obj05_04_saltshaker",
       "obj05_05_lockpick",
+      "obj05_06_shovel",
+      "obj05_07_keycard",
     ]
   },
   {
@@ -159,7 +167,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: [],
         information: ["dir002_description", "dir002_info"],
-        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_person1", "dir002_person2", "dir002_search"],
+        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_search", "dir002_person1", "dir002_person2"],
       },
       {
         id: "dir003",
@@ -322,6 +330,14 @@ window.sectionsData = [
         checkboxes: ["dir059_search"],
       },
       {
+        id: "dir063",
+        title: "063: Terrace",
+        color: "green",
+        dependencies: ["obj02_063_terrace"],
+        information: ["dir063_description", "dir063_info"],
+        checkboxes: ["dir063_search"],
+      },
+      {
         id: "dir065",
         title: "065: Courtyard",
         color: "green",
@@ -377,6 +393,22 @@ window.sectionsData = [
         information: ["dir082_description"],
         checkboxes: ["dir082_note_scrapbook", "dir082_search"],
       },
+      {
+        id: "dir084",
+        title: "084: Darkroom",
+        color: "red",
+        dependencies: ["obj02_084_darkroom"],
+        information: ["dir084_description"],
+        checkboxes: ["dir084_note_print", "dir084_note_photos", "dir084_search"],
+      },
+      {
+        id: "dir086",
+        title: "086: Furnace",
+        color: "red",
+        dependencies: ["obj02_086_furnace"],
+        information: ["dir086_description", "dir086_info"],
+        checkboxes: ["dir086_search"],
+      },
     ],
   },
   {
@@ -390,6 +422,8 @@ window.sectionsData = [
       "item03_windupkey",
       "item04_saltshaker",
       "item05_lockpick",
+      "item06_shovel",
+      "item07_keycard",
     ],
   },
   {
@@ -457,7 +491,7 @@ window.sectionsData = [
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir082_note_scrapbook"],
-        information: ["person08_caleb_001", "person08_caleb_002"],
+        information: ["person08_caleb_001", "person08_caleb_002", "person08_caleb_003"],
         checkboxes: [],
       },
       {
@@ -466,7 +500,7 @@ window.sectionsData = [
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir082_note_scrapbook"],
-        information: ["person09_phillip_001"],
+        information: ["person09_phillip_001", "person09_phillip_002"],
         checkboxes: [],
       },
       {
