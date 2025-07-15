@@ -31,6 +31,7 @@ window.sectionsData = [
       "obj03_r2f4",
       "obj03_r2f5",
       "obj03_r1f1",
+      "obj03_r1f2",
       "obj03_r1f3",
       "obj03_r1f4",
     ]

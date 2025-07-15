@@ -436,6 +436,22 @@ window.checkboxesData = {
       },
     ],
   },
+  obj03_r1f2: {
+    title: "Rank 1 • File 2: A",
+    hint: "Rank 1 • File 2: ???",
+    description: "PR[A]Y",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r1f2_L.jpeg",
+        caption: "pray"
+      },
+      {
+        url: "images/obj03_r1f2_R.jpeg",
+        caption: "pry"
+      },
+    ],
+  },
   obj03_r1f3: {
     title: "Rank 1 • File 3: F",
     hint: "Rank 1 • File 3: ???",
