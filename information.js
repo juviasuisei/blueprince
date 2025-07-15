@@ -167,6 +167,22 @@ window.informationData = {
       },
     ],
   },
+  dir031_description: {
+    title: "Description",
+    description: "One benefit of the restoration of old buildings is that it allows the owners to update and add modern amenities. The utility closet and the circuit breaker box within were set up when gas powered lighting was retired and replaced by a more fashionable home electrical system.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir031_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir031_info: {
+    title: "Classification",
+    description: "TYPE: Mechanical • Dead End",
+    dependencies: [],
+  },
   dir034_description: {
     title: "Description",
     description: "A control room with state of the art surveillance equipment, inventory system, and access control via an electronic computer terminal. This room is where the estate's patrol guards kick up their feet and thank their stars they are living in a modern era.",

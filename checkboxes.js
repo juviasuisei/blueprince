@@ -61,6 +61,13 @@ window.checkboxesData = {
     unlockKeyword: "Pantry",
     dependencies: [],
   },
+  obj02_031_utilitycloset: {
+    title: "Utility Closet",
+    hint: "Draft the Utility Closet",
+    description: "Room 031",
+    unlockKeyword: "Utility Closet",
+    dependencies: [],
+  },
   obj02_034_security: {
     title: "Security",
     hint: "Draft Security",
@@ -504,19 +511,19 @@ window.checkboxesData = {
     title: "Entrance Hall: None",
     hint: "Entrance Hall: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_002_entrance"],
   },
-  obj04_002_spareroom: {
+  obj04_003_spareroom: {
     title: "Spare Room: None",
     hint: "Spare Room: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_003_spareroom"],
   },
   obj04_005_parlor: {
     title: "Parlor: Black Pawn",
     hint: "Parlor: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_005_parlor"],
     images: [
       {
         url: "images/obj04_005_parlor.jpeg",
@@ -528,19 +535,19 @@ window.checkboxesData = {
     title: "Billiard Room: None",
     hint: "Billiard Room: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_006_billiardroom"],
   },
   obj04_009_closet: {
     title: "Closet: None",
     hint: "Closet: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_009_closet"],
   },
   obj04_012_storeroom: {
     title: "Storeroom: White Pawn",
     hint: "Storeroom: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_012_storeroom"],
     images: [
       {
         url: "images/obj04_012_storeroom.jpeg",
@@ -552,7 +559,7 @@ window.checkboxesData = {
     title: "Nook: White Rook",
     hint: "Nook: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_013_nook"],
     images: [
       {
         url: "images/obj04_013_nook.jpeg",
@@ -564,7 +571,7 @@ window.checkboxesData = {
     title: "Den: White Pawn",
     hint: "Den: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_017_den"],
     images: [
       {
         url: "images/obj04_017_den.jpeg",
@@ -576,13 +583,19 @@ window.checkboxesData = {
     title: "Pantry: None",
     hint: "Pantry: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_021_pantry"],
+  },
+  obj04_031_utilitycloset: {
+    title: "Utility Closet: None",
+    hint: "Utility Closet: ???",
+    description: "",
+    dependencies: ["obj02_031_utilitycloset"],
   },
   obj04_034_security: {
     title: "Security: White Knight",
     hint: "Security: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_034_security"],
     images: [
       {
         url: "images/obj04_034_security.jpeg",
@@ -594,7 +607,7 @@ window.checkboxesData = {
     title: "Observatory: White Knight",
     hint: "Observatory: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_042_observatory"],
     images: [
       {
         url: "images/obj04_042_observatory.jpeg",
@@ -606,7 +619,7 @@ window.checkboxesData = {
     title: "Bedroom: White Pawn",
     hint: "Bedroom: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_047_bedroom"],
     images: [
       {
         url: "images/obj04_047_bedroom.jpeg",
@@ -618,13 +631,13 @@ window.checkboxesData = {
     title: "Boudoir: None",
     hint: "Boudoir: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_048_boudoir"],
   },
   obj04_049_guestbedroom: {
     title: "Guest Bedroom: White Pawn",
     hint: "Guest Bedroom: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_049_guestbedroom"],
     images: [
       {
         url: "images/obj04_049_guestbedroom.jpeg",
@@ -632,23 +645,47 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_055_hallway: {
+    title: "Hallway: None",
+    hint: "Hallway: ???",
+    description: "",
+    dependencies: ["obj02_055_hallway"],
+  },
+  obj04_056_westwinghall: {
+    title: "West Wing Hall: None",
+    hint: "West Wing Hall: ???",
+    description: "",
+    dependencies: ["obj02_056_westwinghall"],
+  },
+  obj04_058_corridor: {
+    title: "Corridor: None",
+    hint: "Corridor: ???",
+    description: "",
+    dependencies: ["obj02_058_corridor"],
+  },
   obj04_065_courtyard: {
     title: "Courtyard: None",
     hint: "Courtyard: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_065_courtyard"],
+  },
+  obj04_071_commissary: {
+    title: "Commissary: None",
+    hint: "Commissary: ???",
+    description: "",
+    dependencies: ["obj02_071_commissary"],
   },
   obj04_079_lavatory: {
     title: "Lavatory: None",
     hint: "Lavatory: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_079_lavatory"],
   },
   obj04_080_chapel: {
     title: "Chapel: White Bishop",
     hint: "Chapel: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_080_chapel"],
     images: [
       {
         url: "images/obj04_080_chapel.jpeg",
@@ -660,7 +697,7 @@ window.checkboxesData = {
     title: "Maid's Chamber: None",
     hint: "Maid's Chamber: ???",
     description: "",
-    dependencies: [],
+    dependencies: ["obj02_081_maidschamber"],
   },
   obj05_01_sledgehammer: {
     title: "Sledge Hammer",
@@ -1028,6 +1065,24 @@ window.checkboxesData = {
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
+  },
+  dir031_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir031_vac: {
+    title: "V.A.C. System Activated",
+    hint: "V.A.C.: ???",
+    description: "Volatage Adjustment Controls: Gray • Blue • Green • White • Red • Purple",
+    dependencies: [],
+  },
+  dir031_switch: {
+    title: "Gemstone Cavern Unlocked",
+    hint: "Pull the Switch: ???",
+    description: "",
+    dependencies: ["dir031_vac"],
   },
   dir034_note_pad: {
     title: "Note: Note Pad",
