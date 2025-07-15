@@ -275,7 +275,7 @@ window.sectionsData = [
         color: "red",
         dependencies: ["obj02_080_chapel"],
         information: ["dir080_description", "dir080_info"],
-        checkboxes: ["dir080_search"],
+        checkboxes: ["dir080_search", "dir080_angel1", "dir080_angel2", "dir080_angel3", "dir080_angel4", "dir080_angel5", "dir080_angel6", "dir080_angel7"],
       },
     ],
   },
