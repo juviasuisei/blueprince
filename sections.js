@@ -21,6 +21,7 @@ window.sectionsData = [
       "obj03_r4f4",
       "obj03_r4f5",
       "obj03_r3f1",
+      "obj03_r3f2",
       "obj03_r3f3",
       "obj03_r3f5",
       "obj03_r2f2",
@@ -52,6 +53,7 @@ window.sectionsData = [
       "obj02_045_antechamber",
       "obj02_046_room46",
       "obj02_047_bedroom",
+      "obj02_048_boudoir",
       "obj02_049_guestbedroom",
       "obj02_055_hallway",
       "obj02_056_westwinghall",
@@ -69,7 +71,12 @@ window.sectionsData = [
     mysteryType: "item",
     dependencies: [],
     information: [],
-    checkboxes: ["obj05_01_sledgehammer", "obj05_02_coinpurse", "obj05_03_windupkey", "obj05_04_saltshaker"]
+    checkboxes: [
+      "obj05_01_sledgehammer",
+      "obj05_02_coinpurse",
+      "obj05_03_windupkey",
+      "obj05_04_saltshaker",
+    ]
   },
   {
     id: "obj06",
@@ -110,6 +117,7 @@ window.sectionsData = [
       "obj04_034_security",
       "obj04_042_observatory",
       "obj04_047_bedroom",
+      "obj04_048_boudoir",
       "obj04_049_guestbedroom",
       "obj04_065_courtyard",
       "obj04_079_lavatory",
@@ -225,6 +233,14 @@ window.sectionsData = [
         dependencies: ["obj02_047_bedroom"],
         information: ["dir047_description", "dir047_info", "dir047_chess"],
         checkboxes: ["dir047_note_postcard", "dir047_photo", "dir047_photo_identify", "dir047_finger", "dir047_search"],
+      },
+      {
+        id: "dir048",
+        title: "048: Boudoir",
+        color: "purple",
+        dependencies: ["obj02_048_boudoir"],
+        information: ["dir048_description"],
+        checkboxes: ["dir048_note", "dir048_search"],
       },
       {
         id: "dir049",
@@ -415,6 +431,7 @@ window.sectionsData = [
           "note010", // 034 - security
           "note011", // 034 - security
           "note012", // 047 - bedroom
+          "note019", // 047 - bedroom
           "note004", // 055 - hallway
           "note018", // 056 - west wing hall
           "note013", // 071 - commissary

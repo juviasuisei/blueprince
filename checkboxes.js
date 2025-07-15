@@ -87,6 +87,13 @@ window.checkboxesData = {
     unlockKeyword: "Bedroom",
     dependencies: [],
   },
+  obj02_048_boudoir: {
+    title: "Boudoir",
+    hint: "Draft the Boudoir",
+    description: "Room 048",
+    unlockKeyword: "Boudoir",
+    dependencies: [],
+  },
   obj02_049_guestbedroom: {
     title: "Guest Bedroom",
     hint: "Draft the Guest Bedroom",
@@ -239,22 +246,6 @@ window.checkboxesData = {
       },
     ],
   },
-  obj03_r3f3: {
-    title: "Rank 3 • File 3: A",
-    hint: "Rank 3 • File 3: ???",
-    description: "RO[A]D",
-    dependencies: [],
-    images: [
-      {
-        url: "images/obj03_r3f3_L.jpeg",
-        caption: "road"
-      },
-      {
-        url: "images/obj03_r3f3_R.jpeg",
-        caption: "rod"
-      },
-    ],
-  },
   obj03_r3f1: {
     title: "Rank 3 • File 1: C",
     hint: "Rank 3 • File 1: ???",
@@ -268,6 +259,38 @@ window.checkboxesData = {
       {
         url: "images/obj03_r3f1_R.jpeg",
         caption: "row"
+      },
+    ],
+  },
+  obj03_r3f2: {
+    title: "Rank 3 • File 2: R",
+    hint: "Rank 3 • File 2: ???",
+    description: "TIE[R]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r3f2_L.jpeg",
+        caption: "tier"
+      },
+      {
+        url: "images/obj03_r3f2_R.jpeg",
+        caption: "tie"
+      },
+    ],
+  },
+  obj03_r3f3: {
+    title: "Rank 3 • File 3: A",
+    hint: "Rank 3 • File 3: ???",
+    description: "RO[A]D",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r3f3_L.jpeg",
+        caption: "road"
+      },
+      {
+        url: "images/obj03_r3f3_R.jpeg",
+        caption: "rod"
       },
     ],
   },
@@ -506,6 +529,12 @@ window.checkboxesData = {
         caption: "white pawn"
       },
     ],
+  },
+  obj04_048_boudoir: {
+    title: "Boudoir: None",
+    hint: "Boudoir: ???",
+    description: "",
+    dependencies: [],
   },
   obj04_049_guestbedroom: {
     title: "Guest Bedroom: White Pawn",
@@ -1046,16 +1075,34 @@ window.checkboxesData = {
     description: "This is our greatgrandmother, the Baroness Auravei Sinclair.",
     dependencies: ["dir047_photo"],
   },
+  dir047_finger: {
+    title: "Baron Bafflers",
+    hint: "What's Up With This Giant Finger?",
+    description: "The April 6 Edition of Baron Bafflers.",
+    dependencies: [],
+  },
   dir047_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
-  dir047_finger: {
-    title: "Baron Bafflers",
-    hint: "What's Up With This Giant Finger?",
-    description: "The April 6 Edition of Baron Bafflers.",
+  dir048_note: {
+    title: "Photo: Boudoir Holiday",
+    hint: "Photo: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note019.jpeg",
+        caption: "holiday photo"
+      },
+    ],
+  },
+  dir048_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
     dependencies: [],
   },
   dir049_note: {

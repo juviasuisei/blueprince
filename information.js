@@ -259,6 +259,17 @@ window.informationData = {
       },
     ],
   },
+  dir048_description: {
+    title: "Description",
+    description: "A private salon with a plethora of fainting couches and chaise lounges that served both as a dressing room for her Ladyship in the mornings and a cozy sitting room for her in the evenings.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir048_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir049_description: {
     title: "Description",
     description: "A small bedroom maintained and kept available for accommodating weekend guests and impromptu visitors who find themselves compelled to stay the night.",
@@ -657,6 +668,17 @@ window.informationData = {
       {
         url: "images/note018.jpeg",
         caption: "West Wing closure notice"
+      },
+    ],
+  },
+  note019: {
+    title: "Photo: Boudoir Holiday ",
+    description: "",
+    dependencies: ["dir048_note"],
+    images: [
+      {
+        url: "images/note019.jpeg",
+        caption: "holiday photo"
       },
     ],
   },
