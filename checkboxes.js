@@ -150,6 +150,13 @@ window.checkboxesData = {
     unlockKeyword: "Chapel",
     dependencies: [],
   },
+  obj02_081_maidschamber: {
+    title: "Maid's Chamber",
+    hint: "Draft the Maid's Chamber",
+    description: "Room 081",
+    unlockKeyword: "Maid's Chamber",
+    dependencies: [],
+  },
   obj03_r6f4: {
     title: "Rank 6 • File 4: E",
     hint: "Rank 6 • File 4: ???",
@@ -195,6 +202,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r5f5_R.jpeg",
         caption: "ten"
+      },
+    ],
+  },
+  obj03_r4f3: {
+    title: "Rank 4 • File 2: A",
+    hint: "Rank 4 • File 2: ???",
+    description: "CO[A]T",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r4f2_L.jpeg",
+        caption: "coat"
+      },
+      {
+        url: "images/obj03_r4f2_R.jpeg",
+        caption: "cot"
       },
     ],
   },
@@ -571,6 +594,12 @@ window.checkboxesData = {
         caption: "white bishop"
       },
     ],
+  },
+  obj04_081_maidschamber: {
+    title: "Maid's Chamber: None",
+    hint: "Maid's Chamber: ???",
+    description: "",
+    dependencies: [],
   },
   obj05_01_sledgehammer: {
     title: "Sledge Hammer",
@@ -1296,5 +1325,35 @@ window.checkboxesData = {
         caption: "Orinda • Royal"
       },
     ],
+  },
+  dir081_note_notice: {
+    title: "Note: Death of Baron Herbert S. Sinclair Notice",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note020.jpeg",
+        caption: "announcement that work is suspended in lieu of the Baron's death"
+      },
+    ],
+  },
+  dir081_note_photo: {
+    title: "Photo: Mount Holly Staff",
+    hint: "Photo: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note021.jpeg",
+        caption: "group photo of the Mount Holly staff"
+      },
+    ],
+  },
+  dir081_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
   },
 };

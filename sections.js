@@ -17,6 +17,7 @@ window.sectionsData = [
       "obj03_r6f4",
       "obj03_r5f4",
       "obj03_r5f5",
+      "obj03_r4f2",
       "obj03_r4f3",
       "obj03_r4f4",
       "obj03_r4f5",
@@ -62,6 +63,7 @@ window.sectionsData = [
       "obj02_071_commissary",
       "obj02_079_lavatory",
       "obj02_080_chapel",
+      "obj02_081_maidschamber",
     ]
   },
   {
@@ -122,6 +124,7 @@ window.sectionsData = [
       "obj04_065_courtyard",
       "obj04_079_lavatory",
       "obj04_080_chapel",
+      "obj04_081_maidschamber",
     ]
   },
   {
@@ -306,6 +309,14 @@ window.sectionsData = [
         information: ["dir080_description", "dir080_info"],
         checkboxes: ["dir080_search", "dir080_angel1", "dir080_angel2", "dir080_angel3", "dir080_angel4", "dir080_angel5", "dir080_angel6", "dir080_angel7"],
       },
+      {
+        id: "dir081",
+        title: "081: Maid's Chamber",
+        color: "red",
+        dependencies: ["obj02_081_maidschamber"],
+        information: ["dir081_description"],
+        checkboxes: ["dir081_note_notice", "dir081_note_photo", "dir081_search"],
+      },
     ],
   },
   {
@@ -385,6 +396,7 @@ window.sectionsData = [
       "date002", // 1809
       "date003", // 1983-06-15
       "date001", // 1993-03-18
+      "date004", // 1993-11-06
     ],
     checkboxes: [],
   },
@@ -436,6 +448,8 @@ window.sectionsData = [
           "note018", // 056 - west wing hall
           "note013", // 071 - commissary
           "note014", // 071 - commissary
+          "note020", // 081 - maid's chamber
+          "note021", // 081 - maid's chamber
         ],
       },
     ],

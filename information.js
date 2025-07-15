@@ -384,6 +384,17 @@ window.informationData = {
     description: "TYPE: Entry",
     dependencies: [],
   },
+  dir081_description: {
+    title: "Description",
+    description: "A typical example of the accommodations for the live-in staff on the estate. It appears this particular bedroom belongs to one of the maids.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir081_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   item01_sledgehammer: {
     title: "A Heavy Sledge Hammer",
     description: "Can shatter padlocks on locked trunks.",
@@ -682,6 +693,28 @@ window.informationData = {
       },
     ],
   },
+  note020: {
+    title: "Death of Baron Herbert S. Sinclair Notice",
+    description: "",
+    dependencies: ["dir081_note_notice"],
+    images: [
+      {
+        url: "images/note020.jpeg",
+        caption: "announcement that work is suspended in lieu of the Baron's death"
+      },
+    ],
+  },
+  note021: {
+    title: "Photo: Mount Holly Staff",
+    description: "",
+    dependencies: ["dir081_note_photo"],
+    images: [
+      {
+        url: "images/note021.jpeg",
+        caption: "group photo of the Mount Holly staff"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Baron Herbert S. Sinclair was our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
@@ -739,11 +772,17 @@ window.informationData = {
   date002: {
     title: "Unknown, 1809",
     description: "Bird & Sons Publishing, a Fenn Aeries company, publishes The Fixed Stars by Richard Witt.",
-    dependencies: [],
+    optionalDependencies: true,
+    dependencies: ["dir042_note_book"],
   },
   date003: {
     title: "Wednesday, 15 June 1983",
     description: "The West Wing of Mount Holly is closed out of respect for the late Lady Clara Epsen.",
-    dependencies: [],
+    dependencies: ["dir056_note"],
+  },
+  date003: {
+    title: "Friday, 06 November 1993",
+    description: "The staff of Mount Holly leave on temporary paid leave after Baron Herbert S. Sinclair's death.",
+    dependencies: ["dir081_note_notice"],
   },
 };
