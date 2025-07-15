@@ -185,6 +185,13 @@ window.checkboxesData = {
     unlockKeyword: "Maid's Chamber",
     dependencies: [],
   },
+  obj02_082_archives: {
+    title: "Archives",
+    hint: "Draft the Archives",
+    description: "Room 082",
+    unlockKeyword: "Archives",
+    dependencies: [],
+  },
   obj03_r6f4: {
     title: "Rank 6 • File 4: E",
     hint: "Rank 6 • File 4: ???",
@@ -735,6 +742,12 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_081_maidschamber"],
   },
+  obj04_082_archives: {
+    title: "Archives: None",
+    hint: "Archives: ???",
+    description: "",
+    dependencies: ["obj02_082_archives"],
+  },
   obj05_01_sledgehammer: {
     title: "Sledge Hammer",
     hint: "Find a Sledge Hammer",
@@ -783,6 +796,19 @@ window.checkboxesData = {
       {
         url: "images/item04_saltshaker.jpeg",
         caption: "salt shaker"
+      },
+    ],
+  },
+  obj05_05_lockpick: {
+    title: "Lock Pick Kit",
+    hint: "Find a Lock Pick Kit",
+    description: "",
+    unlockKeyword: "Lock Pick Kit",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item05_lockpick.jpeg",
+        caption: "lock pick kit"
       },
     ],
   },
@@ -1509,6 +1535,40 @@ window.checkboxesData = {
     ],
   },
   dir081_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir082_note_scrapbook: {
+    title: "Book: Newsclippings",
+    hint: "Book: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note022_1.jpeg",
+        caption: "first spread"
+      },
+      {
+        url: "images/note022_2.jpeg",
+        caption: "second spread"
+      },
+      {
+        url: "images/note022_3.jpeg",
+        caption: "third spread"
+      },
+      {
+        url: "images/note022_4.jpeg",
+        caption: "fourth spread"
+      },
+      {
+        url: "images/note022_5.jpeg",
+        caption: "fifth spread"
+      },
+    ],
+  },
+  dir082_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

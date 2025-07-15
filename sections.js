@@ -39,6 +39,7 @@ window.sectionsData = [
       "obj04_079_lavatory",
       "obj04_080_chapel",
       "obj04_081_maidschamber",
+      "obj04_082_archives",
     ]
   },
   {
@@ -61,6 +62,7 @@ window.sectionsData = [
       "obj03_r3f3",
       "obj03_r3f4",
       "obj03_r3f5",
+      "obj03_r2f1",
       "obj03_r2f2",
       "obj03_r2f3",
       "obj03_r2f4",
@@ -106,6 +108,7 @@ window.sectionsData = [
       "obj02_079_lavatory",
       "obj02_080_chapel",
       "obj02_081_maidschamber",
+      "obj02_082_archives",
     ]
   },
   {
@@ -120,6 +123,7 @@ window.sectionsData = [
       "obj05_02_coinpurse",
       "obj05_03_windupkey",
       "obj05_04_saltshaker",
+      "obj05_05_lockpick",
     ]
   },
   {
@@ -365,6 +369,14 @@ window.sectionsData = [
         information: ["dir081_description"],
         checkboxes: ["dir081_note_notice", "dir081_note_photo", "dir081_search"],
       },
+      {
+        id: "dir082",
+        title: "082: Archives",
+        color: "red",
+        dependencies: ["obj02_082_archives"],
+        information: ["dir082_description"],
+        checkboxes: ["dir082_note_scrapbook", "dir082_search"],
+      },
     ],
   },
   {
@@ -377,6 +389,7 @@ window.sectionsData = [
       "item02_coinpurse",
       "item03_windupkey",
       "item04_saltshaker",
+      "item05_lockpick",
     ],
   },
   {
@@ -390,7 +403,16 @@ window.sectionsData = [
         title: "Baron Herbert S. Sinclair",
         color: "blue",
         dependencies: [],
-        information: ["person01_herbie_001"],
+        information: ["person01_herbie_001", "person01_herbie_002", "person01_herbie_003"],
+        checkboxes: [],
+      },
+      {
+        id: "person07_mary",
+        title: "Author Mary Matthew Jones",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir081_note_scrapbook"],
+        information: ["person07_mary_001", "person07_mary_002", "person07_mary_003", "person07_mary_004", "person07_mary_005"],
         checkboxes: [],
       },
       {
@@ -399,7 +421,7 @@ window.sectionsData = [
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir056_note"],
-        information: ["person06_clara_001"],
+        information: ["person06_clara_002", "person06_clara_001"],
         checkboxes: [],
       },
       {
@@ -430,6 +452,24 @@ window.sectionsData = [
         checkboxes: [],
       },
       {
+        id: "person08_caleb",
+        title: "Author Caleb Manning",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir081_note_scrapbook"],
+        information: ["person08_caleb_001", "person08_caleb_002"],
+        checkboxes: [],
+      },
+      {
+        id: "person09_phillip",
+        title: "Publisher Philip White",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir081_note_scrapbook"],
+        information: ["person09_phillip_001"],
+        checkboxes: [],
+      },
+      {
         id: "person05_richardwitt",
         title: "Author Richard Witt",
         color: "blue",
@@ -448,6 +488,13 @@ window.sectionsData = [
     information: [
       "date002", // 1809
       "date003", // 1983-06-15
+      "date005", // 1985-08-22
+      "date006", // 1986-01-27
+      "date008", // 1986-11-04
+      "date007", // 1986-11-11
+      "date009", // 1986-11-17
+      "date010", // 1987-02-20
+      "date011", // 1987-09-02
       "date001", // 1993-03-18
       "date004", // 1993-11-06
     ],
@@ -467,6 +514,7 @@ window.sectionsData = [
         dependencies: ["dir042_note_book"],
         information: [
           "note016", // 042 - observatory
+          "note022", // 082 - archives
         ],
       },
       {

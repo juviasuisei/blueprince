@@ -449,6 +449,17 @@ window.informationData = {
       },
     ],
   },
+  dir082_description: {
+    title: "Description",
+    description: "Countless shelves of documents and towering file cabinets make this otherwise immense space seem small and cramped. These archives contain almost a century of records and files pertaining to the Sinclair family's numerous interests, many of which are sealed and unable to be accessed.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir082_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   item01_sledgehammer: {
     title: "A Heavy Sledge Hammer",
     description: "Can shatter padlocks on locked trunks.",
@@ -490,6 +501,17 @@ window.informationData = {
       {
         url: "images/item04_saltshaker.jpeg",
         caption: "salt shaker"
+      },
+    ],
+  },
+  item05_lockpick: {
+    title: "A Hobbyist Lock Pick Kit",
+    description: "Will occasionally be able to open some locked doors.",
+    dependencies: ["obj05_05_lockpick"],
+    images: [
+      {
+        url: "images/item05_lockpick.jpeg",
+        caption: "lock pick kit"
       },
     ],
   },
@@ -550,8 +572,8 @@ window.informationData = {
     ],
   },
   note005: {
-    title: "Drawing: Swimbird",
-    description: "This is from the children's book Swimbird by our mother.",
+    title: "Drawing: Swim Bird",
+    description: "This is from the children's book Swim Bird by our mother.",
     dependencies: ["dir012_drawing_identify"],
     images: [
       {
@@ -769,9 +791,36 @@ window.informationData = {
       },
     ],
   },
+  note022: {
+    title: "Newsclippings",
+    description: "",
+    dependencies: ["dir082_note_scrapbook"],
+    images: [
+      {
+        url: "images/note022_1.jpeg",
+        caption: "first spread"
+      },
+      {
+        url: "images/note022_2.jpeg",
+        caption: "second spread"
+      },
+      {
+        url: "images/note022_3.jpeg",
+        caption: "third spread"
+      },
+      {
+        url: "images/note022_4.jpeg",
+        caption: "fourth spread"
+      },
+      {
+        url: "images/note022_5.jpeg",
+        caption: "fifth spread"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
-    description: "Baron Herbert S. Sinclair was our granduncle and prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
+    description: "Our granduncle. Deceased.",
     dependencies: [],
     images: [
       {
@@ -780,10 +829,20 @@ window.informationData = {
       },
     ]
   },
+  person01_herbie_002: {
+    title: "Mount Holly",
+    description: "Prior to his death, he was the owner of the Mount Holly Estate. He left us the estate in his will if we complete his challenge.",
+    dependencies: [],
+  },
+  person01_herbie_003: {
+    title: "Synka",
+    description: "Prior to his death, he was the owner of Synka. Prior to her disappearance, he was going to leave the company to his niece, Mary.",
+    dependencies: [],
+  },
   person02_baroness_001: {
     title: "Relation",
-    description: "Baroness Auravei Sinclair was our great-grandmother.",
-    dependencies: ["dir047_photo_identify"],
+    description: "Our great-grandmother. Deceased.",
+    dependencies: ["TK"],
     images: [
       {
         url: "images/dir047_person.jpeg",
@@ -793,18 +852,18 @@ window.informationData = {
   },
   person03_babbage_001: {
     title: "Occupation",
-    description: "Mrs. Babbage is the House Manager for the Mount Holly Estate.",
+    description: "House Manager for the Mount Holly Estate.",
     optionalDependencies: true,
     dependencies: ["dir034_note_notice", "dir081_note_notice"],
   },
   person04_bridgette_001: {
     title: "Occupation",
-    description: "Bridgette is a maid at the Mount Holly Estate who is commonly tasked with getting the groceries.",
+    description: "Maid at the Mount Holly Estate who is commonly tasked with getting the groceries.",
     dependencies: ["dir021_note"],
   },
   person05_richardwitt_001: {
     title: "Occupation",
-    description: "Richard Witt is the author of The Fixed Stars, published in 1809",
+    description: "Author of The Fixed Stars, published in 1809",
     optionalDependencies: true,
     dependencies: ["dir042_note_book"],
     images: [
@@ -816,12 +875,54 @@ window.informationData = {
   },
   person06_clara_001: {
     title: "Mount Holly West Wing",
-    description: "Lady Clara Epsen is associated with the West Wing Hall in Mount Holly. So much so, that in the wake of her death, the West Wing was closed.",
+    description: "Associated strongly with the West Wing Hall in Mount Holly. So much so, that in the wake of her death, the West Wing was closed.",
     dependencies: ["dir056_note"],
+  },
+  person06_clara_002: {
+    title: "Relation",
+    description: "Our grandmother. Deceased.",
+    dependencies: ["TK"],
+    images: [
+      {
+        url: "images/TK.jpeg",
+        caption: "portrait of Lady Clara Epsen"
+      },
+    ]
+  },
+  person07_mary_001: {
+    title: "Relation",
+    description: "Our mother. Presumed deceased.",
+    dependencies: ["dir082_note_scrapbook"],
+    images: [
+      {
+        url: "images/TK.jpeg",
+        caption: "portrait of Mary Matthew Jones"
+      },
+    ]
+  },
+  person07_mary_002: {
+    title: "Occupation",
+    description: "Author under the pseudonym Marion Marigold. Her first book was The Red Prince and her second book was Swim Bird.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  person07_mary_003: {
+    title: "Friendship with Caleb Manning",
+    description: "Has referred to Caleb as a mentor, friend, and confidant in press interviews.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  person07_mary_004: {
+    title: "Vanished",
+    description: "Last seen on 20 February 1987 after a late luncheon date in Trinsdale.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  person07_mary_005: {
+    title: "Synka Heiress",
+    description: "Prior to her disappearance, she was the hieress to Synka.",
+    dependencies: ["dir082_note_scrapbook"],
   },
   date001: {
     title: "Thursday, 18 March 1993",
-    description: "Herbert S. Sinclair updates his will.",
+    description: "Herbert updates his will.",
     dependencies: [],
   },
   date002: {
@@ -832,12 +933,47 @@ window.informationData = {
   },
   date003: {
     title: "Wednesday, 15 June 1983",
-    description: "The West Wing of Mount Holly is closed out of respect for the late Lady Clara Epsen.",
+    description: "The West Wing of Mount Holly is closed out of respect after the death of Clara.",
     dependencies: ["dir056_note"],
   },
-  date003: {
+  date004: {
     title: "Friday, 06 November 1993",
-    description: "The staff of Mount Holly leave on temporary paid leave after Baron Herbert S. Sinclair's death.",
+    description: "The staff of Mount Holly leave on temporary paid leave after the death of Herbert.",
     dependencies: ["dir081_note_notice"],
+  },
+  date005: {
+    title: "Thursday, 22 August 1985",
+    description: "Mary wins the Illustrated Book of the Year by the Herald for her second book, Swim Bird.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  date006: {
+    title: "Monday, 27 January 1986",
+    description: "Mary gives an interview discussing her origins as a writer and distancing herself from any political messages.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  date007: {
+    title: "Tuesday, 11 November 1986",
+    description: "Caleb and Phillip are arrested in relation to the politically motivated bombing in Trinsdale.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  date008: {
+    title: "Tuesday, 04 November 1986",
+    description: "A politically motivated bombing kills four people in Trinsdale. Believed to be the work of \"RLCF\", also known as the Children of Black Water.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  date009: {
+    title: "Monday, 17 November 1986",
+    description: "Mary leaves her publisher, Ruffington Press, after Caleb & Phillip are arrested.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  date010: {
+    title: "Friday, 20 February 1987",
+    description: "Mary disappears after a late luncheon date with a friend in Trinsdale.",
+    dependencies: ["dir082_note_scrapbook"],
+  },
+  date011: {
+    title: "Wednesday, 2 September 1987",
+    description: "Several masked intruders break into the Fenn Aeries Royal Museum in the early hours and steal the Ruby Crown of Orinda Aeries. Presumed to be politically motivated.",
+    dependencies: ["dir082_note_scrapbook"],
   },
 };
