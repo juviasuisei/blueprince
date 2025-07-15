@@ -63,7 +63,7 @@ window.checkboxesData = {
   },
   obj02_042_observatory: {
     title: "Observatory",
-    hint: "Draft Observatory",
+    hint: "Draft the Observatory",
     description: "Room 042",
     unlockKeyword: "Observatory",
     dependencies: [],
@@ -903,7 +903,7 @@ window.checkboxesData = {
       },
     ],
   },
-  dir042_telecope: {
+  dir042_telescope: {
     title: "Stargazing Unlocked",
     hint: "Telescope: ???",
     description: "",
