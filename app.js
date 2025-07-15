@@ -18,6 +18,10 @@ function checklistApp() {
     showNavigation: false,
     expandedNavSections: [],
     currentActiveSection: null,
+    navigationEventListeners: {
+      clickOutside: null,
+      escapeKey: null,
+    },
 
     async init() {
       await this.loadData();
@@ -954,6 +958,17 @@ function checklistApp() {
         `Navigation ${this.showNavigation ? "opened" : "closed"}`,
         "polite"
       );
+
+      // Set up or clean up auto-close event listeners based on navigation state
+      if (this.showNavigation) {
+        // Navigation is now open - set up auto-close listeners
+        this.$nextTick(() => {
+          this.setupNavigationAutoClose();
+        });
+      } else {
+        // Navigation is now closed - clean up auto-close listeners
+        this.cleanupNavigationAutoClose();
+      }
     },
 
     toggleNavSection(sectionId) {
@@ -1042,6 +1057,117 @@ function checklistApp() {
         }
       }
       return "Unknown Subsection";
+    },
+
+    // Navigation auto-close event listener management
+    setupNavigationAutoClose() {
+      try {
+        // Clean up any existing listeners first
+        this.cleanupNavigationAutoClose();
+
+        // Set up click-outside listener
+        this.navigationEventListeners.clickOutside = (event) => {
+          this.handleClickOutside(event);
+        };
+
+        // Set up escape key listener
+        this.navigationEventListeners.escapeKey = (event) => {
+          this.handleNavigationEscape(event);
+        };
+
+        // Add event listeners to document
+        document.addEventListener(
+          "click",
+          this.navigationEventListeners.clickOutside,
+          true
+        );
+        document.addEventListener(
+          "keydown",
+          this.navigationEventListeners.escapeKey
+        );
+      } catch (error) {
+        // Handle event listener setup errors gracefully
+        console.warn(
+          "Error setting up navigation auto-close listeners:",
+          error
+        );
+      }
+    },
+
+    cleanupNavigationAutoClose() {
+      try {
+        // Remove click-outside listener
+        if (this.navigationEventListeners.clickOutside) {
+          document.removeEventListener(
+            "click",
+            this.navigationEventListeners.clickOutside,
+            true
+          );
+          this.navigationEventListeners.clickOutside = null;
+        }
+
+        // Remove escape key listener
+        if (this.navigationEventListeners.escapeKey) {
+          document.removeEventListener(
+            "keydown",
+            this.navigationEventListeners.escapeKey
+          );
+          this.navigationEventListeners.escapeKey = null;
+        }
+      } catch (error) {
+        // Handle event listener removal errors gracefully
+        console.warn(
+          "Error cleaning up navigation auto-close listeners:",
+          error
+        );
+        // Still clean up references even if removal fails
+        this.navigationEventListeners.clickOutside = null;
+        this.navigationEventListeners.escapeKey = null;
+      }
+    },
+
+    handleClickOutside(event) {
+      // Only process if navigation is currently open
+      if (!this.showNavigation) {
+        return;
+      }
+
+      try {
+        // Get the navigation panel and toggle button elements
+        const navigationPanel = event.target.closest(
+          '[role="navigation"][aria-label="Section navigation"]'
+        );
+        const toggleButton = event.target.closest(
+          'button[aria-label="Toggle navigation menu"]'
+        );
+
+        // If click is inside navigation panel or on toggle button, don't close
+        if (navigationPanel || toggleButton) {
+          return;
+        }
+
+        // Click is outside navigation - close it
+        this.showNavigation = false;
+        this.announceToScreenReader("Navigation closed", "polite");
+
+        // Clean up event listeners since navigation is now closed
+        this.cleanupNavigationAutoClose();
+      } catch (error) {
+        // Handle DOM errors gracefully - log but don't break functionality
+        console.warn("Error in handleClickOutside:", error);
+      }
+    },
+
+    handleNavigationEscape(event) {
+      // Only process escape key when navigation is open
+      if (event.key === "Escape" && this.showNavigation) {
+        event.preventDefault();
+        this.showNavigation = false;
+        this.announceToScreenReader("Navigation closed", "polite");
+
+        // Clean up event listeners since navigation is now closed
+        this.cleanupNavigationAutoClose();
+      }
     },
 
     setupScrollSpy() {
