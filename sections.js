@@ -373,6 +373,7 @@ window.sectionsData = [
         information: [
           "note002", // 002 - entrance hall
           "note006", // 005 - parlor
+          "note017", // 049 - guest bedroom
         ],
       },
       {
@@ -391,7 +392,6 @@ window.sectionsData = [
           "note010", // 034 - security
           "note011", // 034 - security
           "note012", // 047 - bedroom
-          "note017", // 049 - guest bedroom
           "note004", // 055 - hallway
           "note013", // 071 - commissary
           "note014", // 071 - commissary
