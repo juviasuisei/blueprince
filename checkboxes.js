@@ -519,6 +519,30 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_065_courtyard: {
+    title: "Courtyard: None",
+    hint: "Courtyard: ???",
+    description: "",
+    dependencies: [],
+  },
+  obj04_079_lavatory: {
+    title: "Lavatory: None",
+    hint: "Lavatory: ???",
+    description: "",
+    dependencies: [],
+  },
+  obj04_080_chapel: {
+    title: "Chapel: White Bishop",
+    hint: "Chapel: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj04_080_chapel.jpeg",
+        caption: "white bishop"
+      },
+    ],
+  },
   obj05_01_sledgehammer: {
     title: "Sledge Hammer",
     hint: "Find a Sledge Hammer",

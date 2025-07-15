@@ -111,6 +111,9 @@ window.sectionsData = [
       "obj04_042_observatory",
       "obj04_047_bedroom",
       "obj04_049_guestbedroom",
+      "obj04_065_courtyard",
+      "obj04_079_lavatory",
+      "obj04_080_chapel",
     ]
   },
   {
