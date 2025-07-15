@@ -16,30 +16,33 @@ const path = require("path");
 // Simple minification function for JavaScript
 function minifyJS(code) {
   // Advanced safe minification that preserves JavaScript syntax
+  const debug = process.env.DEBUG_BUILD === "true";
+
+  if (debug) {
+    console.log("🔍 Starting minification process...");
+  }
 
   // Step 1: Preserve all string literals and template literals
-  const preservedStrings = [];
-  let stringIndex = 0;
+  const preservedContent = new Map();
+  let globalIndex = 0;
 
   // Handle template literals first (more complex)
   let result = code.replace(/`(?:[^`\\]|\\.)*`/g, (match) => {
-    const placeholder = `__TEMPLATE_${stringIndex}__`;
-    preservedStrings[stringIndex] = match;
-    stringIndex++;
+    const placeholder = `__TEMPLATE_${globalIndex}__`;
+    preservedContent.set(placeholder, match);
+    globalIndex++;
     return placeholder;
   });
 
   // Handle regular string literals
   result = result.replace(/(["'])((?:\\.|(?!\1)[^\\])*?)\1/g, (match) => {
-    const placeholder = `__STRING_${stringIndex}__`;
-    preservedStrings[stringIndex] = match;
-    stringIndex++;
+    const placeholder = `__STRING_${globalIndex}__`;
+    preservedContent.set(placeholder, match);
+    globalIndex++;
     return placeholder;
   });
 
   // Step 2: Preserve regex literals
-  const preservedRegex = [];
-  let regexIndex = 0;
   result = result.replace(
     /\/(?![*/])(?:[^\/\\\n]|\\.)+\/[gimuy]*/g,
     (match, offset) => {
@@ -48,9 +51,9 @@ function minifyJS(code) {
       if (/[a-zA-Z0-9_$)]/.test(before)) {
         return match; // Likely a division operator
       }
-      const placeholder = `__REGEX_${regexIndex}__`;
-      preservedRegex[regexIndex] = match;
-      regexIndex++;
+      const placeholder = `__REGEX_${globalIndex}__`;
+      preservedContent.set(placeholder, match);
+      globalIndex++;
       return placeholder;
     }
   );
@@ -80,17 +83,53 @@ function minifyJS(code) {
     .trim();
 
   // Step 4: Restore preserved content
-  // Restore regex first
-  result = result.replace(/__REGEX_(\d+)__/g, (match, index) => {
-    return preservedRegex[parseInt(index)] || match;
-  });
+  // Multiple passes to handle nested placeholders
+  let previousResult;
+  let passes = 0;
+  const maxPasses = 5;
 
-  // Restore strings and templates
-  result = result.replace(/__(?:STRING|TEMPLATE)_(\d+)__/g, (match, index) => {
-    return preservedStrings[parseInt(index)] || match;
-  });
+  do {
+    previousResult = result;
+    result = result.replace(/__(?:STRING|TEMPLATE|REGEX)_(\d+)__/g, (match) => {
+      return preservedContent.get(match) || match;
+    });
+    passes++;
+  } while (result !== previousResult && passes < maxPasses);
+
+  if (debug && passes > 1) {
+    console.log(`🔄 Required ${passes} restoration passes`);
+  }
 
   return result;
+}
+
+// Validate that all template variables have been replaced
+function validateTemplateReplacement(code, filename = "unknown") {
+  const templatePattern = /__(?:STRING|TEMPLATE|REGEX)_\d+__/g;
+  const unreplacedVariables = [];
+  let match;
+
+  while ((match = templatePattern.exec(code)) !== null) {
+    unreplacedVariables.push({
+      variable: match[0],
+      position: match.index,
+      line: code.substring(0, match.index).split("\n").length,
+    });
+  }
+
+  return {
+    isValid: unreplacedVariables.length === 0,
+    unreplacedVariables,
+    filename,
+    errorMessage:
+      unreplacedVariables.length > 0
+        ? `Found ${
+            unreplacedVariables.length
+          } unreplaced template variable(s) in ${filename}: ${unreplacedVariables
+            .map((v) => v.variable)
+            .join(", ")}`
+        : null,
+  };
 }
 
 // Create production directory
@@ -117,6 +156,20 @@ function createProductionBuild() {
     if (fs.existsSync(file)) {
       const content = fs.readFileSync(file, "utf8");
       const minified = minifyJS(content);
+
+      // Validate that all template variables have been replaced
+      const validation = validateTemplateReplacement(minified, file);
+      if (!validation.isValid) {
+        console.error(`❌ Build failed: ${validation.errorMessage}`);
+        console.error("Unreplaced variables found:");
+        validation.unreplacedVariables.forEach((v) => {
+          console.error(
+            `  - ${v.variable} at line ${v.line}, position ${v.position}`
+          );
+        });
+        process.exit(1);
+      }
+
       fs.writeFileSync(path.join(prodDir, file), minified);
       console.log(
         `✅ Minified ${file} (${Math.round(
@@ -363,4 +416,8 @@ if (require.main === module) {
   createProductionBuild();
 }
 
-module.exports = { createProductionBuild, minifyJS };
+module.exports = {
+  createProductionBuild,
+  minifyJS,
+  validateTemplateReplacement,
+};
