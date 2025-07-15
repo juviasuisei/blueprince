@@ -419,8 +419,8 @@
                       <div class="flex items-center space-x-2 ml-2">
                         <span 
                           class="text-xs text-gray-500"
-                          x-show="getSectionTotalCount(section.id) > 0"
-                          x-text="`${Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)}%`"
+                          x-show="getSectionVisibleTotalCount(section.id) > 0"
+                          x-text="`${Math.round((getSectionVisibleCheckedCount(section.id) / getSectionVisibleTotalCount(section.id)) * 100)}%`"
                         ></span>
                         
                         <!-- Accordion Toggle for Subsections -->
@@ -471,8 +471,8 @@
                           <!-- Subsection Progress -->
                           <span 
                             class="text-xs text-gray-400 ml-2"
-                            x-show="getSubsectionTotalCount(subsection.id) > 0"
-                            x-text="`${Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)}%`"
+                            x-show="getSubsectionVisibleTotalCount(subsection.id) > 0"
+                            x-text="`${Math.round((getSubsectionVisibleCheckedCount(subsection.id) / getSubsectionVisibleTotalCount(subsection.id)) * 100)}%`"
                           ></span>
                         </div>
                       </template>
@@ -524,7 +524,7 @@
                 role="button"
                 :aria-expanded="expandedSections.includes(section.id)"
                 :aria-controls="`section-content-${section.id}`"
-                :aria-label="`${section.title} section, ${expandedSections.includes(section.id) ? 'expanded' : 'collapsed'}. Progress: ${getSectionTotalCount(section.id) > 0 ? Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100) + '%' : 'No items'}`"
+                :aria-label="`${section.title} section, ${expandedSections.includes(section.id) ? 'expanded' : 'collapsed'}. Progress: ${getSectionVisibleTotalCount(section.id) > 0 ? Math.round((getSectionVisibleCheckedCount(section.id) / getSectionVisibleTotalCount(section.id)) * 100) + '%' : 'No items'}`"
               >
                 <div class="pl-4 pr-6 py-4 flex justify-between items-center">
                   <h2
@@ -534,10 +534,10 @@
                   ></h2>
                   <div class="flex items-center space-x-3">
                     <!-- Section Progress -->
-                    <div class="text-sm text-gray-500" x-show="getSectionTotalCount(section.id) > 0">
+                    <div class="text-sm text-gray-500" x-show="getSectionVisibleTotalCount(section.id) > 0">
                       <span
-                        x-text="`${Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)}%`"
-                        :aria-label="`Section progress: ${Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)}% complete`"
+                        x-text="`${Math.round((getSectionVisibleCheckedCount(section.id) / getSectionVisibleTotalCount(section.id)) * 100)}%`"
+                        :aria-label="`Section progress: ${Math.round((getSectionVisibleCheckedCount(section.id) / getSectionVisibleTotalCount(section.id)) * 100)}% complete`"
                       ></span>
                     </div>
                     <!-- Expand/Collapse Icon -->
@@ -561,13 +561,13 @@
                 <!-- Section Progress Bar -->
                 <div class="w-full bg-gray-200 rounded-full h-1.5" 
                      role="progressbar" 
-                     :aria-valuenow="getSectionTotalCount(section.id) === 0 ? 100 : Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)"
+                     :aria-valuenow="getSectionVisibleTotalCount(section.id) === 0 ? 100 : Math.round((getSectionVisibleCheckedCount(section.id) / getSectionVisibleTotalCount(section.id)) * 100)"
                      aria-valuemin="0" 
                      aria-valuemax="100"
-                     :aria-label="`${section.title} progress: ${getSectionTotalCount(section.id) === 0 ? 100 : Math.round((getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100)}% complete`">
+                     :aria-label="`${section.title} progress: ${getSectionVisibleTotalCount(section.id) === 0 ? 100 : Math.round((getSectionVisibleCheckedCount(section.id) / getSectionVisibleTotalCount(section.id)) * 100)}% complete`">
                   <div
                     class="h-1.5 rounded-full transition-all duration-300"
-                    :style="`width: ${getSectionTotalCount(section.id) === 0 ? 100 : (getSectionCheckedCount(section.id) / getSectionTotalCount(section.id)) * 100}%; background-color: ${getColorHex(section.color)}`"
+                    :style="`width: ${getSectionVisibleTotalCount(section.id) === 0 ? 100 : (getSectionVisibleCheckedCount(section.id) / getSectionVisibleTotalCount(section.id)) * 100}%; background-color: ${getColorHex(section.color)}`"
                   ></div>
                 </div>
               </div>
@@ -599,7 +599,7 @@
                       role="button"
                       :aria-expanded="expandedSubsections.includes(subsection.id)"
                       :aria-controls="`subsection-content-${subsection.id}`"
-                      :aria-label="`${subsection.title} subsection, ${expandedSubsections.includes(subsection.id) ? 'expanded' : 'collapsed'}. Progress: ${getSubsectionTotalCount(subsection.id) > 0 ? Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100) + '%' : 'No items'}`"
+                      :aria-label="`${subsection.title} subsection, ${expandedSubsections.includes(subsection.id) ? 'expanded' : 'collapsed'}. Progress: ${getSubsectionVisibleTotalCount(subsection.id) > 0 ? Math.round((getSubsectionVisibleCheckedCount(subsection.id) / getSubsectionVisibleTotalCount(subsection.id)) * 100) + '%' : 'No items'}`"
                     >
                       <div
                         class="pl-4 pr-6 py-3 flex justify-between items-center"
@@ -611,10 +611,10 @@
                         ></h3>
                         <div class="flex items-center space-x-3">
                           <!-- Subsection Progress Count -->
-                          <div class="text-sm text-gray-500" x-show="getSubsectionTotalCount(subsection.id) > 0">
+                          <div class="text-sm text-gray-500" x-show="getSubsectionVisibleTotalCount(subsection.id) > 0">
                             <span
-                              x-text="`${Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)}%`"
-                              :aria-label="`Subsection progress: ${Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)}% complete`"
+                              x-text="`${Math.round((getSubsectionVisibleCheckedCount(subsection.id) / getSubsectionVisibleTotalCount(subsection.id)) * 100)}%`"
+                              :aria-label="`Subsection progress: ${Math.round((getSubsectionVisibleCheckedCount(subsection.id) / getSubsectionVisibleTotalCount(subsection.id)) * 100)}% complete`"
                             ></span>
                           </div>
                           <!-- Expand/Collapse Icon -->
@@ -638,13 +638,13 @@
                       <!-- Subsection Progress Bar -->
                       <div class="w-full bg-gray-200 rounded-full h-1" 
                            role="progressbar" 
-                           :aria-valuenow="getSubsectionTotalCount(subsection.id) === 0 ? 100 : Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)"
+                           :aria-valuenow="getSubsectionVisibleTotalCount(subsection.id) === 0 ? 100 : Math.round((getSubsectionVisibleCheckedCount(subsection.id) / getSubsectionVisibleTotalCount(subsection.id)) * 100)"
                            aria-valuemin="0" 
                            aria-valuemax="100"
-                           :aria-label="`${subsection.title} progress: ${getSubsectionTotalCount(subsection.id) === 0 ? 100 : Math.round((getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100)}% complete`">
+                           :aria-label="`${subsection.title} progress: ${getSubsectionVisibleTotalCount(subsection.id) === 0 ? 100 : Math.round((getSubsectionVisibleCheckedCount(subsection.id) / getSubsectionVisibleTotalCount(subsection.id)) * 100)}% complete`">
                         <div
                           class="h-1 rounded-full transition-all duration-300"
-                          :style="`width: ${getSubsectionTotalCount(subsection.id) === 0 ? 100 : (getSubsectionCheckedCount(subsection.id) / getSubsectionTotalCount(subsection.id)) * 100}%; background-color: ${getColorHex(subsection.color)}`"
+                          :style="`width: ${getSubsectionVisibleTotalCount(subsection.id) === 0 ? 100 : (getSubsectionVisibleCheckedCount(subsection.id) / getSubsectionVisibleTotalCount(subsection.id)) * 100}%; background-color: ${getColorHex(subsection.color)}`"
                         ></div>
                       </div>
                     </div>
