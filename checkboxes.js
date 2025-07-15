@@ -129,7 +129,7 @@ window.checkboxesData = {
     unlockKeyword: "West Wing Hall",
     dependencies: [],
   },
-  obj02_058_hallway: {
+  obj02_058_corridor: {
     title: "Corridor",
     hint: "Draft the Corridor",
     description: "Room 058",
@@ -803,7 +803,7 @@ window.checkboxesData = {
     title: "Lock Pick Kit",
     hint: "Find a Lock Pick Kit",
     description: "",
-    unlockKeyword: "Lock Pick Kit",
+    unlockKeyword: ["Lock Pick Kit", "Lockpick", "Lock Pick", "Lockpick Kit"],
     dependencies: [],
     images: [
       {
@@ -1428,7 +1428,7 @@ window.checkboxesData = {
   },
   dir080_angel1: {
     title: "Rynna the Ajeran Angel of Gardeners",
-    hint: "Identify Ajeran Angel I: ???",
+    hint: "Identify Ajeran Angel I (Gardener): ???",
     description: "",
     dependencies: [],
     images: [
@@ -1440,7 +1440,7 @@ window.checkboxesData = {
   },
   dir080_angel2: {
     title: "Joya the Ajeran Angel of Chefs",
-    hint: "Identify Ajeran Angel II: ???",
+    hint: "Identify Ajeran Angel II (Chef): ???",
     description: "",
     dependencies: [],
     images: [
@@ -1452,7 +1452,7 @@ window.checkboxesData = {
   },
   dir080_angel3: {
     title: "Dauja the Ajeran Angel of Farmers",
-    hint: "Identify Ajeran Angel III: ???",
+    hint: "Identify Ajeran Angel III (Farmer): ???",
     description: "",
     dependencies: [],
     images: [
@@ -1464,7 +1464,7 @@ window.checkboxesData = {
   },
   dir080_angel4: {
     title: "Veia the Ajeran Angel of Chimney Sweeps",
-    hint: "Identify Ajeran Angel IV: ???",
+    hint: "Identify Ajeran Angel IV (Chimney Sweep): ???",
     description: "",
     dependencies: [],
     images: [
@@ -1476,7 +1476,7 @@ window.checkboxesData = {
   },
   dir080_angel5: {
     title: "Mila the Ajeran Angel of Maids",
-    hint: "Identify Ajeran Angel V: ???",
+    hint: "Identify Ajeran Angel V (Maid): ???",
     description: "",
     dependencies: [],
     images: [
@@ -1488,7 +1488,7 @@ window.checkboxesData = {
   },
   dir080_angel6: {
     title: "Lydia the Ajeran Angel of Equestrians",
-    hint: "Identify Ajeran Angel VI: ???",
+    hint: "Identify Ajeran Angel VI (Equestrian): ???",
     description: "",
     dependencies: [],
     images: [
@@ -1500,7 +1500,7 @@ window.checkboxesData = {
   },
   dir080_angel7: {
     title: "Orinda the Ajeran Angel of Royals",
-    hint: "Identify Ajeran Angel VII: ???",
+    hint: "Identify Ajeran Angel VII (Royal): ???",
     description: "",
     dependencies: [],
     images: [
