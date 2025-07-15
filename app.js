@@ -589,6 +589,9 @@ function checklistApp() {
         });
       }
 
+      // Invalidate progress cache since checkbox state changed
+      this._invalidateProgressCache();
+
       this.debouncedSaveState();
       this.$nextTick(() => {
         this.initializeSwipers();
@@ -764,6 +767,155 @@ function checklistApp() {
         }
       }
       return 0;
+    },
+
+    // Visible checkbox filtering logic for progress calculations
+    getVisibleCheckboxesInSection(sectionId) {
+      const section = this.data.sections?.find((s) => s.id === sectionId);
+      if (!section) return [];
+
+      let visibleCheckboxes = [];
+
+      // Get visible direct checkboxes
+      if (section.checkboxes) {
+        visibleCheckboxes = visibleCheckboxes.concat(
+          this.getVisibleCheckboxes(section.checkboxes)
+        );
+      }
+
+      // Get visible subsection checkboxes
+      if (section.subsections) {
+        section.subsections.forEach((subsection) => {
+          if (subsection.checkboxes) {
+            visibleCheckboxes = visibleCheckboxes.concat(
+              this.getVisibleCheckboxes(subsection.checkboxes)
+            );
+          }
+        });
+      }
+
+      return visibleCheckboxes;
+    },
+
+    getVisibleCheckboxesInSubsection(subsectionId) {
+      for (const section of this.data.sections || []) {
+        const subsection = section.subsections?.find(
+          (s) => s.id === subsectionId
+        );
+        if (subsection && subsection.checkboxes) {
+          return this.getVisibleCheckboxes(subsection.checkboxes);
+        }
+      }
+      return [];
+    },
+
+    isCheckboxVisible(checkboxId) {
+      const checkbox = this.data.checkboxes?.[checkboxId];
+      if (!checkbox) return false;
+
+      return this.checkDependencies(
+        checkbox.dependencies,
+        checkbox.optionalDependencies
+      );
+    },
+
+    // Visible progress calculation methods with performance optimizations
+    getSectionVisibleTotalCount(sectionId) {
+      // Use cached result if available and still valid
+      const cacheKey = `section-visible-total-${sectionId}`;
+      if (
+        this._progressCache &&
+        this._progressCache[cacheKey] &&
+        this._progressCache[cacheKey].timestamp > this._lastStateChange
+      ) {
+        return this._progressCache[cacheKey].value;
+      }
+
+      const visibleCheckboxes = this.getVisibleCheckboxesInSection(sectionId);
+      const result = visibleCheckboxes.length;
+
+      // Cache the result
+      this._cacheProgressResult(cacheKey, result);
+      return result;
+    },
+
+    getSectionVisibleCheckedCount(sectionId) {
+      // Use cached result if available and still valid
+      const cacheKey = `section-visible-checked-${sectionId}`;
+      if (
+        this._progressCache &&
+        this._progressCache[cacheKey] &&
+        this._progressCache[cacheKey].timestamp > this._lastStateChange
+      ) {
+        return this._progressCache[cacheKey].value;
+      }
+
+      const visibleCheckboxes = this.getVisibleCheckboxesInSection(sectionId);
+      const result = visibleCheckboxes.filter((checkboxId) =>
+        this.checkedItems.includes(checkboxId)
+      ).length;
+
+      // Cache the result
+      this._cacheProgressResult(cacheKey, result);
+      return result;
+    },
+
+    getSubsectionVisibleTotalCount(subsectionId) {
+      // Use cached result if available and still valid
+      const cacheKey = `subsection-visible-total-${subsectionId}`;
+      if (
+        this._progressCache &&
+        this._progressCache[cacheKey] &&
+        this._progressCache[cacheKey].timestamp > this._lastStateChange
+      ) {
+        return this._progressCache[cacheKey].value;
+      }
+
+      const visibleCheckboxes =
+        this.getVisibleCheckboxesInSubsection(subsectionId);
+      const result = visibleCheckboxes.length;
+
+      // Cache the result
+      this._cacheProgressResult(cacheKey, result);
+      return result;
+    },
+
+    getSubsectionVisibleCheckedCount(subsectionId) {
+      // Use cached result if available and still valid
+      const cacheKey = `subsection-visible-checked-${subsectionId}`;
+      if (
+        this._progressCache &&
+        this._progressCache[cacheKey] &&
+        this._progressCache[cacheKey].timestamp > this._lastStateChange
+      ) {
+        return this._progressCache[cacheKey].value;
+      }
+
+      const visibleCheckboxes =
+        this.getVisibleCheckboxesInSubsection(subsectionId);
+      const result = visibleCheckboxes.filter((checkboxId) =>
+        this.checkedItems.includes(checkboxId)
+      ).length;
+
+      // Cache the result
+      this._cacheProgressResult(cacheKey, result);
+      return result;
+    },
+
+    // Performance optimization helper methods
+    _cacheProgressResult(key, value) {
+      if (!this._progressCache) {
+        this._progressCache = {};
+      }
+      this._progressCache[key] = {
+        value: value,
+        timestamp: Date.now(),
+      };
+    },
+
+    _invalidateProgressCache() {
+      this._progressCache = {};
+      this._lastStateChange = Date.now();
     },
 
     initializeSwiper(swiperId, color, onSlideChange) {
