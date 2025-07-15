@@ -233,7 +233,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_034_security"],
         information: ["dir034_description", "dir034_info", "dir034_chess"],
-        checkboxes: ["dir034_note_pad", "dir034_note_notice", "dir034_note_red", "dir034_note_blue", "obj_network_unlock", "dir034_search"],
+        checkboxes: ["dir034_note_pad", "dir034_note_notice", "dir034_note_red", "dir034_note_blue", "dir034_search", "obj_network_unlock"],
       },
       {
         id: "dir042",
