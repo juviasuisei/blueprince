@@ -362,6 +362,17 @@ window.informationData = {
       },
     ],
   },
+  dir059_description: {
+    title: "Description",
+    description: "A long cramped series of unfinished passages used primarily by the servant staff to traverse the estate quickly.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir059_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir065_description: {
     title: "Description",
     description: "A charming spot granting guests a bit of fresh air and open skies within the privacy of the manor walls.",

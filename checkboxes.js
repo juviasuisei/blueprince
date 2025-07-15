@@ -136,6 +136,13 @@ window.checkboxesData = {
     unlockKeyword: "Corridor",
     dependencies: [],
   },
+  obj02_059_passageway: {
+    title: "Passageway",
+    hint: "Draft the Passageway",
+    description: "Room 059",
+    unlockKeyword: "Passageway",
+    dependencies: [],
+  },
   obj02_065_courtyard: {
     title: "Courtyard",
     hint: "Draft the Courtyard",
@@ -685,6 +692,12 @@ window.checkboxesData = {
     hint: "Corridor: ???",
     description: "",
     dependencies: ["obj02_058_corridor"],
+  },
+  obj04_059_passageway: {
+    title: "Passageway: None",
+    hint: "Passageway: ???",
+    description: "",
+    dependencies: ["obj02_059_passageway"],
   },
   obj04_065_courtyard: {
     title: "Courtyard: None",
