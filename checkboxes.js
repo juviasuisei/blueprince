@@ -1280,7 +1280,7 @@ window.checkboxesData = {
     dependencies: [],
     images: [
       {
-        url: "images/dir080_angel1.jpeg",
+        url: "images/dir080_angel6.jpeg",
         caption: "Lydia • Equestrian"
       },
     ],
@@ -1292,7 +1292,7 @@ window.checkboxesData = {
     dependencies: [],
     images: [
       {
-        url: "images/dir080_angel1.jpeg",
+        url: "images/dir080_angel7.jpeg",
         caption: "Orinda • Royal"
       },
     ],
