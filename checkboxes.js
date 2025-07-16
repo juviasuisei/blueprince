@@ -1122,7 +1122,7 @@ window.checkboxesData = {
   obj06_004_diamondusminor: {
     title: "Diamondus Minor",
     hint: "Diamondus Minor",
-    description: "+3 steps",
+    description: "+1 gem",
     dependencies: [],
     images: [
       {
