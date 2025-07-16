@@ -29,6 +29,7 @@ window.sectionsData = [
       "obj04_047_bedroom",
       "obj04_048_boudoir",
       "obj04_049_guestbedroom",
+      "obj04_050_nursery",
       "obj04_055_hallway",
       "obj04_056_westwinghall",
       "obj04_058_corridor",
@@ -101,6 +102,7 @@ window.sectionsData = [
       "obj02_047_bedroom",
       "obj02_048_boudoir",
       "obj02_049_guestbedroom",
+      "obj02_050_nursery",
       "obj02_055_hallway",
       "obj02_056_westwinghall",
       "obj02_058_corridor",
@@ -297,6 +299,14 @@ window.sectionsData = [
         dependencies: ["obj02_049_guestbedroom"],
         information: ["dir049_description", "dir049_info", "dir049_chess"],
         checkboxes: ["dir049_note", "dir049_note_magnify", "dir049_search"],
+      },
+      {
+        id: "dir050",
+        title: "050: Nursery",
+        color: "purple",
+        dependencies: ["obj02_050_nursery"],
+        information: ["dir050_description", "dir050_info", "dir050_chess"],
+        checkboxes: ["dir050_note", "dir050_note_magnify", "dir050_search"],
       },
       {
         id: "dir055",
@@ -550,6 +560,7 @@ window.sectionsData = [
         dependencies: ["dir042_note_book"],
         information: [
           "note016", // 042 - observatory
+          "note025", // 050 - nursery
           "note022", // 082 - archives
         ],
       },

@@ -329,6 +329,33 @@ window.informationData = {
       },
     ],
   },
+  dir050_description: {
+    title: "Description",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir050_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir050_info: {
+    title: "Classification",
+    description: "TYPE: Drafting • Dead End",
+    dependencies: [],
+  },
+  dir050_chess: {
+    title: "Chess Piece",
+    description: "White Pawn",
+    dependencies: ["obj04_050_nursery"],
+    images: [
+      {
+        url: "images/obj04_050_nursery.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   dir055_description: {
     title: "Description",
     description: "One of the many nondescript hallways snaking through the estate and providing elegant causeways between the more noteworthy destinations that the house has to offer.",
@@ -933,6 +960,61 @@ window.informationData = {
       {
         url: "images/note024_6.jpeg",
         caption: "weathered portrait of Clara"
+      },
+    ],
+  },
+  note025: {
+    title: "The Red Prince",
+    description: "Marion Marigold",
+    dependencies: ["dir050_note"],
+    images: [
+      {
+        url: "images/note025_01.jpeg",
+        caption: "cover"
+      },
+      {
+        url: "images/note025_02.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note025_03.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note025_04.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note025_05.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note025_06.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note025_07.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note025_08.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note025_09.jpeg",
+        caption: "pages 14–15"
+      },
+      {
+        url: "images/note025_10.jpeg",
+        caption: "pages 16–17"
+      },
+      {
+        url: "images/note025_11.jpeg",
+        caption: "pages 18–19"
+      },
+      {
+        url: "images/note025_12.jpeg",
+        caption: "pages 20–21"
       },
     ],
   },

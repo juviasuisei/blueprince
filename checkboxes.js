@@ -115,6 +115,13 @@ window.checkboxesData = {
     unlockKeyword: "Guest Bedroom",
     dependencies: [],
   },
+  obj02_050_nursery: {
+    title: "Nursery",
+    hint: "Draft the Nursery",
+    description: "Room 050",
+    unlockKeyword: "Nursery",
+    dependencies: [],
+  },
   obj02_055_hallway: {
     title: "Hallway",
     hint: "Draft the Hallway",
@@ -699,6 +706,18 @@ window.checkboxesData = {
     images: [
       {
         url: "images/obj04_049_guestbedroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
+  obj04_050_nursery: {
+    title: "Nursery: White Pawn",
+    hint: "Nursery: ???",
+    description: "",
+    dependencies: ["obj02_050_nursery"],
+    images: [
+      {
+        url: "images/obj04_050_nursery.jpeg",
         caption: "white pawn"
       },
     ],
@@ -1505,6 +1524,74 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir049_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir050_note: {
+    title: "Book: The Red Prince",
+    hint: "Book: ???",
+    description: "Marion Marigold",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note025_01.jpeg",
+        caption: "cover"
+      },
+      {
+        url: "images/note025_02.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note025_03.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note025_04.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note025_05.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note025_06.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note025_07.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note025_08.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note025_09.jpeg",
+        caption: "pages 14–15"
+      },
+      {
+        url: "images/note025_10.jpeg",
+        caption: "pages 16–17"
+      },
+      {
+        url: "images/note025_11.jpeg",
+        caption: "pages 18–19"
+      },
+      {
+        url: "images/note025_12.jpeg",
+        caption: "pages 20–21"
+      },
+    ],
+  },
+  dir050_note_magnify: {
+    title: "Magnify Book: Nothing",
+    hint: "Magnify Book: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
+  dir050_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
