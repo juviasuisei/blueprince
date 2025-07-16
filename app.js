@@ -14,7 +14,7 @@ function checklistApp() {
     // Accessibility state
     announcements: [],
     lastAnnouncementId: 0,
-    
+
     // Mystery message state
     mysteryMessages: [], // Array to store active mystery messages
 
@@ -1050,18 +1050,7 @@ function checklistApp() {
               autoHeight: true,
               spaceBetween: 10,
               // Performance optimizations
-              
-              // Add event handlers for navigation button visibility
-              on: {
-                init: function(swiper) {
-                  // Initial state setup for navigation buttons
-                  updateNavigationVisibility(swiper);
-                },
-                slideChange: function(swiper) {
-                  // Update navigation buttons on slide change
-                  updateNavigationVisibility(swiper);
-                }
-              }
+
               observer: true,
               observeParents: true,
               watchSlidesProgress: true,
@@ -1077,6 +1066,9 @@ function checklistApp() {
               // Optimized event handlers
               on: {
                 init: (swiper) => {
+                  // Initial state setup for navigation buttons
+                  this.updateNavigationVisibility(swiper);
+                  this.applySwiperStyling(swiperEl, color);
                   this.applySwiperStyling(swiperEl, color);
                   if (onSlideChange) onSlideChange(swiper);
                 },
@@ -1730,22 +1722,11 @@ function checklistApp() {
 
       console.log("All progress has been completed - all secrets revealed!");
     },
-  };
-}
 
-// Initialize the app when the DOM is ready
-document.addEventListener("DOMContentLoaded", () => {
-  window.app = checklistApp();
-});
-
-// Export for testing
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = checklistApp;
-}
     // Expand all sections
     expandAllSections() {
       const visibleSections = this.getVisibleSections();
-      visibleSections.forEach(section => {
+      visibleSections.forEach((section) => {
         if (!this.expandedSections.includes(section.id)) {
           this.expandedSections.push(section.id);
         }
@@ -1762,59 +1743,76 @@ if (typeof module !== "undefined" && module.exports) {
       this.expandedSections = [];
       this.debouncedSaveState();
       this.announceToScreenReader("All sections collapsed");
-    },// He
-lper function to update navigation visibility for Swiper carousels
-function updateNavigationVisibility(swiper) {
-  const nextButton = swiper.navigation.nextEl;
-  const prevButton = swiper.navigation.prevEl;
-  
-  if (!nextButton || !prevButton) return;
-  
-  if (swiper.isBeginning) {
-    prevButton.classList.add('swiper-button-disabled');
-    prevButton.setAttribute('aria-disabled', 'true');
-  } else {
-    prevButton.classList.remove('swiper-button-disabled');
-    prevButton.setAttribute('aria-disabled', 'false');
-  }
-  
-  if (swiper.isEnd) {
-    nextButton.classList.add('swiper-button-disabled');
-    nextButton.setAttribute('aria-disabled', 'true');
-  } else {
-    nextButton.classList.remove('swiper-button-disabled');
-    nextButton.setAttribute('aria-disabled', 'false');
-  }
-  
-  // Hide both buttons if there's only one slide
-  if (swiper.slides.length <= 1) {
-    nextButton.style.display = 'none';
-    prevButton.style.display = 'none';
-  } else {
-    nextButton.style.display = '';
-    prevButton.style.display = '';
-  }
-}    // Sho
-w mystery message with stacking support
+    },
+
+    // Helper function to update navigation visibility for Swiper carousels
+    updateNavigationVisibility(swiper) {
+      const nextButton = swiper.navigation.nextEl;
+      const prevButton = swiper.navigation.prevEl;
+
+      if (!nextButton || !prevButton) return;
+
+      if (swiper.isBeginning) {
+        prevButton.classList.add("swiper-button-disabled");
+        prevButton.setAttribute("aria-disabled", "true");
+      } else {
+        prevButton.classList.remove("swiper-button-disabled");
+        prevButton.setAttribute("aria-disabled", "false");
+      }
+
+      if (swiper.isEnd) {
+        nextButton.classList.add("swiper-button-disabled");
+        nextButton.setAttribute("aria-disabled", "true");
+      } else {
+        nextButton.classList.remove("swiper-button-disabled");
+        nextButton.setAttribute("aria-disabled", "false");
+      }
+
+      // Hide both buttons if there's only one slide
+      if (swiper.slides.length <= 1) {
+        nextButton.style.display = "none";
+        prevButton.style.display = "none";
+      } else {
+        nextButton.style.display = "";
+        prevButton.style.display = "";
+      }
+    },
+
+    // Show mystery message with stacking support
     showMysteryMessage(message, isSuccess = true) {
       const id = Date.now(); // Unique ID for the message
-      
+
       // Create new message object
       const newMessage = {
         id,
         message,
         isSuccess,
-        timestamp: Date.now()
+        timestamp: Date.now(),
       };
-      
+
       // Add new message to the top of the stack
       this.mysteryMessages.unshift(newMessage);
-      
+
       // Set timeout to remove this specific message
       setTimeout(() => {
-        this.mysteryMessages = this.mysteryMessages.filter(msg => msg.id !== id);
+        this.mysteryMessages = this.mysteryMessages.filter(
+          (msg) => msg.id !== id
+        );
       }, 5000); // 5 second timeout
-      
-      // Announce to screen reader
-      this.announceToScreenReader(message, "assertive");
+
+      // Announce to screen reader with appropriate priority
+      // Use "assertive" for success messages and "polite" for failure messages
+      this.announceToScreenReader(message, isSuccess ? "assertive" : "polite");
     },
+  };
+}
+
+// Initialize the app when the DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  window.app = checklistApp();
+});
+
+// Export for testing
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = checklistApp;
+}
