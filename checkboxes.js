@@ -1219,6 +1219,18 @@ window.checkboxesData = {
       },
     ],
   },
+  dir013_note_magnify: {
+    title: "Magnify Drawing: Hidden Messages",
+    hint: "Magnify Drawing: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+    images: [
+      {
+        url: "images/TK.jpeg",
+        caption: "magnified hidden messages"
+      },
+    ],
+  },
   dir013_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
@@ -1467,7 +1479,7 @@ window.checkboxesData = {
     title: "Photo: Baroness Auravei Sinclair",
     hint: "Identify the Portrait",
     description: "This is our greatgrandmother, the Baroness Auravei Sinclair.",
-    dependencies: ["dir047_photo"],
+    dependencies: ["dir047_note_photo"],
   },
   dir047_finger: {
     title: "Baron Bafflers",

@@ -666,7 +666,7 @@ window.informationData = {
   note004: {
     title: "Red Note: West Wing Locks",
     description: "",
-    dependencies: ["dir055_note_red"],
+    dependencies: ["dir055_note"],
     images: [
       {
         url: "images/note004.jpeg",
@@ -688,7 +688,7 @@ window.informationData = {
   note006: {
     title: "Parlor Game Rules",
     description: "",
-    dependencies: ["dir005_note_letter"],
+    dependencies: ["dir005_note"],
     images: [
       {
         url: "images/note006_1.jpeg",
@@ -726,7 +726,7 @@ window.informationData = {
     title: "Terminal Staff Notice",
     description: "",
     optionalDependencies: true,
-    dependencies: ["dir034_note_notice", "dir071_note_notice"],
+    dependencies: ["dir034_note_notice"],
     images: [
       {
         url: "images/note009.jpeg",
@@ -803,7 +803,7 @@ window.informationData = {
   note016: {
     title: "The Fixed Stars",
     description: "Richard Witt • 1809",
-    dependencies: ["dir042_note_book"],
+    dependencies: ["dir042_note"],
     images: [
       {
         url: "images/note016_1.jpeg",
@@ -1015,6 +1015,17 @@ window.informationData = {
       {
         url: "images/note025_12.jpeg",
         caption: "pages 20–21"
+      },
+    ],
+  },
+  note026: {
+    title: "Photo: Baroness Auravei Sinclair",
+    description: "",
+    dependencies: ["dir047_note_photo"],
+    images: [
+      {
+        url: "images/note026.jpeg",
+        caption: "portrait of Baroness Auravei Sinclair"
       },
     ],
   },
