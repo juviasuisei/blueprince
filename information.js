@@ -555,6 +555,22 @@ window.informationData = {
       },
     ],
   },
+  dir069_description: {
+    title: "Description",
+    description: "The best thing to go with breakfast is a morning newspaper and a coffee.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir069_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir069_info: {
+    title: "Classification",
+    description: "TYPE: Tomorrow • Addition",
+    dependencies: [],
+  },
   dir071_description: {
     title: "Description",
     description: "The staff commissary is always stocked with household goods and supplies at a reasonable cost. This provides the servants of the estate an invaluable service, especially to the live-in staff who may only expect to leave the property once or twice a month.",
@@ -576,6 +592,22 @@ window.informationData = {
         caption: "room directory entry"
       },
     ],
+  },
+  dir073_description: {
+    title: "Description",
+    description: "Considering the amount of floor plans and differnt doors that can appear on any given day, it was only a matter of time before a fulltime locksmith service became an essential requisite on the estate.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir073_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir073_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
   },
   dir079_description: {
     title: "Description",
@@ -807,6 +839,28 @@ window.informationData = {
       {
         url: "images/item11_compass.jpeg",
         caption: "compass"
+      },
+    ],
+  },
+  item12_brokenlever: {
+    title: "What Appears to Be a Broken Lever",
+    description: "Could prove to be useful.",
+    dependencies: ["obj05_12_brokenlever"],
+    images: [
+      {
+        url: "images/item12_brokenlever.jpeg",
+        caption: "broken lever"
+      },
+    ],
+  },
+  item13_upgradedisk: {
+    title: "A Floorplan Upgrade Disk",
+    description: "Insert into one of the Estate Terminals to permanently upgrade one of your floorplans.",
+    dependencies: ["obj05_12_upgradedisk"],
+    images: [
+      {
+        url: "images/item12_upgradedisk.jpeg",
+        caption: "upgrade disk"
       },
     ],
   },
@@ -1254,7 +1308,7 @@ window.informationData = {
       },
     ],
   },
-  note029: {
+  note030: {
     title: "Letter from Dad",
     description: "",
     dependencies: ["dir039_note_letter"],
@@ -1274,6 +1328,17 @@ window.informationData = {
       {
         url: "images/note030_4.jpeg",
         caption: "page 3"
+      },
+    ],
+  },
+  note031: {
+    title: "Newspaper Announcement of Our Inheritance",
+    description: "",
+    dependencies: ["dir069_note"],
+    images: [
+      {
+        url: "images/note031.jpeg",
+        caption: "article announcing our potential inheritance"
       },
     ],
   },
@@ -1297,6 +1362,22 @@ window.informationData = {
     title: "Synka",
     description: "Prior to his death, he was the owner of Synka. Prior to her disappearance, he was going to leave the company to his niece, Mary.",
     dependencies: ["dir082_note"],
+  },
+  person01_herbie_004: {
+    title: "Death",
+    description: "When he died on 4 November 1993, he was 73 years old.",
+    dependencies: ["dir069_note"],
+  },
+  person01_herbie_005: {
+    title: "Synka Heir",
+    description: "Named his grandnephew (us) the heir to Synka.",
+    dependencies: ["dir082_note", "dir069_note"],
+  },
+  person01_herbie_006: {
+    title: "Noted Puzzler",
+    description: "Published a regular puzzle feature called Baron Bafflers in the local paper for over 10 years.",
+    optionalDependencies: true,
+    dependencies: ["dir069_note"],
   },
   person02_baroness_001: {
     title: "Relation",
@@ -1362,7 +1443,8 @@ window.informationData = {
   person07_mary_002: {
     title: "Occupation",
     description: "Author under the pseudonym Marion Marigold. Her first book was The Red Prince and her second book was Swim Bird.",
-    dependencies: ["dir082_note"],
+    optionalDependencies: true,
+    dependencies: ["dir082_note", "dir069_note"],
   },
   person07_mary_003: {
     title: "Friendship with Caleb",
@@ -1378,6 +1460,11 @@ window.informationData = {
     title: "Synka Heiress",
     description: "Prior to her disappearance, she was the hieress to Synka.",
     dependencies: ["dir082_note"],
+  },
+  person07_mary_006: {
+    title: "Third Book",
+    description: "Her third book was A New Clue.",
+    dependencies: ["dir069_note"],
   },
   person08_caleb_001: {
     title: "Occupation",
@@ -1413,6 +1500,26 @@ window.informationData = {
     title: "Relation",
     description: "Our father.",
     dependencies: ["dir039_note_letter1"],
+  },
+  person12_player_001: {
+    title: "Player Character",
+    description: "This is us, the player.",
+    dependencies: ["dir069_note_letter1"],
+  },
+  person12_player_002: {
+    title: "Age",
+    description: "At the start of the game we are 14 years old.",
+    dependencies: ["dir069_note_letter1"],
+  },
+  person12_player_003: {
+    title: "Award",
+    description: "We placed Runner-Up in the 1992 County Science Fair.",
+    dependencies: ["dir069_note_letter1"],
+  },
+  person12_player_004: {
+    title: "Heir",
+    description: "Assuming we pass our granduncle's challenge, we inherit Mount Holly and the Synka empire.",
+    dependencies: ["dir069_note_letter1"],
   },
   date001: {
     title: "Thursday, 18 March 1993",
@@ -1480,5 +1587,35 @@ window.informationData = {
     description: "Day One of our challenge at Mount Holly.",
     optionalDependencies: true,
     dependencies: ["dir082_note"],
+  },
+  date014: {
+    title: "Wednesday, 4 November 1993",
+    description: "Herbert dies from a long-standing heart condition.",
+    dependencies: ["dir069_note"],
+  },
+  date015: {
+    title: "Thursday, 5 November 1993",
+    description: "Our dad writes us a letter to support us that we find in the Mail Room.",
+    dependencies: ["dir069_note", "dir039_note_letter1"],
+  },
+  date016: {
+    title: "Wednesday, 4 November 1993",
+    description: "Mrs. Babbage sends a notice to the staff notifying them of Herbert's death and their need to tempoarily vacate the house by Friday.",
+    dependencies: ["dir069_note", "dir081_note_notice"],
+  },
+  date017: {
+    title: "Wednesday, 4 November 1993",
+    description: "Herbert's funeral is held.",
+    dependencies: ["dir069_note", "dir039_note_letter1"],
+  },
+  date018: {
+    title: "Wednesday, 4 November 1993",
+    description: "Our provisional inheritance is announced during the reading of Herbert's will.",
+    dependencies: ["dir069_note"],
+  },
+  date019: {
+    title: "Thursday, 5 November 1993",
+    description: "Our provisional inheritance is announced publically via a newspaper article.",
+    dependencies: ["dir069_note"],
   },
 };

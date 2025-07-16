@@ -206,6 +206,13 @@ window.checkboxesData = {
     unlockKeyword: "Courtyard",
     dependencies: [],
   },
+  obj02_069_morningroom: {
+    title: "Morning Room",
+    hint: "Draft the Morning Room",
+    description: "Room 069",
+    unlockKeyword: "Morning Room",
+    dependencies: [],
+  },
   obj02_071_commissary: {
     title: "Commissary",
     hint: "Draft the Commissary",
@@ -218,6 +225,13 @@ window.checkboxesData = {
     hint: "Draft the Kitchen",
     description: "Room 072",
     unlockKeyword: "Kitchen",
+    dependencies: [],
+  },
+  obj02_073_locksmith: {
+    title: "Locksmith",
+    hint: "Draft the Locksmith",
+    description: "Room 073",
+    unlockKeyword: "Locksmith",
     dependencies: [],
   },
   obj02_079_lavatory: {
@@ -268,6 +282,22 @@ window.checkboxesData = {
     description: "Room 086",
     unlockKeyword: "Furnace",
     dependencies: [],
+  },
+  obj03_r6f3: {
+    title: "Rank 6 • File 3: T",
+    hint: "Rank 6 • File 3: ???",
+    description: "PLANE[T]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r6f3_L.jpeg",
+        caption: "planet"
+      },
+      {
+        url: "images/obj03_r6f3_R.jpeg",
+        caption: "plane"
+      },
+    ],
   },
   obj03_r6f4: {
     title: "Rank 6 • File 4: E",
@@ -887,11 +917,29 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_065_courtyard"],
   },
+  obj04_069_morningroom: {
+    title: "Morning Room: None",
+    hint: "Morning Room: ???",
+    description: "",
+    dependencies: ["obj02_069_morningroom"],
+  },
   obj04_071_commissary: {
     title: "Commissary: None",
     hint: "Commissary: ???",
     description: "",
     dependencies: ["obj02_071_commissary"],
+  },
+  obj04_072_kitchen: {
+    title: "Kitchen: None",
+    hint: "Kitchen: ???",
+    description: "",
+    dependencies: ["obj02_072_kitchen"],
+  },
+  obj04_073_locksmith: {
+    title: "Locksmith: None",
+    hint: "Locksmith: ???",
+    description: "",
+    dependencies: ["obj02_073_locksmith"],
   },
   obj04_079_lavatory: {
     title: "Lavatory: None",
@@ -1080,6 +1128,32 @@ window.checkboxesData = {
       {
         url: "images/item11_compass.jpeg",
         caption: "Compass"
+      },
+    ],
+  },
+  obj05_12_brokenlever: {
+    title: "Broken Lever",
+    hint: "Find a Broken Lever",
+    description: "",
+    unlockKeyword: ["Broken Lever", "Lever"],
+    dependencies: [],
+    images: [
+      {
+        url: "images/item12_brokenlever.jpeg",
+        caption: "Broken Lever"
+      },
+    ],
+  },
+  obj05_13_upgradedisk: {
+    title: "Upgrade Disk",
+    hint: "Find a Upgrade Disk",
+    description: "",
+    unlockKeyword: "Upgrade Disk",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item13_upgradedisk.jpeg",
+        caption: "Upgrade Disk"
       },
     ],
   },
@@ -1999,6 +2073,30 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
+  dir069_note: {
+    title: "Note: Newspaper Announcement of Our Inheritance",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note031.jpeg",
+        caption: "article announcing our potential inheritance"
+      },
+    ],
+  },
+  dir069_note_magnify: {
+    title: "Magnify Note: Nothing",
+    hint: "Magnify Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
+  dir069_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir071_note_flyer: {
     title: "Flyer: Maid's Day Sale",
     hint: "Flyer: ???",
@@ -2036,6 +2134,18 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir071_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir072_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir073_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

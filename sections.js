@@ -42,8 +42,10 @@ window.sectionsData = [
       "obj04_059_passageway",
       "obj04_063_terrace",
       "obj04_065_courtyard",
+      "obj04_069_morningroom",
       "obj04_071_commissary",
       "obj04_072_kitchen",
+      "obj04_073_locksmith",
       "obj04_079_lavatory",
       "obj04_080_chapel",
       "obj04_081_maidschamber",
@@ -60,6 +62,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r6f3",
       "obj03_r6f4",
       "obj03_r6f5",
       "obj03_r5f3",
@@ -124,8 +127,10 @@ window.sectionsData = [
       "obj02_059_passageway",
       "obj02_063_terrace",
       "obj02_065_courtyard",
+      "obj02_069_morningroom",
       "obj02_071_commissary",
       "obj02_072_kitchen",
+      "obj02_073_locksmith",
       "obj02_079_lavatory",
       "obj02_080_chapel",
       "obj02_081_maidschamber",
@@ -154,6 +159,8 @@ window.sectionsData = [
       "obj05_09_metaldetector",
       "obj05_10_couponbook",
       "obj05_11_compass",
+      "obj05_12_brokenlever",
+      "obj05_13_upgradedisk",
     ]
   },
   {
@@ -432,6 +439,14 @@ window.sectionsData = [
         checkboxes: ["dir065_search"],
       },
       {
+        id: "dir069",
+        title: "069: Morning Room",
+        color: "green",
+        dependencies: ["obj02_069_morningroom"],
+        information: ["dir069_description", "dir069_info"],
+        checkboxes: ["dir069_note", "dir069_note_magnify", "dir069_search"],
+      },
+      {
         id: "dir071",
         title: "071: Commissary",
         color: "gold",
@@ -446,6 +461,14 @@ window.sectionsData = [
         dependencies: ["obj02_072_kitchen"],
         information: ["dir072_description"],
         checkboxes: ["dir072_search"],
+      },
+      {
+        id: "dir073",
+        title: "073: Locksmith",
+        color: "gold",
+        dependencies: ["obj02_073_locksmith"],
+        information: ["dir073_description", "dir073_info"],
+        checkboxes: ["dir073_search"],
       },
       {
         id: "dir079",
@@ -522,6 +545,8 @@ window.sectionsData = [
       "item09_metaldetector",
       "item10_couponbook",
       "item11_compass",
+      "item12_brokenlever",
+      "item13_upgradedisk",
     ],
   },
   {
@@ -531,11 +556,26 @@ window.sectionsData = [
     dependencies: [],
     subsections: [
       {
+        id: "person12_player",
+        title: "Simon P. Jones",
+        color: "blue",
+        dependencies: [],
+        information: ["person12_player_001", "person12_player_002", "person12_player_003", "person12_player_004"],
+        checkboxes: [],
+      },
+      {
         id: "person01_herbie",
         title: "Baron Herbert S. Sinclair",
         color: "blue",
         dependencies: [],
-        information: ["person01_herbie_001", "person01_herbie_002", "person01_herbie_003"],
+        information: [
+          "person01_herbie_001", // relation
+          "person01_herbie_004", // death
+          "person01_herbie_002", // mount holly
+          "person01_herbie_003", // original intended heir
+          "person01_herbie_005", // final heir decision
+          "person01_herbie_006", // baron bafflers
+        ],
         checkboxes: [],
       },
       {
@@ -544,7 +584,14 @@ window.sectionsData = [
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir082_note_scrapbook"],
-        information: ["person07_mary_001", "person07_mary_002", "person07_mary_003", "person07_mary_004", "person07_mary_005"],
+        information: [
+          "person07_mary_001", // relation
+          "person07_mary_002", // occupation
+          "person07_mary_006", // third book
+          "person07_mary_004", // disappearance
+          "person07_mary_005", // original intended heir
+          "person07_mary_003", // friendship with caleb
+        ],
         checkboxes: [],
       },
       {
@@ -646,6 +693,12 @@ window.sectionsData = [
       "date010", // 1987-02-20
       "date011", // 1987-09-02
       "date001", // 1993-03-18
+      "date014", // 1993-11-04
+      "date016", // 1993-11-04
+      "date017", // 1993-11-04
+      "date018", // 1993-11-04
+      "date019", // 1993-11-05
+      "date015", // 1993-11-05
       "date004", // 1993-11-06
       "date012", // 1993-11-06
       "date013", // 1993-11-07
@@ -705,6 +758,7 @@ window.sectionsData = [
           "note019", // 048 - bedroom
           "note004", // 055 - hallway
           "note018", // 056 - west wing hall
+          "note031", // 069 - morning room
           "note013", // 071 - commissary
           "note014", // 071 - commissary
           "note020", // 081 - maid's chamber
