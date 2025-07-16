@@ -27,6 +27,7 @@ window.sectionsData = [
       "obj04_031_utility_closet",
       "obj04_034_security",
       "obj04_038_coatcheck",
+      "obj04_040_freezer",
       "obj04_041_diningroom",
       "obj04_042_observatory",
       "obj04_047_bedroom",
@@ -58,6 +59,7 @@ window.sectionsData = [
     information: [],
     checkboxes: [
       "obj03_r6f4",
+      "obj03_r6f5",
       "obj03_r5f3",
       "obj03_r5f4",
       "obj03_r5f5",
@@ -103,6 +105,7 @@ window.sectionsData = [
       "obj02_031_utilitycloset",
       "obj02_034_security",
       "obj02_038_coatcheck",
+      "obj02_040_freezer",
       "obj02_041_diningroom",
       "obj02_042_observatory",
       "obj02_045_antechamber",
@@ -278,6 +281,14 @@ window.sectionsData = [
         dependencies: ["obj02_038_coatcheck"],
         information: ["dir038_description", "dir038_info"],
         checkboxes: ["dir038_search"],
+      },
+      {
+        id: "dir040",
+        title: "040: Freezer",
+        color: "blue",
+        dependencies: ["obj02_040_freezer"],
+        information: ["dir040_description", "dir040_info"],
+        checkboxes: ["dir040_search", "dir040_thaw1", "dir040_thaw2"],
       },
       {
         id: "dir041",

@@ -89,6 +89,13 @@ window.checkboxesData = {
     unlockKeyword: ["Coat Check", "Coatcheck"],
     dependencies: [],
   },
+  obj02_040_freezer: {
+    title: "Freezer",
+    hint: "Draft the Freezer",
+    description: "Room 040",
+    unlockKeyword: "Freezer",
+    dependencies: [],
+  },
   obj02_041_diningroom: {
     title: "Dining Room",
     hint: "Draft the Dining Room",
@@ -261,6 +268,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r6f4_R.jpeg",
         caption: "stag"
+      },
+    ],
+  },
+  obj03_r6f5: {
+    title: "Rank 6 • File 5: S",
+    hint: "Rank 6 • File 5: ???",
+    description: "COA[S]T",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r6f5_L.jpeg",
+        caption: "coast"
+      },
+      {
+        url: "images/obj03_r6f5_R.jpeg",
+        caption: "coat"
       },
     ],
   },
@@ -729,6 +752,12 @@ window.checkboxesData = {
     hint: "Coat Check: ???",
     description: "",
     dependencies: ["obj02_038_coatcheck"],
+  },
+  obj04_040_freezer: {
+    title: "Freezer: None",
+    hint: "Freezer: ???",
+    description: "",
+    dependencies: ["obj02_040_freezer"],
   },
   obj04_041_diningroom: {
     title: "Dining Room: White Pawn",
@@ -1510,6 +1539,24 @@ window.checkboxesData = {
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
+  },
+  dir040_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir040_thaw1: {
+    title: "Freezer Thawed: None",
+    hint: "Thaw the Freezer: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir040_thaw2: {
+    title: "Herbert's Personal Freezer Thawed: None",
+    hint: "Thaw Herbert's Personal Freezer: ???",
+    description: "",
+    dependencies: ["dir040_thaw1"],
   },
   dir041_search: {
     title: "Standard Search Complete: None",

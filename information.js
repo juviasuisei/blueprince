@@ -253,6 +253,22 @@ window.informationData = {
     description: "TYPE: Tomorrow • Dead End",
     dependencies: [],
   },
+  dir040_description: {
+    title: "Description",
+    description: "Dedicated to deep freeze and cold storage, Mount Holly's freezer is an insulated space kept almost as frigid as the snowy mountains of Corarica. Sustaining a subzero temperature is vital for keeping the items in this room under ice.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir040_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir040_info: {
+    title: "Classification",
+    description: "TYPE: Tomorrow • Dead End",
+    dependencies: [],
+  },
   dir041_description: {
     title: "Description",
     description: "An intimate and warm room with a large dining table boasting a serving tray with a silver dome cover. Dinner is served here each evening.",
