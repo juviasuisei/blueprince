@@ -75,6 +75,13 @@ window.checkboxesData = {
     unlockKeyword: "Security",
     dependencies: [],
   },
+  obj02_038_coatcheck: {
+    title: "Coat Check",
+    hint: "Draft the Coat Check",
+    description: "Room 038",
+    unlockKeyword: "Coat Check",
+    dependencies: [],
+  },
   obj02_042_observatory: {
     title: "Observatory",
     hint: "Draft the Observatory",
@@ -667,6 +674,12 @@ window.checkboxesData = {
         caption: "white knight"
       },
     ],
+  },
+  obj04_038_coatcheck: {
+    title: "Coat Check: None",
+    hint: "Coat Check: ???",
+    description: "",
+    dependencies: ["obj02_038_coatcheck"],
   },
   obj04_042_observatory: {
     title: "Observatory: White Knight",
@@ -1370,6 +1383,12 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir034_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir038_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

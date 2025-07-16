@@ -210,6 +210,22 @@ window.informationData = {
       },
     ],
   },
+  dir038_description: {
+    title: "Description",
+    description: "A cloakroom where guests may leave their coats, bags, or hats in exchange for a claim ticket. This floor plan was usually drafted adjoining the Entrance Hall during larger social events such as a ball or gala.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir038_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir038_info: {
+    title: "Classification",
+    description: "TYPE: Tomorrow • Dead End",
+    dependencies: [],
+  },
   dir042_description: {
     title: "Description",
     description: "Housing an impressively large telescope, Mount Holly's observatory is a window to the world above and beyond the clouds and sky. Through its mirrored lens, even a novice stargazer will be able to distincly appreciate the wonder, signs, and constellations that punctuate the tapestry of night.",
