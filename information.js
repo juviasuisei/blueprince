@@ -1173,7 +1173,7 @@ window.informationData = {
   note028: {
     title: "Return Denny Revane's Mail",
     description: "",
-    dependencies: ["dir028_note"],
+    dependencies: ["dir039_note_pad"],
     images: [
       {
         url: "images/note028.jpeg",
@@ -1184,7 +1184,7 @@ window.informationData = {
   note029: {
     title: "Partial V.A.C. System Instructions",
     description: "",
-    dependencies: ["dir029_note"],
+    dependencies: ["dir039_note_vac"],
     images: [
       {
         url: "images/note029.jpeg",
@@ -1195,7 +1195,7 @@ window.informationData = {
   note029: {
     title: "Letter from Dad",
     description: "",
-    dependencies: ["dir029_note"],
+    dependencies: ["dir039_note_letter"],
     images: [
       {
         url: "images/note030_1.jpeg",
