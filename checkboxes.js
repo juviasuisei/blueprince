@@ -941,6 +941,19 @@ window.checkboxesData = {
       },
     ],
   },
+  obj05_09_metaldetector: {
+    title: "Metal Detector",
+    hint: "Find a Metal Detector",
+    description: "",
+    unlockKeyword: "Metal Detector",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item09_metaldetector.jpeg",
+        caption: "Metal Detector"
+      },
+    ],
+  },
   obj06_001_northstar: {
     title: "North Star",
     hint: "North Star",

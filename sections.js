@@ -139,6 +139,7 @@ window.sectionsData = [
       "obj05_06_shovel",
       "obj05_07_keycard",
       "obj05_08_magnifyingglass",
+      "obj05_09_metaldetector",
     ]
   },
   {

@@ -661,6 +661,17 @@ window.informationData = {
       },
     ],
   },
+  item09_metaldetector: {
+    title: "A Functioning Metal Detector",
+    description: "Greater chance of finding keys and gold.",
+    dependencies: ["obj05_09_metaldetector"],
+    images: [
+      {
+        url: "images/item09_metaldetector.jpeg",
+        caption: "metal detector"
+      },
+    ],
+  },
   note001: {
     title: "Recital Invitation",
     description: "",
