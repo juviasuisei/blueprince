@@ -1369,7 +1369,7 @@ window.informationData = {
     dependencies: ["dir056_note"],
   },
   date004: {
-    title: "Friday, 06 November 1993",
+    title: "Friday, 6 November 1993",
     description: "The staff of Mount Holly leave on temporary paid leave after the death of Herbert.",
     dependencies: ["dir081_note_notice"],
   },
