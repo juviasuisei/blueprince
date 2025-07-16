@@ -227,6 +227,13 @@ window.checkboxesData = {
     unlockKeyword: "Darkroom",
     dependencies: [],
   },
+  obj02_085_weightroom: {
+    title: "Weight Room",
+    hint: "Draft the Weight Room",
+    description: "Room 085",
+    unlockKeyword: "Weight Room",
+    dependencies: [],
+  },
   obj02_086_furnace: {
     title: "Furnace",
     hint: "Draft the Furnace",
@@ -831,6 +838,12 @@ window.checkboxesData = {
     hint: "Darkroom: ???",
     description: "",
     dependencies: ["obj02_084_darkroom"],
+  },
+  obj04_085_weightroom: {
+    title: "Weight Room: None",
+    hint: "Weight Room: ???",
+    description: "",
+    dependencies: ["obj02_085_weightroom"],
   },
   obj04_086_furnace: {
     title: "Furnace: None",
@@ -2043,6 +2056,12 @@ window.checkboxesData = {
     ],
   },
   dir084_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir085_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

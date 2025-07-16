@@ -45,6 +45,7 @@ window.sectionsData = [
       "obj04_081_maidschamber",
       "obj04_082_archives",
       "obj04_084_darkroom",
+      "obj04_085_weightroom",
       "obj04_086_furnace",
     ]
   },
@@ -120,6 +121,7 @@ window.sectionsData = [
       "obj02_081_maidschamber",
       "obj02_082_archives",
       "obj02_084_darkroom",
+      "obj02_085_weightroom",
       "obj02_086_furnace",
     ]
   },
@@ -432,6 +434,14 @@ window.sectionsData = [
         dependencies: ["obj02_084_darkroom"],
         information: ["dir084_description"],
         checkboxes: ["dir084_note_print", "dir084_note_print_magnify", "dir084_note_photos", "dir084_note_photos_magnify", "dir084_search"],
+      },
+      {
+        id: "dir085",
+        title: "085: Weight Room",
+        color: "red",
+        dependencies: ["obj02_085_weightroom"],
+        information: ["dir085_description"],
+        checkboxes: ["dir085_search"],
       },
       {
         id: "dir086",

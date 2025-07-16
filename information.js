@@ -557,6 +557,17 @@ window.informationData = {
       },
     ],
   },
+  dir085_description: {
+    title: "Description",
+    description: "An exercise room outfitted with weightlifting equipment. A good workout session here will wipe you out and leave you with little energy left for exploring.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir085_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir086_description: {
     title: "Description",
     description: "The main centralized heat source for the estate. You may find yourself starting to sweat after drafting this room.",
