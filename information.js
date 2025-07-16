@@ -1504,22 +1504,22 @@ window.informationData = {
   person12_player_001: {
     title: "Player Character",
     description: "This is us, the player.",
-    dependencies: ["dir069_note_letter1"],
+    dependencies: ["dir069_note"],
   },
   person12_player_002: {
     title: "Age",
     description: "At the start of the game we are 14 years old.",
-    dependencies: ["dir069_note_letter1"],
+    dependencies: ["dir069_note"],
   },
   person12_player_003: {
     title: "Award",
     description: "We placed Runner-Up in the 1992 County Science Fair.",
-    dependencies: ["dir069_note_letter1"],
+    dependencies: ["dir069_note"],
   },
   person12_player_004: {
     title: "Heir",
     description: "Assuming we pass our granduncle's challenge, we inherit Mount Holly and the Synka empire.",
-    dependencies: ["dir069_note_letter1"],
+    dependencies: ["dir069_note"],
   },
   date001: {
     title: "Thursday, 18 March 1993",
