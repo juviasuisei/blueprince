@@ -223,7 +223,12 @@ window.informationData = {
   },
   dir032_info: {
     title: "Classification",
-    description: "TYPE: Mechanical • Steam Ducts",
+    description: "TYPE: Mechanical",
+    dependencies: [],
+  },
+  dir032_steam: {
+    title: "Is Part of the Steam Duct Network",
+    description: "",
     dependencies: [],
   },
   dir034_description: {
@@ -239,7 +244,7 @@ window.informationData = {
   },
   dir034_info: {
     title: "Classification",
-    description: "TYPE: Mechanical • Steam Ducts",
+    description: "TYPE: Mechanical",
     dependencies: [],
   },
   dir034_chess: {
@@ -252,6 +257,11 @@ window.informationData = {
         caption: "white knight"
       },
     ],
+  },
+  dir034_steam: {
+    title: "Is Part of the Steam Duct Network",
+    description: "",
+    dependencies: [],
   },
   dir038_description: {
     title: "Description",
@@ -513,9 +523,9 @@ window.informationData = {
       },
     ],
   },
-  dir059_info: {
-    title: "Classification",
-    description: "TYPE: Steam Ducts",
+  dir059_steam: {
+    title: "Is Part of the Steam Duct Network",
+    description: "",
     dependencies: [],
   },
   dir063_description: {
@@ -621,9 +631,9 @@ window.informationData = {
       },
     ],
   },
-  dir082_info: {
-    title: "Classification",
-    description: "TYPE: Steam Ducts",
+  dir082_steam: {
+    title: "Is Part of the Steam Duct Network",
+    description: "",
     dependencies: [],
   },
   dir084_description: {
@@ -637,9 +647,9 @@ window.informationData = {
       },
     ],
   },
-  dir084_info: {
-    title: "Classification",
-    description: "TYPE: Steam Ducts",
+  dir084_steam: {
+    title: "Is Part of the Steam Duct Network",
+    description: "",
     dependencies: [],
   },
   dir085_description: {
@@ -653,9 +663,9 @@ window.informationData = {
       },
     ],
   },
-  dir085_info: {
-    title: "Classification",
-    description: "TYPE: Steam Ducts",
+  dir085_steam: {
+    title: "Is Part of the Steam Duct Network",
+    description: "",
     dependencies: [],
   },
   dir086_description: {
@@ -671,7 +681,12 @@ window.informationData = {
   },
   dir086_info: {
     title: "Classification",
-    description: "TYPE: Dead End • Steam Ducts",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
+  dir086_steam: {
+    title: "Is Part of the Steam Duct Network",
+    description: "",
     dependencies: [],
   },
   item01_sledgehammer: {

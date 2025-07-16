@@ -276,7 +276,7 @@ window.sectionsData = [
         title: "032: Boiler Room",
         color: "blue",
         dependencies: ["obj02_032_boilerroom"],
-        information: ["dir032_description", "dir032_info"],
+        information: ["dir032_description", "dir032_info", "dir032_steam"],
         checkboxes: ["dir032_search", "dir032_steam"],
       },
       {
@@ -284,7 +284,7 @@ window.sectionsData = [
         title: "034: Security",
         color: "blue",
         dependencies: ["obj02_034_security"],
-        information: ["dir034_description", "dir034_info", "dir034_chess"],
+        information: ["dir034_description", "dir034_info", "dir034_chess", "dir034_steam"],
         checkboxes: ["dir034_note_pad", "dir034_note_pad_magnify", "dir034_note_notice", "dir034_note_notice_magnify", "dir034_note_red", "dir034_note_red_magnify", "dir034_note_blue", "dir034_note_blue_magnify", "dir034_search", "obj_network_unlock"],
       },
       {
@@ -412,7 +412,7 @@ window.sectionsData = [
         title: "059: Passageway",
         color: "orange",
         dependencies: ["obj02_059_passageway"],
-        information: ["dir059_description"],
+        information: ["dir059_description", "dir059_steam"],
         checkboxes: ["dir059_search"],
       },
       {
@@ -476,7 +476,7 @@ window.sectionsData = [
         title: "082: Archives",
         color: "red",
         dependencies: ["obj02_082_archives"],
-        information: ["dir082_description"],
+        information: ["dir082_description", "dir082_steam"],
         checkboxes: ["dir082_note", "dir082_note_magnify", "dir082_search"],
       },
       {
@@ -484,7 +484,7 @@ window.sectionsData = [
         title: "084: Darkroom",
         color: "red",
         dependencies: ["obj02_084_darkroom"],
-        information: ["dir084_description"],
+        information: ["dir084_description", "dir084_steam"],
         checkboxes: ["dir084_note_print", "dir084_note_print_magnify", "dir084_note_photos", "dir084_note_photos_magnify", "dir084_search"],
       },
       {
@@ -492,7 +492,7 @@ window.sectionsData = [
         title: "085: Weight Room",
         color: "red",
         dependencies: ["obj02_085_weightroom"],
-        information: ["dir085_description"],
+        information: ["dir085_description", "dir085_steam"],
         checkboxes: ["dir085_search"],
       },
       {
@@ -500,7 +500,7 @@ window.sectionsData = [
         title: "086: Furnace",
         color: "red",
         dependencies: ["obj02_086_furnace"],
-        information: ["dir086_description", "dir086_info"],
+        information: ["dir086_description", "dir086_info", "dir086_steam"],
         checkboxes: ["dir086_search", "dir086_steam"],
       },
     ],
