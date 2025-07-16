@@ -27,6 +27,7 @@ window.sectionsData = [
       "obj04_031_utility_closet",
       "obj04_034_security",
       "obj04_038_coatcheck",
+      "obj04_039_mailroom",
       "obj04_040_freezer",
       "obj04_041_diningroom",
       "obj04_042_observatory",
@@ -105,6 +106,7 @@ window.sectionsData = [
       "obj02_031_utilitycloset",
       "obj02_034_security",
       "obj02_038_coatcheck",
+      "obj02_039_mailroom",
       "obj02_040_freezer",
       "obj02_041_diningroom",
       "obj02_042_observatory",
@@ -281,6 +283,22 @@ window.sectionsData = [
         dependencies: ["obj02_038_coatcheck"],
         information: ["dir038_description", "dir038_info"],
         checkboxes: ["dir038_search"],
+      },
+      {
+        id: "dir039",
+        title: "039: Mail Room",
+        color: "blue",
+        dependencies: ["obj02_039_mailroom"],
+        information: ["dir039_description", "dir039_info"],
+        checkboxes: [
+          "dir039_note_pad",
+          "dir039_note_pad_magnify",
+          "dir039_note_vac",
+          "dir039_note_vac_magnify",
+          "dir039_note_letter1",
+          "dir039_note_letter1_magnify",
+          "dir039_search"
+        ],
       },
       {
         id: "dir040",
@@ -518,6 +536,15 @@ window.sectionsData = [
         checkboxes: [],
       },
       {
+        id: "person11_dad",
+        title: "Dad",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir039_note_letter1"],
+        information: ["person11_dad_001"],
+        checkboxes: [],
+      },
+      {
         id: "person06_clara",
         title: "Lady Clara Epsen",
         color: "blue",
@@ -537,7 +564,7 @@ window.sectionsData = [
       },
       {
         id: "person03_babbage",
-        title: "House Manager Mrs. Babbage",
+        title: "Staff Member Mrs. Babbage",
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir034_note_notice"],
@@ -546,11 +573,20 @@ window.sectionsData = [
       },
       {
         id: "person04_bridgette",
-        title: "Maid Bridgette",
+        title: "Staff Member Bridgette",
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir021_note"],
         information: ["person04_bridgette_001"],
+        checkboxes: [],
+      },
+      {
+        id: "person10_denny",
+        title: "Ex-Staff Member Denny Revane",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir039_note_pad"],
+        information: ["person10_denny_001"],
         checkboxes: [],
       },
       {
@@ -599,6 +635,8 @@ window.sectionsData = [
       "date011", // 1987-09-02
       "date001", // 1993-03-18
       "date004", // 1993-11-06
+      "date012", // 1993-11-06
+      "date013", // 1993-11-07
     ],
     checkboxes: [],
   },
@@ -628,6 +666,7 @@ window.sectionsData = [
         information: [
           "note002", // 002 - entrance hall
           "note006", // 005 - parlor
+          "note030", // 039 - mail room
           "note017", // 049 - guest bedroom
         ],
       },
@@ -647,6 +686,8 @@ window.sectionsData = [
           "note009", // 034 - security
           "note010", // 034 - security
           "note011", // 034 - security
+          "note028", // 039 - mail room
+          "note029", // 039 - mail room
           "note012", // 047 - bedroom
           "note026", // 047 - bedroom
           "note019", // 048 - bedroom

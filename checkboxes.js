@@ -89,6 +89,13 @@ window.checkboxesData = {
     unlockKeyword: ["Coat Check", "Coatcheck"],
     dependencies: [],
   },
+  obj02_039_mailroom: {
+    title: "Mail Room",
+    hint: "Draft the Mail Room",
+    description: "Room 039",
+    unlockKeyword: "Mail Room",
+    dependencies: [],
+  },
   obj02_040_freezer: {
     title: "Freezer",
     hint: "Draft the Freezer",
@@ -752,6 +759,12 @@ window.checkboxesData = {
     hint: "Coat Check: ???",
     description: "",
     dependencies: ["obj02_038_coatcheck"],
+  },
+  obj04_039_mailroom: {
+    title: "Mail Room: None",
+    hint: "Mail Room: ???",
+    description: "",
+    dependencies: ["obj02_039_mailroom"],
   },
   obj04_040_freezer: {
     title: "Freezer: None",
@@ -1445,7 +1458,7 @@ window.checkboxesData = {
     dependencies: ["dir031_vac"],
   },
   dir034_note_pad: {
-    title: "Note: Note Pad",
+    title: "Note Pad: Red/Blue Notes",
     hint: "Note Pad: ???",
     description: "",
     dependencies: [],
@@ -1535,6 +1548,84 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir038_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir039_note_pad: {
+    title: "Note Pad: Return Denny Revane's Mail",
+    hint: "Note Pad: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note028.jpeg",
+        caption: "return ex-staff Denny's mail to sender"
+      },
+    ],
+  },
+  dir039_note_pad_magnify: {
+    title: "Magnify Note Pad: Hidden Message",
+    hint: "Magnify Note Pad: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+    images: [
+      {
+        url: "images/TK.jpeg",
+        caption: "magnified hidden message"
+      },
+    ],
+  },
+  dir039_note_vac: {
+    title: "Note: Partial V.A.C. System Instructions",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note029.jpeg",
+        caption: "partial V.A.C. explainer"
+      },
+    ],
+  },
+  dir039_note_vac_magnify: {
+    title: "Magnify Note: Nothing",
+    hint: "Magnify Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
+  dir039_note_letter1: {
+    title: "Letter: Letter from Dad",
+    hint: "Letter: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note030_1.jpeg",
+        caption: "envelope"
+      },
+      {
+        url: "images/note030_2.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note030_3.jpeg",
+        caption: "page 2"
+      },
+      {
+        url: "images/note030_4.jpeg",
+        caption: "page 3"
+      },
+    ],
+  },
+  dir039_note_letter1_magnify: {
+    title: "Magnify Note: Nothing",
+    hint: "Magnify Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
+  dir039_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

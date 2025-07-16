@@ -253,6 +253,22 @@ window.informationData = {
     description: "TYPE: Tomorrow • Dead End",
     dependencies: [],
   },
+  dir039_description: {
+    title: "Description",
+    description: "A dedicated mailing room in which incoming and outgoing post and packages are sorted and then delivered within the estate to their intended recipients.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir039_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir039_info: {
+    title: "Classification",
+    description: "TYPE: Tomorrow • Dead End",
+    dependencies: [],
+  },
   dir040_description: {
     title: "Description",
     description: "Dedicated to deep freeze and cold storage, Mount Holly's freezer is an insulated space kept almost as frigid as the snowy mountains of Corarica. Sustaining a subzero temperature is vital for keeping the items in this room under ice.",
@@ -826,7 +842,7 @@ window.informationData = {
     ],
   },
   note008: {
-    title: "Notepad",
+    title: "Red/Blue Notes",
     description: "",
     dependencies: ["dir034_note_pad"],
     images: [
@@ -1154,6 +1170,51 @@ window.informationData = {
       },
     ],
   },
+  note028: {
+    title: "Return Denny Revane's Mail",
+    description: "",
+    dependencies: ["dir028_note"],
+    images: [
+      {
+        url: "images/note028.jpeg",
+        caption: "return ex-staff Denny's mail to sender"
+      },
+    ],
+  },
+  note029: {
+    title: "Partial V.A.C. System Instructions",
+    description: "",
+    dependencies: ["dir029_note"],
+    images: [
+      {
+        url: "images/note029.jpeg",
+        caption: "partial V.A.C. explainer"
+      },
+    ],
+  },
+  note029: {
+    title: "Letter from Dad",
+    description: "",
+    dependencies: ["dir029_note"],
+    images: [
+      {
+        url: "images/note030_1.jpeg",
+        caption: "envelope"
+      },
+      {
+        url: "images/note030_2.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note030_3.jpeg",
+        caption: "page 2"
+      },
+      {
+        url: "images/note030_4.jpeg",
+        caption: "page 3"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -1281,6 +1342,16 @@ window.informationData = {
     description: "Arrested days after a politically motivated bombing in Trinsdale.",
     dependencies: ["dir082_note"],
   },
+  person10_denny_001: {
+    title: "Ex-Staff",
+    description: "No longer a member of the Mount Holly staff.",
+    dependencies: ["dir039_note_pad"],
+  },
+  person11_dad_001: {
+    title: "Relation",
+    description: "Our father.",
+    dependencies: ["dir039_note_letter1"],
+  },
   date001: {
     title: "Thursday, 18 March 1993",
     description: "Herbert updates his will.",
@@ -1335,6 +1406,17 @@ window.informationData = {
   date011: {
     title: "Wednesday, 2 September 1987",
     description: "Several masked intruders break into the Fenn Aeries Royal Museum in the early hours and steal the Ruby Crown of Orinda Aeries. Presumed to be politically motivated.",
+    dependencies: ["dir082_note"],
+  },
+  date012: {
+    title: "Friday, 6 November 1993",
+    description: "We leave home and head to Mount Holly.",
+    dependencies: ["dir039_note_letter1"],
+  },
+  date013: {
+    title: "Saturday, 7 November 1993",
+    description: "Day One of our challenge at Mount Holly.",
+    optionalDependencies: true,
     dependencies: ["dir082_note"],
   },
 };
