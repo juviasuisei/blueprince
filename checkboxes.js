@@ -1547,13 +1547,13 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir040_thaw1: {
-    title: "Freezer Thawed: None",
+    title: "Freezer Thawed",
     hint: "Thaw the Freezer: ???",
     description: "",
     dependencies: [],
   },
   dir040_thaw2: {
-    title: "Herbert's Personal Freezer Thawed: None",
+    title: "Herbert's Personal Freezer Thawed",
     hint: "Thaw Herbert's Personal Freezer: ???",
     description: "",
     dependencies: ["dir040_thaw1"],
