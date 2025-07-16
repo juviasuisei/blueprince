@@ -89,6 +89,13 @@ window.checkboxesData = {
     unlockKeyword: ["Coat Check", "Coatcheck"],
     dependencies: [],
   },
+  obj02_041_diningroom: {
+    title: "Dining Room",
+    hint: "Draft the Dining Room",
+    description: "Room 041",
+    unlockKeyword: "Dining Room",
+    dependencies: [],
+  },
   obj02_042_observatory: {
     title: "Observatory",
     hint: "Draft the Observatory",
@@ -254,6 +261,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r6f4_R.jpeg",
         caption: "stag"
+      },
+    ],
+  },
+  obj03_r5f3: {
+    title: "Rank 5 • File 3: G",
+    hint: "Rank 5 • File 3: ???",
+    description: "TI[G]ER",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r5f3_L.jpeg",
+        caption: "tiger"
+      },
+      {
+        url: "images/obj03_r5f3_R.jpeg",
+        caption: "tier"
       },
     ],
   },
@@ -707,6 +730,18 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_038_coatcheck"],
   },
+  obj04_041_diningroom: {
+    title: "Dining Room: White Pawn",
+    hint: "Dining Room: ???",
+    description: "",
+    dependencies: ["obj02_041_diningroom"],
+    images: [
+      {
+        url: "images/obj04_041_diningroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   obj04_042_observatory: {
     title: "Observatory: White Knight",
     hint: "Observatory: ???",
@@ -964,6 +999,19 @@ window.checkboxesData = {
       {
         url: "images/item09_metaldetector.jpeg",
         caption: "Metal Detector"
+      },
+    ],
+  },
+  obj05_10_couponbook: {
+    title: "Coupon Book",
+    hint: "Find a Coupon Book",
+    description: "",
+    unlockKeyword: "Coupon Book",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item10_couponbook.jpeg",
+        caption: "Coupon Book"
       },
     ],
   },
@@ -1458,6 +1506,12 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir038_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir041_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

@@ -27,6 +27,7 @@ window.sectionsData = [
       "obj04_031_utility_closet",
       "obj04_034_security",
       "obj04_038_coatcheck",
+      "obj04_041_diningroom",
       "obj04_042_observatory",
       "obj04_047_bedroom",
       "obj04_048_boudoir",
@@ -57,6 +58,7 @@ window.sectionsData = [
     information: [],
     checkboxes: [
       "obj03_r6f4",
+      "obj03_r5f3",
       "obj03_r5f4",
       "obj03_r5f5",
       "obj03_r4f1",
@@ -101,6 +103,7 @@ window.sectionsData = [
       "obj02_031_utilitycloset",
       "obj02_034_security",
       "obj02_038_coatcheck",
+      "obj02_041_diningroom",
       "obj02_042_observatory",
       "obj02_045_antechamber",
       "obj02_046_room46",
@@ -142,6 +145,7 @@ window.sectionsData = [
       "obj05_07_keycard",
       "obj05_08_magnifyingglass",
       "obj05_09_metaldetector",
+      "obj05_10_couponbook",
     ]
   },
   {
@@ -274,6 +278,14 @@ window.sectionsData = [
         dependencies: ["obj02_038_coatcheck"],
         information: ["dir038_description", "dir038_info"],
         checkboxes: ["dir038_search"],
+      },
+      {
+        id: "dir041",
+        title: "041: Dining Room",
+        color: "blue",
+        dependencies: ["obj02_041_diningroom"],
+        information: ["dir041_description", "dir041_chess"],
+        checkboxes: ["dir041_search"],
       },
       {
         id: "dir042",
@@ -468,6 +480,7 @@ window.sectionsData = [
       "item07_keycard",
       "item08_magnifyingglass",
       "item09_metaldetector",
+      "item10_couponbook",
     ],
   },
   {

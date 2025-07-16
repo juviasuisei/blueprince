@@ -253,6 +253,28 @@ window.informationData = {
     description: "TYPE: Tomorrow • Dead End",
     dependencies: [],
   },
+  dir041_description: {
+    title: "Description",
+    description: "An intimate and warm room with a large dining table boasting a serving tray with a silver dome cover. Dinner is served here each evening.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir041_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir041_chess: {
+    title: "Chess Piece",
+    description: "White Pawn",
+    dependencies: ["obj04_041_diningroom"],
+    images: [
+      {
+        url: "images/obj04_041_diningroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   dir042_description: {
     title: "Description",
     description: "Housing an impressively large telescope, Mount Holly's observatory is a window to the world above and beyond the clouds and sky. Through its mirrored lens, even a novice stargazer will be able to distincly appreciate the wonder, signs, and constellations that punctuate the tapestry of night.",
@@ -680,6 +702,17 @@ window.informationData = {
       {
         url: "images/item09_metaldetector.jpeg",
         caption: "metal detector"
+      },
+    ],
+  },
+  item10_couponbook: {
+    title: "A Discount Coupon Book",
+    description: "Save 1 gold on each purchase you make on the Estate.",
+    dependencies: ["obj05_10_couponbook"],
+    images: [
+      {
+        url: "images/item10_couponbook.jpeg",
+        caption: "coupon book"
       },
     ],
   },
