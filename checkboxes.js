@@ -61,6 +61,13 @@ window.checkboxesData = {
     unlockKeyword: "Pantry",
     dependencies: [],
   },
+  obj02_025_drawingroom: {
+    title: "Drawing Room",
+    hint: "Draft the Drawing Room",
+    description: "Room 025",
+    unlockKeyword: "Drawing Room",
+    dependencies: [],
+  },
   obj02_031_utilitycloset: {
     title: "Utility Closet",
     hint: "Draft the Utility Closet",
@@ -657,6 +664,18 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_021_pantry"],
   },
+  obj04_025_den: {
+    title: "Drawing Room: White Pawn",
+    hint: "Drawing Room: ???",
+    description: "",
+    dependencies: ["obj02_025_drawingroom"],
+    images: [
+      {
+        url: "images/obj04_025_drawingroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   obj04_031_utilitycloset: {
     title: "Utility Closet: None",
     hint: "Utility Closet: ???",
@@ -1233,8 +1252,8 @@ window.checkboxesData = {
     ],
   },
   dir013_note_magnify: {
-    title: "Magnify Drawing: Hidden Messages",
-    hint: "Magnify Drawing: ???",
+    title: "Magnify Black Note: Hidden Messages",
+    hint: "Magnify Black Note: ???",
     description: "",
     dependencies: ["obj05_08_magnifyingglass"],
     images: [
@@ -1275,6 +1294,30 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir021_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir025_note: {
+    title: "Black Note: Drawing Floorplans",
+    hint: "Black Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note027.jpeg",
+        caption: "drawing/redrawing explainer"
+      },
+    ],
+  },
+  dir025_note_magnify: {
+    title: "Magnify Black Note: Nothing",
+    hint: "Magnify Black Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
+  dir025_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

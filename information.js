@@ -167,6 +167,33 @@ window.informationData = {
       },
     ],
   },
+  dir025_description: {
+    title: "Description",
+    description: "A social sitting room adorned wall to wall with artwork and drawings. An unfinished sketch of your uncle sits on an easel in the middle of the room, providing a vivid image of what were presumably his final days (depending on when the project was abandoned).",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir025_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir025_info: {
+    title: "Classification",
+    description: "TYPE: Drafting",
+    dependencies: [],
+  },
+  dir025_chess: {
+    title: "Chess Piece",
+    description: "White Pawn",
+    dependencies: ["obj04_025_drawingroom"],
+    images: [
+      {
+        url: "images/obj04_025_drawingroom.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   dir031_description: {
     title: "Description",
     description: "One benefit of the restoration of old buildings is that it allows the owners to update and add modern amenities. The utility closet and the circuit breaker box within were set up when gas powered lighting was retired and replaced by a more fashionable home electrical system.",
@@ -1042,6 +1069,17 @@ window.informationData = {
       {
         url: "images/note026.jpeg",
         caption: "portrait of Baroness Auravei Sinclair"
+      },
+    ],
+  },
+  note027: {
+    title: "Black Note: Drawing Floorplans",
+    description: "",
+    dependencies: ["dir025_note"],
+    images: [
+      {
+        url: "images/note027.jpeg",
+        caption: "drawing/redrawing explainer"
       },
     ],
   },

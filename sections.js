@@ -23,6 +23,7 @@ window.sectionsData = [
       "obj04_013_nook",
       "obj04_017_den",
       "obj04_021_pantry",
+      "obj04_025_drawingroom",
       "obj04_031_utility_closet",
       "obj04_034_security",
       "obj04_038_coatcheck",
@@ -95,6 +96,7 @@ window.sectionsData = [
       "obj02_013_nook",
       "obj02_017_den",
       "obj02_021_pantry",
+      "obj02_025_drawingroom",
       "obj02_031_utilitycloset",
       "obj02_034_security",
       "obj02_038_coatcheck",
@@ -237,6 +239,14 @@ window.sectionsData = [
         dependencies: ["obj02_021_pantry"],
         information: ["dir021_description"],
         checkboxes: ["dir021_note", "dir021_note_magnify", "dir021_search"],
+      },
+      {
+        id: "dir025",
+        title: "025: Drawing Room",
+        color: "blue",
+        dependencies: ["obj02_025_drawingroom"],
+        information: ["dir025_description", "dir025_info", "dir025_chess"],
+        checkboxes: ["dir025_note", "dir025_note_magnify", "dir025_search"],
       },
       {
         id: "dir031",
@@ -596,6 +606,7 @@ window.sectionsData = [
           "note005", // 012 - storeroom
           "note015", // 013 - nook
           "note007", // 021 - pantry
+          "note027", // 025 - drawing room
           "note008", // 034 - security
           "note009", // 034 - security
           "note010", // 034 - security
