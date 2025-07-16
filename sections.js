@@ -601,7 +601,8 @@ window.sectionsData = [
           "note010", // 034 - security
           "note011", // 034 - security
           "note012", // 047 - bedroom
-          "note019", // 047 - bedroom
+          "note026", // 047 - bedroom
+          "note019", // 048 - bedroom
           "note004", // 055 - hallway
           "note018", // 056 - west wing hall
           "note013", // 071 - commissary

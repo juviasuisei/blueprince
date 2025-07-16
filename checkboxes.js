@@ -79,7 +79,7 @@ window.checkboxesData = {
     title: "Coat Check",
     hint: "Draft the Coat Check",
     description: "Room 038",
-    unlockKeyword: "Coat Check",
+    unlockKeyword: ["Coat Check", "Coatcheck"],
     dependencies: [],
   },
   obj02_042_observatory: {
@@ -1145,13 +1145,13 @@ window.checkboxesData = {
     ],
   },
   dir002_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir003_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1179,25 +1179,25 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir005_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir006_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir009_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir012_search: {
-    title: "Drawing: ???",
+    title: "Standard Search Complete: Obscured Drawing Found",
     hint: "Search for any Less Obvious Notes: ???",
     description: "What is this a drawing of and who drew it?",
     dependencies: [],
@@ -1245,13 +1245,13 @@ window.checkboxesData = {
     ],
   },
   dir013_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir017_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1275,13 +1275,13 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir021_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir031_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1383,13 +1383,13 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir034_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir038_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1441,7 +1441,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir042_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1483,7 +1483,7 @@ window.checkboxesData = {
     dependencies: [],
     images: [
       {
-        url: "images/dir047_person.jpeg",
+        url: "images/note026.jpeg",
         caption: "a portrait of a woman with a moon-pendant necklace"
       },
     ],
@@ -1507,7 +1507,7 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir047_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1531,7 +1531,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir048_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1555,7 +1555,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir049_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1623,7 +1623,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir050_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1647,7 +1647,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir055_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1671,31 +1671,31 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir056_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir058_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir059_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir063_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir065_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1737,19 +1737,19 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir071_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir079_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir080_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1875,7 +1875,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir081_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1915,7 +1915,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir082_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1987,13 +1987,13 @@ window.checkboxesData = {
     ],
   },
   dir084_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir086_search: {
-    title: "Search Complete: None",
+    title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],

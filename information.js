@@ -1037,7 +1037,7 @@ window.informationData = {
   note026: {
     title: "Photo: Baroness Auravei Sinclair",
     description: "",
-    dependencies: ["dir047_note_photo"],
+    dependencies: ["dir047_photo_identify"],
     images: [
       {
         url: "images/note026.jpeg",
@@ -1072,7 +1072,7 @@ window.informationData = {
     dependencies: ["TK"],
     images: [
       {
-        url: "images/dir047_person.jpeg",
+        url: "images/note026.jpeg",
         caption: "portrait of Baroness Auravei Sinclair"
       },
     ]
