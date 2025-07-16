@@ -118,6 +118,43 @@
       x-cloak
       class="container mx-auto px-4 py-6 max-w-4xl"
     >
+      <!-- Mystery Message Container -->
+      <div 
+        class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2 items-end"
+        aria-live="polite"
+        aria-atomic="false"
+      >
+        <template x-for="msg in mysteryMessages" :key="msg.id">
+          <div
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-2"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform translate-y-2"
+            :class="msg.isSuccess ? 'bg-green-100 border-green-400 text-green-700' : 'bg-red-100 border-red-400 text-red-700'"
+            class="px-4 py-3 rounded-lg shadow-md border max-w-md"
+          >
+            <div class="flex items-center">
+              <svg 
+                class="w-5 h-5 mr-2" 
+                :class="msg.isSuccess ? 'text-green-500' : 'text-red-500'"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  :d="msg.isSuccess ? 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' : 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z'"
+                ></path>
+              </svg>
+              <span x-text="msg.message"></span>
+            </div>
+          </div>
+        </template>
+      </div>
         <!-- Header -->
         <header class="mb-8" role="banner">
           <div class="text-center">
@@ -133,35 +170,66 @@
           </div>
           
           <!-- Action Buttons -->
-          <div class="flex justify-end mt-4 space-x-3" role="toolbar" aria-label="Application controls">
-            <button
-              @click="showCompleteAllConfirm = true"
-              @keydown.enter="showCompleteAllConfirm = true"
-              @keydown.space.prevent="showCompleteAllConfirm = true"
-              class="px-4 py-2 text-sm font-medium text-orange-600 bg-white border border-orange-300 rounded-md hover:bg-orange-50 hover:border-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-              aria-label="Complete all items and reveal all content including spoilers"
-              aria-describedby="complete-all-warning"
-            >
-              <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              Complete All (Spoilers!)
-            </button>
-            <div id="complete-all-warning" class="sr-only">Warning: This action will reveal all spoilers and secrets</div>
-            <button
-              @click="showResetConfirm = true"
-              @keydown.enter="showResetConfirm = true"
-              @keydown.space.prevent="showResetConfirm = true"
-              class="px-4 py-2 text-sm font-medium text-red-600 bg-white border border-red-300 rounded-md hover:bg-red-50 hover:border-red-400 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-              aria-label="Reset all progress and clear all completed items"
-              aria-describedby="reset-warning"
-            >
-              <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-              </svg>
-              Reset All Progress
-            </button>
-            <div id="reset-warning" class="sr-only">Warning: This action will permanently delete all progress</div>
+          <div class="flex justify-between mt-4 w-full" role="toolbar" aria-label="Application controls">
+            <!-- Expand/Collapse All Buttons (Left-aligned) -->
+            <div class="flex space-x-3">
+              <button
+                @click="expandAllSections()"
+                @keydown.enter="expandAllSections()"
+                @keydown.space.prevent="expandAllSections()"
+                class="px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                aria-label="Expand all sections"
+              >
+                <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                Expand All
+              </button>
+              <button
+                @click="collapseAllSections()"
+                @keydown.enter="collapseAllSections()"
+                @keydown.space.prevent="collapseAllSections()"
+                class="px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                aria-label="Collapse all sections"
+              >
+                <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                </svg>
+                Collapse All
+              </button>
+            </div>
+            
+            <!-- Complete/Reset Buttons (Right-aligned) -->
+            <div class="flex space-x-3">
+              <button
+                @click="showCompleteAllConfirm = true"
+                @keydown.enter="showCompleteAllConfirm = true"
+                @keydown.space.prevent="showCompleteAllConfirm = true"
+                class="px-4 py-2 text-sm font-medium text-orange-600 bg-white border border-orange-300 rounded-md hover:bg-orange-50 hover:border-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                aria-label="Complete all items and reveal all content including spoilers"
+                aria-describedby="complete-all-warning"
+              >
+                <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Complete All (Spoilers!)
+              </button>
+              <div id="complete-all-warning" class="sr-only">Warning: This action will reveal all spoilers and secrets</div>
+              <button
+                @click="showResetConfirm = true"
+                @keydown.enter="showResetConfirm = true"
+                @keydown.space.prevent="showResetConfirm = true"
+                class="px-4 py-2 text-sm font-medium text-red-600 bg-white border border-red-300 rounded-md hover:bg-red-50 hover:border-red-400 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                aria-label="Reset all progress and clear all completed items"
+                aria-describedby="reset-warning"
+              >
+                <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                Reset All Progress
+              </button>
+              <div id="reset-warning" class="sr-only">Warning: This action will permanently delete all progress</div>
+            </div>
           </div>
         </header>
 

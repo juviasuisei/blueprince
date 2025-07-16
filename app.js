@@ -14,6 +14,9 @@ function checklistApp() {
     // Accessibility state
     announcements: [],
     lastAnnouncementId: 0,
+    
+    // Mystery message state
+    mysteryMessages: [], // Array to store active mystery messages
 
     // Navigation state
     showNavigation: false,
@@ -1031,8 +1034,7 @@ function checklistApp() {
             if (prevBtn) prevBtn.style.color = color;
           }
 
-          // Only enable loop if we have more than 2 slides
-          const enableLoop = slideCount > 2;
+          // Remove loop option to fix synchronization issues with images and captions
 
           try {
             this.swipers[swiperId] = new Swiper(`#${swiperId}`, {
@@ -1044,10 +1046,22 @@ function checklistApp() {
                 el: `#${swiperId} .swiper-pagination`,
                 clickable: true,
               },
-              loop: enableLoop,
+              // loop: enableLoop, // Removed to fix synchronization issues
               autoHeight: true,
               spaceBetween: 10,
               // Performance optimizations
+              
+              // Add event handlers for navigation button visibility
+              on: {
+                init: function(swiper) {
+                  // Initial state setup for navigation buttons
+                  updateNavigationVisibility(swiper);
+                },
+                slideChange: function(swiper) {
+                  // Update navigation buttons on slide change
+                  updateNavigationVisibility(swiper);
+                }
+              }
               observer: true,
               observeParents: true,
               watchSlidesProgress: true,
@@ -1538,10 +1552,10 @@ function checklistApp() {
             this.unlockedMysteries.push(checkboxId);
             this.debouncedSaveState();
 
-            // Announce the mystery unlock
-            this.announceToScreenReader(
+            // Show success message and announce the mystery unlock
+            this.showMysteryMessage(
               `Mystery unlocked: ${checkbox.title}. New item is now available to complete.`,
-              "assertive"
+              true // isSuccess = true
             );
 
             return {
@@ -1553,10 +1567,10 @@ function checklistApp() {
         }
       }
 
-      // No mystery was unlocked, announce failure
-      this.announceToScreenReader(
+      // No mystery was unlocked, show failure message
+      this.showMysteryMessage(
         "No matching mystery found for that keyword.",
-        "polite"
+        false // isSuccess = false
       );
 
       return null;
@@ -1728,3 +1742,79 @@ document.addEventListener("DOMContentLoaded", () => {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = checklistApp;
 }
+    // Expand all sections
+    expandAllSections() {
+      const visibleSections = this.getVisibleSections();
+      visibleSections.forEach(section => {
+        if (!this.expandedSections.includes(section.id)) {
+          this.expandedSections.push(section.id);
+        }
+      });
+      this.debouncedSaveState();
+      this.$nextTick(() => {
+        this.initializeSwipers();
+        this.announceToScreenReader("All sections expanded");
+      });
+    },
+
+    // Collapse all sections
+    collapseAllSections() {
+      this.expandedSections = [];
+      this.debouncedSaveState();
+      this.announceToScreenReader("All sections collapsed");
+    },// He
+lper function to update navigation visibility for Swiper carousels
+function updateNavigationVisibility(swiper) {
+  const nextButton = swiper.navigation.nextEl;
+  const prevButton = swiper.navigation.prevEl;
+  
+  if (!nextButton || !prevButton) return;
+  
+  if (swiper.isBeginning) {
+    prevButton.classList.add('swiper-button-disabled');
+    prevButton.setAttribute('aria-disabled', 'true');
+  } else {
+    prevButton.classList.remove('swiper-button-disabled');
+    prevButton.setAttribute('aria-disabled', 'false');
+  }
+  
+  if (swiper.isEnd) {
+    nextButton.classList.add('swiper-button-disabled');
+    nextButton.setAttribute('aria-disabled', 'true');
+  } else {
+    nextButton.classList.remove('swiper-button-disabled');
+    nextButton.setAttribute('aria-disabled', 'false');
+  }
+  
+  // Hide both buttons if there's only one slide
+  if (swiper.slides.length <= 1) {
+    nextButton.style.display = 'none';
+    prevButton.style.display = 'none';
+  } else {
+    nextButton.style.display = '';
+    prevButton.style.display = '';
+  }
+}    // Sho
+w mystery message with stacking support
+    showMysteryMessage(message, isSuccess = true) {
+      const id = Date.now(); // Unique ID for the message
+      
+      // Create new message object
+      const newMessage = {
+        id,
+        message,
+        isSuccess,
+        timestamp: Date.now()
+      };
+      
+      // Add new message to the top of the stack
+      this.mysteryMessages.unshift(newMessage);
+      
+      // Set timeout to remove this specific message
+      setTimeout(() => {
+        this.mysteryMessages = this.mysteryMessages.filter(msg => msg.id !== id);
+      }, 5000); // 5 second timeout
+      
+      // Announce to screen reader
+      this.announceToScreenReader(message, "assertive");
+    },
