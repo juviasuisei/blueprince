@@ -457,6 +457,7 @@ window.sectionsData = [
       "item06_shovel",
       "item07_keycard",
       "item08_magnifyingglass",
+      "item09_metaldetector",
     ],
   },
   {
