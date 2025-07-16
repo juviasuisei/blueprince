@@ -167,7 +167,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: [],
         information: ["dir002_description", "dir002_info"],
-        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_black", "dir002_search", "dir002_person1", "dir002_person2"],
+        checkboxes: ["dir002_item_blueprint", "dir002_note_letter1", "dir002_note_letter1_magnify", "dir002_note_black", "dir002_note_black_magnify", "dir002_search", "dir002_person1", "dir002_person2"],
       },
       {
         id: "dir003",
@@ -183,7 +183,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_005_parlor"],
         information: ["dir005_description", "dir005_info", "dir005_chess"],
-        checkboxes: ["obj05_03_windupkey", "dir005_note_letter", "dir005_search"],
+        checkboxes: ["obj05_03_windupkey", "dir005_note", "dir005_note_magnify", "dir005_search"],
       },
       {
         id: "dir006",
@@ -207,7 +207,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_012_storeroom"],
         information: ["dir012_description", "dir012_info", "dir012_chess"],
-        checkboxes: ["dir012_search", "dir012_drawing_identify"],
+        checkboxes: ["dir012_search", "dir012_drawing_magnify", "dir012_drawing_identify"],
       },
       {
         id: "dir013",
@@ -215,7 +215,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_013_nook"],
         information: ["dir013_description", "dir013_chess"],
-        checkboxes: ["dir013_note", "dir013_search"],
+        checkboxes: ["dir013_note", "dir013_note_magnify", "dir013_search"],
       },
       {
         id: "dir017",
@@ -231,7 +231,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_021_pantry"],
         information: ["dir021_description"],
-        checkboxes: ["dir021_note", "dir021_search"],
+        checkboxes: ["dir021_note", "dir021_note_magnify", "dir021_search"],
       },
       {
         id: "dir031",
@@ -247,7 +247,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_034_security"],
         information: ["dir034_description", "dir034_info", "dir034_chess"],
-        checkboxes: ["dir034_note_pad", "dir034_note_notice", "dir034_note_red", "dir034_note_blue", "dir034_search", "obj_network_unlock"],
+        checkboxes: ["dir034_note_pad", "dir034_note_pad_magnify", "dir034_note_notice", "dir034_note_notice_magnify", "dir034_note_red", "dir034_note_red_magnify", "dir034_note_blue", "dir034_note_blue_magnify", "dir034_search", "obj_network_unlock"],
       },
       {
         id: "dir042",
@@ -255,7 +255,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_042_observatory"],
         information: ["dir042_description", "dir042_chess"],
-        checkboxes: ["dir042_note_book", "dir042_telescope", "dir042_search"],
+        checkboxes: ["dir042_note", "dir042_note_magnify", "dir042_search", "dir042_telescope"],
       },
       {
         id: "dir045",
@@ -279,7 +279,7 @@ window.sectionsData = [
         color: "purple",
         dependencies: ["obj02_047_bedroom"],
         information: ["dir047_description", "dir047_info", "dir047_chess"],
-        checkboxes: ["dir047_note_postcard", "dir047_photo", "dir047_photo_identify", "dir047_search", "dir047_finger"],
+        checkboxes: ["dir047_note_postcard", "dir047_note_postcard_magnify", "dir047_note_photo", "dir047_note_photo_magnify", "dir047_photo_identify", "dir047_search", "dir047_finger"],
       },
       {
         id: "dir048",
@@ -287,7 +287,7 @@ window.sectionsData = [
         color: "purple",
         dependencies: ["obj02_048_boudoir"],
         information: ["dir048_description"],
-        checkboxes: ["dir048_note", "dir048_search"],
+        checkboxes: ["dir048_note", "dir048_note_magnify", "dir048_search"],
       },
       {
         id: "dir049",
@@ -295,7 +295,7 @@ window.sectionsData = [
         color: "purple",
         dependencies: ["obj02_049_guestbedroom"],
         information: ["dir049_description", "dir049_info", "dir049_chess"],
-        checkboxes: ["dir049_note", "dir049_search"],
+        checkboxes: ["dir049_note", "dir049_note_magnify", "dir049_search"],
       },
       {
         id: "dir055",
@@ -303,7 +303,7 @@ window.sectionsData = [
         color: "orange",
         dependencies: ["obj02_055_hallway"],
         information: ["dir055_description"],
-        checkboxes: ["dir055_note_red", "dir055_search"],
+        checkboxes: ["dir055_note", "dir055_note_magnify", "dir055_search"],
       },
       {
         id: "dir056",
@@ -311,7 +311,7 @@ window.sectionsData = [
         color: "orange",
         dependencies: ["obj02_056_westwinghall"],
         information: ["dir056_description"],
-        checkboxes: ["dir056_note", "dir056_search"],
+        checkboxes: ["dir056_note", "dir056_note_magnify", "dir056_search"],
       },
       {
         id: "dir058",
@@ -351,7 +351,7 @@ window.sectionsData = [
         color: "gold",
         dependencies: ["obj02_071_commissary"],
         information: ["dir071_description"],
-        checkboxes: ["dir071_note_flyer", "dir034_note_notice", "dir071_note_red", "dir071_search"],
+        checkboxes: ["dir071_note_flyer", "dir071_note_flyer_magnify", "dir034_note_notice", "dir034_note_notice_magnify", "dir071_note_red", "dir071_note_red_magnify", "dir071_search"],
       },
       {
         id: "dir072",
@@ -383,7 +383,7 @@ window.sectionsData = [
         color: "red",
         dependencies: ["obj02_081_maidschamber"],
         information: ["dir081_description"],
-        checkboxes: ["dir081_note_notice", "dir081_note_photo", "dir081_search"],
+        checkboxes: ["dir081_note_notice", "dir081_note_notice_magnify", "dir081_note_photo", "dir081_note_photo_magnify", "dir081_search"],
       },
       {
         id: "dir082",
@@ -391,7 +391,7 @@ window.sectionsData = [
         color: "red",
         dependencies: ["obj02_082_archives"],
         information: ["dir082_description"],
-        checkboxes: ["dir082_note_scrapbook", "dir082_search"],
+        checkboxes: ["dir082_note", "dir082_note_magnify", "dir082_search"],
       },
       {
         id: "dir084",
@@ -399,7 +399,7 @@ window.sectionsData = [
         color: "red",
         dependencies: ["obj02_084_darkroom"],
         information: ["dir084_description"],
-        checkboxes: ["dir084_note_print", "dir084_note_photos", "dir084_search"],
+        checkboxes: ["dir084_note_print", "dir084_note_print_magnify", "dir084_note_photos", "dir084_note_photos_magnify", "dir084_search"],
       },
       {
         id: "dir086",
@@ -424,6 +424,7 @@ window.sectionsData = [
       "item05_lockpick",
       "item06_shovel",
       "item07_keycard",
+      "item08_magnifyingglass",
     ],
   },
   {

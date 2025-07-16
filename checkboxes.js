@@ -877,6 +877,19 @@ window.checkboxesData = {
       },
     ],
   },
+  obj05_08_magnifyingglass: {
+    title: "Magnifying Glass",
+    hint: "Find a Magnifying Glass",
+    description: "",
+    unlockKeyword: "Magnifying Glass",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item08_magnifyingglass.jpeg",
+        caption: "Magnifying Glass"
+      },
+    ],
+  },
   obj06_001_northstar: {
     title: "North Star",
     hint: "North Star",
@@ -1051,6 +1064,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir002_note_letter1_magnify: {
+    title: "Magnify Letter: Nothing",
+    hint: "Magnify Letter: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir002_note_black: {
     title: "Black Note: Exhaustion",
     hint: "Black Note: ???",
@@ -1062,6 +1081,12 @@ window.checkboxesData = {
         caption: "steps explainer"
       },
     ],
+  },
+  dir002_note_black_magnify: {
+    title: "Magnify Black Note: Nothing",
+    hint: "Magnify Black Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
   },
   dir002_person1: {
     title: "Left Bust: TK",
@@ -1099,7 +1124,7 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
-  dir005_note_letter: {
+  dir005_note: {
     title: "Letter: Parlor Game Rules",
     hint: "Letter: ???",
     description: "",
@@ -1114,6 +1139,12 @@ window.checkboxesData = {
         caption: "parlor game rules"
       },
     ],
+  },
+  dir005_note_magnify: {
+    title: "Magnify Letter: Nothing",
+    hint: "Magnify Letter: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
   },
   dir005_search: {
     title: "Search Complete: None",
@@ -1144,6 +1175,12 @@ window.checkboxesData = {
         caption: "a hand drawn color depiction of a blue bird wearing a swim cap and a blue-striped swimsuit"
       },
     ],
+  },
+  dir012_drawing_magnify: {
+    title: "Magnify Drawing: Nothing",
+    hint: "Magnify Drawing: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
   },
   dir012_drawing_identify: {
     title: "Drawing: Swimbird",
@@ -1187,6 +1224,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir021_note_magnify: {
+    title: "Magnify Note: Nothing",
+    hint: "Magnify Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir021_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
@@ -1223,8 +1266,20 @@ window.checkboxesData = {
       },
     ],
   },
+  dir034_note_pad_magnify: {
+    title: "Magnify Notepad: Hidden Message",
+    hint: "Magnify Notepad: ???",
+    description: "TK",
+    dependencies: ["obj05_08_magnifyingglass"],
+    images: [
+      {
+        url: "images/TK.jpeg",
+        caption: "magnified hidden message"
+      },
+    ],
+  },
   dir034_note_notice: {
-    title: "Note: Staff Notice",
+    title: "Note: Terminal Staff Notice",
     hint: "White Note: ???",
     description: "",
     dependencies: [],
@@ -1232,6 +1287,18 @@ window.checkboxesData = {
       {
         url: "images/note009.jpeg",
         caption: "terminal explainer"
+      },
+    ],
+  },
+  dir034_note_notice_magnify: {
+    title: "Magnify Staff Notice: Hidden Message",
+    hint: "Magnify Staff Notice: ???",
+    description: "SWANSONG",
+    dependencies: ["obj05_08_magnifyingglass"],
+    images: [
+      {
+        url: "images/TK.jpeg",
+        caption: "magnified hidden message"
       },
     ],
   },
@@ -1247,6 +1314,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir034_note_red_magnify: {
+    title: "Magnify Red Note: Nothing",
+    hint: "Magnify Red Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir034_note_blue: {
     title: "Blue Note: Keycard Doors",
     hint: "Blue Note: ???",
@@ -1259,13 +1332,19 @@ window.checkboxesData = {
       },
     ],
   },
+  dir034_note_blue_magnify: {
+    title: "Magnify Blue Note: Nothing",
+    hint: "Magnify Blue Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir034_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
-  dir042_note_book: {
+  dir042_note: {
     title: "Book: The Fixed Stars",
     hint: "Book: ???",
     description: "Richard Witt • 1809",
@@ -1305,6 +1384,18 @@ window.checkboxesData = {
       },
     ],
   },
+  dir042_note_magnify: {
+    title: "Magnify Book: Nothing",
+    hint: "Magnify Book: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
+  dir042_search: {
+    title: "Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir042_telescope: {
     title: "Stargazing Unlocked",
     hint: "Telescope: ???",
@@ -1316,12 +1407,6 @@ window.checkboxesData = {
         caption: "stargazing unlocked"
       },
     ],
-  },
-  dir042_search: {
-    title: "Search Complete: None",
-    hint: "Search for any Less Obvious Notes: ???",
-    description: "",
-    dependencies: [],
   },
   dir047_note_postcard: {
     title: "Postcard: Reddington",
@@ -1335,7 +1420,13 @@ window.checkboxesData = {
       },
     ],
   },
-  dir047_photo: {
+  dir047_note_postcard_magnify: {
+    title: "Magnify Postcard: Nothing",
+    hint: "Magnify Postcard: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
+  dir047_note_photo: {
     title: "Photo: ???",
     hint: "Photo: ???",
     description: "Who is this a portrait of?",
@@ -1346,6 +1437,12 @@ window.checkboxesData = {
         caption: "a portrait of a woman with a moon-pendant necklace"
       },
     ],
+  },
+  dir047_note_photo_magnify: {
+    title: "Magnify Photo: Nothing",
+    hint: "Magnify Photo: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
   },
   dir047_photo_identify: {
     title: "Photo: Baroness Auravei Sinclair",
@@ -1377,6 +1474,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir048_note_magnify: {
+    title: "Magnify Photo: Nothing",
+    hint: "Magnify Photo: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir048_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
@@ -1395,13 +1498,19 @@ window.checkboxesData = {
       },
     ],
   },
+  dir049_note_magnify: {
+    title: "Magnify Letter: Nothing",
+    hint: "Magnify Letter: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir049_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
-  dir055_note_red: {
+  dir055_note: {
     title: "Red Note: West Wing Locks",
     hint: "Red Note: ???",
     description: "",
@@ -1413,6 +1522,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir055_note_magnify: {
+    title: "Magnify Red Note: Nothing",
+    hint: "Magnify Red Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir055_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
@@ -1420,7 +1535,7 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir056_note: {
-    title: "Note: Staff Notice",
+    title: "Note: West Wing Closure Staff Notice",
     hint: "Note: ???",
     description: "",
     dependencies: [],
@@ -1430,6 +1545,12 @@ window.checkboxesData = {
         caption: "West Wing closure notice"
       },
     ],
+  },
+  dir056_note_magnify: {
+    title: "Magnify Staff Notice: Nothing",
+    hint: "Magnify Staff Notice: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
   },
   dir056_search: {
     title: "Search Complete: None",
@@ -1449,7 +1570,7 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
-  dir063_terrace: {
+  dir063_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
@@ -1473,6 +1594,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir071_note_flyer_magnify: {
+    title: "Magnify Flyer: Nothing",
+    hint: "Magnify Flyer: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir071_note_red: {
     title: "Red Note: Commissary Closure",
     hint: "Red Note: ???",
@@ -1484,6 +1611,12 @@ window.checkboxesData = {
         caption: "a red typed note"
       },
     ],
+  },
+  dir071_note_red_magnify: {
+    title: "Magnify Red Note: Nothing",
+    hint: "Magnify Red Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
   },
   dir071_search: {
     title: "Search Complete: None",
@@ -1588,7 +1721,7 @@ window.checkboxesData = {
     ],
   },
   dir081_note_notice: {
-    title: "Note: Death of Baron Herbert S. Sinclair Notice",
+    title: "Note: Death of Baron Herbert S. Sinclair Staff Notice",
     hint: "Note: ???",
     description: "",
     dependencies: [],
@@ -1598,6 +1731,12 @@ window.checkboxesData = {
         caption: "announcement that work is suspended in lieu of the Baron's death"
       },
     ],
+  },
+  dir081_note_notice_magnify: {
+    title: "Magnify Staff Notice: Nothing",
+    hint: "Magnify Staff Notice: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
   },
   dir081_note_photo: {
     title: "Photo: Mount Holly Staff",
@@ -1611,13 +1750,19 @@ window.checkboxesData = {
       },
     ],
   },
+  dir081_note_photo_magnify: {
+    title: "Magnify Photo: Nothing",
+    hint: "Magnify Photo: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir081_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
-  dir082_note_scrapbook: {
+  dir082_note: {
     title: "Book: Newsclippings",
     hint: "Book: ???",
     description: "",
@@ -1645,6 +1790,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir082_note_magnify: {
+    title: "Magnify Book: Nothing",
+    hint: "Magnify Book: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
   dir082_search: {
     title: "Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
@@ -1662,6 +1813,12 @@ window.checkboxesData = {
         caption: "print-making order from Herbert"
       },
     ],
+  },
+  dir084_note_print_magnify: {
+    title: "Magnify Note: Nothing",
+    hint: "Magnify Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
   },
   dir084_note_photos: {
     title: "Photos: Darkroom Prints",
@@ -1692,6 +1849,22 @@ window.checkboxesData = {
       {
         url: "images/note024_6.jpeg",
         caption: "weathered portrait of Clara"
+      },
+    ],
+  },
+  dir084_note_photos_magnify: {
+    title: "Magnify Photos: Hidden Messages",
+    hint: "Magnify Photos: ???",
+    description: "clear Red Note held by Hartley and a date on the tree by the apple orchard",
+    dependencies: ["obj05_08_magnifyingglass"],
+    images: [
+      {
+        url: "images/note024_1.jpeg",
+        caption: "red typed note"
+      },
+      {
+        url: "images/note024_2.jpeg",
+        caption: "date on tree by the apple orchard"
       },
     ],
   },

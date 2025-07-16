@@ -580,6 +580,17 @@ window.informationData = {
       },
     ],
   },
+  item08_magnifyingglass: {
+    title: "A Wood and Brass Magnifying Glass",
+    description: "Inspect documents of the estate more closely.",
+    dependencies: ["obj05_08_magnifyingglass"],
+    images: [
+      {
+        url: "images/item08_magnifyingglass.jpeg",
+        caption: "magnifying glass"
+      },
+    ],
+  },
   note001: {
     title: "Recital Invitation",
     description: "",
@@ -813,7 +824,7 @@ window.informationData = {
     ],
   },
   note018: {
-    title: "West Wing Closure",
+    title: "West Wing Closure Staff Notice",
     description: "",
     dependencies: ["dir056_note"],
     images: [
@@ -835,7 +846,7 @@ window.informationData = {
     ],
   },
   note020: {
-    title: "Death of Baron Herbert S. Sinclair Notice",
+    title: "Death of Baron Herbert S. Sinclair Staff Notice",
     description: "",
     dependencies: ["dir081_note_notice"],
     images: [
@@ -859,7 +870,7 @@ window.informationData = {
   note022: {
     title: "Newsclippings",
     description: "",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
     images: [
       {
         url: "images/note022_1.jpeg",
@@ -944,7 +955,7 @@ window.informationData = {
   person01_herbie_003: {
     title: "Synka",
     description: "Prior to his death, he was the owner of Synka. Prior to her disappearance, he was going to leave the company to his niece, Mary.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person02_baroness_001: {
     title: "Relation",
@@ -999,7 +1010,7 @@ window.informationData = {
   person07_mary_001: {
     title: "Relation",
     description: "Our mother. Presumed deceased.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
     images: [
       {
         url: "images/TK.jpeg",
@@ -1010,47 +1021,47 @@ window.informationData = {
   person07_mary_002: {
     title: "Occupation",
     description: "Author under the pseudonym Marion Marigold. Her first book was The Red Prince and her second book was Swim Bird.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person07_mary_003: {
     title: "Friendship with Caleb",
     description: "Has referred to Caleb as a mentor, friend, and confidant in press interviews.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person07_mary_004: {
     title: "Vanished",
     description: "Last seen on 20 February 1987 after a late luncheon date in Trinsdale.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person07_mary_005: {
     title: "Synka Heiress",
     description: "Prior to her disappearance, she was the hieress to Synka.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person08_caleb_001: {
     title: "Occupation",
     description: "Author.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person08_caleb_002: {
     title: "Political Activist?",
     description: "Arrested days after a politically motivated bombing in Trinsdale.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person08_caleb_003: {
     title: "Friendship with Mary",
     description: "Mary spoke in press interviews about Caleb being her mentor, friend, and confidant.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person09_phillip_001: {
     title: "Occupation",
     description: "Publisher.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   person09_phillip_002: {
     title: "Political Activist?",
     description: "Arrested days after a politically motivated bombing in Trinsdale.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   date001: {
     title: "Thursday, 18 March 1993",
@@ -1076,36 +1087,36 @@ window.informationData = {
   date005: {
     title: "Thursday, 22 August 1985",
     description: "Mary wins the Illustrated Book of the Year by the Herald for her second book, Swim Bird.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   date006: {
     title: "Monday, 27 January 1986",
     description: "Mary gives an interview discussing her origins as a writer and distancing herself from any political messages.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   date007: {
     title: "Tuesday, 11 November 1986",
     description: "Caleb and Phillip are arrested in relation to the politically motivated bombing in Trinsdale.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   date008: {
     title: "Tuesday, 04 November 1986",
     description: "A politically motivated bombing kills four people in Trinsdale. Believed to be the work of \"RLCF\", also known as the Children of Black Water.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   date009: {
     title: "Monday, 17 November 1986",
     description: "Mary leaves her publisher, Ruffington Press, after Caleb & Phillip are arrested.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   date010: {
     title: "Friday, 20 February 1987",
     description: "Mary disappears after a late luncheon date with a friend in Trinsdale.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
   date011: {
     title: "Wednesday, 2 September 1987",
     description: "Several masked intruders break into the Fenn Aeries Royal Museum in the early hours and steal the Ruby Crown of Orinda Aeries. Presumed to be politically motivated.",
-    dependencies: ["dir082_note_scrapbook"],
+    dependencies: ["dir082_note"],
   },
 };
