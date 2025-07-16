@@ -33,6 +33,8 @@ function checklistApp() {
       this.loadState();
       this.setupAccessibility();
       this.setupPerformanceOptimizations();
+      // Clear any existing mystery messages since we're not using the bottom-right display anymore
+      this.mysteryMessages = [];
       this.$nextTick(() => {
         this.initializeSwipers();
         this.setupScrollSpy();
@@ -608,30 +610,67 @@ function checklistApp() {
     },
 
     toggleSection(sectionId) {
+      const wasCollapsed = !this.expandedSections.includes(sectionId);
       const index = this.expandedSections.indexOf(sectionId);
+
       if (index > -1) {
         this.expandedSections.splice(index, 1);
       } else {
         this.expandedSections.push(sectionId);
       }
+
       this.debouncedSaveState();
-      this.$nextTick(() => {
-        this.initializeSwipers();
-      });
+
+      // If we're expanding a previously collapsed section, we need to ensure swipers are properly initialized
+      if (wasCollapsed) {
+        // First nextTick waits for the DOM to update with the expanded section
+        this.$nextTick(() => {
+          // Second nextTick ensures all child elements are fully rendered
+          setTimeout(() => {
+            // Reinitialize all swipers to ensure proper navigation
+            this.initializeSwipers();
+            // Also reinitialize any existing swipers that might need navigation updates
+            this.reinitializeExistingSwipers();
+          }, 50); // Small delay to ensure DOM is fully updated
+        });
+      } else {
+        this.$nextTick(() => {
+          this.initializeSwipers();
+        });
+      }
     },
 
     toggleSubsection(subsectionId) {
+      const wasCollapsed = !this.expandedSubsections.includes(subsectionId);
       const index = this.expandedSubsections.indexOf(subsectionId);
+
       if (index > -1) {
         this.expandedSubsections.splice(index, 1);
       } else {
         this.expandedSubsections.push(subsectionId);
       }
+
       this.debouncedSaveState();
-      this.$nextTick(() => {
-        this.initializeSwipers();
-        this.observeImages(); // Re-observe new images after DOM updates
-      });
+
+      // If we're expanding a previously collapsed subsection, we need to ensure swipers are properly initialized
+      if (wasCollapsed) {
+        // First nextTick waits for the DOM to update with the expanded subsection
+        this.$nextTick(() => {
+          // Second nextTick ensures all child elements are fully rendered
+          setTimeout(() => {
+            // Reinitialize all swipers to ensure proper navigation
+            this.initializeSwipers();
+            // Also reinitialize any existing swipers that might need navigation updates
+            this.reinitializeExistingSwipers();
+            this.observeImages(); // Re-observe new images after DOM updates
+          }, 50); // Small delay to ensure DOM is fully updated
+        });
+      } else {
+        this.$nextTick(() => {
+          this.initializeSwipers();
+          this.observeImages(); // Re-observe new images after DOM updates
+        });
+      }
     },
 
     checkDependencies(dependencies, optionalDependencies = false) {
@@ -1723,26 +1762,39 @@ function checklistApp() {
       console.log("All progress has been completed - all secrets revealed!");
     },
 
-    // Expand all sections
+    // Expand all sections and subsections
     expandAllSections() {
+      // Expand all visible sections
       const visibleSections = this.getVisibleSections();
       visibleSections.forEach((section) => {
         if (!this.expandedSections.includes(section.id)) {
           this.expandedSections.push(section.id);
         }
+
+        // Also expand all subsections within this section
+        const visibleSubsections = this.getVisibleSubsections(section.id);
+        visibleSubsections.forEach((subsection) => {
+          if (!this.expandedSubsections.includes(subsection.id)) {
+            this.expandedSubsections.push(subsection.id);
+          }
+        });
       });
+
       this.debouncedSaveState();
       this.$nextTick(() => {
         this.initializeSwipers();
-        this.announceToScreenReader("All sections expanded");
+        this.announceToScreenReader("All sections and subsections expanded");
       });
     },
 
-    // Collapse all sections
+    // Collapse all sections and subsections
     collapseAllSections() {
+      // Clear both sections and subsections arrays
       this.expandedSections = [];
+      this.expandedSubsections = [];
+
       this.debouncedSaveState();
-      this.announceToScreenReader("All sections collapsed");
+      this.announceToScreenReader("All sections and subsections collapsed");
     },
 
     // Helper function to update navigation visibility for Swiper carousels
@@ -1778,31 +1830,35 @@ function checklistApp() {
       }
     },
 
-    // Show mystery message with stacking support
+    // Reinitialize existing swipers to ensure navigation elements are properly set up
+    reinitializeExistingSwipers() {
+      // For each existing swiper instance, update its navigation
+      Object.entries(this.swipers).forEach(([swiperId, swiper]) => {
+        if (swiper && typeof swiper.update === "function") {
+          // Update the swiper instance to refresh its state
+          swiper.update();
+
+          // Make sure navigation is properly initialized
+          if (
+            swiper.navigation &&
+            typeof swiper.navigation.update === "function"
+          ) {
+            swiper.navigation.update();
+          }
+
+          // Update navigation visibility
+          this.updateNavigationVisibility(swiper);
+        }
+      });
+    },
+
+    // Handle mystery message announcements (no visual stacking)
     showMysteryMessage(message, isSuccess = true) {
-      const id = Date.now(); // Unique ID for the message
-
-      // Create new message object
-      const newMessage = {
-        id,
-        message,
-        isSuccess,
-        timestamp: Date.now(),
-      };
-
-      // Add new message to the top of the stack
-      this.mysteryMessages.unshift(newMessage);
-
-      // Set timeout to remove this specific message
-      setTimeout(() => {
-        this.mysteryMessages = this.mysteryMessages.filter(
-          (msg) => msg.id !== id
-        );
-      }, 5000); // 5 second timeout
-
-      // Announce to screen reader with appropriate priority
+      // Only announce to screen reader with appropriate priority
       // Use "assertive" for success messages and "polite" for failure messages
       this.announceToScreenReader(message, isSuccess ? "assertive" : "polite");
+
+      // Note: Visual feedback is now handled by the inline messages under the input field
     },
   };
 }
