@@ -75,6 +75,13 @@ window.checkboxesData = {
     unlockKeyword: "Utility Closet",
     dependencies: [],
   },
+  obj02_032_boilerroom: {
+    title: "Boiler Room",
+    hint: "Draft the Boiler Room",
+    description: "Room 032",
+    unlockKeyword: "Boiler Room",
+    dependencies: [],
+  },
   obj02_034_security: {
     title: "Security",
     hint: "Draft Security",
@@ -742,6 +749,12 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_031_utilitycloset"],
   },
+  obj04_032_boilerroom: {
+    title: "Boiler Room: None",
+    hint: "Boiler Room: ???",
+    description: "",
+    dependencies: ["obj02_032_boilerroom"],
+  },
   obj04_034_security: {
     title: "Security: White Knight",
     hint: "Security: ???",
@@ -1054,6 +1067,19 @@ window.checkboxesData = {
       {
         url: "images/item10_couponbook.jpeg",
         caption: "Coupon Book"
+      },
+    ],
+  },
+  obj05_11_compass: {
+    title: "Compass",
+    hint: "Find a Compass",
+    description: "",
+    unlockKeyword: "Compass",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item11_compass.jpeg",
+        caption: "Compass"
       },
     ],
   },
@@ -1457,6 +1483,18 @@ window.checkboxesData = {
     description: "",
     dependencies: ["dir031_vac"],
   },
+  dir032_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir032_steam: {
+    title: "Steam Power Activated",
+    hint: "Activate Steam Power",
+    description: "",
+    dependencies: [],
+  },
   dir034_note_pad: {
     title: "Note Pad: Red/Blue Notes",
     hint: "Note Pad: ???",
@@ -1639,13 +1677,13 @@ window.checkboxesData = {
   },
   dir040_thaw1: {
     title: "Freezer Thawed",
-    hint: "Thaw the Freezer: ???",
+    hint: "Thaw the Freezer",
     description: "",
     dependencies: [],
   },
   dir040_thaw2: {
     title: "Herbert's Personal Freezer Thawed",
-    hint: "Thaw Herbert's Personal Freezer: ???",
+    hint: "Thaw Herbert's Personal Freezer",
     description: "",
     dependencies: ["dir040_thaw1"],
   },
@@ -2264,5 +2302,11 @@ window.checkboxesData = {
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
+  },
+  dir086_steam: {
+    title: "Steam Powered the Furnace",
+    hint: "Steam Power the Furnace",
+    description: "",
+    dependencies: ["dir032_steam"],
   },
 };

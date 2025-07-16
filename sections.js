@@ -24,7 +24,8 @@ window.sectionsData = [
       "obj04_017_den",
       "obj04_021_pantry",
       "obj04_025_drawingroom",
-      "obj04_031_utility_closet",
+      "obj04_031_utilitycloset",
+      "obj04_032_boilerroom",
       "obj04_034_security",
       "obj04_038_coatcheck",
       "obj04_039_mailroom",
@@ -104,6 +105,7 @@ window.sectionsData = [
       "obj02_021_pantry",
       "obj02_025_drawingroom",
       "obj02_031_utilitycloset",
+      "obj02_032_boilerroom",
       "obj02_034_security",
       "obj02_038_coatcheck",
       "obj02_039_mailroom",
@@ -151,6 +153,7 @@ window.sectionsData = [
       "obj05_08_magnifyingglass",
       "obj05_09_metaldetector",
       "obj05_10_couponbook",
+      "obj05_11_compass",
     ]
   },
   {
@@ -267,6 +270,14 @@ window.sectionsData = [
         dependencies: ["obj02_031_utilitycloset"],
         information: ["dir031_description", "dir031_info"],
         checkboxes: ["dir031_search", "dir031_vac", "dir031_switch"],
+      },
+      {
+        id: "dir032",
+        title: "032: Boiler Room",
+        color: "blue",
+        dependencies: ["obj02_032_boilerroom"],
+        information: ["dir032_description", "dir032_info"],
+        checkboxes: ["dir032_search", "dir032_steam"],
       },
       {
         id: "dir034",
@@ -490,7 +501,7 @@ window.sectionsData = [
         color: "red",
         dependencies: ["obj02_086_furnace"],
         information: ["dir086_description", "dir086_info"],
-        checkboxes: ["dir086_search"],
+        checkboxes: ["dir086_search", "dir086_steam"],
       },
     ],
   },
@@ -510,6 +521,7 @@ window.sectionsData = [
       "item08_magnifyingglass",
       "item09_metaldetector",
       "item10_couponbook",
+      "item11_compass",
     ],
   },
   {

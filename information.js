@@ -210,6 +210,22 @@ window.informationData = {
     description: "TYPE: Mechanical • Dead End",
     dependencies: [],
   },
+  dir032_description: {
+    title: "Description",
+    description: "A utility room serving as a central hub for controlling the heating and steam power supplied to various rooms of the estate. Steam power is conveyed in the estate through steam ducts that run through select rooms. These floorplans must be drafted in alignment that will facilitate the steam traveling through the house to reach its intended destination.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir032_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir032_info: {
+    title: "Classification",
+    description: "TYPE: Mechanical • Steam Ducts",
+    dependencies: [],
+  },
   dir034_description: {
     title: "Description",
     description: "A control room with state of the art surveillance equipment, inventory system, and access control via an electronic computer terminal. This room is where the estate's patrol guards kick up their feet and thank their stars they are living in a modern era.",
@@ -223,7 +239,7 @@ window.informationData = {
   },
   dir034_info: {
     title: "Classification",
-    description: "TYPE: Mechanical",
+    description: "TYPE: Mechanical • Steam Ducts",
     dependencies: [],
   },
   dir034_chess: {
@@ -497,6 +513,11 @@ window.informationData = {
       },
     ],
   },
+  dir059_info: {
+    title: "Classification",
+    description: "TYPE: Steam Ducts",
+    dependencies: [],
+  },
   dir063_description: {
     title: "Description",
     description: "A terrace balcony overlooking the grounds providing an ideal spot for appreciating all the verdure and greenery that the estate offers.",
@@ -600,6 +621,11 @@ window.informationData = {
       },
     ],
   },
+  dir082_info: {
+    title: "Classification",
+    description: "TYPE: Steam Ducts",
+    dependencies: [],
+  },
   dir084_description: {
     title: "Description",
     description: "A room dedicated to photo processing, development, and print-making. This room is outfitted with safelights which provide red illumination to which photographic material is insensitive. However, due to a faulty installation the safelights often overload their circuit capacity and blow a fuse.",
@@ -611,6 +637,11 @@ window.informationData = {
       },
     ],
   },
+  dir084_info: {
+    title: "Classification",
+    description: "TYPE: Steam Ducts",
+    dependencies: [],
+  },
   dir085_description: {
     title: "Description",
     description: "An exercise room outfitted with weightlifting equipment. A good workout session here will wipe you out and leave you with little energy left for exploring.",
@@ -621,6 +652,11 @@ window.informationData = {
         caption: "room directory entry"
       },
     ],
+  },
+  dir085_info: {
+    title: "Classification",
+    description: "TYPE: Steam Ducts",
+    dependencies: [],
   },
   dir086_description: {
     title: "Description",
@@ -635,7 +671,7 @@ window.informationData = {
   },
   dir086_info: {
     title: "Classification",
-    description: "TYPE: Dead End",
+    description: "TYPE: Dead End • Steam Ducts",
     dependencies: [],
   },
   item01_sledgehammer: {
@@ -745,6 +781,17 @@ window.informationData = {
       {
         url: "images/item10_couponbook.jpeg",
         caption: "coupon book"
+      },
+    ],
+  },
+  item11_compass: {
+    title: "A Navigational Compass",
+    description: "Draw floorplans leading North more frequently.",
+    dependencies: ["obj05_11_compass"],
+    images: [
+      {
+        url: "images/item11_compass.jpeg",
+        caption: "compass"
       },
     ],
   },
