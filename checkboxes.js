@@ -1487,20 +1487,13 @@ window.checkboxesData = {
     description: "",
     unlockKeyword: "Storeroom",
     dependencies: ["obj02_012_storeroom"],
-    images: [
-      {
-        url: "images/dir012_description_u1.jpeg",
-        caption: "+1 extra key"
-      },
-      {
-        url: "images/dir012_description_u2.jpeg",
-        caption: "+1 extra gem"
-      },
-      {
-        url: "images/dir012_description_u3.jpeg",
-        caption: "+10 extra gold"
-      },
-    ],
+  },
+  obj09_01: {
+    title: "Morning Room",
+    hint: "Morning Room",
+    description: "",
+    unlockKeyword: "Morning Room",
+    dependencies: ["obj02_069_morningroom"],
   },
   obj_network_unlock: {
     title: "Network Password",

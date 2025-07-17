@@ -155,6 +155,17 @@ window.sectionsData = [
     ]
   },
   {
+    id: "obj09",
+    title: "Objective: Find All the Upgrade Disks",
+    color: "blue",
+    mysteryType: "location",
+    dependencies: ["obj05_13_upgradedisk"],
+    information: [],
+    checkboxes: [
+      "obj09_01", // 069 - morning room
+    ]
+  },
+  {
     id: "obj08",
     title: "Objective: Upgrade All Upgradeable Rooms",
     color: "blue",
