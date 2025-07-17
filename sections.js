@@ -19,6 +19,7 @@ window.sectionsData = [
       "obj04_005_parlor",
       "obj04_006_billiardroom",
       "obj04_009_closet",
+      "obj04_010_walkincloset",
       "obj04_012_storeroom",
       "obj04_013_nook",
       "obj04_017_den",
@@ -113,6 +114,7 @@ window.sectionsData = [
       "obj02_005_parlor",
       "obj02_006_billiardroom",
       "obj02_009_closet",
+      "obj02_010_walkincloset",
       "obj02_012_storeroom",
       "obj02_013_nook",
       "obj02_017_den",
@@ -209,6 +211,8 @@ window.sectionsData = [
       "obj05_11_compass",
       "obj05_12_brokenlever",
       "obj05_13_upgradedisk",
+      "obj05_14_carkeys",
+      "obj05_15_runningshoes",
     ]
   },
   {
@@ -277,6 +281,14 @@ window.sectionsData = [
         dependencies: ["obj02_009_closet"],
         information: ["dir009_description", "dir009_info"],
         checkboxes: ["dir009_search"],
+      },
+      {
+        id: "dir010",
+        title: "010: Walk-In Closet",
+        color: "blue",
+        dependencies: ["obj02_010_walkincloset"],
+        information: ["dir010_description", "dir010_info", "dir010_chess"],
+        checkboxes: ["dir010_note", "dir010_note_magnify", "dir010_search", "dir010_search"],
       },
       {
         id: "dir012",
@@ -444,7 +456,7 @@ window.sectionsData = [
         color: "purple",
         dependencies: ["obj02_048_boudoir"],
         information: ["dir048_description"],
-        checkboxes: ["dir048_note", "dir048_note_magnify", "dir048_search"],
+        checkboxes: ["dir048_note", "dir048_note_magnify", "dir048_search", "dir048_safe"],
       },
       {
         id: "dir049",
@@ -839,6 +851,7 @@ window.sectionsData = [
         information: [
           "note001", // opening cinematic
           "note003", // 002 - entrance hall
+          "note033", // 010 - walk-in closet
           "note005", // 012 - storeroom
           "note015", // 013 - nook
           "note007", // 021 - pantry

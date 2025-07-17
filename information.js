@@ -85,6 +85,33 @@ window.informationData = {
     description: "TYPE: Dead End",
     dependencies: [],
   },
+  dir010_description: {
+    title: "Description",
+    description: "The stylish and smart clothes in this generously sized closet belong to the former Mistress of the estate, Lady Clara Epsen. Though the small dressing room has not been used in many years, it is nevertheless kept up and preserved in the state you now find it.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir010_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir010_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
+  dir010_chess: {
+    title: "Chess Piece",
+    description: "Black Pawn",
+    dependencies: ["obj04_010_walkincloset"],
+    images: [
+      {
+        url: "images/obj04_010_walkincloset.jpeg",
+        caption: "black pawn"
+      },
+    ],
+  },
   dir012_description: {
     title: "Description",
     description: "A dedicated storage space filled from end to end with a surplus of chairs, carpets, paintings, and a handful of other things that had at one time been in vogue and on display elsewhere in the house.",
@@ -972,6 +999,28 @@ window.informationData = {
       },
     ],
   },
+  item14_carkeys: {
+    title: "A Spare Set of Car Keys",
+    description: "The only car left on the estate should be in the Garage.",
+    dependencies: ["obj05_14_carkeys"],
+    images: [
+      {
+        url: "images/item14_carkeys.jpeg",
+        caption: "car keys"
+      },
+    ],
+  },
+  item15_runningshoes: {
+    title: "A Pair of Running Shoes",
+    description: "Lose less steps when traveling longer distances across the estate and grounds.",
+    dependencies: ["obj05_15_runningshoes"],
+    images: [
+      {
+        url: "images/item15_runningshoes.jpeg",
+        caption: "running shoes"
+      },
+    ],
+  },
   note001: {
     title: "Recital Invitation",
     description: "",
@@ -1461,6 +1510,17 @@ window.informationData = {
       },
     ],
   },
+  note033: {
+    title: "Photo: Lady Clara Epsen",
+    description: "",
+    dependencies: ["dir010_note"],
+    images: [
+      {
+        url: "images/note032.jpeg",
+        caption: "weathered portrait of Lady Clara Epsen"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -1540,11 +1600,11 @@ window.informationData = {
   person06_clara_002: {
     title: "Relation",
     description: "Our grandmother. Deceased.",
-    dependencies: ["TK"],
+    dependencies: ["dir010_note"],
     images: [
       {
-        url: "images/TK.jpeg",
-        caption: "portrait of Lady Clara Epsen"
+        url: "images/note032.jpeg",
+        caption: "weathered portrait of Lady Clara Epsen"
       },
     ]
   },

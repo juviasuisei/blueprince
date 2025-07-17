@@ -33,6 +33,13 @@ window.checkboxesData = {
     unlockKeyword: "Closet",
     dependencies: [],
   },
+  obj02_010_walkincloset: {
+    title: "Walk-In Closet",
+    hint: "Draft the Walk-In Closet",
+    description: "Room 010",
+    unlockKeyword: "Walk-In Closet",
+    dependencies: [],
+  },
   obj02_012_storeroom: {
     title: "Storeroom",
     hint: "Draft the Storeroom",
@@ -850,6 +857,18 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_009_closet"],
   },
+  obj04_010_walkincloset: {
+    title: "Walk-In Closet: Black Pawn",
+    hint: "Walk-In Closet: ???",
+    description: "",
+    dependencies: ["obj02_010_walkincloset"],
+    images: [
+      {
+        url: "images/obj04_010_walkincloset.jpeg",
+        caption: "black pawn"
+      },
+    ],
+  },
   obj04_012_storeroom: {
     title: "Storeroom: White Pawn",
     hint: "Storeroom: ???",
@@ -1319,7 +1338,7 @@ window.checkboxesData = {
   },
   obj05_13_upgradedisk: {
     title: "Upgrade Disk",
-    hint: "Find a Upgrade Disk",
+    hint: "Find an Upgrade Disk",
     description: "",
     unlockKeyword: "Upgrade Disk",
     dependencies: [],
@@ -1327,6 +1346,32 @@ window.checkboxesData = {
       {
         url: "images/item13_upgradedisk.jpeg",
         caption: "Upgrade Disk"
+      },
+    ],
+  },
+  obj05_14_carkeys: {
+    title: "Car Keys",
+    hint: "Find the Car Keys",
+    description: "",
+    unlockKeyword: "Car Keys",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item14_carkeys.jpeg",
+        caption: "Car Keys"
+      },
+    ],
+  },
+  obj05_15_runningshoes: {
+    title: "Running Shoes",
+    hint: "Find the Running Shoes",
+    description: "",
+    unlockKeyword: "Running Shoes",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item15_runningshoes.jpeg",
+        caption: "Running Shoes"
       },
     ],
   },
@@ -1554,7 +1599,7 @@ window.checkboxesData = {
     title: "Magnify Letter: Nothing",
     hint: "Magnify Letter: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir002_note_letter1"],
   },
   dir002_note_black: {
     title: "Black Note: Exhaustion",
@@ -1572,7 +1617,7 @@ window.checkboxesData = {
     title: "Magnify Black Note: Nothing",
     hint: "Magnify Black Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir002_note_black"],
   },
   dir002_person1: {
     title: "Left Bust: TK",
@@ -1630,7 +1675,7 @@ window.checkboxesData = {
     title: "Magnify Letter: Nothing",
     hint: "Magnify Letter: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir005_note"],
   },
   dir005_search: {
     title: "Standard Search Complete: None",
@@ -1645,6 +1690,30 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir009_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir010_note: {
+    title: "Photo: Lady Clara Epsen",
+    hint: "Photo: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note032.jpeg",
+        caption: "weathered portrait of Lady Clara Epsen"
+      },
+    ],
+  },
+  dir010_note_magnify: {
+    title: "Magnify Photo: None",
+    hint: "Magnify Photo: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir010_note"],
+  },
+  dir010_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
@@ -1666,7 +1735,7 @@ window.checkboxesData = {
     title: "Magnify Drawing: Nothing",
     hint: "Magnify Drawing: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir012_search"],
   },
   dir012_drawing_identify: {
     title: "Drawing: Swimbird",
@@ -1690,7 +1759,7 @@ window.checkboxesData = {
     title: "Magnify Black Note: Hidden Messages",
     hint: "Magnify Black Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir013_note"],
     images: [
       {
         url: "images/TK.jpeg",
@@ -1726,7 +1795,7 @@ window.checkboxesData = {
     title: "Magnify Note: Nothing",
     hint: "Magnify Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir021_note"],
   },
   dir021_search: {
     title: "Standard Search Complete: None",
@@ -1756,7 +1825,7 @@ window.checkboxesData = {
     title: "Magnify Black Note: Nothing",
     hint: "Magnify Black Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir025_note"],
   },
   dir025_search: {
     title: "Standard Search Complete: None",
@@ -1780,7 +1849,7 @@ window.checkboxesData = {
     title: "Magnify Note: Nothing",
     hint: "Magnify Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir029_note"],
   },
   dir029_search: {
     title: "Standard Search Complete: None",
@@ -1834,7 +1903,7 @@ window.checkboxesData = {
     title: "Magnify Notepad: Hidden Message",
     hint: "Magnify Notepad: ???",
     description: "TK",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir034_note_pad"],
     images: [
       {
         url: "images/TK.jpeg",
@@ -1858,7 +1927,7 @@ window.checkboxesData = {
     title: "Magnify Staff Notice: Hidden Message",
     hint: "Magnify Staff Notice: ???",
     description: "SWANSONG",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir034_note_notice"],
     images: [
       {
         url: "images/TK.jpeg",
@@ -1882,7 +1951,7 @@ window.checkboxesData = {
     title: "Magnify Red Note: Nothing",
     hint: "Magnify Red Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir034_note_red"],
   },
   dir034_note_blue: {
     title: "Blue Note: Keycard Doors",
@@ -1900,7 +1969,7 @@ window.checkboxesData = {
     title: "Magnify Blue Note: Nothing",
     hint: "Magnify Blue Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir034_note_blue"],
   },
   dir034_search: {
     title: "Standard Search Complete: None",
@@ -1930,7 +1999,7 @@ window.checkboxesData = {
     title: "Magnify Note Pad: Hidden Message",
     hint: "Magnify Note Pad: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir039_note_pad"],
     images: [
       {
         url: "images/TK.jpeg",
@@ -1954,7 +2023,7 @@ window.checkboxesData = {
     title: "Magnify Note: Nothing",
     hint: "Magnify Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir039_note_vac"],
   },
   dir039_note_letter1: {
     title: "Letter: Letter from Dad",
@@ -1984,7 +2053,7 @@ window.checkboxesData = {
     title: "Magnify Note: Nothing",
     hint: "Magnify Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir039_note_letter1"],
   },
   dir039_search: {
     title: "Standard Search Complete: None",
@@ -2060,7 +2129,7 @@ window.checkboxesData = {
     title: "Magnify Book: Nothing",
     hint: "Magnify Book: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir042_note"],
   },
   dir042_search: {
     title: "Standard Search Complete: None",
@@ -2102,7 +2171,7 @@ window.checkboxesData = {
     title: "Magnify Postcard: Nothing",
     hint: "Magnify Postcard: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir047_note_postcard"],
   },
   dir047_note_photo: {
     title: "Photo: ???",
@@ -2120,7 +2189,7 @@ window.checkboxesData = {
     title: "Magnify Photo: Nothing",
     hint: "Magnify Photo: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir047_note_photo"],
   },
   dir047_photo_identify: {
     title: "Photo: Baroness Auravei Sinclair",
@@ -2156,12 +2225,18 @@ window.checkboxesData = {
     title: "Magnify Photo: Nothing",
     hint: "Magnify Photo: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir048_note"],
   },
   dir048_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
+    dependencies: [],
+  },
+  dir048_safe: {
+    title: "Opened the Safe",
+    hint: "Crack the Safe Code: ???",
+    description: "1225",
     dependencies: [],
   },
   dir049_note: {
@@ -2180,7 +2255,7 @@ window.checkboxesData = {
     title: "Magnify Letter: Nothing",
     hint: "Magnify Letter: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir049_note"],
   },
   dir049_search: {
     title: "Standard Search Complete: None",
@@ -2248,7 +2323,7 @@ window.checkboxesData = {
     title: "Magnify Book: Nothing",
     hint: "Magnify Book: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir050_note"],
   },
   dir050_search: {
     title: "Standard Search Complete: None",
@@ -2272,7 +2347,7 @@ window.checkboxesData = {
     title: "Magnify Red Note: Nothing",
     hint: "Magnify Red Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir055_note"],
   },
   dir055_search: {
     title: "Standard Search Complete: None",
@@ -2296,7 +2371,7 @@ window.checkboxesData = {
     title: "Magnify Staff Notice: Nothing",
     hint: "Magnify Staff Notice: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir056_note"],
   },
   dir056_search: {
     title: "Standard Search Complete: None",
@@ -2344,7 +2419,7 @@ window.checkboxesData = {
     title: "Magnify Note: Nothing",
     hint: "Magnify Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir069_note"],
   },
   dir069_search: {
     title: "Standard Search Complete: None",
@@ -2368,7 +2443,7 @@ window.checkboxesData = {
     title: "Magnify Flyer: Nothing",
     hint: "Magnify Flyer: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir071_note_flyer"],
   },
   dir071_note_red: {
     title: "Red Note: Commissary Closure",
@@ -2386,7 +2461,7 @@ window.checkboxesData = {
     title: "Magnify Red Note: Nothing",
     hint: "Magnify Red Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir071_note_red"],
   },
   dir071_search: {
     title: "Standard Search Complete: None",
@@ -2530,7 +2605,7 @@ window.checkboxesData = {
     title: "Magnify Staff Notice: Nothing",
     hint: "Magnify Staff Notice: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir081_note_notice"],
   },
   dir081_note_photo: {
     title: "Photo: Mount Holly Staff",
@@ -2548,7 +2623,7 @@ window.checkboxesData = {
     title: "Magnify Photo: Nothing",
     hint: "Magnify Photo: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir081_note_photo"],
   },
   dir081_search: {
     title: "Standard Search Complete: None",
@@ -2588,7 +2663,7 @@ window.checkboxesData = {
     title: "Magnify Book: Nothing",
     hint: "Magnify Book: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir082_note"],
   },
   dir082_search: {
     title: "Standard Search Complete: None",
@@ -2618,7 +2693,7 @@ window.checkboxesData = {
     title: "Magnify Note: Nothing",
     hint: "Magnify Note: ???",
     description: "",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir084_note_print"],
   },
   dir084_note_photos: {
     title: "Photos: Darkroom Prints",
@@ -2656,7 +2731,7 @@ window.checkboxesData = {
     title: "Magnify Photos: Hidden Messages",
     hint: "Magnify Photos: ???",
     description: "clear Red Note held by Hartley and a date on the tree by the apple orchard",
-    dependencies: ["obj05_08_magnifyingglass"],
+    dependencies: ["obj05_08_magnifyingglass", "dir084_note_photos"],
     images: [
       {
         url: "images/note024_1.jpeg",
