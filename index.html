@@ -120,7 +120,7 @@
     >
       <!-- Mystery messages are now displayed inline under each input field -->
         <!-- Header -->
-        <header class="mb-8" role="banner">
+        <header class="mb-8 pt-12 sm:pt-4" role="banner">
           <div class="text-center">
             <h1 class="text-3xl font-bold text-gray-800 mb-2">
               Blue Prince Spoiler Free Guide & Tracking
@@ -401,7 +401,7 @@
         </div>
 
         <!-- Navigation Panel -->
-        <div x-show="!dataLoadError" class="fixed top-4 left-4 z-40">
+        <div x-show="!dataLoadError" class="fixed top-4 left-4 z-40 md:block">
           <!-- Navigation Toggle Button -->
           <button
             @click="toggleNavigation()"
