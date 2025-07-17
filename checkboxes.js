@@ -82,6 +82,13 @@ window.checkboxesData = {
     unlockKeyword: "Drawing Room",
     dependencies: [],
   },
+  obj02_027_library: {
+    title: "Library",
+    hint: "Draft the Library",
+    description: "Room 027",
+    unlockKeyword: "Library",
+    dependencies: [],
+  },
   obj02_029_thepool: {
     title: "The Pool",
     hint: "Draft the The Pool",
@@ -941,6 +948,12 @@ window.checkboxesData = {
         caption: "white pawn"
       },
     ],
+  },
+  obj04_027_library: {
+    title: "Library: None",
+    hint: "Library: ???",
+    description: "",
+    dependencies: ["obj02_027_library"],
   },
   obj04_029_thepool: {
     title: "Utility Closet: None",
@@ -1843,6 +1856,60 @@ window.checkboxesData = {
   dir025_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir027_note_black: {
+    title: "Black Note: Additional Reading",
+    hint: "Black Note: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir027_note_black_magnify: {
+    title: "Magnify Black Note: Nothing",
+    hint: "Magnify Black Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir027_note_black"],
+  },
+  dir027_note_order: {
+    title: "Note: Book Request Form",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir027_note_records: {
+    title: "Book: Mount Holly Records",
+    hint: "Records Book: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note034.jpeg",
+        caption: "title page"
+      },
+    ],
+  },
+  dir027_note_scrapbook: {
+    title: "Book: Mount Holly Scrapbook",
+    hint: "Scrapbook: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note035.jpeg",
+        caption: "title page"
+      },
+    ],
+  },
+  dir027_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir027_blanks: {
+    title: "Secret Messages from Baroness Auravei Sinclair",
+    hint: "What's Up With These Blank Books on Display?",
     description: "",
     dependencies: [],
   },

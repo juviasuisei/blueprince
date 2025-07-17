@@ -26,6 +26,7 @@ window.sectionsData = [
       "obj04_021_pantry",
       "obj04_022_rumpusroom",
       "obj04_025_drawingroom",
+      "obj04_027_library",
       "obj04_029_thepool",
       "obj04_031_utilitycloset",
       "obj04_032_boilerroom",
@@ -122,6 +123,7 @@ window.sectionsData = [
       "obj02_021_pantry",
       "obj02_022_rumpusroom",
       "obj02_025_drawingroom",
+      "obj02_027_library",
       "obj02_029_thepool",
       "obj02_031_utilitycloset",
       "obj02_032_boilerroom",
@@ -180,6 +182,55 @@ window.sectionsData = [
     information: [],
     checkboxes: [
       "obj08_01",
+    ]
+  },
+  {
+    id: "obj10",
+    title: "Objective: Read All the Books in the Library",
+    color: "blue",
+    dependencies: ["obj02_027_library"],
+    information: [],
+    checkboxes: [
+      "obj10_01", // sightseer
+      "obj10_02", // swim bird
+      "obj10_03", // fixed stars
+      "obj10_04", // history of orindia
+      "obj10_05", // pump system
+      "obj10_06", // drafting vol 3
+    ]
+  },
+  {
+    id: "obj11",
+    title: "Objective: Build All the Contraptions",
+    color: "blue",
+    dependencies: ["dir027_note_scrapbook"],
+    information: [],
+    checkboxes: [
+      "obj11_01", // 
+      "obj11_02", // 
+      "obj11_03", // 
+      "obj11_04", // 
+      "obj11_05", // 
+      "obj11_06", // 
+      "obj11_07", // 
+      "obj11_08", // 
+    ]
+  },
+  {
+    id: "obj12",
+    title: "Objective: Collect All the Stamps",
+    color: "blue",
+    dependencies: ["dir027_note_scrapbook"],
+    information: [],
+    checkboxes: [
+      "obj12_01", // 
+      "obj12_02", // 
+      "obj12_03", // 
+      "obj12_04", // 
+      "obj12_05", // 
+      "obj12_06", // 
+      "obj12_07", // 
+      "obj12_08", // 
     ]
   },
   {
@@ -339,6 +390,24 @@ window.sectionsData = [
         dependencies: ["obj02_025_drawingroom"],
         information: ["dir025_description", "dir025_info", "dir025_chess"],
         checkboxes: ["dir025_note", "dir025_note_magnify", "dir025_search"],
+      },
+      {
+        id: "dir027",
+        title: "027: Library",
+        color: "blue",
+        dependencies: ["obj02_027_library"],
+        information: ["dir027_description", "dir027_info"],
+        checkboxes: [
+          "dir027_note_black", "dir027_note_black_magnify", 
+          "dir027_note_order", "dir027_note_records", "dir027_note_scrapbook",
+          "obj10_01", "obj10_01_magnify",
+          "obj10_02", "obj10_02_magnify",
+          "obj10_03", "obj10_03_magnify",
+          "obj10_04", "obj10_04_magnify",
+          "obj10_05", "obj10_05_magnify",
+          "obj10_06", "obj10_06_magnify",
+          "dir027_search", "dir027_blanks"
+        ],
       },
       {
         id: "dir029",
@@ -774,7 +843,7 @@ window.sectionsData = [
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir082_note_scrapbook"],
-        information: ["person08_caleb_001", "person08_caleb_002", "person08_caleb_003"],
+        information: ["person08_caleb_001", "person08_caleb_004", "person08_caleb_002", "person08_caleb_003"],
         checkboxes: [],
       },
       {
@@ -793,6 +862,15 @@ window.sectionsData = [
         optionalDependencies: true,
         dependencies: ["dir042_note_book"],
         information: ["person05_richardwitt_001"],
+        checkboxes: [],
+      },
+      {
+        id: "person14_andrewdarle",
+        title: "Author Andrew Darle",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["obj02_027_library"],
+        information: ["person14_andrewdarle_001"],
         checkboxes: [],
       },
     ],
@@ -838,6 +916,8 @@ window.sectionsData = [
         optionalDependencies: true,
         dependencies: ["dir042_note_book"],
         information: [
+          "note034", // 027 - library
+          "note035", // 027 - library
           "note016", // 042 - observatory
           "note025", // 050 - nursery
           "note022", // 082 - archives

@@ -243,6 +243,22 @@ window.informationData = {
       },
     ],
   },
+  dir027_description: {
+    title: "Description",
+    description: "Two stories of wall-to-wall books surround the reader in this room, exhibiting either a bountiful spring of knowledge or typical interior design sensibilities of the wealthy. A few books have been withdrawn from the shelves and placed on rostrum stands in various corners of the library.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir027_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir027_info: {
+    title: "Classification",
+    description: "TYPE: Drafting",
+    dependencies: [],
+  },
   dir029_description: {
     title: "Description",
     description: "An indoor Orindian pool was one of the more modern additions to the estate, the inclusion of which provided a convenient excuse for building a handful of other rooms which not only complement an indoor pool, but are often compulsory inclusions.",
@@ -1532,6 +1548,39 @@ window.informationData = {
       },
     ],
   },
+  note034: {
+    title: "Mount Holly Records",
+    description: "",
+    dependencies: ["dir027_note_records"],
+    images: [
+      {
+        url: "images/note034.jpeg",
+        caption: "title page"
+      },
+    ],
+  },
+  note035: {
+    title: "Mount Holly Scrapbook",
+    description: "",
+    dependencies: ["dir027_note_scrapbook"],
+    images: [
+      {
+        url: "images/note035.jpeg",
+        caption: "title page"
+      },
+    ],
+  },
+  note036: {
+    title: "Black Note: Additional Reading",
+    description: "",
+    dependencies: ["dir027_note_black"],
+    images: [
+      {
+        url: "images/note036.jpeg",
+        caption: "house directory explainer"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -1659,7 +1708,8 @@ window.informationData = {
   person08_caleb_001: {
     title: "Occupation",
     description: "Author.",
-    dependencies: ["dir082_note"],
+    optionalDependencies: true,
+    dependencies: ["dir082_note", "dir027_note_order"],
   },
   person08_caleb_002: {
     title: "Political Activist?",
@@ -1670,6 +1720,11 @@ window.informationData = {
     title: "Friendship with Mary",
     description: "Mary spoke in press interviews about Caleb being her mentor, friend, and confidant.",
     dependencies: ["dir082_note"],
+  },
+  person08_caleb_004: {
+    title: "Published Work",
+    description: "His book was History of Orindia.",
+    dependencies: ["dir027_note_order"],
   },
   person09_phillip_001: {
     title: "Occupation",
@@ -1721,6 +1776,11 @@ window.informationData = {
         caption: "automaton of The Great Alzara"
       },
     ]
+  },
+  person14_andrewdarle_001: {
+    title: "Occupation",
+    description: "Author of the Sightseer's Guide to Reddington.",
+    dependencies: ["dir027_note_order"],
   },
   date001: {
     title: "Thursday, 18 March 1993",
