@@ -349,6 +349,17 @@ window.informationData = {
     description: "TYPE: Tomorrow • Dead End",
     dependencies: [],
   },
+  dir040_chess: {
+    title: "Chess Piece",
+    description: "White Pawn",
+    dependencies: ["obj04_040_freezer"],
+    images: [
+      {
+        url: "images/obj04_040_freezer.jpeg",
+        caption: "white pawn"
+      },
+    ],
+  },
   dir041_description: {
     title: "Description",
     description: "An intimate and warm room with a large dining table boasting a serving tray with a silver dome cover. Dinner is served here each evening.",
@@ -390,6 +401,17 @@ window.informationData = {
       {
         url: "images/obj04_042_observatory.jpeg",
         caption: "white knight"
+      },
+    ],
+  },
+  dir044_description: {
+    title: "Description",
+    description: "In addition to having a bouquet of colorful fish swimming within them, each tank in the Aquarium is also inspired by the decor and colors of the various types of rooms found throughout the estate, including one or two red herrings.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir044_description.jpeg",
+        caption: "room directory entry"
       },
     ],
   },
@@ -716,6 +738,22 @@ window.informationData = {
     title: "Is Part of the Steam Duct Network",
     description: "",
     dependencies: ["dir032_steam"],
+  },
+  dir083_description: {
+    title: "Description",
+    description: "A half-court intended for basketball and racquetball which is seldom used by anyone apart from the junior staff during their lunch hour. At least they did before Mrs. Babbage disallowed the practice after noticing how worn out staff members were after a game.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir083_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir083_info: {
+    title: "Classification",
+    description: "TYPE: Entry",
+    dependencies: [],
   },
   dir084_description: {
     title: "Description",

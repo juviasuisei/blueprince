@@ -138,6 +138,13 @@ window.checkboxesData = {
     unlockKeyword: "Observatory",
     dependencies: [],
   },
+  obj02_044_aquarium: {
+    title: "Aquarium",
+    hint: "Draft the Aquarium",
+    description: "Room 044",
+    unlockKeyword: "Aquarium",
+    dependencies: [],
+  },
   obj02_045_antechamber: {
     title: "Antechamber",
     hint: "Enter the Antechamber",
@@ -276,6 +283,13 @@ window.checkboxesData = {
     unlockKeyword: "Archives",
     dependencies: [],
   },
+  obj02_083_gymnasium: {
+    title: "Gymnasium",
+    hint: "Draft the Gymnasium",
+    description: "Room 083",
+    unlockKeyword: "Gymnasium",
+    dependencies: [],
+  },
   obj02_084_darkroom: {
     title: "Darkroom",
     hint: "Draft the Darkroom",
@@ -297,6 +311,38 @@ window.checkboxesData = {
     unlockKeyword: "Furnace",
     dependencies: [],
   },
+  obj03_r9f5: {
+    title: "Rank 9 • File 5: E",
+    hint: "Rank 9 • File 5: ???",
+    description: "CR[E]ATE",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r9f5_L.jpeg",
+        caption: "create"
+      },
+      {
+        url: "images/obj03_r9f5_R.jpeg",
+        caption: "crate"
+      },
+    ],
+  },
+  obj03_r8f4: {
+    title: "Rank 8 • File 4: N",
+    hint: "Rank 8 • File 4: ???",
+    description: "CROW[N]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r8f4_L.jpeg",
+        caption: "crown"
+      },
+      {
+        url: "images/obj03_r8f4_R.jpeg",
+        caption: "crow"
+      },
+    ],
+  },
   obj03_r8f5: {
     title: "Rank 8 • File 5: T",
     hint: "Rank 8 • File 5: ???",
@@ -312,7 +358,8 @@ window.checkboxesData = {
         caption: "plan"
       },
     ],
-  },  obj03_r7f4: {
+  },
+  obj03_r7f4: {
     title: "Rank 7 • File 4: L",
     hint: "Rank 7 • File 4: ???",
     description: "F[L]AN",
@@ -325,6 +372,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r7f4_R.jpeg",
         caption: "fan"
+      },
+    ],
+  },
+  obj03_r7f5: {
+    title: "Rank 7 • File 5: L",
+    hint: "Rank 7 • File 5: ???",
+    description: "P[L]ANE",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r7f5_L.jpeg",
+        caption: "plane"
+      },
+      {
+        url: "images/obj03_r7f5_R.jpeg",
+        caption: "pane"
       },
     ],
   },
@@ -373,6 +436,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r6f5_R.jpeg",
         caption: "coat"
+      },
+    ],
+  },
+  obj03_r5f2: {
+    title: "Rank 5 • File 2: I",
+    hint: "Rank 5 • File 2: ???",
+    description: "P[I]LOT",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r5f2_L.jpeg",
+        caption: "pilot"
+      },
+      {
+        url: "images/obj03_r5f2_R.jpeg",
+        caption: "plot"
       },
     ],
   },
@@ -873,10 +952,16 @@ window.checkboxesData = {
     dependencies: ["obj02_039_mailroom"],
   },
   obj04_040_freezer: {
-    title: "Freezer: None",
+    title: "Freezer: White Pawn",
     hint: "Freezer: ???",
     description: "",
     dependencies: ["obj02_040_freezer"],
+    images: [
+      {
+        url: "images/obj04_040_freezer.jpeg",
+        caption: "white pawn"
+      },
+    ],
   },
   obj04_041_diningroom: {
     title: "Dining Room: White Pawn",
@@ -901,6 +986,12 @@ window.checkboxesData = {
         caption: "white knight"
       },
     ],
+  },
+  obj04_044_aquarium: {
+    title: "Aquarium: None",
+    hint: "Aquarium: ???",
+    description: "",
+    dependencies: ["obj02_044_aquarium"],
   },
   obj04_047_bedroom: {
     title: "Bedroom: White Pawn",
@@ -1033,6 +1124,12 @@ window.checkboxesData = {
     hint: "Archives: ???",
     description: "",
     dependencies: ["obj02_082_archives"],
+  },
+  obj04_083_gymnasium: {
+    title: "Gymnasium: None",
+    hint: "Gymnasium: ???",
+    description: "",
+    dependencies: ["obj02_083_gymnasium"],
   },
   obj04_084_darkroom: {
     title: "Darkroom: None",
@@ -1381,6 +1478,27 @@ window.checkboxesData = {
       {
         url: "images/obj07_1_6.jpeg",
         caption: "It is the door you have been searching for, yet, will not find. A lost room beyond the dark waters."
+      },
+    ],
+  },
+  obj08_01: {
+    title: "Upgraded the Storeroom",
+    hint: "Upgrade the Storeroom",
+    description: "",
+    unlockKeyword: "Storeroom",
+    dependencies: ["obj02_012_storeroom"],
+    images: [
+      {
+        url: "images/dir012_description_u1.jpeg",
+        caption: "+1 extra key"
+      },
+      {
+        url: "images/dir012_description_u2.jpeg",
+        caption: "+1 extra gem"
+      },
+      {
+        url: "images/dir012_description_u3.jpeg",
+        caption: "+10 extra gold"
       },
     ],
   },
@@ -1956,6 +2074,12 @@ window.checkboxesData = {
       },
     ],
   },
+  dir044_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir047_note_postcard: {
     title: "Postcard: Reddington",
     hint: "Postcard: ???",
@@ -2449,6 +2573,12 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir082_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir083_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
