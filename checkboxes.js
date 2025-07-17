@@ -255,6 +255,13 @@ window.checkboxesData = {
     unlockKeyword: "Locksmith",
     dependencies: [],
   },
+  obj02_075_laundryroom: {
+    title: "Laundry Room",
+    hint: "Draft the Laundry Room",
+    description: "Room 075",
+    unlockKeyword: "Laundry Room",
+    dependencies: [],
+  },
   obj02_079_lavatory: {
     title: "Lavatory",
     hint: "Draft the Lavatory",
@@ -1094,6 +1101,12 @@ window.checkboxesData = {
     hint: "Locksmith: ???",
     description: "",
     dependencies: ["obj02_073_locksmith"],
+  },
+  obj04_075_laundryroom: {
+    title: "Laundry Room: None",
+    hint: "Laundry Room: ???",
+    description: "",
+    dependencies: ["obj02_075_laundryroom"],
   },
   obj04_079_lavatory: {
     title: "Lavatory: None",
@@ -2392,6 +2405,18 @@ window.checkboxesData = {
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
+  },
+  dir075_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir075_steam: {
+    title: "Steam Powered the Furnace",
+    hint: "Steam Power the Furnace",
+    description: "",
+    dependencies: ["dir032_steam"],
   },
   dir079_search: {
     title: "Standard Search Complete: None",

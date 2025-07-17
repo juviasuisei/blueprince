@@ -669,6 +669,27 @@ window.informationData = {
     description: "TYPE: Dead End",
     dependencies: [],
   },
+  dir075_description: {
+    title: "Description",
+    description: "A standard hub of domestic toil complete with washers, dryers, and a state of the art steampowered unit leveraging the newly installed steam ducts leading from the boiler room. Despite its innocent appearance, this inconspicuous space is rumored to launder more than just linen.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir075_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir075_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
+  dir075_steam: {
+    title: "Is Part of the Steam Duct Network",
+    description: "",
+    dependencies: ["dir032_steam"],
+  },
   dir079_description: {
     title: "Description",
     description: "A room one might go to great lengths to avoid showing guests despite them always probing for its location.",
