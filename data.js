@@ -1,6 +1,6 @@
 // Main data aggregator - combines data from separate files
 window.checklistData = {
-  version: "0.46.0",
+  version: "0.46.1",
   sections: window.sectionsData || [],
   checkboxes: window.checkboxesData || {},
   information: window.informationData || {},

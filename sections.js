@@ -910,11 +910,30 @@ window.sectionsData = [
     dependencies: [],
     subsections: [
       {
+        id: "info_notes_explainers",
+        title: "Black Notes",
+        color: "black",
+        optionalDependencies: true,
+        dependencies: ["dir042_note_book"],
+        information: [
+          "note003", // 002 - entrance hall
+          "note015", // 013 - nook
+          "note027", // 025 - drawing room
+          "note036", // 027 - library
+        ],
+      },
+      {
         id: "info_notes_books",
         title: "Books",
         color: "blue",
         optionalDependencies: true,
-        dependencies: ["dir042_note_book"],
+        dependencies: [
+          "dir027_note_records",
+          "dir027_note_scrapbook",
+          "dir042_note",
+          "dir050_note",
+          "dir082_note",
+        ],
         information: [
           "note034", // 027 - library
           "note035", // 027 - library
@@ -927,7 +946,12 @@ window.sectionsData = [
         id: "info_notes_letters",
         title: "Letters",
         color: "blue",
-        dependencies: ["dir002_note_letter1"],
+        dependencies: [
+          "dir002_note_letter1",
+          "dir005_note",
+          "dir039_note_letter1",
+          "dir049_note",
+        ],
         information: [
           "note002", // 002 - entrance hall
           "note006", // 005 - parlor
@@ -942,12 +966,9 @@ window.sectionsData = [
         dependencies: [],
         information: [
           "note001", // opening cinematic
-          "note003", // 002 - entrance hall
           "note033", // 010 - walk-in closet
           "note005", // 012 - storeroom
-          "note015", // 013 - nook
           "note007", // 021 - pantry
-          "note027", // 025 - drawing room
           "note032", // 029 - the pool
           "note008", // 034 - security
           "note009", // 034 - security

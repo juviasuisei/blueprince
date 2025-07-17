@@ -1083,7 +1083,7 @@ window.informationData = {
     ],
   },
   note003: {
-    title: "Black Note: Exhaustion",
+    title: "Exhaustion",
     description: "",
     dependencies: ["dir002_note_black"],
     images: [
@@ -1220,7 +1220,7 @@ window.informationData = {
     ],
   },
   note015: {
-    title: "Black Note: Journal",
+    title: "Journal",
     description: "",
     dependencies: ["dir013_note"],
     images: [
@@ -1460,7 +1460,7 @@ window.informationData = {
     ],
   },
   note027: {
-    title: "Black Note: Drawing Floorplans",
+    title: "Drawing Floorplans",
     description: "",
     dependencies: ["dir025_note"],
     images: [
@@ -1571,7 +1571,7 @@ window.informationData = {
     ],
   },
   note036: {
-    title: "Black Note: Additional Reading",
+    title: "Additional Reading",
     description: "",
     dependencies: ["dir027_note_black"],
     images: [
