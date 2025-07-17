@@ -23,6 +23,7 @@ window.sectionsData = [
       "obj04_013_nook",
       "obj04_017_den",
       "obj04_021_pantry",
+      "obj04_022_rumpusroom",
       "obj04_025_drawingroom",
       "obj04_031_utilitycloset",
       "obj04_032_boilerroom",
@@ -62,6 +63,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r7f4",
       "obj03_r6f3",
       "obj03_r6f4",
       "obj03_r6f5",
@@ -106,6 +108,7 @@ window.sectionsData = [
       "obj02_013_nook",
       "obj02_017_den",
       "obj02_021_pantry",
+      "obj02_022_rumpusroom",
       "obj02_025_drawingroom",
       "obj02_031_utilitycloset",
       "obj02_032_boilerroom",
@@ -138,6 +141,16 @@ window.sectionsData = [
       "obj02_084_darkroom",
       "obj02_085_weightroom",
       "obj02_086_furnace",
+    ]
+  },
+  {
+    id: "obj07",
+    title: "Objective: Witness All of the Great Alzara's Prophecies",
+    color: "blue",
+    dependencies: ["obj02_022_rumpusroom"],
+    information: [],
+    checkboxes: [
+      "obj07_1",
     ]
   },
   {
@@ -261,6 +274,14 @@ window.sectionsData = [
         dependencies: ["obj02_021_pantry"],
         information: ["dir021_description"],
         checkboxes: ["dir021_note", "dir021_note_magnify", "dir021_search"],
+      },
+      {
+        id: "dir022",
+        title: "022: Rumpus Room",
+        color: "blue",
+        dependencies: ["obj02_022_rumpusroom"],
+        information: ["dir022_description", "dir022_chess"],
+        checkboxes: ["dir022_search", "obj07_1"],
       },
       {
         id: "dir025",
@@ -646,6 +667,14 @@ window.sectionsData = [
         optionalDependencies: true,
         dependencies: ["dir039_note_pad"],
         information: ["person10_denny_001"],
+        checkboxes: [],
+      },
+      {
+        id: "person13_alzara",
+        title: "The Great Alzara",
+        color: "blue",
+        dependencies: [],
+        information: ["person13_alzara_001"],
         checkboxes: [],
       },
       {

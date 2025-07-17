@@ -167,6 +167,28 @@ window.informationData = {
       },
     ],
   },
+  dir022_description: {
+    title: "Description",
+    description: "A uniquely modern fashioned gaming room, the Rumpus Room has provided many guests of the estate with countless hours of recreation. The room is outfitted with a record player, two television sets, a collection of board games, and a mysterious antique fortune telling automaton named \"Alzara\".",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir022_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir022_chess: {
+    title: "Chess Piece",
+    description: "Black Bishop",
+    dependencies: ["obj04_022_rumpusroom"],
+    images: [
+      {
+        url: "images/obj04_022_rumpusroom.jpeg",
+        caption: "black bishop"
+      },
+    ],
+  },
   dir025_description: {
     title: "Description",
     description: "A social sitting room adorned wall to wall with artwork and drawings. An unfinished sketch of your uncle sits on an easel in the middle of the room, providing a vivid image of what were presumably his final days (depending on when the project was abandoned).",
@@ -261,7 +283,7 @@ window.informationData = {
   dir034_steam: {
     title: "Is Part of the Steam Duct Network",
     description: "",
-    dependencies: [],
+    dependencies: ["dir032_steam"],
   },
   dir038_description: {
     title: "Description",
@@ -526,7 +548,7 @@ window.informationData = {
   dir059_steam: {
     title: "Is Part of the Steam Duct Network",
     description: "",
-    dependencies: [],
+    dependencies: ["dir032_steam"],
   },
   dir063_description: {
     title: "Description",
@@ -641,6 +663,17 @@ window.informationData = {
     description: "TYPE: Entry",
     dependencies: [],
   },
+  dir080_chess: {
+    title: "Chess Piece",
+    description: "White Bishop",
+    dependencies: ["obj04_080_chapel"],
+    images: [
+      {
+        url: "images/obj04_080_chapel.jpeg",
+        caption: "white bishop"
+      },
+    ],
+  },
   dir081_description: {
     title: "Description",
     description: "A typical example of the accommodations for the live-in staff on the estate. It appears this particular bedroom belongs to one of the maids.",
@@ -666,7 +699,7 @@ window.informationData = {
   dir082_steam: {
     title: "Is Part of the Steam Duct Network",
     description: "",
-    dependencies: [],
+    dependencies: ["dir032_steam"],
   },
   dir084_description: {
     title: "Description",
@@ -682,7 +715,7 @@ window.informationData = {
   dir084_steam: {
     title: "Is Part of the Steam Duct Network",
     description: "",
-    dependencies: [],
+    dependencies: ["dir032_steam"],
   },
   dir085_description: {
     title: "Description",
@@ -698,7 +731,7 @@ window.informationData = {
   dir085_steam: {
     title: "Is Part of the Steam Duct Network",
     description: "",
-    dependencies: [],
+    dependencies: ["dir032_steam"],
   },
   dir086_description: {
     title: "Description",
@@ -719,7 +752,7 @@ window.informationData = {
   dir086_steam: {
     title: "Is Part of the Steam Duct Network",
     description: "",
-    dependencies: [],
+    dependencies: ["dir032_steam"],
   },
   item01_sledgehammer: {
     title: "A Heavy Sledge Hammer",
@@ -1520,6 +1553,17 @@ window.informationData = {
     title: "Heir",
     description: "Assuming we pass our granduncle's challenge, we inherit Mount Holly and the Synka empire.",
     dependencies: ["dir069_note"],
+  },
+  person13_alzara_001: {
+    title: "Occupation",
+    description: "An antique fortune telling automaton.",
+    dependencies: ["obj02_022_rumpusroom"],
+    images: [
+      {
+        url: "images/dir022_alzara.jpeg",
+        caption: "automaton of The Great Alzara"
+      },
+    ]
   },
   date001: {
     title: "Thursday, 18 March 1993",

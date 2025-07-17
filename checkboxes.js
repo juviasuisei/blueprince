@@ -61,6 +61,13 @@ window.checkboxesData = {
     unlockKeyword: "Pantry",
     dependencies: [],
   },
+  obj02_022_rumpusroom: {
+    title: "Rumpus Room",
+    hint: "Draft the Rumpus Room",
+    description: "Room 022",
+    unlockKeyword: "Rumpus Room",
+    dependencies: [],
+  },
   obj02_025_drawingroom: {
     title: "Drawing Room",
     hint: "Draft the Drawing Room",
@@ -282,6 +289,22 @@ window.checkboxesData = {
     description: "Room 086",
     unlockKeyword: "Furnace",
     dependencies: [],
+  },
+  obj03_r7f4: {
+    title: "Rank 7 • File 4: L",
+    hint: "Rank 7 • File 4: ???",
+    description: "F[L]AN",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r7f4_L.jpeg",
+        caption: "flan"
+      },
+      {
+        url: "images/obj03_r7f4_R.jpeg",
+        caption: "fan"
+      },
+    ],
   },
   obj03_r6f3: {
     title: "Rank 6 • File 3: T",
@@ -760,6 +783,18 @@ window.checkboxesData = {
     hint: "Pantry: ???",
     description: "",
     dependencies: ["obj02_021_pantry"],
+  },
+  obj04_022_rumpusroom: {
+    title: "Rumpus Room: Black Bishop",
+    hint: "Rumpus Room: ???",
+    description: "",
+    dependencies: ["obj02_022_rumpusroom"],
+    images: [
+      {
+        url: "images/obj04_022_rumpusroom.jpeg",
+        caption: "black bishop"
+      },
+    ],
   },
   obj04_025_den: {
     title: "Drawing Room: White Pawn",
@@ -1289,6 +1324,38 @@ window.checkboxesData = {
       },
     ],
   },
+  obj07_1: {
+    title: "First Prophecy",
+    hint: "Witness the First Prophecy",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj07_1_1.jpeg",
+        caption: "I see a boy standing on a shore of white sand."
+      },
+      {
+        url: "images/obj07_1_2.jpeg",
+        caption: "He is looking for something he was told he would not find."
+      },
+      {
+        url: "images/obj07_1_3.jpeg",
+        caption: "I see a black cat tied to a red flag."
+      },
+      {
+        url: "images/obj07_1_4.jpeg",
+        caption: "I hear the wind blowing but the flag does not stir."
+      },
+      {
+        url: "images/obj07_1_5.jpeg",
+        caption: "I see a door marked by a rogue moon. A door that is always locked yet has no key."
+      },
+      {
+        url: "images/obj07_1_6.jpeg",
+        caption: "It is the door you have been searching for, yet, will not find. A lost room beyond the dark waters."
+      },
+    ],
+  },
   obj_network_unlock: {
     title: "Network Password",
     hint: "Find the Network Password",
@@ -1510,6 +1577,12 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir021_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir022_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
