@@ -25,6 +25,7 @@ window.sectionsData = [
       "obj04_021_pantry",
       "obj04_022_rumpusroom",
       "obj04_025_drawingroom",
+      "obj04_029_thepool",
       "obj04_031_utilitycloset",
       "obj04_032_boilerroom",
       "obj04_034_security",
@@ -63,6 +64,7 @@ window.sectionsData = [
     dependencies: ["TK"],
     information: [],
     checkboxes: [
+      "obj03_r8f5",
       "obj03_r7f4",
       "obj03_r6f3",
       "obj03_r6f4",
@@ -110,6 +112,7 @@ window.sectionsData = [
       "obj02_021_pantry",
       "obj02_022_rumpusroom",
       "obj02_025_drawingroom",
+      "obj02_029_thepool",
       "obj02_031_utilitycloset",
       "obj02_032_boilerroom",
       "obj02_034_security",
@@ -290,6 +293,14 @@ window.sectionsData = [
         dependencies: ["obj02_025_drawingroom"],
         information: ["dir025_description", "dir025_info", "dir025_chess"],
         checkboxes: ["dir025_note", "dir025_note_magnify", "dir025_search"],
+      },
+      {
+        id: "dir029",
+        title: "029: The Pool",
+        color: "blue",
+        dependencies: ["obj02_029_thepool"],
+        information: ["dir029_description", "dir029_info"],
+        checkboxes: ["dir029_note", "dir029_note_magnify", "dir029_search"],
       },
       {
         id: "dir031",
@@ -776,6 +787,7 @@ window.sectionsData = [
           "note015", // 013 - nook
           "note007", // 021 - pantry
           "note027", // 025 - drawing room
+          "note032", // 029 - the pool
           "note008", // 034 - security
           "note009", // 034 - security
           "note010", // 034 - security

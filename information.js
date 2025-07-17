@@ -216,6 +216,22 @@ window.informationData = {
       },
     ],
   },
+  dir029_description: {
+    title: "Description",
+    description: "An indoor Orindian pool was one of the more modern additions to the estate, the inclusion of which provided a convenient excuse for building a handful of other rooms which not only complement an indoor pool, but are often compulsory inclusions.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir029_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir029_info: {
+    title: "Classification",
+    description: "TYPE: Drafting",
+    dependencies: [],
+  },
   dir031_description: {
     title: "Description",
     description: "One benefit of the restoration of old buildings is that it allows the owners to update and add modern amenities. The utility closet and the circuit breaker box within were set up when gas powered lighting was retired and replaced by a more fashionable home electrical system.",
@@ -1372,6 +1388,17 @@ window.informationData = {
       {
         url: "images/note031.jpeg",
         caption: "article announcing our potential inheritance"
+      },
+    ],
+  },
+  note032: {
+    title: "Drafting Pool Rules",
+    description: "",
+    dependencies: ["dir029_note"],
+    images: [
+      {
+        url: "images/note032.jpeg",
+        caption: "drafting explainer"
       },
     ],
   },

@@ -75,6 +75,13 @@ window.checkboxesData = {
     unlockKeyword: "Drawing Room",
     dependencies: [],
   },
+  obj02_029_thepool: {
+    title: "The Pool",
+    hint: "Draft the The Pool",
+    description: "Room 029",
+    unlockKeyword: "The Pool",
+    dependencies: [],
+  },
   obj02_031_utilitycloset: {
     title: "Utility Closet",
     hint: "Draft the Utility Closet",
@@ -290,7 +297,22 @@ window.checkboxesData = {
     unlockKeyword: "Furnace",
     dependencies: [],
   },
-  obj03_r7f4: {
+  obj03_r8f5: {
+    title: "Rank 8 • File 5: T",
+    hint: "Rank 8 • File 5: ???",
+    description: "PLAN[T]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r8f5_L.jpeg",
+        caption: "plant"
+      },
+      {
+        url: "images/obj03_r8f5_R.jpeg",
+        caption: "plan"
+      },
+    ],
+  },  obj03_r7f4: {
     title: "Rank 7 • File 4: L",
     hint: "Rank 7 • File 4: ???",
     description: "F[L]AN",
@@ -807,6 +829,12 @@ window.checkboxesData = {
         caption: "white pawn"
       },
     ],
+  },
+  obj04_029_thepool: {
+    title: "Utility Closet: None",
+    hint: "Utility Closet: ???",
+    description: "",
+    dependencies: ["obj02_031_utilitycloset"],
   },
   obj04_031_utilitycloset: {
     title: "Utility Closet: None",
@@ -1607,6 +1635,30 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass"],
   },
   dir025_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir029_note: {
+    title: "Note: Drafting Pool Rules",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note032.jpeg",
+        caption: "drafting explainer"
+      },
+    ],
+  },
+  dir029_note_magnify: {
+    title: "Magnify Note: Nothing",
+    hint: "Magnify Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass"],
+  },
+  dir029_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
