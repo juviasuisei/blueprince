@@ -262,6 +262,13 @@ window.checkboxesData = {
     unlockKeyword: "Locksmith",
     dependencies: [],
   },
+  obj02_074_showroom: {
+    title: "Showroom",
+    hint: "Draft the Showroom",
+    description: "Room 074",
+    unlockKeyword: "Showroom",
+    dependencies: [],
+  },
   obj02_075_laundryroom: {
     title: "Laundry Room",
     hint: "Draft the Laundry Room",
@@ -1120,6 +1127,12 @@ window.checkboxesData = {
     hint: "Locksmith: ???",
     description: "",
     dependencies: ["obj02_073_locksmith"],
+  },
+  obj04_074_showroom: {
+    title: "Showroom: None",
+    hint: "Showroom: ???",
+    description: "",
+    dependencies: ["obj02_074_showroom"],
   },
   obj04_075_laundryroom: {
     title: "Laundry Room: None",
@@ -2476,6 +2489,12 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir073_search: {
+    title: "Standard Search Complete: None",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir074_search: {
     title: "Standard Search Complete: None",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",

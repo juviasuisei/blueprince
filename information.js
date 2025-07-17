@@ -696,6 +696,17 @@ window.informationData = {
     description: "TYPE: Dead End",
     dependencies: [],
   },
+  dir074_description: {
+    title: "Description",
+    description: "An array of jewelry display cabinets showcasing an impressive selection of high-priced items, each unique and one of a kind. This exclusive collection is not for the faint of purse.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir074_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
   dir075_description: {
     title: "Description",
     description: "A standard hub of domestic toil complete with washers, dryers, and a state of the art steampowered unit leveraging the newly installed steam ducts leading from the boiler room. Despite its innocent appearance, this inconspicuous space is rumored to launder more than just linen.",
