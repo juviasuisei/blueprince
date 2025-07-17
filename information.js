@@ -1602,7 +1602,7 @@ window.informationData = {
   person12_player_001: {
     title: "Player Character",
     description: "This is us, the player.",
-    dependencies: ["dir069_note"],
+    dependencies: [],
   },
   person12_player_002: {
     title: "Age",
