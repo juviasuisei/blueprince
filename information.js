@@ -1527,7 +1527,7 @@ window.informationData = {
     dependencies: ["dir010_note"],
     images: [
       {
-        url: "images/note032.jpeg",
+        url: "images/note033.jpeg",
         caption: "weathered portrait of Lady Clara Epsen"
       },
     ],
@@ -1614,7 +1614,7 @@ window.informationData = {
     dependencies: ["dir010_note"],
     images: [
       {
-        url: "images/note032.jpeg",
+        url: "images/note033.jpeg",
         caption: "weathered portrait of Lady Clara Epsen"
       },
     ]
