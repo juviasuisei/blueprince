@@ -37,7 +37,7 @@ window.checkboxesData = {
     title: "Walk-In Closet",
     hint: "Draft the Walk-In Closet",
     description: "Room 010",
-    unlockKeyword: "Walk-In Closet",
+    unlockKeyword: ["Walk-In Closet", "Walkin Closet"],
     dependencies: [],
   },
   obj02_012_storeroom: {

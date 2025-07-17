@@ -288,7 +288,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_010_walkincloset"],
         information: ["dir010_description", "dir010_info", "dir010_chess"],
-        checkboxes: ["dir010_note", "dir010_note_magnify", "dir010_search", "dir010_search"],
+        checkboxes: ["dir010_note", "dir010_note_magnify", "dir010_search"],
       },
       {
         id: "dir012",
@@ -647,6 +647,8 @@ window.sectionsData = [
       "item11_compass",
       "item12_brokenlever",
       "item13_upgradedisk",
+      "item14_carkeys",
+      "item15_runningshoes",
     ],
   },
   {
