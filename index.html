@@ -825,8 +825,10 @@
                           x-data="{ 
                             mysteryInput: '', 
                             lastUnlock: null,
-                            messages: [], // Array to store stacked messages
-                            nextMessageId: 1 // Counter for unique message IDs
+                            showSuccess: false,
+                            showError: false,
+                            errorMessage: '',
+                            successMessage: ''
                           }"
                         >
                           <div class="flex items-center space-x-2 mb-2">
@@ -839,6 +841,8 @@
                               x-text="`Discovered a ${getMysteryType(subsection.checkboxes).toLowerCase()} for the first time? Add it below to start tracking it.`"
                             ></span>
                           </div>
+
+                          
                           <div class="flex space-x-2" role="group" :aria-labelledby="`mystery-label-${subsection.id}`">
                             <input
                               type="text"
@@ -847,37 +851,23 @@
                                 const result = tryUnlockMystery(mysteryInput, subsection.checkboxes);
                                 if (result) {
                                   lastUnlock = result;
-                                  // Add success message to the stack
-                                  const messageId = nextMessageId++;
-                                  messages.unshift({
-                                    id: messageId,
-                                    type: 'success',
-                                    text: `Mystery unlocked: ${result.title}!`,
-                                    timestamp: Date.now()
-                                  });
+                                  // Show success message
+                                  showSuccess = true;
+                                  showError = false;
+                                  successMessage = `Mystery unlocked: ${result.title}!`;
                                   mysteryInput = '';
-                                  // Set timeout to remove this specific message
-                                  setTimeout(() => {
-                                    messages = messages.filter(msg => msg.id !== messageId);
-                                  }, 5000);
+                                  setTimeout(() => showSuccess = false, 5000);
                                 } else if (mysteryInput.trim()) {
-                                  // Add error message to the stack
-                                  const messageId = nextMessageId++;
-                                  messages.unshift({
-                                    id: messageId,
-                                    type: 'error',
-                                    text: 'Not a valid unlock keyword. Keep exploring!',
-                                    timestamp: Date.now()
-                                  });
-                                  // Set timeout to remove this specific message
-                                  setTimeout(() => {
-                                    messages = messages.filter(msg => msg.id !== messageId);
-                                  }, 5000);
+                                  // Show error message
+                                  showError = true;
+                                  showSuccess = false;
+                                  errorMessage = 'Not a valid unlock keyword. Keep exploring!';
+                                  setTimeout(() => showError = false, 5000);
                                 }
                               "
                               :placeholder="`Enter a ${getMysteryType(subsection.checkboxes).toLowerCase()}`"
                               :aria-label="`Enter ${getMysteryType(subsection.checkboxes).toLowerCase()} to unlock mystery items`"
-                              :aria-describedby="`mystery-help-${subsection.id} ${showSuccess ? 'mystery-success-' + subsection.id : ''} ${showError ? 'mystery-error-' + subsection.id : ''}`"
+                              :aria-describedby="`mystery-help-${subsection.id}`"
                               class="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:border-transparent"
                               :style="`focus:ring-color: ${getColorHex(subsection.color)}`"
                             />
@@ -886,32 +876,18 @@
                                 const result = tryUnlockMystery(mysteryInput, subsection.checkboxes);
                                 if (result) {
                                   lastUnlock = result;
-                                  // Add success message to the stack
-                                  const messageId = nextMessageId++;
-                                  messages.unshift({
-                                    id: messageId,
-                                    type: 'success',
-                                    text: `Mystery unlocked: ${result.title}!`,
-                                    timestamp: Date.now()
-                                  });
+                                  // Show success message
+                                  showSuccess = true;
+                                  showError = false;
+                                  successMessage = `Mystery unlocked: ${result.title}!`;
                                   mysteryInput = '';
-                                  // Set timeout to remove this specific message
-                                  setTimeout(() => {
-                                    messages = messages.filter(msg => msg.id !== messageId);
-                                  }, 5000);
+                                  setTimeout(() => showSuccess = false, 5000);
                                 } else if (mysteryInput.trim()) {
-                                  // Add error message to the stack
-                                  const messageId = nextMessageId++;
-                                  messages.unshift({
-                                    id: messageId,
-                                    type: 'error',
-                                    text: 'Not a valid unlock keyword. Keep exploring!',
-                                    timestamp: Date.now()
-                                  });
-                                  // Set timeout to remove this specific message
-                                  setTimeout(() => {
-                                    messages = messages.filter(msg => msg.id !== messageId);
-                                  }, 5000);
+                                  // Show error message
+                                  showError = true;
+                                  showSuccess = false;
+                                  errorMessage = 'Not a valid unlock keyword. Keep exploring!';
+                                  setTimeout(() => showError = false, 5000);
                                 }
                               "
                               @keydown.enter="$event.target.click()"
@@ -927,42 +903,40 @@
                             Enter a keyword you discovered to unlock hidden mystery items in this section
                           </div>
                           
-                          <!-- Stacked Messages Container -->
-                          <div class="mt-2 space-y-2" role="status" aria-live="polite">
-                            <template x-for="message in messages" :key="message.id">
-                              <div
-                                x-transition:enter="transition ease-out duration-200"
-                                x-transition:enter-start="opacity-0 transform scale-95"
-                                x-transition:enter-end="opacity-1 transform scale-100"
-                                x-transition:leave="transition ease-in duration-150"
-                                x-transition:leave-start="opacity-100"
-                                x-transition:leave-end="opacity-0"
-                                :class="message.type === 'success' ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'"
-                                class="p-2 border rounded-md"
-                              >
-                                <div class="flex items-center space-x-2">
-                                  <svg 
-                                    class="w-4 h-4" 
-                                    :class="message.type === 'success' ? 'text-green-500' : 'text-red-500'"
-                                    fill="none" 
-                                    stroke="currentColor" 
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path 
-                                      stroke-linecap="round" 
-                                      stroke-linejoin="round" 
-                                      stroke-width="2" 
-                                      :d="message.type === 'success' ? 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' : 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z'"
-                                    ></path>
-                                  </svg>
-                                  <span 
-                                    class="text-sm" 
-                                    :class="message.type === 'success' ? 'text-green-800' : 'text-red-800'"
-                                    x-text="message.text"
-                                  ></span>
-                                </div>
-                              </div>
-                            </template>
+                          <!-- Success Message -->
+                          <div 
+                            x-show="showSuccess"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-1 transform scale-100"
+                            class="mt-2 p-2 bg-green-50 border border-green-200 rounded-md"
+                            role="status"
+                            aria-live="polite"
+                          >
+                            <div class="flex items-center space-x-2">
+                              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span class="text-sm text-green-800" x-text="successMessage"></span>
+                            </div>
+                          </div>
+
+                          <!-- Error Message -->
+                          <div 
+                            x-show="showError"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-1 transform scale-100"
+                            class="mt-2 p-2 bg-red-50 border border-red-200 rounded-md"
+                            role="alert"
+                            aria-live="assertive"
+                          >
+                            <div class="flex items-center space-x-2">
+                              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                              </svg>
+                              <span class="text-sm text-red-800" x-text="errorMessage"></span>
+                            </div>
                           </div>
                         </div>
                       </template>
@@ -1272,7 +1246,22 @@
                       mysteryInput: '', 
                       lastUnlock: null,
                       messages: [], // Array to store stacked messages
-                      nextMessageId: 1 // Counter for unique message IDs
+                      nextMessageId: 1, // Counter for unique message IDs
+                      
+                      // Add a message to the stack
+                      addMessage(type, text) {
+                        const id = this.nextMessageId++;
+                        const newMsg = { id, type, text, timestamp: Date.now() };
+                        
+                        // Create a new array with the new message at the top
+                        this.messages = [newMsg, ...this.messages];
+                        
+                        // Set timeout to remove this specific message
+                        setTimeout(() => {
+                          this.messages = this.messages.filter(msg => msg.id !== id);
+                        }, 5000);
+                      }
+                    }"
                     }"
                   >
                     <div class="flex items-center space-x-2 mb-2">
@@ -1281,6 +1270,8 @@
                       </svg>
                       <span class="text-sm font-medium text-gray-700" x-text="`Discovered a ${getMysteryType(section.checkboxes).toLowerCase()} for the first time? Add it below to start tracking it.`"></span>
                     </div>
+
+                    
                     <div class="flex space-x-2">
                       <input
                         type="text"
@@ -1289,15 +1280,12 @@
                           const result = tryUnlockMystery(mysteryInput, section.checkboxes);
                           if (result) {
                             lastUnlock = result;
-                            showSuccess = true;
-                            showError = false;
+                            // Add success message to the stack
+                            addMessage('success', `Mystery unlocked: ${result.title}!`);
                             mysteryInput = '';
-                            setTimeout(() => showSuccess = false, 3000);
                           } else if (mysteryInput.trim()) {
-                            showError = true;
-                            showSuccess = false;
-                            errorMessage = 'Not a valid unlock keyword. Keep exploring!';
-                            setTimeout(() => showError = false, 3000);
+                            // Add error message to the stack
+                            addMessage('error', 'Not a valid unlock keyword. Keep exploring!');
                           }
                         "
                         :placeholder="`Enter a ${getMysteryType(section.checkboxes).toLowerCase()}`"
@@ -1310,31 +1298,11 @@
                           if (result) {
                             lastUnlock = result;
                             // Add success message to the stack
-                            const messageId = nextMessageId++;
-                            messages.unshift({
-                              id: messageId,
-                              type: 'success',
-                              text: `Mystery unlocked: ${result.title}!`,
-                              timestamp: Date.now()
-                            });
+                            addMessage('success', `Mystery unlocked: ${result.title}!`);
                             mysteryInput = '';
-                            // Set timeout to remove this specific message
-                            setTimeout(() => {
-                              messages = messages.filter(msg => msg.id !== messageId);
-                            }, 5000);
                           } else if (mysteryInput.trim()) {
                             // Add error message to the stack
-                            const messageId = nextMessageId++;
-                            messages.unshift({
-                              id: messageId,
-                              type: 'error',
-                              text: 'Not a valid unlock keyword. Keep exploring!',
-                              timestamp: Date.now()
-                            });
-                            // Set timeout to remove this specific message
-                            setTimeout(() => {
-                              messages = messages.filter(msg => msg.id !== messageId);
-                            }, 5000);
+                            addMessage('error', 'Not a valid unlock keyword. Keep exploring!');
                           }
                         "
                         class="px-4 py-2 text-sm font-medium text-white rounded-md hover:opacity-90 transition-opacity"
@@ -1345,7 +1313,7 @@
                     </div>
                     
                     <!-- Stacked Messages Container -->
-                    <div class="mt-2 space-y-2">
+                    <div class="mt-2 space-y-2" role="status" aria-live="polite">
                       <template x-for="message in messages" :key="message.id">
                         <div
                           x-transition:enter="transition ease-out duration-200"
