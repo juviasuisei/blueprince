@@ -1495,7 +1495,7 @@ window.informationData = {
   note030: {
     title: "Letter from Dad",
     description: "",
-    dependencies: ["dir039_note_letter"],
+    dependencies: ["dir039_note_letter1"],
     images: [
       {
         url: "images/note030_1.jpeg",

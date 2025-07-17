@@ -848,7 +848,7 @@ window.sectionsData = [
       },
       {
         id: "person09_phillip",
-        title: "Publisher Philip White",
+        title: "Publisher Phillip White",
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir082_note_scrapbook"],
