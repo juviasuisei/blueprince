@@ -2413,8 +2413,8 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir075_steam: {
-    title: "Steam Powered the Furnace",
-    hint: "Steam Power the Furnace",
+    title: "Steam Powered the Laundry Room",
+    hint: "Steam Power the Laundry Room",
     description: "",
     dependencies: ["dir032_steam"],
   },
