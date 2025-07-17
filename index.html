@@ -128,7 +128,7 @@
             <p class="text-gray-600">
               Mark items complete to track your progress. Objectives and tracking will appear as relevant
               dependencies are checked off.<br /><br />
-              Using this tracker doesn't fully replace the need to keep your own log as you play because
+              Using this tracker may not fully replace the need to keep your own log as you play because
               you might discover things earlier than this tracker can confirm that knowledge but you can
               transfer your tracking as it unlocks here.<br /><br />
               Happy exploring!
@@ -139,63 +139,66 @@
           </div>
           
           <!-- Action Buttons -->
-          <div class="flex justify-between mt-4 w-full" role="toolbar" aria-label="Application controls">
-            <!-- Expand/Collapse All Buttons (Left-aligned) -->
-            <div class="flex space-x-3">
+          <div class="mt-4 w-full" role="toolbar" aria-label="Application controls">
+            <!-- Button Grid for better mobile layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+              <!-- Expand All Button -->
               <button
                 @click="expandAllSections()"
                 @keydown.enter="expandAllSections()"
                 @keydown.space.prevent="expandAllSections()"
-                class="px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                class="px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center"
                 aria-label="Expand all sections"
               >
-                <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
-                Expand All
+                <span>Expand All</span>
               </button>
+              
+              <!-- Collapse All Button -->
               <button
                 @click="collapseAllSections()"
                 @keydown.enter="collapseAllSections()"
                 @keydown.space.prevent="collapseAllSections()"
-                class="px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                class="px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center"
                 aria-label="Collapse all sections"
               >
-                <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
                 </svg>
-                Collapse All
+                <span>Collapse All</span>
               </button>
-            </div>
-            
-            <!-- Complete/Reset Buttons (Right-aligned) -->
-            <div class="flex space-x-3">
+              
+              <!-- Complete All Button -->
               <button
                 @click="showCompleteAllConfirm = true"
                 @keydown.enter="showCompleteAllConfirm = true"
                 @keydown.space.prevent="showCompleteAllConfirm = true"
-                class="px-4 py-2 text-sm font-medium text-orange-600 bg-white border border-orange-300 rounded-md hover:bg-orange-50 hover:border-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                class="px-4 py-2 text-sm font-medium text-orange-600 bg-white border border-orange-300 rounded-md hover:bg-orange-50 hover:border-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 flex items-center justify-center"
                 aria-label="Complete all items and reveal all content including spoilers"
                 aria-describedby="complete-all-warning"
               >
-                <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                Complete All (Spoilers!)
+                <span>Complete All (Spoilers!)</span>
               </button>
               <div id="complete-all-warning" class="sr-only">Warning: This action will reveal all spoilers and secrets</div>
+              
+              <!-- Reset All Button -->
               <button
                 @click="showResetConfirm = true"
                 @keydown.enter="showResetConfirm = true"
                 @keydown.space.prevent="showResetConfirm = true"
-                class="px-4 py-2 text-sm font-medium text-red-600 bg-white border border-red-300 rounded-md hover:bg-red-50 hover:border-red-400 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                class="px-4 py-2 text-sm font-medium text-red-600 bg-white border border-red-300 rounded-md hover:bg-red-50 hover:border-red-400 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 flex items-center justify-center"
                 aria-label="Reset all progress and clear all completed items"
                 aria-describedby="reset-warning"
               >
-                <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                 </svg>
-                Reset All Progress
+                <span>Reset All Progress</span>
               </button>
               <div id="reset-warning" class="sr-only">Warning: This action will permanently delete all progress</div>
             </div>
