@@ -673,7 +673,7 @@ window.sectionsData = [
         id: "person13_alzara",
         title: "The Great Alzara",
         color: "blue",
-        dependencies: [],
+        dependencies: ["obj02_022_rumpusroom"],
         information: ["person13_alzara_001"],
         checkboxes: [],
       },
