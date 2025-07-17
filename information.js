@@ -1230,6 +1230,21 @@ window.informationData = {
       },
     ],
   },
+  note015M: {
+    title: "Journal Magnified",
+    description: "",
+    dependencies: ["dir013_note", "dir013_note_magnify"],
+    images: [
+      {
+        url: "images/note015_m1.jpeg",
+        caption: "billiard room puzzle hint"
+      },
+      {
+        url: "images/note015_m2.jpeg",
+        caption: "antechamber hint"
+      },
+    ],
+  },
   note016: {
     title: "The Fixed Stars",
     description: "Richard Witt • 1809",

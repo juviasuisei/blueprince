@@ -225,7 +225,7 @@ window.sectionsData = [
     checkboxes: [
       "obj12_01", // 
       "obj12_02", // 
-      "obj12_03", // 
+      "obj12_03", // mora jai
       "obj12_04", // 
       "obj12_05", // 
       "obj12_06", // 
@@ -968,6 +968,7 @@ window.sectionsData = [
           "note001", // opening cinematic
           "note033", // 010 - walk-in closet
           "note005", // 012 - storeroom
+          "note015M", // 013 - nook
           "note007", // 021 - pantry
           "note032", // 029 - the pool
           "note008", // 034 - security

@@ -1579,6 +1579,26 @@ window.checkboxesData = {
     unlockKeyword: "Morning Room",
     dependencies: ["obj02_069_morningroom"],
   },
+  obj12_03: {
+    title: "Mora Jai",
+    hint: "Blue Stamp",
+    description: "Mora Jai • The White Sea of Yore",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj12_03.jpeg",
+        caption: "Mora Jai stamp"
+      },
+      {
+        url: "images/obj12_03_T.jpeg",
+        caption: "upper details"
+      },
+      {
+        url: "images/obj12_03_B.jpeg",
+        caption: "lower details"
+      },
+    ],
+  },
   obj_network_unlock: {
     title: "Network Password",
     hint: "Find the Network Password",
@@ -1788,8 +1808,12 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir013_note"],
     images: [
       {
-        url: "images/TK.jpeg",
-        caption: "magnified hidden messages"
+        url: "images/note015_m1.jpeg",
+        caption: "billiard room puzzle hint"
+      },
+      {
+        url: "images/note015_m2.jpeg",
+        caption: "antechamber hint"
       },
     ],
   },
