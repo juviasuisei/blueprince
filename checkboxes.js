@@ -1864,6 +1864,12 @@ window.checkboxesData = {
     hint: "Black Note: ???",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/note036.jpeg",
+        caption: "house directory explainer"
+      },
+    ],
   },
   dir027_note_black_magnify: {
     title: "Magnify Black Note: Nothing",
