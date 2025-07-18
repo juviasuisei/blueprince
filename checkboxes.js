@@ -3123,6 +3123,18 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
+  dir053_diary_open: {
+    title: "Diary Unlocked",
+    hint: "Unlock the Diary: ???",
+    description: "",
+    dependencies: ["dir053_note_diary"],
+  },
+  dir053_diary_magnify: {
+    title: "Magnify Diary: Nothing",
+    hint: "Magnify Diary: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir053_diary_open"],
+  },
   dir055_note: {
     title: "Red Note: West Wing Locks",
     hint: "Red Note: ???",
