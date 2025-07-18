@@ -216,6 +216,33 @@ window.informationData = {
       },
     ],
   },
+  dir023_description: {
+    title: "Description",
+    description: "A secure onsite depository fitted with steel walls and numbered lockers. This fortified strongroom holds a good portion of the Sinclair fortune despite the fact that several inventories have led accountants to assume the true legacy is hidden elsewhere.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir023_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir023_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
+  dir023_chess: {
+    title: "Chess Piece",
+    description: "White Rook",
+    dependencies: ["obj04_023_vault"],
+    images: [
+      {
+        url: "images/obj04_023_vault.jpeg",
+        caption: "white rook"
+      },
+    ],
+  },
   dir025_description: {
     title: "Description",
     description: "A social sitting room adorned wall to wall with artwork and drawings. An unfinished sketch of your uncle sits on an easel in the middle of the room, providing a vivid image of what were presumably his final days (depending on when the project was abandoned).",
@@ -1163,7 +1190,7 @@ window.informationData = {
     ],
   },
   note004: {
-    title: "Red Note: West Wing Locks",
+    title: "West Wing Locks",
     description: "",
     dependencies: ["dir055_note"],
     images: [
@@ -1234,7 +1261,7 @@ window.informationData = {
     ],
   },
   note010: {
-    title: "Red Note: Antechamber Access",
+    title: "Antechamber Access",
     description: "",
     dependencies: ["dir034_note_red"],
     images: [
@@ -1245,7 +1272,7 @@ window.informationData = {
     ],
   },
   note011: {
-    title: "Blue Note: Keycard Doors",
+    title: "Keycard Doors",
     description: "",
     dependencies: ["dir034_note_blue"],
     images: [
@@ -1278,7 +1305,7 @@ window.informationData = {
     ],
   },
   note014: {
-    title: "Red Note: Commissary Closure",
+    title: "Commissary Closure",
     description: "",
     dependencies: ["dir047_note_postcard"],
     images: [
@@ -1722,6 +1749,56 @@ window.informationData = {
       },
     ],
   },
+  note040: {
+    title: "Checkout Card: A Sightseer's Guide to Reddington",
+    description: "",
+    dependencies: ["obj10_01"],
+    images: [
+      {
+        url: "images/note040.jpeg",
+        caption: "checkout card"
+      },
+    ],
+  },
+  note041: {
+    title: "A Sightseer's Guide to Reddington",
+    description: "Sir Andrew Darle",
+    dependencies: ["obj10_01"],
+    images: [
+      {
+        url: "images/note041_1.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note041_2.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note041_3.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note041_4.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note041_5.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note041_6.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note041_7.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note041_8.jpeg",
+        caption: "pages 14–15"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -1808,6 +1885,16 @@ window.informationData = {
         caption: "weathered portrait of Lady Clara Epsen"
       },
     ]
+  },
+  person06_clara_003: {
+    title: "Marriage",
+    description: "Married Simon H. Sinclair in 1951.",
+    dependencies: ["obj10_01"],
+  },
+  person06_clara_004: {
+    title: "Epsen Family Home",
+    description: "After her father passed away, Clara ran her childhood home, Featherfall Keep, until she wed and moved to Mount Holly. At that point she turned Featherfall Keep into a museum.",
+    dependencies: ["obj10_01"],
   },
   person07_mary_001: {
     title: "Relation",
@@ -1920,13 +2007,63 @@ window.informationData = {
   },
   person14_andrewdarle_001: {
     title: "Occupation",
-    description: "Author of the Sightseer's Guide to Reddington.",
+    description: "Author of A Sightseer's Guide to Reddington.",
     dependencies: ["dir027_note_order"],
   },
   person15_simon_001: {
     title: "Relation",
     description: "Our grandfather. Herbert's younger brother.",
     dependencies: ["dir052_note"],
+  },
+  person15_simon_002: {
+    title: "Marriage",
+    description: "Married Lady Clara Epsen in 1951.",
+    dependencies: ["obj10_01"],
+  },
+  person16_lordepsen_001: {
+    title: "Relation",
+    description: "Our great-granduncle. Deceased.",
+    dependencies: ["obj10_01"],
+  },
+  person17_lionel_001: {
+    title: "Relation",
+    description: "Our granduncle.",
+    dependencies: ["obj10_01"],
+  },
+  person17_lionel_002: {
+    title: "Relation",
+    description: "After his father's death he left his childhood home, Featherfall Keep, never to return, leaving his sister, Lady Clara Epsen to run the estate.",
+    dependencies: ["obj10_01"],
+  },
+  person18_evanson_001: {
+    title: "Mount Holly Visitor",
+    description: "Has visited the estate in the past.",
+    dependencies: ["dir049_note"],
+  },
+  person18_evanson_002: {
+    title: "Time of Visit",
+    description: "The visit was in mid-November 1987.",
+    dependencies: ["obj10_01"],
+  },
+  person19_kl_001: {
+    title: "Mount Holly Visitor",
+    description: "Has visited the estate in the past.",
+    dependencies: ["dir049_note"],
+  },
+  person19_kl_002: {
+    title: "Time of Visit",
+    description: "The visit was in mid-November 1987.",
+    dependencies: ["obj10_01"],
+  },
+  person20_mlowry_002: {
+    title: "Mount Holly Visitor",
+    description: "Has visited the estate in the past.",
+    dependencies: ["dir049_note"],
+  },
+  person20_mlowry_002: {
+    title: "Time of Visit",
+    description: "The visit was in late April 1992.",
+    dependencies: ["obj10_01"],
   },
   date001: {
     title: "Thursday, 18 March 1993",
@@ -2024,5 +2161,35 @@ window.informationData = {
     title: "Thursday, 5 November 1993",
     description: "Our provisional inheritance is announced publically via a newspaper article.",
     dependencies: ["dir069_note"],
+  },
+  date020: {
+    title: "1951",
+    description: "Lady Clara Epsen and Simon H. Sinclair marry.",
+    dependencies: ["obj10_01"],
+  },
+  date021: {
+    title: "1972",
+    description: "Lady Clara Epsen's childhood home, Featherfall Keep, is named a National Historic Landmark.",
+    dependencies: ["obj10_01"],
+  },
+  date022: {
+    title: "1966",
+    description: "The Mount Holly Schoolhouse closes.",
+    dependencies: ["obj10_01"],
+  },
+  date023: {
+    title: "Monday, 4 January 1982",
+    description: "Mrs. Babbage checked out A Sightseer's Guide to Reddington from the Library.",
+    dependencies: ["obj10_01"],
+  },
+  date024: {
+    title: "Wednesday, 18 November 1987",
+    description: "Lord Evanson checked out A Sightseer's Guide to Reddington from the Library.",
+    dependencies: ["obj10_01"],
+  },
+  date025: {
+    title: "Saturday, 25 April 1992",
+    description: "M. Lowry checked out A Sightseer's Guide to Reddington from the Library.",
+    dependencies: ["obj10_01"],
   },
 };

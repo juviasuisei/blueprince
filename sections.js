@@ -25,6 +25,7 @@ window.sectionsData = [
       "obj04_017_den",
       "obj04_021_pantry",
       "obj04_022_rumpusroom",
+      "obj04_023_vault",
       "obj04_025_drawingroom",
       "obj04_027_library",
       "obj04_029_thepool",
@@ -125,6 +126,7 @@ window.sectionsData = [
       "obj02_017_den",
       "obj02_021_pantry",
       "obj02_022_rumpusroom",
+      "obj02_023_vault",
       "obj02_025_drawingroom",
       "obj02_027_library",
       "obj02_029_thepool",
@@ -388,6 +390,14 @@ window.sectionsData = [
         dependencies: ["obj02_022_rumpusroom"],
         information: ["dir022_description", "dir022_chess"],
         checkboxes: ["dir022_search", "obj07_1"],
+      },
+      {
+        id: "dir023",
+        title: "023: Vault",
+        color: "blue",
+        dependencies: ["obj02_023_vault"],
+        information: ["dir023_description", "dir023_info", "dir023_chess"],
+        checkboxes: ["dir023_search"],
       },
       {
         id: "dir025",
@@ -819,8 +829,8 @@ window.sectionsData = [
         title: "Lady Clara Epsen",
         color: "blue",
         optionalDependencies: true,
-        dependencies: ["dir056_note"],
-        information: ["person06_clara_002", "person06_clara_001"],
+        dependencies: ["dir056_note", "dir010_note"],
+        information: ["person06_clara_002", "person06_clara_001", "person06_clara_003", "person06_clara_004"],
         checkboxes: [],
       },
       {
@@ -829,7 +839,7 @@ window.sectionsData = [
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir052_note"],
-        information: ["person15_simon_001"],
+        information: ["person15_simon_001", "person15_simon_002"],
         checkboxes: [],
       },
       {
@@ -839,6 +849,24 @@ window.sectionsData = [
         optionalDependencies: true,
         dependencies: ["dir047_photo_identify"],
         information: ["person02_baroness_001"],
+        checkboxes: [],
+      },
+      {
+        id: "person16_lordepsen",
+        title: "Lord William Epsen",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["obj10_01"],
+        information: ["person16_lordepsen_001"],
+        checkboxes: [],
+      },
+      {
+        id: "person17_lionel",
+        title: "Lionel Epsen",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["obj10_01"],
+        information: ["person17_lionel_001", "person17_lionel_002"],
         checkboxes: [],
       },
       {
@@ -905,11 +933,38 @@ window.sectionsData = [
       },
       {
         id: "person14_andrewdarle",
-        title: "Author Andrew Darle",
+        title: "Author Sir Andrew Darle",
         color: "blue",
         optionalDependencies: true,
         dependencies: ["obj02_027_library"],
         information: ["person14_andrewdarle_001"],
+        checkboxes: [],
+      },
+      {
+        id: "person18_evanson",
+        title: "Lord Evanson",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir049_note", "obj10_01"],
+        information: ["person18_evanson_001", "person18_evanson_002"],
+        checkboxes: [],
+      },
+      {
+        id: "person19_kl",
+        title: "K.L.",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir049_note"],
+        information: ["person19_kl_001", "person19_kl_002"],
+        checkboxes: [],
+      },
+      {
+        id: "person20_mlowry",
+        title: "M. Lowry",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir005_note", "obj10_01"],
+        information: ["person20_mlowry_001", "person20_mlowry_002"],
         checkboxes: [],
       },
     ],
@@ -921,6 +976,10 @@ window.sectionsData = [
     dependencies: [],
     information: [
       "date002", // 1809
+      "date020", // 1951
+      "date022", // 1966
+      "date021", // 1972
+      "date023", // 1982-01-04
       "date003", // 1983-06-15
       "date005", // 1985-08-22
       "date006", // 1986-01-27
@@ -929,6 +988,8 @@ window.sectionsData = [
       "date009", // 1986-11-17
       "date010", // 1987-02-20
       "date011", // 1987-09-02
+      "date024", // 1987-11-18
+      "date025", // 1992-04-25
       "date001", // 1993-03-18
       "date014", // 1993-11-04
       "date016", // 1993-11-04
@@ -944,7 +1005,7 @@ window.sectionsData = [
   },
   {
     id: "info_notes",
-    title: "Letters & Notes",
+    title: "Documents",
     color: "blue",
     dependencies: [],
     subsections: [
@@ -962,6 +1023,41 @@ window.sectionsData = [
         ],
       },
       {
+        id: "info_notes_cards",
+        title: "Blue Notes",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: [
+          "dir034_note_blue",
+        ],
+        information: [
+          "note011", // 034 - security
+        ],
+      },
+      {
+        id: "info_notes_cards",
+        title: "Green Notes",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: [],
+        information: [
+        ],
+      },
+      {
+        id: "info_notes_cards",
+        title: "Red Notes",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: [
+          "dir034_note_red",
+          "dir055_note",
+        ],
+        information: [
+          "note010", // 034 - security
+          "note004", // 055 - hallway
+        ],
+      },
+      {
         id: "info_notes_books",
         title: "Books",
         color: "blue",
@@ -972,10 +1068,12 @@ window.sectionsData = [
           "dir042_note",
           "dir050_note",
           "dir082_note",
+          "obj10_01",
         ],
         information: [
           "note034", // 027 - library
           "note035", // 027 - library
+          "note041", // 027 - library
           "note016", // 042 - observatory
           "note025", // 050 - nursery
           "note038", // 052 - bunk room
@@ -1001,7 +1099,7 @@ window.sectionsData = [
       },
       {
         id: "info_notes_cards",
-        title: "Note Cards",
+        title: "Other",
         color: "blue",
         dependencies: [],
         information: [
@@ -1010,18 +1108,16 @@ window.sectionsData = [
           "note005", // 012 - storeroom
           "note015M", // 013 - nook
           "note007", // 021 - pantry
+          "note040", // 027 - library
           "note032", // 029 - the pool
           "note008", // 034 - security
           "note009", // 034 - security
-          "note010", // 034 - security
-          "note011", // 034 - security
           "note028", // 039 - mail room
           "note029", // 039 - mail room
           "note012", // 047 - bedroom
           "note026", // 047 - bedroom
-          "note019", // 048 - bedroom
+          "note019", // 048 - boudoir
           "note039", // 052 - bunk room
-          "note004", // 055 - hallway
           "note018", // 056 - west wing hall
           "note037", // 060 - secret passage
           "note031", // 069 - morning room

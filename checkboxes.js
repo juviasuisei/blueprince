@@ -75,6 +75,13 @@ window.checkboxesData = {
     unlockKeyword: "Rumpus Room",
     dependencies: [],
   },
+  obj02_023_vault: {
+    title: "Vault",
+    hint: "Draft the Vault",
+    description: "Room 023",
+    unlockKeyword: "Vault",
+    dependencies: [],
+  },
   obj02_025_drawingroom: {
     title: "Drawing Room",
     hint: "Draft the Drawing Room",
@@ -958,6 +965,18 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_023_vault: {
+    title: "Vault: White Rook",
+    hint: "Vault: ???",
+    description: "",
+    dependencies: ["obj02_023_vault"],
+    images: [
+      {
+        url: "images/obj04_023_vault.jpeg",
+        caption: "white rook"
+      },
+    ],
+  },
   obj04_025_den: {
     title: "Drawing Room: White Pawn",
     hint: "Drawing Room: ???",
@@ -1634,6 +1653,46 @@ window.checkboxesData = {
     unlockKeyword: "Morning Room",
     dependencies: ["obj02_069_morningroom"],
   },
+  obj10_01: {
+    title: "Checked Out: A Sightseer's Guide to Reddington",
+    hint: "Checkout: A Sightseer's Guide to Reddington",
+    description: "Sir Andrew Darle",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note041_1.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note041_2.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note041_3.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note041_4.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note041_5.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note041_6.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note041_7.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note041_8.jpeg",
+        caption: "pages 14–15"
+      },
+    ],
+  },
   obj12_03: {
     title: "Mora Jai",
     hint: "Blue Stamp",
@@ -1909,6 +1968,12 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir022_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir023_search: {
     title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
