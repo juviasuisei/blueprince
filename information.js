@@ -2067,7 +2067,7 @@ window.informationData = {
       },
     ],
   },
-  note050: {
+  note051: {
     title: "Sheet Music: #8",
     description: "",
     dependencies: ["dir035_note"],
@@ -2078,7 +2078,7 @@ window.informationData = {
       },
     ],
   },
-  note050: {
+  note052: {
     title: "Parlor Game Box Design",
     description: "",
     dependencies: ["obj02_005_parlor", "obj02_035_workshop"],
