@@ -1014,7 +1014,12 @@ window.sectionsData = [
         title: "Black Notes",
         color: "black",
         optionalDependencies: true,
-        dependencies: ["dir042_note_book"],
+        dependencies: [
+          "dir002_note_black",
+          "dir013_note",
+          "dir025_note",
+          "dir027_note_black",
+        ],
         information: [
           "note003", // 002 - entrance hall
           "note015", // 013 - nook
@@ -1034,15 +1039,15 @@ window.sectionsData = [
           "note011", // 034 - security
         ],
       },
-      {
-        id: "info_notes_cards",
-        title: "Green Notes",
-        color: "blue",
-        optionalDependencies: true,
-        dependencies: [],
-        information: [
-        ],
-      },
+      // {
+      //   id: "info_notes_cards",
+      //   title: "Green Notes",
+      //   color: "blue",
+      //   optionalDependencies: true,
+      //   dependencies: [],
+      //   information: [
+      //   ],
+      // },
       {
         id: "info_notes_cards",
         title: "Red Notes",
