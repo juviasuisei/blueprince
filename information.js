@@ -329,6 +329,27 @@ window.informationData = {
     description: "TYPE: Drafting",
     dependencies: [],
   },
+  dir028_description: {
+    title: "Description",
+    description: "Reflections of reflections, this confusing room can sometimes prove disorienting to the wayward guest. However, upon closer inspection, they quickly realize that viewing this room from more than one perspective is key to unraveling its secrets.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir028_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir028_info: {
+    title: "Classification",
+    description: "TYPE: Drafting • \"Dead End\"",
+    dependencies: [],
+  },
+  dir028_warning: {
+    title: "Warning",
+    description: "This room's puzzle and rewards can be repeated each day it is drafted. Be mindful of when you take the rewards.",
+    dependencies: [],
+  },
   dir029_description: {
     title: "Description",
     description: "An indoor Orindian pool was one of the more modern additions to the estate, the inclusion of which provided a convenient excuse for building a handful of other rooms which not only complement an indoor pool, but are often compulsory inclusions.",
@@ -764,6 +785,11 @@ window.informationData = {
       },
     ],
   },
+  dir056_restriction: {
+    title: "Drafting Restriction",
+    description: "Can only be drafted on the west side (File 1) of the house.",
+    dependencies: [],
+  },
   dir057_description: {
     title: "Description",
     description: "This fenestrated hallway overlooks the east side of the estate grounds and is warmed in the early day by the light of the rising afternoon sun.",
@@ -774,6 +800,11 @@ window.informationData = {
         caption: "room directory entry"
       },
     ],
+  },
+  dir057_restriction: {
+    title: "Drafting Restriction",
+    description: "Can only be drafted on the east side (File 5) of the house.",
+    dependencies: [],
   },
   dir058_description: {
     title: "Description",
@@ -845,6 +876,11 @@ window.informationData = {
     description: "TYPE: Dead End",
     dependencies: [],
   },
+  dir063_restriction: {
+    title: "Drafting Restriction",
+    description: "Can only be drafted on the east and west sides (Files 1 & 5) of the house.",
+    dependencies: [],
+  },
   dir065_description: {
     title: "Description",
     description: "A charming spot granting guests a bit of fresh air and open skies within the privacy of the manor walls.",
@@ -855,6 +891,22 @@ window.informationData = {
         caption: "room directory entry"
       },
     ],
+  },
+  dir067_description: {
+    title: "Description",
+    description: "This relaxing breezeway serves as an ideal spot for rocking chairs and lemonade.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir067_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir067_restriction: {
+    title: "Drafting Restriction",
+    description: "Can only be drafted on the east and west sides (Files 1 & 5) of the house and only from another room on the east or west side.",
+    dependencies: [],
   },
   dir069_description: {
     title: "Description",
@@ -872,6 +924,11 @@ window.informationData = {
     description: "TYPE: Tomorrow • Addition",
     dependencies: [],
   },
+  dir069_restriction: {
+    title: "Drafting Restriction",
+    description: "Can only be drafted on the east and west sides (Files 1 & 5) of the house and only after eating Bacon and Eggs from the Kitchen.",
+    dependencies: [],
+  },
   dir070_description: {
     title: "Description",
     description: "A floorplan so secretive it had been removed from the drafting pool to avoid anyone unwanted accidentally stumbling upon it. This secluded garden, flanked by a variety of Mora Jai fruit trees, has served as a private retreat to at least two other generations of Sinclairs.",
@@ -886,6 +943,11 @@ window.informationData = {
   dir070_info: {
     title: "Classification",
     description: "TYPE: Tomorrow • Spread",
+    dependencies: [],
+  },
+  dir070_restriction: {
+    title: "Drafting Restriction",
+    description: "Can only be drafted on the west or east sides (Files 1 & 5) of the house and only by using the key.",
     dependencies: [],
   },
   dir071_description: {
@@ -1296,7 +1358,18 @@ window.informationData = {
     images: [
       {
         url: "images/obj13_01_secretgarden.jpeg",
-        caption: "secret garden key"
+        caption: "Secret Garden key"
+      },
+    ],
+  },
+  key02_silver: {
+    title: "The Silver Key",
+    description: "Unlocking a door with the Silver Key will lead to a room with many doors.",
+    dependencies: ["obj13_02_silver"],
+    images: [
+      {
+        url: "images/obj13_02_silver.jpeg",
+        caption: "silver key"
       },
     ],
   },
@@ -2168,6 +2241,17 @@ window.informationData = {
       },
     ],
   },
+  note057: {
+    title: "Checkout Card: The Fixed Stars",
+    description: "",
+    dependencies: ["obj10_03"],
+    images: [
+      {
+        url: "images/note057.jpeg",
+        caption: "checkout card"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -2653,5 +2737,10 @@ window.informationData = {
     title: "Monday, 2 March 1987",
     description: "Detective Margle checked out Swim Bird from the Library.",
     dependencies: ["obj10_02"],
+  },
+  date034: {
+    title: "Monday, 9 January 1961",
+    description: "Clara checked out The Fixed Stars from the Library.",
+    dependencies: ["obj10_03"],
   },
 };

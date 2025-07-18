@@ -137,6 +137,13 @@ window.checkboxesData = {
     unlockKeyword: "Library",
     dependencies: [],
   },
+  obj02_028_chamberofmirrors: {
+    title: "Chamber of Mirrors",
+    hint: "Draft the Chamber of Mirrors",
+    description: "Room 028",
+    unlockKeyword: "Chamber of Mirrors",
+    dependencies: [],
+  },
   obj02_029_thepool: {
     title: "The Pool",
     hint: "Draft the The Pool",
@@ -329,6 +336,13 @@ window.checkboxesData = {
     hint: "Draft the Courtyard",
     description: "Room 065",
     unlockKeyword: "Courtyard",
+    dependencies: [],
+  },
+  obj02_067_courtyard: {
+    title: "Veranda",
+    hint: "Draft the Veranda",
+    description: "Room 067",
+    unlockKeyword: "Veranda",
     dependencies: [],
   },
   obj02_069_morningroom: {
@@ -1097,6 +1111,12 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_027_library"],
   },
+  obj04_028_chamberofmirrors: {
+    title: "Chamber of Mirrors: None",
+    hint: "Chamber of Mirrors: ???",
+    description: "",
+    dependencies: ["obj02_028_chamberofmirrors"],
+  },
   obj04_029_thepool: {
     title: "Utility Closet: None",
     hint: "Utility Closet: ???",
@@ -1310,6 +1330,12 @@ window.checkboxesData = {
     hint: "Courtyard: ???",
     description: "",
     dependencies: ["obj02_065_courtyard"],
+  },
+  obj04_067_veranda: {
+    title: "Veranda: None",
+    hint: "Veranda: ???",
+    description: "",
+    dependencies: ["obj02_067_veranda"],
   },
   obj04_069_morningroom: {
     title: "Morning Room: None",
@@ -1915,11 +1941,57 @@ window.checkboxesData = {
       },
     ],
   },
-  obj10_01_magnify: {
+  obj10_02_magnify: {
     title: "Magnify Swim Bird: Nothing",
     hint: "Magnify Swim Bird: ???",
     description: "",
     dependencies: ["obj05_08_magnifyingglass", "obj10_02"],
+  },
+  obj10_03: {
+    title: "Checked Out: The Fixed Stars",
+    hint: "Checkout: The Fixed Stars",
+    description: "Richard Witt • 1809",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note057.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note016_2.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note016_3.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note016_4.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note016_5.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note016_6.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note016_7.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note016_8.jpeg",
+        caption: "pages 14–15"
+      },
+    ],
+  },
+  obj10_03_magnify: {
+    title: "Magnify The Fixed Stars: Nothing",
+    hint: "Magnify The Fixed Stars: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "obj10_03"],
   },
   obj12_03: {
     title: "Mora Jai",
@@ -1945,12 +2017,25 @@ window.checkboxesData = {
     title: "Secret Garden Key",
     hint: "Find the Secret Garden Key",
     description: "",
-    unlockKeyword: "Secret Garden Key",
+    unlockKeyword: ["Secret Garden Key", "Secret Garden"],
     dependencies: [],
     images: [
       {
         url: "images/obj13_01_secretgarden.jpeg",
-        caption: "Secret Garden Key"
+        caption: "Secret Garden key"
+      },
+    ],
+  },
+  obj13_02_silver: {
+    title: "Silver Key",
+    hint: "Find the Silver Key",
+    description: "",
+    unlockKeyword: ["Silver Key", "Silver"],
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj13_02_silver.jpeg",
+        caption: "silver key"
       },
     ],
   },
@@ -2334,6 +2419,12 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
+  dir025_gaits: {
+    title: "This Room Is Part of the Hidden Painting Message Puzzle",
+    hint: "What's Up With All These Paintings?",
+    description: "",
+    dependencies: [],
+  },
   dir027_note_black: {
     title: "Black Note: Additional Reading",
     hint: "Black Note: ???",
@@ -2391,6 +2482,18 @@ window.checkboxesData = {
   dir027_blanks: {
     title: "Secret Messages from Baroness Auravei Sinclair",
     hint: "What's Up With These Blank Books on Display?",
+    description: "",
+    dependencies: [],
+  },
+  dir028_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir028_solve: {
+    title: "Chamber of Mirrors Puzzle Solved",
+    hint: "Solve the Chamber of Mirrors Puzzle",
     description: "",
     dependencies: [],
   },

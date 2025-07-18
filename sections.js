@@ -35,6 +35,7 @@ window.sectionsData = [
       "obj04_023_vault",
       "obj04_025_drawingroom",
       "obj04_027_library",
+      "obj04_028_chamberofmirrors",
       "obj04_029_thepool",
       "obj04_031_utilitycloset",
       "obj04_032_boilerroom",
@@ -61,6 +62,7 @@ window.sectionsData = [
       "obj04_060_secretpassage",
       "obj04_063_terrace",
       "obj04_065_courtyard",
+      "obj04_067_veranda",
       "obj04_069_morningroom",
       "obj04_070_secretgarden",
       "obj04_071_commissary",
@@ -143,6 +145,7 @@ window.sectionsData = [
       "obj02_023_vault",
       "obj02_025_drawingroom",
       "obj02_027_library",
+      "obj02_028_chamberofmirrors",
       "obj02_029_thepool",
       "obj02_031_utilitycloset",
       "obj02_032_boilerroom",
@@ -171,6 +174,7 @@ window.sectionsData = [
       "obj02_060_secretpassage",
       "obj02_063_terrace",
       "obj02_065_courtyard",
+      "obj02_067_veranda",
       "obj02_069_morningroom",
       "obj02_070_secretgarden",
       "obj02_071_commissary",
@@ -292,6 +296,7 @@ window.sectionsData = [
     information: [],
     checkboxes: [
       "obj13_01_secretgarden",
+      "obj13_02_silver",
     ]
   },
   {
@@ -321,6 +326,7 @@ window.sectionsData = [
       "obj05_17_batterypack",
       "obj05_18_treasuremap",
       "obj13_01_secretgarden",
+      "obj13_02_silver",
     ]
   },
   {
@@ -468,7 +474,7 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_025_drawingroom"],
         information: ["dir025_description", "dir025_info", "dir025_chess"],
-        checkboxes: ["dir025_note", "dir025_note_magnify", "dir025_search"],
+        checkboxes: ["dir025_note", "dir025_note_magnify", "dir025_search", "dir025_gaits"],
       },
       {
         id: "dir027",
@@ -487,6 +493,14 @@ window.sectionsData = [
           "obj10_06", "obj10_06_magnify",
           "dir027_search", "dir027_blanks"
         ],
+      },
+      {
+        id: "dir028",
+        title: "028: Chamber of Mirrors",
+        color: "blue",
+        dependencies: ["obj02_028_chamberofmirrors"],
+        information: ["dir028_description", "dir028_info", "dir028_warning"],
+        checkboxes: ["dir028_search", "dir028_solve"],
       },
       {
         id: "dir029",
@@ -685,7 +699,7 @@ window.sectionsData = [
         title: "056: West Wing Hall",
         color: "orange",
         dependencies: ["obj02_056_westwinghall"],
-        information: ["dir056_description"],
+        information: ["dir056_description", "dir056_restriction"],
         checkboxes: ["dir056_note", "dir056_note_magnify", "dir056_search"],
       },
       {
@@ -693,7 +707,7 @@ window.sectionsData = [
         title: "057: East Wing Hall",
         color: "orange",
         dependencies: ["obj02_057_eastwinghall"],
-        information: ["dir057_description"],
+        information: ["dir057_description", "dir057_restriction"],
         checkboxes: ["dir057_search"],
       },
       {
@@ -725,7 +739,7 @@ window.sectionsData = [
         title: "063: Terrace",
         color: "green",
         dependencies: ["obj02_063_terrace"],
-        information: ["dir063_description", "dir063_info"],
+        information: ["dir063_description", "dir063_info", "dir063_restriction"],
         checkboxes: ["dir063_search"],
       },
       {
@@ -737,11 +751,19 @@ window.sectionsData = [
         checkboxes: ["dir065_search"],
       },
       {
+        id: "dir067",
+        title: "067: Veranda",
+        color: "green",
+        dependencies: ["obj02_067_veranda"],
+        information: ["dir067_description", "dir067_restriction"],
+        checkboxes: ["dir067_search"],
+      },
+      {
         id: "dir069",
         title: "069: Morning Room",
         color: "green",
         dependencies: ["obj02_069_morningroom"],
-        information: ["dir069_description", "dir069_info"],
+        information: ["dir069_description", "dir069_info", "dir069_restriction"],
         checkboxes: ["obj09_01", "dir069_note", "dir069_note_magnify", "dir069_search"],
       },
       {
@@ -749,7 +771,7 @@ window.sectionsData = [
         title: "070: Secret Garden",
         color: "green",
         dependencies: ["obj02_070_secretgarden"],
-        information: ["dir070_description", "dir070_info"],
+        information: ["dir070_description", "dir070_info", "dir070_restriction"],
         checkboxes: ["dir070_search", "dir070_puzzle"],
       },
       {
@@ -894,6 +916,7 @@ window.sectionsData = [
     ],
     information: [
       "key01_secretgarden",
+      "key02_silver",
     ],
   },
   {
@@ -1132,6 +1155,7 @@ window.sectionsData = [
     information: [
       "date002", // 1809
       "date020", // 1951
+      "date034", // 1961-01-09
       "date022", // 1966
       "date021", // 1972
       "date023", // 1982-01-04
@@ -1289,6 +1313,7 @@ window.sectionsData = [
           "note007", // 021 - pantry
           "note040", // 027 - library
           "note049", // 027 - library
+          "note057", // 027 - library
           "note032", // 029 - the pool
           "note008", // 034 - security
           "note009", // 034 - security
