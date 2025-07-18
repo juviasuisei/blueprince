@@ -414,6 +414,22 @@ window.informationData = {
     description: "",
     dependencies: ["dir032_steam"],
   },
+  dir035_description: {
+    title: "Description",
+    description: "Springs, screws, and coils scattered atop the workbench show signs of this room's frequent use. A craftsman's studio dedicated to creativity and invention, this room was used by your granduncle regularly whenever he needed to fix (or improve) a gadget or contraption.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir035_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir035_info: {
+    title: "Classification",
+    description: "TYPE: Mechanical",
+    dependencies: [],
+  },
   dir038_description: {
     title: "Description",
     description: "A cloakroom where guests may leave their coats, bags, or hats in exchange for a claim ticket. This floor plan was usually drafted adjoining the Entrance Hall during larger social events such as a ball or gala.",
@@ -2048,6 +2064,28 @@ window.informationData = {
       {
         url: "images/note050_11.jpeg",
         caption: "pages 20–21"
+      },
+    ],
+  },
+  note050: {
+    title: "Sheet Music: #8",
+    description: "",
+    dependencies: ["dir035_note"],
+    images: [
+      {
+        url: "images/note051.jpeg",
+        caption: "sheet music #8"
+      },
+    ],
+  },
+  note050: {
+    title: "Parlor Game Box Design",
+    description: "",
+    dependencies: ["obj02_005_parlor", "obj02_035_workshop"],
+    images: [
+      {
+        url: "images/note052.jpeg",
+        caption: "parlor game hint"
       },
     ],
   },

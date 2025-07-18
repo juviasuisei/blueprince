@@ -39,6 +39,7 @@ window.sectionsData = [
       "obj04_031_utilitycloset",
       "obj04_032_boilerroom",
       "obj04_034_security",
+      "obj04_035_workshop",
       "obj04_038_coatcheck",
       "obj04_039_mailroom",
       "obj04_040_freezer",
@@ -145,6 +146,7 @@ window.sectionsData = [
       "obj02_031_utilitycloset",
       "obj02_032_boilerroom",
       "obj02_034_security",
+      "obj02_035_workshop",
       "obj02_038_coatcheck",
       "obj02_039_mailroom",
       "obj02_040_freezer",
@@ -182,6 +184,17 @@ window.sectionsData = [
       "obj02_084_darkroom",
       "obj02_085_weightroom",
       "obj02_086_furnace",
+    ]
+  },
+  {
+    id: "obj14",
+    title: "Objective: Solve the Sheet Music Puzzle",
+    color: "blue",
+    optionalDependencies: true,
+    dependencies: ["dir035_note"],
+    information: [],
+    checkboxes: [
+      "obj14_1",
     ]
   },
   {
@@ -226,7 +239,7 @@ window.sectionsData = [
     title: "Objective: Build All the Contraptions",
     color: "blue",
     optionalDependencies: true,
-    dependencies: ["obj05_17_batterypack", "dir027_note_scrapbook"],
+    dependencies: ["obj05_17_batterypack", "dir027_note_scrapbook", "obj02_035_security"],
     information: [],
     checkboxes: [
       "obj11_01", // 
@@ -501,7 +514,23 @@ window.sectionsData = [
         color: "blue",
         dependencies: ["obj02_034_security"],
         information: ["dir034_description", "dir034_info", "dir034_chess", "dir034_steam"],
-        checkboxes: ["dir034_note_pad", "dir034_note_pad_magnify", "dir034_note_notice", "dir034_note_notice_magnify", "dir034_note_red", "dir034_note_red_magnify", "dir034_note_blue", "dir034_note_blue_magnify", "dir034_search", "obj_network_unlock"],
+        checkboxes: [
+          "dir034_note_pad", "dir034_note_pad_magnify",
+          "dir034_note_notice", "dir034_note_notice_magnify",
+          "dir034_note_red", "dir034_note_red_magnify",
+          "dir034_note_blue", "dir034_note_blue_magnify",
+          "dir034_search",
+          "obj_network_unlock",
+          "dir034_secret", "dir034_secret_use",
+        ],
+      },
+      {
+        id: "dir035",
+        title: "035: Workshop",
+        color: "blue",
+        dependencies: ["obj02_035_security"],
+        information: ["dir035_description", "dir035_info"],
+        checkboxes: ["dir035_note", "dir035_note_magnify", "dir035_search"],
       },
       {
         id: "dir038",
@@ -1234,6 +1263,8 @@ window.sectionsData = [
           "note032", // 029 - the pool
           "note008", // 034 - security
           "note009", // 034 - security
+          "note051", // 035 - workshop
+          "note052", // 035 - workshop
           "note028", // 039 - mail room
           "note029", // 039 - mail room
           "note047", // 043 - conference room

@@ -165,6 +165,13 @@ window.checkboxesData = {
     unlockKeyword: "Security",
     dependencies: [],
   },
+  obj02_035_workshop: {
+    title: "Workshop",
+    hint: "Draft the Workshop",
+    description: "Room 035",
+    unlockKeyword: "Workshop",
+    dependencies: [],
+  },
   obj02_038_coatcheck: {
     title: "Coat Check",
     hint: "Draft the Coat Check",
@@ -1113,6 +1120,12 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_035_workshop: {
+    title: "Workshop: None",
+    hint: "Workshop: ???",
+    description: "",
+    dependencies: ["obj02_035_workshop"],
+  },
   obj04_038_coatcheck: {
     title: "Coat Check: None",
     hint: "Coat Check: ???",
@@ -1917,6 +1930,18 @@ window.checkboxesData = {
       },
     ],
   },
+  obj14_1: {
+    title: "Sheet Music Bolded Message Completed",
+    hint: "Solve the Sheet Music Bolded Words Puzzle",
+    description: "TK TK TK TK TK TK TK message",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note051.jpeg",
+        caption: "sheet music #8"
+      },
+    ],
+  },
   obj_network_unlock: {
     title: "Network Password",
     hint: "Find the Network Password",
@@ -2501,6 +2526,30 @@ window.checkboxesData = {
     hint: "Find the Use for the Security Secret Puzzle: ???",
     description: "",
     dependencies: ["dir034_secret"],
+  },
+  dir035_note: {
+    title: "Sheet Music: #8",
+    hint: "Sheet Music: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note051.jpeg",
+        caption: "sheet music #8"
+      },
+    ],
+  },
+  dir035_note_magnify: {
+    title: "Magnify Sheet Music: Nothing",
+    hint: "Magnify Sheet Music: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir035_note"],
+  },
+  dir035_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
   },
   dir038_search: {
     title: "Standard Search Complete: Nothing",
