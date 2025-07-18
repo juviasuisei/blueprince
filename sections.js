@@ -41,10 +41,13 @@ window.sectionsData = [
       "obj04_048_boudoir",
       "obj04_049_guestbedroom",
       "obj04_050_nursery",
+      "obj04_052_bunkroom",
       "obj04_055_hallway",
       "obj04_056_westwinghall",
+      "obj04_057_eastwinghall",
       "obj04_058_corridor",
       "obj04_059_passageway",
+      "obj04_060_secretpassage",
       "obj04_063_terrace",
       "obj04_065_courtyard",
       "obj04_069_morningroom",
@@ -140,10 +143,13 @@ window.sectionsData = [
       "obj02_048_boudoir",
       "obj02_049_guestbedroom",
       "obj02_050_nursery",
+      "obj02_052_bunkroom",
       "obj02_055_hallway",
       "obj02_056_westwinghall",
+      "obj02_057_eastwinghall",
       "obj02_058_corridor",
       "obj02_059_passageway",
+      "obj02_060_secretpassage",
       "obj02_063_terrace",
       "obj02_065_courtyard",
       "obj02_069_morningroom",
@@ -546,6 +552,14 @@ window.sectionsData = [
         checkboxes: ["dir050_note", "dir050_note_magnify", "dir050_search"],
       },
       {
+        id: "dir052",
+        title: "052: Bunk Room",
+        color: "purple",
+        dependencies: ["obj02_052_bunkroom"],
+        information: ["dir052_description", "dir052_info", "dir052_chess"],
+        checkboxes: ["dir052_note", "dir052_note_magnify", "dir052_search"],
+      },
+      {
         id: "dir055",
         title: "055: Hallway",
         color: "orange",
@@ -562,6 +576,14 @@ window.sectionsData = [
         checkboxes: ["dir056_note", "dir056_note_magnify", "dir056_search"],
       },
       {
+        id: "dir057",
+        title: "057: East Wing Hall",
+        color: "orange",
+        dependencies: ["obj02_057_eastwinghall"],
+        information: ["dir057_description"],
+        checkboxes: ["dir057_search"],
+      },
+      {
         id: "dir058",
         title: "058: Corridor",
         color: "orange",
@@ -576,6 +598,14 @@ window.sectionsData = [
         dependencies: ["obj02_059_passageway"],
         information: ["dir059_description", "dir059_steam"],
         checkboxes: ["dir059_search"],
+      },
+      {
+        id: "dir060",
+        title: "060: Secret Passage",
+        color: "orange",
+        dependencies: ["obj02_060_secretpassage"],
+        information: ["dir060_description", "dir060_info", "dir060_chess"],
+        checkboxes: ["dir060_search"],
       },
       {
         id: "dir063",
@@ -794,6 +824,15 @@ window.sectionsData = [
         checkboxes: [],
       },
       {
+        id: "person15_simon",
+        title: "Simon H. Sinclair",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["dir052_note"],
+        information: ["person15_simon_001"],
+        checkboxes: [],
+      },
+      {
         id: "person02_baroness",
         title: "Baroness Auravei Sinclair",
         color: "blue",
@@ -939,6 +978,7 @@ window.sectionsData = [
           "note035", // 027 - library
           "note016", // 042 - observatory
           "note025", // 050 - nursery
+          "note038", // 052 - bunk room
           "note022", // 082 - archives
         ],
       },
@@ -980,8 +1020,10 @@ window.sectionsData = [
           "note012", // 047 - bedroom
           "note026", // 047 - bedroom
           "note019", // 048 - bedroom
+          "note039", // 052 - bunk room
           "note004", // 055 - hallway
           "note018", // 056 - west wing hall
+          "note037", // 060 - secret passage
           "note031", // 069 - morning room
           "note013", // 071 - commissary
           "note014", // 071 - commissary

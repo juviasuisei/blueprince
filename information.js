@@ -557,7 +557,7 @@ window.informationData = {
   },
   dir050_description: {
     title: "Description",
-    description: "",
+    description: "One of the few rooms you vividly remember from your visits here in your youth. Though even at that time, you remember feeling a little old for the activities provided here. The twin cribs found in this room might suggest that at one point in time there had beens ome hopeful expectations of a sudden growth of the family tree.",
     dependencies: [],
     images: [
       {
@@ -582,6 +582,37 @@ window.informationData = {
       },
     ],
   },
+  dir052_description: {
+    title: "Description",
+    description: "The rustic, wooden stacked bunk beds evoke the enticing promise of campfire stories and childhood adventures. This bedroom served as pillowfort and bedroom to the young Sinclair boys, and has remained faithfully unchanged over the years.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir052_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir052_info: {
+    title: "Classification",
+    description: "TYPE: Dead End • Dead End",
+    dependencies: [],
+  },
+  dir052_chess: {
+    title: "Chess Pieces",
+    description: "Black Pawn • Black Pawn",
+    dependencies: ["obj04_052_bunkroom"],
+    images: [
+      {
+        url: "images/obj04_052_bunkroom.jpeg",
+        caption: "black pawn • black pawn"
+      },
+      {
+        url: "images/obj04_052_bunkroom.jpeg",
+        caption: "black pawn • black pawn"
+      },
+    ],
+  },
   dir055_description: {
     title: "Description",
     description: "One of the many nondescript hallways snaking through the estate and providing elegant causeways between the more noteworthy destinations that the house has to offer.",
@@ -600,6 +631,17 @@ window.informationData = {
     images: [
       {
         url: "images/dir056_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir057_description: {
+    title: "Description",
+    description: "This fenestrated hallway overlooks the east side of the estate grounds and is warmed in the early day by the light of the rising afternoon sun.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir057_description.jpeg",
         caption: "room directory entry"
       },
     ],
@@ -630,6 +672,33 @@ window.informationData = {
     title: "Is Part of the Steam Duct Network",
     description: "",
     dependencies: ["dir032_steam"],
+  },
+  dir060_description: {
+    title: "Description",
+    description: "A small \"dead end\" room with an ordinary bookcase, that exemplifies that the best means to escape the confinements of our world has always been through books.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir060_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir060_info: {
+    title: "Classification",
+    description: "TYPE: \"Dead End\"",
+    dependencies: [],
+  },
+  dir060_chess: {
+    title: "Chess Piece",
+    description: "Black Pawn",
+    dependencies: ["obj04_060_secretpassage"],
+    images: [
+      {
+        url: "images/obj04_060_secretpassage.jpeg",
+        caption: "black pawn"
+      },
+    ],
   },
   dir063_description: {
     title: "Description",
@@ -1596,6 +1665,63 @@ window.informationData = {
       },
     ],
   },
+  note037: {
+    title: "Hidden Message on Back of Secret Passage Door",
+    description: "",
+    dependencies: ["dir060_search"],
+    images: [
+      {
+        url: "images/note037_1.jpeg",
+        caption: "hidden message"
+      },
+    ],
+  },
+  note038: {
+    title: "Herbert's Childhood Journal",
+    description: "",
+    dependencies: ["dir052_note"],
+    images: [
+      {
+        url: "images/note038_1.jpeg",
+        caption: "pages 1–2"
+      },
+      {
+        url: "images/note038_2.jpeg",
+        caption: "pages 3–4"
+      },
+      {
+        url: "images/note038_3.jpeg",
+        caption: "pages 5–6"
+      },
+      {
+        url: "images/note038_4.jpeg",
+        caption: "pages 7–8"
+      },
+      {
+        url: "images/note038_5.jpeg",
+        caption: "pages 9–10"
+      },
+      {
+        url: "images/note038_6.jpeg",
+        caption: "pages 11–12"
+      },
+    ],
+  },
+  note039: {
+    title: "VHS Tapes",
+    description: "",
+    dependencies: ["dir052_search"],
+    images: [
+      {
+        url: "images/note039_1.jpeg",
+        caption: "Turtles of Verra"
+      },
+      {
+        url: "images/note039_2.jpeg",
+        caption: "Trinsdale Mystery"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -1796,6 +1922,11 @@ window.informationData = {
     title: "Occupation",
     description: "Author of the Sightseer's Guide to Reddington.",
     dependencies: ["dir027_note_order"],
+  },
+  person15_simon_001: {
+    title: "Relation",
+    description: "Our grandfather. Herbert's younger brother.",
+    dependencies: ["dir052_note"],
   },
   date001: {
     title: "Thursday, 18 March 1993",

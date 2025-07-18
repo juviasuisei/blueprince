@@ -199,6 +199,13 @@ window.checkboxesData = {
     unlockKeyword: "Nursery",
     dependencies: [],
   },
+  obj02_052_bunkroom: {
+    title: "Bunk Room",
+    hint: "Draft the Bunk Room",
+    description: "Room 052",
+    unlockKeyword: "Bunk Room",
+    dependencies: [],
+  },
   obj02_055_hallway: {
     title: "Hallway",
     hint: "Draft the Hallway",
@@ -213,6 +220,13 @@ window.checkboxesData = {
     unlockKeyword: "West Wing Hall",
     dependencies: [],
   },
+  obj02_057_eastwinghall: {
+    title: "East Wing Hall",
+    hint: "Draft the East Wing Hall",
+    description: "Room 057",
+    unlockKeyword: "East Wing Hall",
+    dependencies: [],
+  },
   obj02_058_corridor: {
     title: "Corridor",
     hint: "Draft the Corridor",
@@ -225,6 +239,13 @@ window.checkboxesData = {
     hint: "Draft the Passageway",
     description: "Room 059",
     unlockKeyword: "Passageway",
+    dependencies: [],
+  },
+  obj02_060_secretpassage: {
+    title: "Secret Passage",
+    hint: "Draft the Secret Passage",
+    description: "Room 060",
+    unlockKeyword: "Secret Passage",
     dependencies: [],
   },
   obj02_063_terrace: {
@@ -1081,6 +1102,22 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_052_bunkroom: {
+    title: "Bunk Room: Black Pawn • Black Pawn",
+    hint: "Bunk Room: ???",
+    description: "",
+    dependencies: ["obj02_052_bunkroom"],
+    images: [
+      {
+        url: "images/obj04_052_bunkroom.jpeg",
+        caption: "black pawn • black pawn"
+      },
+      {
+        url: "images/obj04_052_bunkroom.jpeg",
+        caption: "black pawn • black pawn"
+      },
+    ],
+  },
   obj04_055_hallway: {
     title: "Hallway: None",
     hint: "Hallway: ???",
@@ -1093,6 +1130,12 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_056_westwinghall"],
   },
+  obj04_057_eastwinghall: {
+    title: "East Wing Hall: None",
+    hint: "East Wing Hall: ???",
+    description: "",
+    dependencies: ["obj02_057_eastwinghall"],
+  },
   obj04_058_corridor: {
     title: "Corridor: None",
     hint: "Corridor: ???",
@@ -1104,6 +1147,18 @@ window.checkboxesData = {
     hint: "Passageway: ???",
     description: "",
     dependencies: ["obj02_059_passageway"],
+  },
+  obj04_060_secretpassage: {
+    title: "Secret Passage: Black Pawn",
+    hint: "Secret Passage: ???",
+    description: "",
+    dependencies: ["obj02_060_secretpassage"],
+    images: [
+      {
+        url: "images/obj04_060_secretpassage.jpeg",
+        caption: "black pawn"
+      },
+    ],
   },
   obj04_063_terrace: {
     title: "Terrace: None",
@@ -1644,7 +1699,7 @@ window.checkboxesData = {
   dir002_note_letter1_magnify: {
     title: "Magnify Letter: Nothing",
     hint: "Magnify Letter: ???",
-    description: "",
+    description: "Blue Stamp",
     dependencies: ["obj05_08_magnifyingglass", "dir002_note_letter1"],
   },
   dir002_note_black: {
@@ -1690,13 +1745,13 @@ window.checkboxesData = {
     ],
   },
   dir002_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir003_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1724,19 +1779,19 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir005_note"],
   },
   dir005_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir006_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir009_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1754,13 +1809,13 @@ window.checkboxesData = {
     ],
   },
   dir010_note_magnify: {
-    title: "Magnify Photo: None",
+    title: "Magnify Photo: Nothing",
     hint: "Magnify Photo: ???",
     description: "",
     dependencies: ["obj05_08_magnifyingglass", "dir010_note"],
   },
   dir010_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1818,13 +1873,13 @@ window.checkboxesData = {
     ],
   },
   dir013_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir017_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1848,13 +1903,13 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir021_note"],
   },
   dir021_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir022_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1878,7 +1933,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir025_note"],
   },
   dir025_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1932,7 +1987,7 @@ window.checkboxesData = {
     ],
   },
   dir027_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1962,13 +2017,13 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir029_note"],
   },
   dir029_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir031_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -1986,7 +2041,7 @@ window.checkboxesData = {
     dependencies: ["dir031_vac"],
   },
   dir032_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2082,13 +2137,13 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir034_note_blue"],
   },
   dir034_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir038_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2166,13 +2221,13 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir039_note_letter1"],
   },
   dir039_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir040_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2190,7 +2245,7 @@ window.checkboxesData = {
     dependencies: ["dir040_thaw1"],
   },
   dir041_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2242,7 +2297,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir042_note"],
   },
   dir042_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2260,7 +2315,7 @@ window.checkboxesData = {
     ],
   },
   dir044_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2314,7 +2369,7 @@ window.checkboxesData = {
     dependencies: [],
   },
   dir047_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2338,7 +2393,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir048_note"],
   },
   dir048_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2368,7 +2423,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir049_note"],
   },
   dir049_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2436,10 +2491,64 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir050_note"],
   },
   dir050_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
+  },
+  dir052_note: {
+    title: "Book: Herbert's Childhood Journal",
+    hint: "Book: ???",
+    description: "Herbert S. Sinclair & Simon H. Sinclair",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note038_1.jpeg",
+        caption: "pages 1–2"
+      },
+      {
+        url: "images/note038_2.jpeg",
+        caption: "pages 3–4"
+      },
+      {
+        url: "images/note038_3.jpeg",
+        caption: "pages 5–6"
+      },
+      {
+        url: "images/note038_4.jpeg",
+        caption: "pages 7–8"
+      },
+      {
+        url: "images/note038_5.jpeg",
+        caption: "pages 9–10"
+      },
+      {
+        url: "images/note038_6.jpeg",
+        caption: "pages 11–12"
+      },
+    ],
+  },
+  dir052_note_magnify: {
+    title: "Magnify Book: Nothing",
+    hint: "Magnify Book: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir052_note"],
+  },
+  dir052_search: {
+    title: "Standard Search Complete: VHS Tapes",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note039_1.jpeg",
+        caption: "Turtles of Verra"
+      },
+      {
+        url: "images/note039_2.jpeg",
+        caption: "Trinsdale Mystery"
+      },
+    ],
   },
   dir055_note: {
     title: "Red Note: West Wing Locks",
@@ -2460,7 +2569,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir055_note"],
   },
   dir055_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2484,31 +2593,53 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir056_note"],
   },
   dir056_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir057_search: {
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir058_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir059_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
+  dir060_search: {
+    title: "Standard Search Complete: Back of Door",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note037_2.jpeg",
+        caption: "hidden message"
+      },
+      {
+        url: "images/note037_1.jpeg",
+        caption: "easier to see if you enter from the back before opening the door"
+      },
+    ],
+  },
   dir063_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir065_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2532,7 +2663,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir069_note"],
   },
   dir069_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2574,31 +2705,31 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir071_note_red"],
   },
   dir071_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir072_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir073_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir074_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir075_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2610,13 +2741,13 @@ window.checkboxesData = {
     dependencies: ["dir032_steam"],
   },
   dir079_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir080_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2742,7 +2873,7 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir081_note_photo"],
   },
   dir081_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2782,13 +2913,13 @@ window.checkboxesData = {
     dependencies: ["obj05_08_magnifyingglass", "dir082_note"],
   },
   dir082_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir083_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
@@ -2860,19 +2991,19 @@ window.checkboxesData = {
     ],
   },
   dir084_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir085_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
   },
   dir086_search: {
-    title: "Standard Search Complete: None",
+    title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
