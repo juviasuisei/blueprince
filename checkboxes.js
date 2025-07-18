@@ -1545,12 +1545,6 @@ window.checkboxesData = {
     description: "",
     unlockKeyword: "Treasure Map",
     dependencies: [],
-    images: [
-      {
-        url: "images/item18_treasuremap.jpeg",
-        caption: "Treasure Map"
-      },
-    ],
   },
   obj06_001_northstar: {
     title: "North Star",

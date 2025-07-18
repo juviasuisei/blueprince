@@ -1213,12 +1213,6 @@ window.informationData = {
     title: "Treasure Map",
     description: "X marks the spot.",
     dependencies: ["obj05_18_treasuremap"],
-    images: [
-      {
-        url: "images/item18_treasuremap.jpeg",
-        caption: "treasure map"
-      },
-    ],
   },
   key01_secretgarden: {
     title: "The Key to the Secret Garden",

@@ -817,7 +817,7 @@ window.sectionsData = [
     color: "blue",
     optionalDependencies: true,
     dependencies: [
-      "obj13_01_secretgarden",
+      "obj02_015_musicroom",
     ],
     information: [
       "key01_secretgarden",
@@ -998,7 +998,7 @@ window.sectionsData = [
       {
         id: "person21_thomasyanders",
         title: "Editor Thomas Yanders",
-        color: "red",
+        color: "blue",
         optionalDependencies: true,
         dependencies: ["dir011_note_letter"],
         information: ["person21_thomasyanders_001", "person21_thomasyanders_002"],
