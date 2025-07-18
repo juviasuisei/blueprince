@@ -1039,15 +1039,15 @@ window.sectionsData = [
           "note011", // 034 - security
         ],
       },
-      // {
-      //   id: "info_notes_cards",
-      //   title: "Green Notes",
-      //   color: "blue",
-      //   optionalDependencies: true,
-      //   dependencies: [],
-      //   information: [
-      //   ],
-      // },
+      {
+        id: "info_notes_cards",
+        title: "Green Notes",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: [],
+        information: ["TK"
+        ],
+      },
       {
         id: "info_notes_cards",
         title: "Red Notes",
