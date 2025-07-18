@@ -98,6 +98,12 @@
         outline-offset: 2px;
       }
 
+      /* Section and subsection header focus styles */
+      .section-header:focus-visible {
+        outline: none;
+        box-shadow: inset 0 0 0 2px #3B82F6;
+      }
+
       /* High contrast mode support */
       @media (prefers-contrast: high) {
         .border-gray-200 {
@@ -557,7 +563,7 @@
             >
               <!-- Section Header -->
               <div
-                class="bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+                class="bg-white cursor-pointer focus:outline-none section-header"
                 @click="toggleSection(section.id)"
                 @keydown="handleSectionKeydown($event, section.id)"
                 tabindex="0"
@@ -632,7 +638,7 @@
                   >
                     <!-- Subsection Header -->
                     <div
-                      class="bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+                      class="bg-white cursor-pointer focus:outline-none section-header"
                       @click="toggleSubsection(subsection.id)"
                       @keydown="handleSubsectionKeydown($event, subsection.id)"
                       tabindex="0"
