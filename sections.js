@@ -1229,6 +1229,7 @@ window.sectionsData = [
           "note042", // 018 - wine cellar
           "note007", // 021 - pantry
           "note040", // 027 - library
+          "note049", // 027 - library
           "note032", // 029 - the pool
           "note008", // 034 - security
           "note009", // 034 - security

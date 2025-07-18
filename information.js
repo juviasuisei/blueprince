@@ -2504,8 +2504,8 @@ window.informationData = {
     description: "Mrs. Babbage checked out Swim Bird from the Library.",
     dependencies: ["obj10_02"],
   },
-  date032: {
-    title: "Monday, 2 March 1986",
+  date033: {
+    title: "Monday, 2 March 1987",
     description: "Detective Margle checked out Swim Bird from the Library.",
     dependencies: ["obj10_02"],
   },
