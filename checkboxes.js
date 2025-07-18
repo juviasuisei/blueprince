@@ -11,6 +11,12 @@ window.checkboxesData = {
     description: "",
     optionalDependencies: true,
     dependencies: ["dir070_puzzle"],
+    images: [
+      {
+        url: "images/obj01_02_leverw.jpeg",
+        caption: "Antechamber western lever"
+      },
+    ],
   },
   obj01_03_levers: {
     title: "Found the Antechamber Southern Lever",
@@ -3038,7 +3044,7 @@ window.checkboxesData = {
     images: [
       {
         url: "images/obj01_02_leverw.jpeg",
-        caption: "commissary sale flyer"
+        caption: "Antechamber western lever"
       },
     ],
   },

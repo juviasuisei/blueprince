@@ -552,7 +552,7 @@ window.sectionsData = [
         checkboxes: ["dir042_note", "dir042_note_magnify", "dir042_search", "dir042_telescope"],
       },
       {
-        id: "dir042",
+        id: "dir043",
         title: "043: Conference Room",
         color: "blue",
         dependencies: ["obj02_043_conferenceroom"],
