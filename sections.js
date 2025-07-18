@@ -528,7 +528,7 @@ window.sectionsData = [
         id: "dir035",
         title: "035: Workshop",
         color: "blue",
-        dependencies: ["obj02_035_security"],
+        dependencies: ["obj02_035_workshop"],
         information: ["dir035_description", "dir035_info"],
         checkboxes: ["dir035_note", "dir035_note_magnify", "dir035_search"],
       },
