@@ -517,6 +517,22 @@ window.informationData = {
       },
     ],
   },
+  dir043_description: {
+    title: "Description",
+    description: "In his latter years, H. S. Sinclair had become withdrawn from public life and conducted all business from the comfort and privacy of home. This included the occasional board meetings which were held in the professional setting of this room.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir043_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir043_info: {
+    title: "Classification",
+    description: "TYPE: Spread",
+    dependencies: [],
+  },
   dir044_description: {
     title: "Description",
     description: "In addition to having a bouquet of colorful fish swimming within them, each tank in the Aquarium is also inspired by the decor and colors of the various types of rooms found throughout the estate, including one or two red herrings.",
@@ -1937,6 +1953,39 @@ window.informationData = {
       {
         url: "images/note045.jpeg",
         caption: "scribbled out note"
+      },
+    ],
+  },
+  note046: {
+    title: "Spreading Items",
+    description: "",
+    dependencies: ["dir043_note_black"],
+    images: [
+      {
+        url: "images/note046.jpeg",
+        caption: "spread explainer"
+      },
+    ],
+  },
+  note047: {
+    title: "Reminder",
+    description: "",
+    dependencies: ["dir043_note_pad"],
+    images: [
+      {
+        url: "images/note047.jpeg",
+        caption: "store meeting notes in the Office safe"
+      },
+    ],
+  },
+  note048: {
+    title: "Safe Code",
+    description: "",
+    dependencies: ["dir043_note_red"],
+    images: [
+      {
+        url: "images/note048.jpeg",
+        caption: "red typed note"
       },
     ],
   },

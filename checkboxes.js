@@ -194,6 +194,13 @@ window.checkboxesData = {
     unlockKeyword: "Observatory",
     dependencies: [],
   },
+  obj02_043_conferenceroom: {
+    title: "Conference Room",
+    hint: "Draft the Conference Room",
+    description: "Room 043",
+    unlockKeyword: "Conference Room",
+    dependencies: [],
+  },
   obj02_044_aquarium: {
     title: "Aquarium",
     hint: "Draft the Aquarium",
@@ -533,6 +540,22 @@ window.checkboxesData = {
       {
         url: "images/obj03_r6f5_R.jpeg",
         caption: "coat"
+      },
+    ],
+  },
+  obj03_r5f1: {
+    title: "Rank 5 • File 1: E",
+    hint: "Rank 5 • File 1: ???",
+    description: "TUB[E]",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj03_r5f1_L.jpeg",
+        caption: "tube"
+      },
+      {
+        url: "images/obj03_r5f1_R.jpeg",
+        caption: "tub"
       },
     ],
   },
@@ -2325,8 +2348,8 @@ window.checkboxesData = {
     ],
   },
   dir034_note_pad_magnify: {
-    title: "Magnify Notepad: Hidden Message",
-    hint: "Magnify Notepad: ???",
+    title: "Magnify Note Pad: Hidden Message",
+    hint: "Magnify Note Pad: ???",
     description: "TK",
     dependencies: ["obj05_08_magnifyingglass", "dir034_note_pad"],
     images: [
@@ -2586,6 +2609,66 @@ window.checkboxesData = {
         caption: "stargazing unlocked"
       },
     ],
+  },
+  dir043_note_black: {
+    title: "Black Note: Spreading Items",
+    hint: "Black Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note046.jpeg",
+        caption: "spread explainer"
+      },
+    ],
+  },
+  dir043_note_black_magnify: {
+    title: "Magnify Black Note: Nothing",
+    hint: "Magnify Black Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir043_note_black"],
+  },
+  dir043_note_pad: {
+    title: "Note Pad: Reminder",
+    hint: "Note Pad: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note047.jpeg",
+        caption: "store meeting notes in the Office safe"
+      },
+    ],
+  },
+  dir043_note_pad_magnify: {
+    title: "Magnify Note Pad: Nothing",
+    hint: "Magnify Note Pad: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir043_note_pad"],
+  },
+  dir043_note_red: {
+    title: "Red Note: Safe Code",
+    hint: "Red Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note048.jpeg",
+        caption: "red typed note"
+      },
+    ],
+  },
+  dir043_note_red_magnify: {
+    title: "Magnify Red Note: Nothing",
+    hint: "Magnify Red Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir043_note_red"],
+  },
+  dir043_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
   },
   dir044_search: {
     title: "Standard Search Complete: Nothing",

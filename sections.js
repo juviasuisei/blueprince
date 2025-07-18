@@ -5,7 +5,12 @@ window.sectionsData = [
     color: "blue",
     dependencies: [],
     information: [],
-    checkboxes: ["obj01_01_room46", "obj01_02_leverw", "obj01_03_levers", "obj01_04_levere"],
+    checkboxes: [
+      "obj01_01_room46",
+      "obj01_02_leverw",
+      "obj01_03_levers",
+      "obj01_04_levere"
+    ],
   },
   {
     id: "obj04",
@@ -39,6 +44,7 @@ window.sectionsData = [
       "obj04_040_freezer",
       "obj04_041_diningroom",
       "obj04_042_observatory",
+      "obj04_043_conferenceroom",
       "obj04_044_aquarium",
       "obj04_047_bedroom",
       "obj04_048_boudoir",
@@ -85,6 +91,7 @@ window.sectionsData = [
       "obj03_r6f3",
       "obj03_r6f4",
       "obj03_r6f5",
+      "obj03_r5f1",
       "obj03_r5f2",
       "obj03_r5f3",
       "obj03_r5f4",
@@ -143,6 +150,7 @@ window.sectionsData = [
       "obj02_040_freezer",
       "obj02_041_diningroom",
       "obj02_042_observatory",
+      "obj02_043_conferenceroom",
       "obj02_044_aquarium",
       "obj02_045_antechamber",
       "obj02_046_room46",
@@ -542,6 +550,14 @@ window.sectionsData = [
         dependencies: ["obj02_042_observatory"],
         information: ["dir042_description", "dir042_chess"],
         checkboxes: ["dir042_note", "dir042_note_magnify", "dir042_search", "dir042_telescope"],
+      },
+      {
+        id: "dir042",
+        title: "043: Conference Room",
+        color: "blue",
+        dependencies: ["obj02_043_conferenceroom"],
+        information: ["dir043_description", "dir043_info"],
+        checkboxes: ["dir043_note_black", "dir043_note_black_magnify", "dir043_note_pad", "dir043_note_pad_magnify", "dir043_note_red", "dir043_note_red_magnify", "dir043_search"],
       },
       {
         id: "dir044",
@@ -1092,12 +1108,14 @@ window.sectionsData = [
           "dir013_note",
           "dir025_note",
           "dir027_note_black",
+          "dir043_note_black",
         ],
         information: [
           "note003", // 002 - entrance hall
           "note015", // 013 - nook
           "note027", // 025 - drawing room
           "note036", // 027 - library
+          "note046", // 043 - conference room
         ],
       },
       {
@@ -1128,10 +1146,12 @@ window.sectionsData = [
         optionalDependencies: true,
         dependencies: [
           "dir034_note_red",
+          "dir043_note_red",
           "dir055_note",
         ],
         information: [
           "note010", // 034 - security
+          "note047", // 043 - conference room
           "note004", // 055 - hallway
         ],
       },
@@ -1197,6 +1217,7 @@ window.sectionsData = [
           "note009", // 034 - security
           "note028", // 039 - mail room
           "note029", // 039 - mail room
+          "note048", // 043 - conference room
           "note012", // 047 - bedroom
           "note026", // 047 - bedroom
           "note019", // 048 - boudoir
