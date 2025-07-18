@@ -715,6 +715,33 @@ window.informationData = {
       },
     ],
   },
+  dir053_description: {
+    title: "Description",
+    description: "Tucked quietly away in the west wing of Mount Holly is the decorative bedroom of your grandmother, Lady Epsen. The style you find, unique in the house, a fitting tribute to her childhood home in Eraja.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir053_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir053_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
+  dir053_chess: {
+    title: "Chess Piece",
+    description: "White Queen",
+    dependencies: ["obj04_053_herladyshipschamber"],
+    images: [
+      {
+        url: "images/obj04_053_herladyshipschamber.jpeg",
+        caption: "white queen"
+      },
+    ],
+  },
   dir055_description: {
     title: "Description",
     description: "One of the many nondescript hallways snaking through the estate and providing elegant causeways between the more noteworthy destinations that the house has to offer.",
@@ -2089,6 +2116,58 @@ window.informationData = {
       },
     ],
   },
+  note053: {
+    title: "Spiral: does it never end?",
+    description: "",
+    dependencies: ["dir053_note_spiral"],
+    images: [
+      {
+        url: "images/note053.jpeg",
+        caption: "spiral"
+      },
+    ],
+  },
+  note054: {
+    title: "Photos: Clara's Parents",
+    description: "",
+    dependencies: ["dir053_note_photos"],
+    images: [
+      {
+        url: "images/note054_1.jpeg",
+        caption: "Lady Epsen"
+      },
+      {
+        url: "images/note054_2.jpeg",
+        caption: "Lord Epsen"
+      },
+    ],
+  },
+  note055: {
+    title: "Her Ladyship's Diary",
+    description: "",
+    dependencies: ["dir053_note_diary", "TK"],
+    images: [
+      {
+        url: "images/note055_1.jpeg",
+        caption: "cover"
+      },
+    ],
+  },
+  note056: {
+    title: "Locked: Clara's Love",
+    description: "",
+    dependencies: ["dir053_note_locket"],
+    images: [
+      {
+        url: "images/note056_1.jpeg",
+        caption: "Simon H. Sinclair"
+      },
+      {
+        url: "images/note056_2.jpeg",
+        caption: "closed locket"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -2183,8 +2262,13 @@ window.informationData = {
   },
   person06_clara_004: {
     title: "Epsen Family Home",
-    description: "After her father passed away, Clara ran her childhood home, Featherfall Keep, until she wed and moved to Mount Holly. At that point she turned Featherfall Keep into a museum.",
+    description: "After her father passed away, Clara ran her family estate in Fenn Aeries, Featherfall Keep, until she wed and moved to Mount Holly. At that point she turned Featherfall Keep into a museum.",
     dependencies: ["obj10_01"],
+  },
+  person06_clara_004: {
+    title: "Erajan",
+    description: "Grew up in Eraja.",
+    dependencies: ["obj02_053_herladyshipschamber"],
   },
   person07_mary_001: {
     title: "Relation",
@@ -2314,6 +2398,12 @@ window.informationData = {
     title: "Relation",
     description: "Our grandfather. Herbert's younger brother.",
     dependencies: ["dir052_note"],
+    images: [
+      {
+        url: "images/note056_1.jpeg",
+        caption: "portrait of Simon H. Sinclair"
+      },
+    ]
   },
   person15_simon_002: {
     title: "Marriage",
@@ -2324,6 +2414,12 @@ window.informationData = {
     title: "Relation",
     description: "Our great-granduncle. Deceased.",
     dependencies: ["obj10_01"],
+    images: [
+      {
+        url: "images/note054_2.jpeg",
+        caption: "portrait of Lord William Epsen"
+      },
+    ]
   },
   person17_lionel_001: {
     title: "Relation",
@@ -2332,7 +2428,7 @@ window.informationData = {
   },
   person17_lionel_002: {
     title: "Relation",
-    description: "After his father's death he left his childhood home, Featherfall Keep, never to return, leaving his sister, Lady Clara Epsen to run the estate.",
+    description: "After his father's death he left his Fenn Aeries family home, Featherfall Keep, never to return, leaving his sister, Lady Clara Epsen to run the estate.",
     dependencies: ["obj10_01"],
   },
   person18_evanson_001: {
@@ -2379,6 +2475,17 @@ window.informationData = {
     title: "Occupation",
     description: "Detective.",
     dependencies: ["obj10_02"],
+  },
+  person23_ashlynn_001: {
+    title: "Relation",
+    description: "Our great-grandaunt. Deceased.",
+    dependencies: ["TKHOVEL"],
+    images: [
+      {
+        url: "images/note054_1.jpeg",
+        caption: "portrait of Lady Ashlynn Epsen"
+      },
+    ]
   },
   date001: {
     title: "Thursday, 18 March 1993",
@@ -2484,7 +2591,7 @@ window.informationData = {
   },
   date021: {
     title: "1972",
-    description: "Lady Clara Epsen's childhood home, Featherfall Keep, is named a National Historic Landmark.",
+    description: "Lady Clara Epsen's Fenn Aeries family estate, Featherfall Keep, is named a National Historic Landmark.",
     dependencies: ["obj10_01"],
   },
   date022: {

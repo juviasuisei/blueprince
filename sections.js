@@ -52,6 +52,7 @@ window.sectionsData = [
       "obj04_049_guestbedroom",
       "obj04_050_nursery",
       "obj04_052_bunkroom",
+      "obj04_053_herladyshipschamber",
       "obj04_055_hallway",
       "obj04_056_westwinghall",
       "obj04_057_eastwinghall",
@@ -161,6 +162,7 @@ window.sectionsData = [
       "obj02_049_guestbedroom",
       "obj02_050_nursery",
       "obj02_052_bunkroom",
+      "obj02_053_herladyshipschamber",
       "obj02_055_hallway",
       "obj02_056_westwinghall",
       "obj02_057_eastwinghall",
@@ -205,6 +207,7 @@ window.sectionsData = [
     dependencies: ["obj05_13_upgradedisk"],
     information: [],
     checkboxes: [
+      "obj09_02", // 053 - her ladyship's chamber
       "obj09_01", // 069 - morning room
     ]
   },
@@ -216,7 +219,8 @@ window.sectionsData = [
     dependencies: ["obj05_13_upgradedisk"],
     information: [],
     checkboxes: [
-      "obj08_01",
+      "obj08_01", // storeroom
+      "obj08_02", // 
     ]
   },
   {
@@ -653,6 +657,22 @@ window.sectionsData = [
         checkboxes: ["dir052_note", "dir052_note_magnify", "dir052_search"],
       },
       {
+        id: "dir053",
+        title: "053: Her Ladyship's Chamber",
+        color: "purple",
+        dependencies: ["obj02_053_herladyshipschamber"],
+        information: ["dir053_description", "dir053_info", "dir053_chess"],
+        checkboxes: [
+          "obj09_02",
+          "dir053_note_spiral", "dir053_note_spiral_magnify",
+          "dir053_note_photos", "dir053_note_photos_magnify",
+          "dir053_note_diary",
+          "dir053_note_locket", "dir053_note_locket_magnify",
+          "dir053_search",
+          "dir053_diary_open", "dir053_diary_magnify",
+        ],
+      },
+      {
         id: "dir055",
         title: "055: Hallway",
         color: "orange",
@@ -722,7 +742,7 @@ window.sectionsData = [
         color: "green",
         dependencies: ["obj02_069_morningroom"],
         information: ["dir069_description", "dir069_info"],
-        checkboxes: ["dir069_note", "dir069_note_magnify", "dir069_search"],
+        checkboxes: ["obj09_01", "dir069_note", "dir069_note_magnify", "dir069_search"],
       },
       {
         id: "dir070",
@@ -938,7 +958,7 @@ window.sectionsData = [
         color: "blue",
         optionalDependencies: true,
         dependencies: ["dir056_note", "dir010_note"],
-        information: ["person06_clara_002", "person06_clara_001", "person06_clara_003", "person06_clara_004"],
+        information: ["person06_clara_002", "person06_clara_001", "person06_clara_003", "person06_clara_004", "person06_clara_005"],
         checkboxes: [],
       },
       {
@@ -966,6 +986,15 @@ window.sectionsData = [
         optionalDependencies: true,
         dependencies: ["obj10_01"],
         information: ["person16_lordepsen_001"],
+        checkboxes: [],
+      },
+      {
+        id: "person23_ashlynn",
+        title: "Lady Ashlynn Epsen",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["TK"],
+        information: ["person23_ashlynn_001"],
         checkboxes: [],
       },
       {
@@ -1272,6 +1301,9 @@ window.sectionsData = [
           "note026", // 047 - bedroom
           "note019", // 048 - boudoir
           "note039", // 052 - bunk room
+          "note053", // 053 - her ladyship's chamber
+          "note054", // 053 - her ladyship's chamber
+          "note056", // 053 - her ladyship's chamber
           "note018", // 056 - west wing hall
           "note037", // 060 - secret passage
           "note031", // 069 - morning room

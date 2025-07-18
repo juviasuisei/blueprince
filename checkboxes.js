@@ -268,6 +268,13 @@ window.checkboxesData = {
     unlockKeyword: "Bunk Room",
     dependencies: [],
   },
+  obj02_053_herladyshipschamber: {
+    title: "Her Ladyship's Chamber",
+    hint: "Draft Her Ladyship's Chamber",
+    description: "Room 053",
+    unlockKeyword: "Her Ladyship's Chamber",
+    dependencies: [],
+  },
   obj02_055_hallway: {
     title: "Hallway",
     hint: "Draft the Hallway",
@@ -1238,6 +1245,18 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_053_herladyshipschamber: {
+    title: "Her Ladyship's Chamber: White Queen",
+    hint: "Her Ladyship's Chamber: ???",
+    description: "",
+    dependencies: ["obj02_053_herladyshipschamber"],
+    images: [
+      {
+        url: "images/obj04_053_herladyshipschamber.jpeg",
+        caption: "white queen"
+      },
+    ],
+  },
   obj04_055_hallway: {
     title: "Hallway: None",
     hint: "Hallway: ???",
@@ -1787,11 +1806,16 @@ window.checkboxesData = {
     dependencies: ["obj02_012_storeroom"],
   },
   obj09_01: {
-    title: "Morning Room",
-    hint: "Morning Room",
+    title: "Upgrade Disk: Morning Room",
+    hint: "Upgrade Disk: Morning Room",
     description: "",
-    unlockKeyword: "Morning Room",
     dependencies: ["obj02_069_morningroom"],
+  },
+  obj09_02: {
+    title: "Upgrade Disk: Her Ladyship's Chamber",
+    hint: "Upgrade Disk: Her Ladyship's Chamber",
+    description: "",
+    dependencies: ["obj02_053_herladyshipschamber"],
   },
   obj10_01: {
     title: "Checked Out: A Sightseer's Guide to Reddington",
@@ -3018,6 +3042,86 @@ window.checkboxesData = {
         caption: "Trinsdale Mystery"
       },
     ],
+  },
+  dir053_note_spiral: {
+    title: "Note: does it never end?",
+    hint: "Note: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note053.jpeg",
+        caption: "spiral"
+      },
+    ],
+  },
+  dir053_note_spiral_magnify: {
+    title: "Magnify Spiral: Nothing",
+    hint: "Magnify Spiral: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir053_note_spiral"],
+  },
+  dir053_note_photos: {
+    title: "Photos: Clara's Parents",
+    hint: "Photos: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note054_1.jpeg",
+        caption: "Lady Epsen"
+      },
+      {
+        url: "images/note054_2.jpeg",
+        caption: "Lord Epsen"
+      },
+    ],
+  },
+  dir053_note_photos_magnify: {
+    title: "Magnify Photos: Nothing",
+    hint: "Magnify Photos: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir053_note_photos"],
+  },
+  dir053_note_diary: {
+    title: "Diary: Locked",
+    hint: "Diary: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note055_1.jpeg",
+        caption: "locked diary cover"
+      },
+    ],
+  },
+  dir053_note_locket: {
+    title: "Locket: Clara's Love",
+    hint: "Locket: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note056_1.jpeg",
+        caption: "Simon H. Sinclair"
+      },
+      {
+        url: "images/note056_2.jpeg",
+        caption: "closed locket"
+      },
+    ],
+  },
+  dir053_note_locket_magnify: {
+    title: "Magnify Locket: Nothing",
+    hint: "Magnify Locket: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir053_note_locket"],
+  },
+  dir053_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
   },
   dir055_note: {
     title: "Red Note: West Wing Locks",
