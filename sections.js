@@ -1052,7 +1052,7 @@ window.sectionsData = [
       {
         id: "info_notes_green",
         title: "Green Notes",
-        color: "blue",
+        color: "green",
         optionalDependencies: true,
         dependencies: [],
         information: [
@@ -1061,7 +1061,7 @@ window.sectionsData = [
       {
         id: "info_notes_red",
         title: "Red Notes",
-        color: "blue",
+        color: "red",
         optionalDependencies: true,
         dependencies: [
           "dir034_note_red",
