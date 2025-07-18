@@ -23,6 +23,7 @@ window.sectionsData = [
       "obj04_012_storeroom",
       "obj04_013_nook",
       "obj04_017_den",
+      "obj04_018_winecellar",
       "obj04_021_pantry",
       "obj04_022_rumpusroom",
       "obj04_023_vault",
@@ -124,6 +125,7 @@ window.sectionsData = [
       "obj02_012_storeroom",
       "obj02_013_nook",
       "obj02_017_den",
+      "obj02_018_winecellar",
       "obj02_021_pantry",
       "obj02_022_rumpusroom",
       "obj02_023_vault",
@@ -374,6 +376,14 @@ window.sectionsData = [
         dependencies: ["obj02_017_den"],
         information: ["dir017_description", "dir017_chess"],
         checkboxes: ["dir017_search"],
+      },
+      {
+        id: "dir018",
+        title: "018: Wine Cellar",
+        color: "blue",
+        dependencies: ["obj02_018_winecellar"],
+        information: ["dir018_description", "dir018_info"],
+        checkboxes: ["dir018_search", "dir018_coatofarms", "dir018_roman"],
       },
       {
         id: "dir021",
@@ -1010,7 +1020,7 @@ window.sectionsData = [
     dependencies: [],
     subsections: [
       {
-        id: "info_notes_explainers",
+        id: "info_notes_black",
         title: "Black Notes",
         color: "black",
         optionalDependencies: true,
@@ -1028,7 +1038,7 @@ window.sectionsData = [
         ],
       },
       {
-        id: "info_notes_cards",
+        id: "info_notes_blue",
         title: "Blue Notes",
         color: "blue",
         optionalDependencies: true,
@@ -1040,16 +1050,16 @@ window.sectionsData = [
         ],
       },
       {
-        id: "info_notes_cards",
+        id: "info_notes_green",
         title: "Green Notes",
         color: "blue",
         optionalDependencies: true,
         dependencies: [],
-        information: ["TK"
+        information: [
         ],
       },
       {
-        id: "info_notes_cards",
+        id: "info_notes_red",
         title: "Red Notes",
         color: "blue",
         optionalDependencies: true,
@@ -1112,6 +1122,7 @@ window.sectionsData = [
           "note033", // 010 - walk-in closet
           "note005", // 012 - storeroom
           "note015M", // 013 - nook
+          "note042", // 018 - wine cellar
           "note007", // 021 - pantry
           "note040", // 027 - library
           "note032", // 029 - the pool

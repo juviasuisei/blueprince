@@ -183,6 +183,22 @@ window.informationData = {
       },
     ],
   },
+  dir018_description: {
+    title: "Description",
+    description: "A short staircase leads down to this below ground cellar revealing an impressive collection of bottles from every respectable vintage of the last 200 years. To the seasoned wine aficionado, the labels displayed here would indicate a preference for prioritizing extravagance and rarity over quality.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir018_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir018_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
   dir021_description: {
     title: "Description",
     description: "A well stocked pantry is always the true test of a large estate, and keeping Mount Holly's wide gamut of ingredients and supplies stocked has always been one of the primary priorities of the house staff.",
@@ -1796,6 +1812,17 @@ window.informationData = {
       {
         url: "images/note041_8.jpeg",
         caption: "pages 14–15"
+      },
+    ],
+  },
+  note042: {
+    title: "Wine Cellar Coat of Arms",
+    description: "",
+    dependencies: ["obj02_018_winecellar"],
+    images: [
+      {
+        url: "images/note042.jpeg",
+        caption: "coat of arms with MCCXIII underneath"
       },
     ],
   },

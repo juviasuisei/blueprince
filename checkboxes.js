@@ -61,6 +61,13 @@ window.checkboxesData = {
     unlockKeyword: "Den",
     dependencies: [],
   },
+  obj02_018_winecellar: {
+    title: "Wine Cellar",
+    hint: "Draft the Wine Cellar",
+    description: "Room 018",
+    unlockKeyword: "Wine Cellar",
+    dependencies: [],
+  },
   obj02_021_pantry: {
     title: "Pantry",
     hint: "Draft the Pantry",
@@ -946,6 +953,12 @@ window.checkboxesData = {
         caption: "white pawn"
       },
     ],
+  },
+  obj04_018_winecellar: {
+    title: "Wine Cellar: None",
+    hint: "Wine Cellar: ???",
+    description: "",
+    dependencies: ["obj02_018_winecellar"],
   },
   obj04_021_pantry: {
     title: "Pantry: None",
@@ -1941,6 +1954,24 @@ window.checkboxesData = {
     title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
+    dependencies: [],
+  },
+  dir018_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir018_coatofarms: {
+    title: "Coat of Arms: Marigold",
+    hint: "Whose Coat of Arms is This: ???",
+    description: "Sinclair • Epsen",
+    dependencies: [],
+  },
+  dir018_roman: {
+    title: "TK",
+    hint: "What's Up With the Roman Numerals: ???",
+    description: "TK",
     dependencies: [],
   },
   dir021_note: {
