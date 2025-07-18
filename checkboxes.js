@@ -40,6 +40,13 @@ window.checkboxesData = {
     unlockKeyword: ["Walk-In Closet", "Walkin Closet"],
     dependencies: [],
   },
+  obj02_011_attic: {
+    title: "Attic",
+    hint: "Draft the Attic",
+    description: "Room 011",
+    unlockKeyword: "Attic",
+    dependencies: [],
+  },
   obj02_012_storeroom: {
     title: "Storeroom",
     hint: "Draft the Storeroom",
@@ -282,6 +289,12 @@ window.checkboxesData = {
     description: "Room 069",
     unlockKeyword: "Morning Room",
     dependencies: [],
+  },
+  obj02_070_secretgarden: {
+    title: "Secret Garden",
+    hint: "Enter the Secret Garden",
+    description: "Room 070",
+    dependencies: ["obj13_01_secretgarden"],
   },
   obj02_071_commissary: {
     title: "Commissary",
@@ -918,6 +931,18 @@ window.checkboxesData = {
       },
     ],
   },
+  obj04_011_attic: {
+    title: "Attic: White Bishop",
+    hint: "Attic: ???",
+    description: "",
+    dependencies: ["obj02_011_attic"],
+    images: [
+      {
+        url: "images/obj04_011_attic.jpeg",
+        caption: "white bishop"
+      },
+    ],
+  },
   obj04_012_storeroom: {
     title: "Storeroom: White Pawn",
     hint: "Storeroom: ???",
@@ -1488,6 +1513,45 @@ window.checkboxesData = {
       },
     ],
   },
+  obj05_16_sleepingmask: {
+    title: "Sleep Mask",
+    hint: "Find the Sleep Mask",
+    description: "",
+    unlockKeyword: "Sleep Mask",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item16_sleepingmask.jpeg",
+        caption: "Sleep Mask"
+      },
+    ],
+  },
+  obj05_17_batterypack: {
+    title: "Battery Pack",
+    hint: "Find the Battery Pack",
+    description: "",
+    unlockKeyword: "Battery Pack",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item17_batterypack.jpeg",
+        caption: "Battery Pack"
+      },
+    ],
+  },
+  obj05_18_treasuremap: {
+    title: "Treasure Map",
+    hint: "Find the Treasure Map",
+    description: "",
+    unlockKeyword: "Treasure Map",
+    dependencies: [],
+    images: [
+      {
+        url: "images/item18_treasuremap.jpeg",
+        caption: "Treasure Map"
+      },
+    ],
+  },
   obj06_001_northstar: {
     title: "North Star",
     hint: "North Star",
@@ -1726,6 +1790,19 @@ window.checkboxesData = {
       },
     ],
   },
+  obj13_01_secretgarden: {
+    title: "Secret Garden Key",
+    hint: "Find the Secret Garden Key",
+    description: "",
+    unlockKeyword: "Secret Garden Key",
+    dependencies: [],
+    images: [
+      {
+        url: "images/obj13_01_secretgarden.jpeg",
+        caption: "Secret Garden Key"
+      },
+    ],
+  },
   obj_network_unlock: {
     title: "Network Password",
     hint: "Find the Network Password",
@@ -1891,6 +1968,66 @@ window.checkboxesData = {
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
+  },
+  dir011_note_letter: {
+    title: "Letter: Rejection of The Red Prince",
+    hint: "Letter: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note043.jpeg",
+        caption: "The Red Prince critiqued for being too political"
+      },
+    ],
+  },
+  dir011_note_letter_magnify: {
+    title: "Magnify Letter: ?",
+    hint: "Magnify Letter: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir011_note_letter"],
+  },
+  dir011_note_photo: {
+    title: "Photo: Baron Thomas Sinclair Points",
+    hint: "Photo: ???",
+    description: "",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note044.jpeg",
+        caption: "Baron Thomas Sinclair and his young sons, Hebert and Simon"
+      },
+    ],
+  },
+  dir011_note_photo_magnify: {
+    title: "Magnify Photo: Nothing",
+    hint: "Magnify Photo: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir011_note_photo"],
+  },
+  dir011_search: {
+    title: "Standard Search Complete: Obscured Note Found",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "What does this mean?",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note045.jpeg",
+        caption: "scribbled out note"
+      },
+    ],
+  },
+  dir011_hidden_magnify: {
+    title: "Magnify Hidden Note: Nothing",
+    hint: "Magnify Hidden Note: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "dir011_search"],
+  },
+  dir011_hidden_solve: {
+    title: "Hidden Note: Secret Security Network Password",
+    hint: "What Does This Note Mean?",
+    description: "This is a hint to solving the secret additional Security Terminal password.",
+    dependencies: ["dir011_search"],
   },
   dir012_search: {
     title: "Standard Search Complete: Obscured Drawing Found",
@@ -2243,6 +2380,19 @@ window.checkboxesData = {
     hint: "Search for any Less Obvious Notes: ???",
     description: "",
     dependencies: [],
+  },
+  dir034_secret: {
+    title: "Solved the Security Secret Puzzle",
+    hint: "Solve the Security Secret Puzzle: ???",
+    description: "SWANSONGHSS",
+    optionalDependencies: true,
+    dependencies: ["dir011_search"],
+  },
+  dir034_secret_use: {
+    title: "Used the Secret Network Password",
+    hint: "Find the Use for the Security Secret Puzzle: ???",
+    description: "",
+    dependencies: ["dir034_secret"],
   },
   dir038_search: {
     title: "Standard Search Complete: Nothing",

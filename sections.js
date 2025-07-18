@@ -20,6 +20,7 @@ window.sectionsData = [
       "obj04_006_billiardroom",
       "obj04_009_closet",
       "obj04_010_walkincloset",
+      "obj04_011_attic",
       "obj04_012_storeroom",
       "obj04_013_nook",
       "obj04_017_den",
@@ -53,6 +54,7 @@ window.sectionsData = [
       "obj04_063_terrace",
       "obj04_065_courtyard",
       "obj04_069_morningroom",
+      "obj04_070_secretgarden",
       "obj04_071_commissary",
       "obj04_072_kitchen",
       "obj04_073_locksmith",
@@ -122,6 +124,7 @@ window.sectionsData = [
       "obj02_006_billiardroom",
       "obj02_009_closet",
       "obj02_010_walkincloset",
+      "obj02_011_attic",
       "obj02_012_storeroom",
       "obj02_013_nook",
       "obj02_017_den",
@@ -157,6 +160,7 @@ window.sectionsData = [
       "obj02_063_terrace",
       "obj02_065_courtyard",
       "obj02_069_morningroom",
+      "obj02_070_secretgarden",
       "obj02_071_commissary",
       "obj02_072_kitchen",
       "obj02_073_locksmith",
@@ -213,7 +217,8 @@ window.sectionsData = [
     id: "obj11",
     title: "Objective: Build All the Contraptions",
     color: "blue",
-    dependencies: ["dir027_note_scrapbook"],
+    optionalDependencies: true,
+    dependencies: ["obj05_17_batterypack", "dir027_note_scrapbook"],
     information: [],
     checkboxes: [
       "obj11_01", // 
@@ -254,6 +259,17 @@ window.sectionsData = [
     ]
   },
   {
+    id: "obj13",
+    title: "Objective: Find All the Major Keys",
+    color: "blue",
+    optionalDependencies: true,
+    dependencies: ["obj02_015_musicroom"],
+    information: [],
+    checkboxes: [
+      "obj13_01_secretgarden",
+    ]
+  },
+  {
     id: "obj05",
     title: "Objective: Discover All the Items",
     color: "blue",
@@ -276,6 +292,10 @@ window.sectionsData = [
       "obj05_13_upgradedisk",
       "obj05_14_carkeys",
       "obj05_15_runningshoes",
+      "obj05_16_sleepingmask",
+      "obj05_17_batterypack",
+      "obj05_18_treasuremap",
+      "obj13_01_secretgarden",
     ]
   },
   {
@@ -352,6 +372,14 @@ window.sectionsData = [
         dependencies: ["obj02_010_walkincloset"],
         information: ["dir010_description", "dir010_info", "dir010_chess"],
         checkboxes: ["dir010_note", "dir010_note_magnify", "dir010_search"],
+      },
+      {
+        id: "dir011",
+        title: "011: Attic",
+        color: "blue",
+        dependencies: ["obj02_011_attic"],
+        information: ["dir011_description", "dir011_info", "dir011_chess"],
+        checkboxes: ["dir011_note_letter", "dir011_note_letter_magnify", "dir011_note_photo", "dir011_note_photo_magnify", "dir011_search", "dir011_hidden_magnify", "dir011_hidden_solve"],
       },
       {
         id: "dir012",
@@ -778,6 +806,21 @@ window.sectionsData = [
       "item13_upgradedisk",
       "item14_carkeys",
       "item15_runningshoes",
+      "item16_sleepingmask",
+      "item17_batterypack",
+      "item18_treasuremap",
+    ],
+  },
+  {
+    id: "info_keys",
+    title: "Major Keys",
+    color: "blue",
+    optionalDependencies: true,
+    dependencies: [
+      "obj13_01_secretgarden",
+    ],
+    information: [
+      "key01_secretgarden",
     ],
   },
   {
@@ -818,6 +861,8 @@ window.sectionsData = [
         information: [
           "person07_mary_001", // relation
           "person07_mary_002", // occupation
+          "person07_mary_007", // red prince rejection
+          "person07_mary_008", // awards
           "person07_mary_006", // third book
           "person07_mary_004", // disappearance
           "person07_mary_005", // original intended heir
@@ -951,6 +996,15 @@ window.sectionsData = [
         checkboxes: [],
       },
       {
+        id: "person21_thomasyanders",
+        title: "Editor Thomas Yanders",
+        color: "red",
+        optionalDependencies: true,
+        dependencies: ["dir011_note_letter"],
+        information: ["person21_thomasyanders_001", "person21_thomasyanders_002"],
+        checkboxes: [],
+      },
+      {
         id: "person18_evanson",
         title: "Lord Evanson",
         color: "blue",
@@ -1000,6 +1054,7 @@ window.sectionsData = [
       "date011", // 1987-09-02
       "date024", // 1987-11-18
       "date025", // 1992-04-25
+      "date026", // 1992-05-02
       "date001", // 1993-03-18
       "date014", // 1993-11-04
       "date016", // 1993-11-04
@@ -1102,12 +1157,14 @@ window.sectionsData = [
         dependencies: [
           "dir002_note_letter1",
           "dir005_note",
+          "dir011_note_letter",
           "dir039_note_letter1",
           "dir049_note",
         ],
         information: [
           "note002", // 002 - entrance hall
           "note006", // 005 - parlor
+          "note043", // 011 - attic
           "note030", // 039 - mail room
           "note017", // 049 - guest bedroom
         ],
@@ -1120,6 +1177,8 @@ window.sectionsData = [
         information: [
           "note001", // opening cinematic
           "note033", // 010 - walk-in closet
+          "note044", // 011 - attic
+          "note045", // 011 - attic
           "note005", // 012 - storeroom
           "note015M", // 013 - nook
           "note042", // 018 - wine cellar

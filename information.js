@@ -112,6 +112,33 @@ window.informationData = {
       },
     ],
   },
+  dir011_description: {
+    title: "Description",
+    description: "High above the mansion in its lofty perch, Mount Holly's Attic provides curious explorers with a cache of dusty keepsakes, trinkets, and clues from a long-forgotten past.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir011_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir011_info: {
+    title: "Classification",
+    description: "TYPE: Dead End",
+    dependencies: [],
+  },
+  dir011_chess: {
+    title: "Chess Piece",
+    description: "White Bishop",
+    dependencies: ["obj04_011_attic"],
+    images: [
+      {
+        url: "images/obj04_011_attic.jpeg",
+        caption: "white bishop"
+      },
+    ],
+  },
   dir012_description: {
     title: "Description",
     description: "A dedicated storage space filled from end to end with a surplus of chairs, carpets, paintings, and a handful of other things that had at one time been in vogue and on display elsewhere in the house.",
@@ -1160,6 +1187,50 @@ window.informationData = {
       },
     ],
   },
+  item16_sleepingmask: {
+    title: "A Black Silk Sleep Mask",
+    description: "The first time you enter each bedroom with the Sleep Mask, gain 5 steps.",
+    dependencies: ["obj05_16_sleepingmask"],
+    images: [
+      {
+        url: "images/item16_sleepingmask.jpeg",
+        caption: "sleep mask"
+      },
+    ],
+  },
+  item17_batterypack: {
+    title: "A Large Battery Pack",
+    description: "Provides juice to contraptions made in the workshop.",
+    dependencies: ["obj05_17_batterypack"],
+    images: [
+      {
+        url: "images/item17_batterypack.jpeg",
+        caption: "battery pack"
+      },
+    ],
+  },
+  item18_treasuremap: {
+    title: "Treasure Map",
+    description: "X marks the spot.",
+    dependencies: ["obj05_18_treasuremap"],
+    images: [
+      {
+        url: "images/item18_treasuremap.jpeg",
+        caption: "treasure map"
+      },
+    ],
+  },
+  key01_secretgarden: {
+    title: "The Key to the Secret Garden",
+    description: "Finding it won't be easy.",
+    dependencies: ["obj13_01_secretgarden"],
+    images: [
+      {
+        url: "images/obj13_01_secretgarden.jpeg",
+        caption: "secret garden key"
+      },
+    ],
+  },
   note001: {
     title: "Recital Invitation",
     description: "",
@@ -1826,6 +1897,39 @@ window.informationData = {
       },
     ],
   },
+  note043: {
+    title: "Rejection of The Red Prince",
+    description: "",
+    dependencies: ["dir011_note_letter"],
+    images: [
+      {
+        url: "images/note043.jpeg",
+        caption: "The Red Prince critiqued for being too political"
+      },
+    ],
+  },
+  note044: {
+    title: "Baron Thomas Sinclair Points",
+    description: "",
+    dependencies: ["dir011_note_photo", "obj02_61_foyer"],
+    images: [
+      {
+        url: "images/note044.jpeg",
+        caption: "Baron Thomas Sinclair and his young sons, Hebert and Simon"
+      },
+    ],
+  },
+  note045: {
+    title: "Scribbled Security Monitors",
+    description: "",
+    dependencies: ["dir011_note_hidden", "obj02_34_security"],
+    images: [
+      {
+        url: "images/note045.jpeg",
+        caption: "scribbled out note"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -1960,6 +2064,16 @@ window.informationData = {
     description: "Her third book was A New Clue.",
     dependencies: ["dir069_note"],
   },
+  person07_mary_007: {
+    title: "Too Political?",
+    description: "The Red Prince was initially rejected for being too political.",
+    dependencies: ["dir082_note", "dir011_note_letter"],
+  },
+  person07_mary_008: {
+    title: "Awards",
+    description: "The Red Prince and Swim Bird both won Illustrated Book of the Year by the Reddington Herald.",
+    dependencies: ["dir082_note", "dir011_note_letter"],
+  },
   person08_caleb_001: {
     title: "Occupation",
     description: "Author.",
@@ -2082,7 +2196,7 @@ window.informationData = {
     description: "The visit was in mid-November 1987.",
     dependencies: ["obj10_01"],
   },
-  person20_mlowry_002: {
+  person20_mlowry_001: {
     title: "Mount Holly Visitor",
     description: "Has visited the estate in the past.",
     dependencies: ["dir049_note"],
@@ -2091,6 +2205,16 @@ window.informationData = {
     title: "Time of Visit",
     description: "The visit was in late April 1992.",
     dependencies: ["obj10_01"],
+  },
+  person21_thomasyanders_001: {
+    title: "Occupation",
+    description: "Editor at Ruffington Red Publishing.",
+    dependencies: ["dir011_note_letter"],
+  },
+  person21_thomasyanders_002: {
+    title: "Rejection of the Red Prince",
+    description: "Rejected Mary's debut book, The Red Prince, for being too political.",
+    dependencies: ["dir011_note_letter"],
   },
   date001: {
     title: "Thursday, 18 March 1993",
@@ -2115,7 +2239,7 @@ window.informationData = {
   },
   date005: {
     title: "Thursday, 22 August 1985",
-    description: "Mary wins the Illustrated Book of the Year by the Herald for her second book, Swim Bird.",
+    description: "Mary wins the Illustrated Book of the Year by the Reddington Herald for her second book, Swim Bird.",
     dependencies: ["dir082_note"],
   },
   date006: {
@@ -2218,5 +2342,10 @@ window.informationData = {
     title: "Saturday, 25 April 1992",
     description: "M. Lowry checked out A Sightseer's Guide to Reddington from the Library.",
     dependencies: ["obj10_01"],
+  },
+  date026: {
+    title: "Saturday, 2 May 1992",
+    description: "M. Lowry writes a letter to Herbert with the details of the Parlor game.",
+    dependencies: ["obj10_01", "dir005_note"],
   },
 };
