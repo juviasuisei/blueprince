@@ -2952,6 +2952,12 @@ window.checkboxesData = {
     hint: "What's Up With These Valves?",
     description: "",
     dependencies: [],
+    images: [
+      {
+        url: "images/obj01_02_leverw.jpeg",
+        caption: "commissary sale flyer"
+      },
+    ],
   },
   dir071_note_flyer: {
     title: "Flyer: Maid's Day Sale",
