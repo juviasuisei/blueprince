@@ -2130,7 +2130,7 @@ window.informationData = {
     title: "Saturday, 7 November 1993",
     description: "Day One of our challenge at Mount Holly.",
     optionalDependencies: true,
-    dependencies: ["dir082_note"],
+    dependencies: ["dir082_note", "obj02_023_vault"],
   },
   date014: {
     title: "Wednesday, 4 November 1993",

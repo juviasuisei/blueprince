@@ -2051,6 +2051,12 @@ window.checkboxesData = {
       },
     ],
   },
+  obj10_01_magnify: {
+    title: "Magnify A Sightseer's Guide to Reddington: Nothing",
+    hint: "Magnify A Sightseer's Guide to Reddington: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "obj10_01"],
+  },
   dir027_search: {
     title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
