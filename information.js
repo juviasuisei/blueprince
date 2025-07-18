@@ -1989,6 +1989,68 @@ window.informationData = {
       },
     ],
   },
+  note049: {
+    title: "Checkout Card: Swim Bird",
+    description: "",
+    dependencies: ["obj10_02"],
+    images: [
+      {
+        url: "images/note049.jpeg",
+        caption: "checkout card"
+      },
+    ],
+  },
+  note050: {
+    title: "Swim Bird",
+    description: "Marion Marigold • 1985",
+    dependencies: ["obj10_02"],
+    images: [
+      {
+        url: "images/note050_01.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note050_02.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note050_03.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note050_04.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note050_05.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note050_06.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note050_07.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note050_08.jpeg",
+        caption: "pages 14–15"
+      },
+      {
+        url: "images/note050_09.jpeg",
+        caption: "pages 16–17"
+      },
+      {
+        url: "images/note050_10.jpeg",
+        caption: "pages 18–19"
+      },
+      {
+        url: "images/note050_11.jpeg",
+        caption: "pages 20–21"
+      },
+    ],
+  },
   person01_herbie_001: {
     title: "Relation",
     description: "Our granduncle. Deceased.",
@@ -2275,6 +2337,11 @@ window.informationData = {
     description: "Rejected Mary's debut book, The Red Prince, for being too political.",
     dependencies: ["dir011_note_letter"],
   },
+  person22_detective_001: {
+    title: "Occupation",
+    description: "Detective.",
+    dependencies: ["obj10_02"],
+  },
   date001: {
     title: "Thursday, 18 March 1993",
     description: "Herbert updates his will.",
@@ -2406,5 +2473,40 @@ window.informationData = {
     title: "Saturday, 2 May 1992",
     description: "M. Lowry writes a letter to Herbert with the details of the Parlor game.",
     dependencies: ["obj10_01", "dir005_note"],
+  },
+  date027: {
+    title: "Tuesday, 2 July 1985",
+    description: "Herbert checked out Swim Bird from the Library.",
+    dependencies: ["obj10_02"],
+  },
+  date028: {
+    title: "Friday, 12 July 1985",
+    description: "Mrs. Peterson checked out Swim Bird from the Library.",
+    dependencies: ["obj10_02"],
+  },
+  date029: {
+    title: "Friday, 1 November 1985",
+    description: "Mrs. Peterson checked out Swim Bird from the Library.",
+    dependencies: ["obj10_02"],
+  },
+  date030: {
+    title: "Tuesday, 24 December 1985",
+    description: "We checked out Swim Bird from the Library during a childhood holiday visit.",
+    dependencies: ["obj10_02"],
+  },
+  date031: {
+    title: "Sunday, 26 January 1986",
+    description: "Mrs. Peterson checked out Swim Bird from the Library.",
+    dependencies: ["obj10_02"],
+  },
+  date032: {
+    title: "Tuesday, 1 April 1986",
+    description: "Mrs. Babbage checked out Swim Bird from the Library.",
+    dependencies: ["obj10_02"],
+  },
+  date032: {
+    title: "Monday, 2 March 1986",
+    description: "Detective Margle checked out Swim Bird from the Library.",
+    dependencies: ["obj10_02"],
   },
 };

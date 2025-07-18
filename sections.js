@@ -1002,6 +1002,15 @@ window.sectionsData = [
         checkboxes: [],
       },
       {
+        id: "person22_detective",
+        title: "Detective Bon Margle",
+        color: "blue",
+        optionalDependencies: true,
+        dependencies: ["obj10_02"],
+        information: ["person22_detective_001"],
+        checkboxes: [],
+      },
+      {
         id: "person05_richardwitt",
         title: "Author Richard Witt",
         color: "blue",
@@ -1069,12 +1078,19 @@ window.sectionsData = [
       "date021", // 1972
       "date023", // 1982-01-04
       "date003", // 1983-06-15
+      "date027", // 1985-07-02
+      "date028", // 1985-07-12
       "date005", // 1985-08-22
+      "date029", // 1985-11-01
+      "date030", // 1985-12-24
+      "date031", // 1986-01-26
       "date006", // 1986-01-27
+      "date032", // 1986-04-01
       "date008", // 1986-11-04
       "date007", // 1986-11-11
       "date009", // 1986-11-17
       "date010", // 1987-02-20
+      "date033", // 1987-03-02
       "date011", // 1987-09-02
       "date024", // 1987-11-18
       "date025", // 1992-04-25
@@ -1167,6 +1183,7 @@ window.sectionsData = [
           "dir050_note",
           "dir082_note",
           "obj10_01",
+          "obj10_02",
         ],
         information: [
           "note034", // 027 - library

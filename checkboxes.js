@@ -1820,6 +1820,70 @@ window.checkboxesData = {
       },
     ],
   },
+  obj10_01_magnify: {
+    title: "Magnify A Sightseer's Guide to Reddington: Nothing",
+    hint: "Magnify A Sightseer's Guide to Reddington: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "obj10_01"],
+  },
+  obj10_02: {
+    title: "Checked Out: Swim Bird",
+    hint: "Checkout: Swim Bird",
+    description: "Marion Marigold • 1985",
+    dependencies: [],
+    images: [
+      {
+        url: "images/note050_01.jpeg",
+        caption: "page 1"
+      },
+      {
+        url: "images/note050_02.jpeg",
+        caption: "pages 2–3"
+      },
+      {
+        url: "images/note050_03.jpeg",
+        caption: "pages 4–5"
+      },
+      {
+        url: "images/note050_04.jpeg",
+        caption: "pages 6–7"
+      },
+      {
+        url: "images/note050_05.jpeg",
+        caption: "pages 8–9"
+      },
+      {
+        url: "images/note050_06.jpeg",
+        caption: "pages 10–11"
+      },
+      {
+        url: "images/note050_07.jpeg",
+        caption: "pages 12–13"
+      },
+      {
+        url: "images/note050_08.jpeg",
+        caption: "pages 14–15"
+      },
+      {
+        url: "images/note050_09.jpeg",
+        caption: "pages 16–17"
+      },
+      {
+        url: "images/note050_10.jpeg",
+        caption: "pages 18–19"
+      },
+      {
+        url: "images/note050_11.jpeg",
+        caption: "pages 20–21"
+      },
+    ],
+  },
+  obj10_01_magnify: {
+    title: "Magnify Swim Bird: Nothing",
+    hint: "Magnify Swim Bird: ???",
+    description: "",
+    dependencies: ["obj05_08_magnifyingglass", "obj10_02"],
+  },
   obj12_03: {
     title: "Mora Jai",
     hint: "Blue Stamp",
@@ -2268,12 +2332,6 @@ window.checkboxesData = {
         caption: "title page"
       },
     ],
-  },
-  obj10_01_magnify: {
-    title: "Magnify A Sightseer's Guide to Reddington: Nothing",
-    hint: "Magnify A Sightseer's Guide to Reddington: ???",
-    description: "",
-    dependencies: ["obj05_08_magnifyingglass", "obj10_01"],
   },
   dir027_search: {
     title: "Standard Search Complete: Nothing",
