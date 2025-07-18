@@ -813,6 +813,22 @@ window.informationData = {
     description: "TYPE: Tomorrow • Addition",
     dependencies: [],
   },
+  dir070_description: {
+    title: "Description",
+    description: "A floorplan so secretive it had been removed from the drafting pool to avoid anyone unwanted accidentally stumbling upon it. This secluded garden, flanked by a variety of Mora Jai fruit trees, has served as a private retreat to at least two other generations of Sinclairs.",
+    dependencies: [],
+    images: [
+      {
+        url: "images/dir070_description.jpeg",
+        caption: "room directory entry"
+      },
+    ],
+  },
+  dir070_info: {
+    title: "Classification",
+    description: "TYPE: Tomorrow • Spread",
+    dependencies: [],
+  },
   dir071_description: {
     title: "Description",
     description: "The staff commissary is always stocked with household goods and supplies at a reasonable cost. This provides the servants of the estate an invaluable service, especially to the live-in staff who may only expect to leave the property once or twice a month.",

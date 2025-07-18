@@ -1,9 +1,30 @@
 window.checkboxesData = {
-  obj01_1_room46: {
+  obj01_01_room46: {
     title: "Enter Room 46",
     hint: "Enter Room 46",
     description: "You have fullfilled your uncle's challenge.",
     dependencies: [],
+  },
+  obj01_02_leverw: {
+    title: "Found the Antechamber Western Lever",
+    hint: "Find the Antechamber Western Lever",
+    description: "",
+    optionalDependencies: true,
+    dependencies: ["dir070_puzzle"],
+  },
+  obj01_03_levers: {
+    title: "Found the Antechamber Southern Lever",
+    hint: "Find the Antechamber Southern Lever",
+    description: "",
+    optionalDependencies: true,
+    dependencies: ["dir070_puzzle"],
+  },
+  obj01_04_levere: {
+    title: "Found the Antechamber Eastern Lever",
+    hint: "Find the Antechamber Eastern Lever",
+    description: "",
+    optionalDependencies: true,
+    dependencies: ["dir070_puzzle"],
   },
   obj02_003_spareroom: {
     title: "Spare Room",
@@ -1235,6 +1256,12 @@ window.checkboxesData = {
     description: "",
     dependencies: ["obj02_069_morningroom"],
   },
+  obj04_070_secretgarden: {
+    title: "Secret Garden: None",
+    hint: "Secret Garden: ???",
+    description: "",
+    dependencies: ["obj02_070_secretgarden"],
+  },
   obj04_071_commissary: {
     title: "Commissary: None",
     hint: "Commissary: ???",
@@ -2101,7 +2128,7 @@ window.checkboxesData = {
   },
   dir018_roman: {
     title: "TK",
-    hint: "What's Up With the Roman Numerals: ???",
+    hint: "What's Up With the Roman Numerals?",
     description: "TK",
     dependencies: [],
   },
@@ -2911,6 +2938,18 @@ window.checkboxesData = {
   dir069_search: {
     title: "Standard Search Complete: Nothing",
     hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir070_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir070_puzzle: {
+    title: "Found Antechamber Western Lever",
+    hint: "What's Up With These Valves?",
     description: "",
     dependencies: [],
   },

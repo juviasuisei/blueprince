@@ -5,7 +5,7 @@ window.sectionsData = [
     color: "blue",
     dependencies: [],
     information: [],
-    checkboxes: ["obj01_1_room46"],
+    checkboxes: ["obj01_01_room46", "obj01_02_leverw", "obj01_03_levers", "obj01_04_levere"],
   },
   {
     id: "obj04",
@@ -678,6 +678,14 @@ window.sectionsData = [
         dependencies: ["obj02_069_morningroom"],
         information: ["dir069_description", "dir069_info"],
         checkboxes: ["dir069_note", "dir069_note_magnify", "dir069_search"],
+      },
+      {
+        id: "dir070",
+        title: "070: Secret Garden",
+        color: "green",
+        dependencies: ["obj02_070_secretgarden"],
+        information: ["dir070_description", "dir070_info"],
+        checkboxes: ["dir070_search", "dir070_puzzle"],
       },
       {
         id: "dir071",
