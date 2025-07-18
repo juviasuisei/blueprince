@@ -338,7 +338,7 @@ window.checkboxesData = {
     unlockKeyword: "Courtyard",
     dependencies: [],
   },
-  obj02_067_courtyard: {
+  obj02_067_veranda: {
     title: "Veranda",
     hint: "Draft the Veranda",
     description: "Room 067",
