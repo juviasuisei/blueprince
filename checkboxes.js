@@ -3357,6 +3357,12 @@ window.checkboxesData = {
     description: "",
     dependencies: [],
   },
+  dir067_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
   dir069_note: {
     title: "Note: Newspaper Announcement of Our Inheritance",
     hint: "Note: ???",
