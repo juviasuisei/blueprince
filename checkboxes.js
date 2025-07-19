@@ -10,7 +10,7 @@ window.checkboxesData = {
     hint: "Find the Antechamber Western Lever",
     description: "",
     optionalDependencies: true,
-    dependencies: ["dir070_puzzle"],
+    dependencies: ["dir062_unlock", "dir070_puzzle"],
     images: [
       {
         url: "images/obj01_02_leverw.jpeg",
@@ -23,14 +23,14 @@ window.checkboxesData = {
     hint: "Find the Antechamber Southern Lever",
     description: "",
     optionalDependencies: true,
-    dependencies: ["dir070_puzzle"],
+    dependencies: ["dir062_unlock", "dir070_puzzle"],
   },
   obj01_04_levere: {
     title: "Found the Antechamber Eastern Lever",
     hint: "Find the Antechamber Eastern Lever",
     description: "",
     optionalDependencies: true,
-    dependencies: ["dir070_puzzle"],
+    dependencies: ["dir062_unlock", "dir070_puzzle"],
   },
   obj02_003_spareroom: {
     title: "Spare Room",
@@ -322,6 +322,13 @@ window.checkboxesData = {
     hint: "Draft the Secret Passage",
     description: "Room 060",
     unlockKeyword: "Secret Passage",
+    dependencies: [],
+  },
+  obj02_062_greathall: {
+    title: "Great Hall",
+    hint: "Draft the Great Hall",
+    description: "Room 062",
+    unlockKeyword: "Great Hall",
     dependencies: [],
   },
   obj02_063_terrace: {
@@ -1318,6 +1325,12 @@ window.checkboxesData = {
         caption: "black pawn"
       },
     ],
+  },
+  obj04_062_greathall: {
+    title: "Great Hall: None",
+    hint: "Great Hall: ???",
+    description: "",
+    dependencies: ["obj02_062_greathall"],
   },
   obj04_063_terrace: {
     title: "Terrace: None",
@@ -3319,6 +3332,18 @@ window.checkboxesData = {
         caption: "easier to see if you enter from the back before opening the door"
       },
     ],
+  },
+  dir062_search: {
+    title: "Standard Search Complete: Nothing",
+    hint: "Search for any Less Obvious Notes: ???",
+    description: "",
+    dependencies: [],
+  },
+  dir062_unlock: {
+    title: "All Doors Unlocked",
+    hint: "Unlock All the Doors",
+    description: "",
+    dependencies: [],
   },
   dir063_search: {
     title: "Standard Search Complete: Nothing",
